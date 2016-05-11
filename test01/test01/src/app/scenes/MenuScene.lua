@@ -3,11 +3,13 @@ local AdBar = import("..views.AdBar")
 local BubbleButton = import("..views.BubbleButton")
 
 local MenuScene = class("MenuScene", function()
-    return display.newScene("MenuScene")
+    return display.newPhysicsScene("MenuScene")
 end)
 
 
 local STICK_POS_FIXED = true
+
+local EDGESEGMENTNUMBER = 10
 
 
 local scheduler = cc.Director:getInstance():getScheduler()
@@ -19,43 +21,18 @@ local stick_event = {
 }
 
 function MenuScene:ctor()
-    -- self.bg = display.newSprite("#MenuSceneBg.png", display.cx, display.cy)
-    -- self:addChild(self.bg)
-
-    -- self.adBar = AdBar.new()
-    -- self:addChild(self.adBar)
-
-    -- self.moreGamesButton = BubbleButton.new({
-    --         image = "#MenuSceneMoreGamesButton.png",
-    --         sound = GAME_SFX.tapButton,
-    --         prepare = function()
-    --             audio.playSound(GAME_SFX.tapButton)
-    --             self.moreGamesButton:setButtonEnabled(false)
-    --         end,
-    --         listener = function()
-    --             app:enterMoreGamesScene()
-    --         end,
-    --     })
-    --     :align(display.CENTER, display.left + 150, display.bottom + 300)
-    --     :addTo(self)
-
-    -- self.startButton = BubbleButton.new({
-    --         image = "#MenuSceneStartButton.png",
-    --         sound = GAME_SFX.tapButton,
-    --         prepare = function()
-    --             audio.playSound(GAME_SFX.tapButton)
-    --             self.startButton:setButtonEnabled(false)
-    --         end,
-    --         listener = function()
-    --             app:enterChooseLevelScene()
-    --         end,
-    --     })
-    --     :align(display.CENTER, display.right - 150, display.bottom + 300)
-    --     :addTo(self)
-
-
+    
     cc(self):addComponent("components.behavior.EventProtocol"):exportMethods()
 
+
+    self.world = self:getPhysicsWorld()
+
+    self.world:setGravity(cc.p(0, -200.0))
+
+    self.world:setDebugDrawMask(cc.PhysicsWorld.DEBUGDRAW_ALL)
+
+
+    self.ground = display.top * 4 / 10
 
     self.layerColor = cc.LayerColor:create(cc.c4b(0,0,0,120))
     self:addChild(self.layerColor)
@@ -99,15 +76,41 @@ function MenuScene:ctor()
     self:init_data("ui/yaogan01.png", "ui/yaogan02.png", 0.016)
 
 
-    
 
     self:addSpineboy()
 
     self:addUI()
 
+    self:addEdgeSegment()
+
 end
 
 function MenuScene:onEnter()
+end
+
+function MenuScene:addEdgeSegment()
+    local w = self.mapSprite:getContentSize().width
+    local h1 = display.top * 8 / 10
+    local h2 = self.ground
+
+
+    local sky = display.newNode()
+    local bodyTop = cc.PhysicsBody:createEdgeSegment(cc.p(0, h1-EDGESEGMENTNUMBER), cc.p(w, h1-EDGESEGMENTNUMBER), cc.PhysicsMaterial(0.0, 0.0, 0.0), EDGESEGMENTNUMBER)
+    sky:setPhysicsBody(bodyTop)
+    self:addChild(sky)
+    bodyTop:setCategoryBitmask(0x1000)
+    bodyTop:setContactTestBitmask(0x0000)
+    bodyTop:setCollisionBitmask(0x0001)
+
+
+    local ground = display.newNode()
+    local bodyBottom = cc.PhysicsBody:createEdgeSegment(cc.p(0, h2-EDGESEGMENTNUMBER), cc.p(w, h2-EDGESEGMENTNUMBER), cc.PhysicsMaterial(0.0, 0.0, 0.0), EDGESEGMENTNUMBER)
+    ground:setPhysicsBody(bodyBottom)
+    self:addChild(ground)
+    bodyBottom:setCategoryBitmask(0x1000)
+    bodyBottom:setContactTestBitmask(0x0001)
+    bodyBottom:setCollisionBitmask(0x0011)
+
 end
 
 function MenuScene:addUI( ... )
@@ -117,54 +120,133 @@ function MenuScene:addUI( ... )
     -- self.bg:setAnchorPoint(cc.p(1, 0))
     -- self.bg:setPosition(960,0)
 
-    self.moreGamesButton = BubbleButton.new({
-        image = "ui/skill00.png",
+    self.skill00Button = cc.ui.UIPushButton.new({normal = "ui/skill00.png"})
+    :align(display.BOTTOM_RIGHT, display.right, display.bottom)
+    :addTo(self)
+    self.skill00Button:onButtonClicked(function(tag)
+        self:skill00BtnCbk()
+    end)
+
+    -- self.skill00Button = BubbleButton.new({
+    --     image = "ui/skill00.png",
+    --     sound = GAME_SFX.tapButton,
+    --     prepare = function()
+    --         audio.playSound(GAME_SFX.tapButton)
+    --         self.skill00Button:setButtonEnabled(false)
+    --     end,
+    --     listener = function()
+    --         self:skill00BtnCbk()
+    --     end,
+    -- })
+    -- :align(display.BOTTOM_RIGHT, display.right, display.bottom)
+    -- :addTo(self)
+
+    self.skill01Button = BubbleButton.new({
+        image = "ui/skill01.png",
         sound = GAME_SFX.tapButton,
         prepare = function()
             audio.playSound(GAME_SFX.tapButton)
-            self.moreGamesButton:setButtonEnabled(false)
+            self.skill01Button:setButtonEnabled(false)
         end,
         listener = function()
-            handler(self, self.skill00BtnCbk)
+            self:skill01BtnCbk()
         end,
     })
-    :align(display.BOTTOM_RIGHT, display.right, display.bottom)
+    :align(display.BOTTOM_RIGHT, display.right - 200, display.bottom)
     :addTo(self)
 
-    -- local skill00Sprite = ccui.ImageView:create()
-    -- skill00Sprite:loadTexture("skill00.png")
-    -- skill00Sprite:setTouchEnabled(true)
+    self.skill02Button = BubbleButton.new({
+        image = "ui/skill02.png",
+        sound = GAME_SFX.tapButton,
+        prepare = function()
+            audio.playSound(GAME_SFX.tapButton)
+            self.skill02Button:setButtonEnabled(false)
+        end,
+        listener = function()
+            self:skill02BtnCbk()
+        end,
+    })
+    :align(display.BOTTOM_RIGHT, display.right , display.bottom + 200)
+    :addTo(self)
 
-    
-    -- self:addChild(skill00Sprite)
-    -- skill00Sprite:setPosition(960,0)
 
-    -- self.bg:addTouchEventListener(handler(self, self.skill00BtnCbk))
-
-
-    -- self.moreGamesButton = BubbleButton.new({
-    --         image = "#skill00.png",
-    --         -- sound = GAME_SFX.tapButton,
-    --         prepare = function()
-    --             -- audio.playSound(GAME_SFX.tapButton)
-    --             -- self.moreGamesButton:setButtonEnabled(false)
-    --         end,
-    --         listener = function()
-    --             handler(self, self.skill00BtnCbk)
-    --         end,
-    --     })
-    --     :align(display.CENTER, display.left + 150, display.bottom + 300)
-    --     :addTo(self)
-
+    self.jumpButton = BubbleButton.new({
+        image = "ui/jump.png",
+        sound = GAME_SFX.tapButton,
+        prepare = function()
+            audio.playSound(GAME_SFX.tapButton)
+            self.skill02Button:setButtonEnabled(false)
+        end,
+        listener = function()
+            self:jumpBtnCbk()
+        end,
+    })
+    :align(display.BOTTOM_RIGHT, display.left + 500 , display.bottom)
+    :addTo(self)
 
 end
 
-function MenuScene:skill00BtnCbk(widget,touchkey)
-    if touchkey == ccui.TouchEventType.ended then  
-        print("   1111111111111111111111111 ")
-        self.spineboy:doEvent("run")
+function MenuScene:skill00BtnCbk()  
+    print("   =============skill00BtnCbk================ ")
+    local state = self.spineboy:getState()
+    print("   =============skill00BtnCbk=======state========= "..state)
+
+    local to = "idle"
+    if state == "idle" then
+        self.spineboy:doEvent("attack1")
+    elseif state == "attack1" then
+        to = "attack2"
+    elseif state == "attack2" then
+        to = "attack3"
+    elseif state == "attack3" then
+        to = "attack1"
     end
+
+    self.spineboy:setAckToState(to)
+    
+    -- local skeletonNode = self.spineboy:getSkeletonNode()
+    -- local function ackBack()
+    --     print("ackBackackBack  ackBackackBack")
+    --     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
+    --     self.spineboy:doEvent(to)
+    -- end
+
+    -- skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
+
 end
+
+function MenuScene:skill01BtnCbk()
+    self.spineboy:doEvent("run")
+end
+
+function MenuScene:skill02BtnCbk()
+    self.spineboy:doEvent("run")
+end
+
+function MenuScene:jumpBtnCbk()
+
+    local h = self.ground
+    local y = self.spineboy:getPositionY()
+    print("   =============jumpBtnCbk==========h===== "..h)
+    print("   =============jumpBtnCbk==========y===== "..y)
+    if y > h then
+        return 
+    end
+
+    -- local cp = self.spineboy:getPhysicsBody():getVelocity()
+    -- print("   =============jumpBtnCbk==========cp.x===== "..cp.x)
+    -- print("   =============jumpBtnCbk==========cp.y===== "..cp.y)
+
+    local state = self.spineboy:getScaleX()
+    print("   =============jumpBtnCbk================ "..state)
+
+    self.spineboy:doEvent("jump1")
+
+
+    self.spineboy:getPhysicsBody():setVelocity(cc.p(0, 200))
+
+end
+
 
 function MenuScene:addSpineboy( ... )
     local spineboy = require("app/player/spineboy").new()
@@ -187,16 +269,24 @@ function MenuScene:moveSpineboy( d_x, d_y )
         end
     end
 
-
-    if (cp.y + d_y) > 0 and (cp.y + d_y + 200) < display.height then
-        self.spineboy:setPositionY(cp.y + d_y) 
-    end
+    -- print("  ==========moveSpineboy========= ")
+    -- if (cp.y + d_y) > 0 and (cp.y + d_y + 200) < display.height then
+    --     self.spineboy:setPositionY(cp.y + d_y) 
+    -- end
     
 
     if d_x < 0 then
         self.spineboy:setScaleX(-1)  
     else
         self.spineboy:setScaleX(1)  
+    end
+
+    if cp.y > self.ground then
+
+        self.spineboy:doEvent("jump2")
+    else
+        self.spineboy:doEvent("run")
+
     end
 
 
@@ -215,7 +305,7 @@ function MenuScene:addMap( ... )
 end
 
 function MenuScene:stickEvent( angle )
-    local speed = 5
+    local speed = 3
     local d_posx = 0
     local d_posy = 0
     angle = math.floor(angle)
@@ -235,7 +325,9 @@ function MenuScene:stickEvent( angle )
 
     self:moveSpineboy(d_posx, d_posy)
 
-    self.spineboy:doEvent("walk")
+
+
+    
 end
 
 
@@ -303,9 +395,10 @@ function MenuScene:on_touch(event, x, y)
             if cc.rectContainsPoint(box, cc.p(x, y)) then
                 self:start_scheduler()
                 self:dispatchEvent({name = stick_event.notify_to_stick_event_began})
+                self.is_touch_begin = true
                 return true
             end
-
+            self.is_touch_begin = false
             return false
         else
             self.stick_pos_.x = x
@@ -343,7 +436,11 @@ function MenuScene:on_touch(event, x, y)
         self:stop_scheduler()
         self:dispatchEvent({name = stick_event.notify_to_stick_event_ended})
 
-        self.spineboy:doEvent("idle")
+        if self.is_touch_begin then
+            print("33 333is_touch_begin 3333333333333333333")
+            self.spineboy:doEvent("idle")
+        end
+
     end
 
     return true

@@ -34,35 +34,35 @@ LOAD LUA FILE: F:/game/test01/test01/src/main.lua
 
 [LUA-print] [INFO] # CONFIG_SCREEN_AUTOSCALE      = FIXED_HEIGHT
 
-[LUA-print] [INFO] # CONFIG_SCREEN_WIDTH          = 1136.00
+[LUA-print] [INFO] # CONFIG_SCREEN_WIDTH          = 960.00
 
 [LUA-print] [INFO] # CONFIG_SCREEN_HEIGHT         = 640.00
 
-[LUA-print] [INFO] # display.widthInPixels        = 1136.00
+[LUA-print] [INFO] # display.widthInPixels        = 960.00
 
 [LUA-print] [INFO] # display.heightInPixels       = 640.00
 
 [LUA-print] [INFO] # display.contentScaleFactor   = 1.00
 
-[LUA-print] [INFO] # display.width                = 1136.00
+[LUA-print] [INFO] # display.width                = 960.00
 
 [LUA-print] [INFO] # display.height               = 640.00
 
-[LUA-print] [INFO] # display.cx                   = 568.00
+[LUA-print] [INFO] # display.cx                   = 480.00
 
 [LUA-print] [INFO] # display.cy                   = 320.00
 
 [LUA-print] [INFO] # display.left                 = 0.00
 
-[LUA-print] [INFO] # display.right                = 1136.00
+[LUA-print] [INFO] # display.right                = 960.00
 
 [LUA-print] [INFO] # display.top                  = 640.00
 
 [LUA-print] [INFO] # display.bottom               = 0.00
 
-[LUA-print] [INFO] # display.c_left               = -568.00
+[LUA-print] [INFO] # display.c_left               = -480.00
 
-[LUA-print] [INFO] # display.c_right              = 568.00
+[LUA-print] [INFO] # display.c_right              = 480.00
 
 [LUA-print] [INFO] # display.c_top                = 320.00
 
@@ -71,4 +71,4166 @@ LOAD LUA FILE: F:/game/test01/test01/src/main.lua
 [LUA-print] [INFO] #
 
 [LUA-print]  init init init init
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
+
+Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA ERROR] function refid '23' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 56.30979797136
+
+[LUA-print] angle_ : 53.130189780844
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 44.999920521325
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.874983651098
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 33.690045108943
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 30.25642206396
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 26.565035972481
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 24.443953582794
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 20.984895404589
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 20.095221788748
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 172.72503164828
+
+[LUA-print] angle_ : 174.50769210163
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 176.30861401355
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 176.63353933657
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 176.86364163167
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.02626891752
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.13759477389
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 177.02626891752
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 175.97174858633
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 175.53285451612
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 174.61070459006
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 170.96051719664
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 165.57922687249
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 160.97442090575
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 154.44009669921
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 144.16237896613
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 139.08565006416
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 128.15722658737
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 118.07251113696
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30994368255
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 86.423658821377
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 60.94537528147
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 49.899092453788
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 42.27366724838
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 35.537686652769
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 29.744862466633
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 26.565051177078
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 24.443938313109
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 22.203463237894
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 20.674410321482
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.653820102104
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.334794881191
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '60' does not reference a Lua function
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.025601856707
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 4.610637568399
+
+[LUA-print] angle_ : 6.9112172291532
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 9.0578634156988
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 10.856417778724
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 11.592153898425
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 13.547929032735
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 13.72228263085
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.191096549024
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.647370833936
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 15.85936229695
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 19.405959304701
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 24.443954031902
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 27.866988142688
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 30.46554626794
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 33.530462347793
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 35.604537063482
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 36.86989065173
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 36.86989065173
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 37.216433455256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 38.480191379627
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 41.027508842612
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 45
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 48.01278207022
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 51.581939762701
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 54.229877326737
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 55.768156882741
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.712472311088
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.996899307924
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.738562584228
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.164871290675
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 56.309927990613
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 55.856408680045
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 54.916526120907
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 54.057897261655
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 52.016490125914
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 50.110426504327
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 48.483257242606
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 45.535458985565
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 43.298645394674
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 40.135492438478
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 34.755912553541
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 33.146995832256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 33.146995832256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 33.146995832256
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 60.255105252834
+
+[LUA-print] angle_ : 68.19858046463
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 68.19858046463
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 85.48600973691
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 92.726310993906
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 97.594645913757
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 100.61969376578
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 101.30993583658
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 97.666804261814
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : 96.581944655178
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 96.581944655178
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 95.38931330243
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 95.38931330243
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 95.38931330243
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 81.027414735459
+
+[LUA-print] angle_ : 78.465379346355
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 75.762740942557
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 74.55369910104
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 73.426011365133
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 73.123735383289
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 79.919398664389
+
+[LUA-print] angle_ : 76.239214888209
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 74.475919063911
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 71.274212154727
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 70.232831323208
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 69.537747110687
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 45
+
+[LUA-print] angle_ : 36.869757763314
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 36.869757763314
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 26.565051177078
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 20.555949409747
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 14.036243467926
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 7.124801145302
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -0.00010928302672007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -15.945511369715
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -23.198590513648
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -33.690403781841
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -53.130312176543
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -139.398705355
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -155.22491060751
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -159.44395478042
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -159.44395478042
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : -160.55996517182
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -160.55996517182
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : -160.55996517182
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : -175.60130493044
+
+[LUA-print] angle_ : 147.52880770915
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 106.26020470831
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 92.726310993906
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.88140420346
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.734521321606
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 90.707319635007
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 61.782626377304
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA ERROR] function refid '90' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA ERROR] function refid '107' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 20.376413263154
+
+[LUA-print] angle_ : 24.145516857781
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 29.475860195104
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 40.914407628458
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 71.565033691778
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 103.24051991519
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 124.38040740689
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 133.53122111351
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 141.07249710709
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 144.63753811293
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '122' does not reference a Lua function
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '122' does not reference a Lua function
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA ERROR] function refid '122' does not reference a Lua function
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] angle_ : 145.49147701233
+
+[LUA-print] table: 0x08b53510 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] 33 333is_touch_begin 3333333333333333333
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
 

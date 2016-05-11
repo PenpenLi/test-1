@@ -8,9 +8,13 @@ end)
 local GameObject = cc.GameObject
 
 function spineboy:ctor( ... )
+
+    local body = cc.PhysicsBody:createBox(self:getContentSize(), cc.PHYSICSBODY_MATERIAL_DEFAULT, cc.p(0,0))
+
+    self:setPhysicsBody(body)
     
 
-    local skeletonNode = sp.SkeletonAnimation:create("spine/spineboy.json", "spine/spineboy.atlas", 0.6)
+    local skeletonNode = sp.SkeletonAnimation:create("spine/hero/hero.json", "spine/hero/hero.atlas", 0.6)
     skeletonNode:setScale(0.5)
     -- skeletonNode:setPosition(960 * 0.5 , 640 * 0.5)
     self:addChild(skeletonNode)
@@ -21,9 +25,33 @@ function spineboy:ctor( ... )
     
 end
 
+function spineboy:getSkeletonNode()
+    return self.skeletonNode
+end
+
 function spineboy:doEvent(event)
     self.fsm:doEvent(event)
 end
+
+function spineboy:doEventForce(event)
+    self.fsm:doEventForce(event)
+end
+
+
+function spineboy:getState()
+    return self.fsm:getState()
+end
+
+function spineboy:setAckToState(ackToState)
+    self.ackToState = ackToState or "idle"
+end
+
+function spineboy:getAckToState()
+    local a =  self.ackToState or "idle"
+    self.ackToState = "idle"
+    return a
+end
+
 
 function spineboy:addStateMachine()
     self.fsm = {}
@@ -33,33 +61,74 @@ function spineboy:addStateMachine()
         initial = "idle",
 
         events = {
-            {name = "walk", from = {"idle", "jump", "run"}, to = "walk"},
-            {name = "jump", from = {"idle", "walk", "run"}, to = "jump"},
-            {name = "idle", from = {"walk", "jump", "run"}, to = "idle"},
-            {name = "run", from = {"walk", "jump", "idle"}, to = "run"},
-            {name = "hit", from = {"walk", "jump", "idle"}, to = "hit"},
+            {name = "run", from = {"idle", "attack1", "jump1", "jump2"}, to = "run"},
+            {name = "jump1", from = {"idle", "run"}, to = "jump1"},
+            {name = "jump2", from = {"idle", "walk", "run", "jump1"}, to = "jump2"},
+            {name = "idle", from = { "jump1", "jump2", "run", "attack1", "attack2", "attack3"}, to = "idle"},
+            {name = "attack1", from = {"run", "jump1", "jump2", "idle", "attack2", "attack3"}, to = "attack1"},
+            {name = "attack2", from = {"run", "jump1", "jump2", "idle", "attack1", "attack3"}, to = "attack2"},
+            {name = "attack3", from = {"run", "jump1", "jump2", "idle", "attack1", "attack2"}, to = "attack3"},
         },
 
         callbacks = {
             onenteridle = function ()
+                print(" setAnimation(0, idle, true) ")
                 self.skeletonNode:setAnimation(0, "idle", true)
-            end,
-
-            onenterwalk = function ()
-                self.skeletonNode:setAnimation(0, "walk", true)
-            end,
-
-            onenterjump = function ()
-                self.skeletonNode:setAnimation(0, "jump", true)
             end,
 
             onenterrun = function ()
                 self.skeletonNode:setAnimation(0, "run", true)
             end,
 
-            onenterhit = function ()
-                self.skeletonNode:setAnimation(0, "hit", true)
+            onenterjump1 = function ()
+                self.skeletonNode:setAnimation(0, "jump1", false)
             end,
+
+            onenterjump2 = function ()
+                self.skeletonNode:setAnimation(0, "jump2", false)
+            end,
+
+            
+
+            onenterattack1 = function ()
+                self.skeletonNode:setAnimation(0, "attack1", false)
+                local skeletonNode = self.skeletonNode
+                local function ackBack()
+                    print("ackBackackBack  ackBackackBack")
+                    skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
+                    self:doEvent(self:getAckToState())
+                end
+
+                skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
+            end,
+
+            onenterattack2 = function ()
+                self.skeletonNode:setAnimation(0, "attack2", false)
+
+                local skeletonNode = self.skeletonNode
+                local function ackBack()
+                    print("ackBackackBack  ackBackackBack")
+                    skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
+                    self:doEvent(self:getAckToState())
+                end
+
+                skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
+
+            end,
+
+            onenterattack3 = function ()
+                self.skeletonNode:setAnimation(0, "attack3", false)
+
+                local skeletonNode = self.skeletonNode
+                local function ackBack()
+                    print("ackBackackBack  ackBackackBack")
+                    skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
+                    self:doEvent(self:getAckToState())
+                end
+
+                skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
+            end,
+
         },
     })
 end
@@ -69,6 +138,17 @@ end
 return spineboy
 
 
+
+                -- self.skeletonNode:registerSpineEventHandler(function (event)
+                --     self.skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
+            
+                --     print(string.format("[spine] %d event: %s, %d, %f, %s", 
+                --               event.trackIndex,
+                --               event.eventData.name,
+                --               event.eventData.intValue,
+                --               event.eventData.floatValue,
+                --               event.eventData.stringValue))
+                -- end, sp.EventType.ANIMATION_EVENT)
 
 
 -- local Player = class("Player", function ()
