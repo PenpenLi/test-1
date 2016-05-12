@@ -73,8 +73,8 @@ function MenuScene:ctor()
     self.stick_pos_ = { x=100, y=100 }
 
     
-    self:init_data("ui/yaogan01.png", "ui/yaogan02.png", 0.016)
-
+    -- self:init_data("ui/yaogan01.png", "ui/yaogan02.png", 0.016)
+    self.rate_ = 0.016
 
 
     self:addSpineboy()
@@ -115,10 +115,23 @@ end
 
 function MenuScene:addUI( ... )
 
-    -- self.bg = display.newSprite("ui/skill00.png")
-    -- self:addChild(self.bg)
-    -- self.bg:setAnchorPoint(cc.p(1, 0))
-    -- self.bg:setPosition(960,0)
+
+
+    local leftBtn = ccui.ImageView:create()
+    leftBtn:loadTexture("ui/left.png")
+    leftBtn:setTouchEnabled(true)
+    self:addChild(leftBtn)
+    leftBtn:setPosition(display.left + 50,display.bottom)
+    leftBtn:addTouchEventListener(handler(self, self.leftCbk))
+    leftBtn:setAnchorPoint(cc.p(0, 0))
+
+    local rightBtn = ccui.ImageView:create()
+    rightBtn:loadTexture("ui/right.png")
+    rightBtn:setTouchEnabled(true)
+    self:addChild(rightBtn)
+    rightBtn:setPosition(display.left + 200,display.bottom)
+    rightBtn:addTouchEventListener(handler(self, self.rightCbk))
+    rightBtn:setAnchorPoint(cc.p(0, 0))
 
     self.skill00Button = cc.ui.UIPushButton.new({normal = "ui/skill00.png"})
     :align(display.BOTTOM_RIGHT, display.right, display.bottom)
@@ -141,58 +154,58 @@ function MenuScene:addUI( ... )
     -- :align(display.BOTTOM_RIGHT, display.right, display.bottom)
     -- :addTo(self)
 
-    self.skill01Button = BubbleButton.new({
-        image = "ui/skill01.png",
-        sound = GAME_SFX.tapButton,
-        prepare = function()
-            audio.playSound(GAME_SFX.tapButton)
-            self.skill01Button:setButtonEnabled(false)
-        end,
-        listener = function()
-            self:skill01BtnCbk()
-        end,
-    })
-    :align(display.BOTTOM_RIGHT, display.right - 200, display.bottom)
+    self.jumpButton = cc.ui.UIPushButton.new({normal = "ui/jump.png"})
+    :align(display.BOTTOM_RIGHT, display.right , display.bottom + 120)
     :addTo(self)
-
-    self.skill02Button = BubbleButton.new({
-        image = "ui/skill02.png",
-        sound = GAME_SFX.tapButton,
-        prepare = function()
-            audio.playSound(GAME_SFX.tapButton)
-            self.skill02Button:setButtonEnabled(false)
-        end,
-        listener = function()
-            self:skill02BtnCbk()
-        end,
-    })
-    :align(display.BOTTOM_RIGHT, display.right , display.bottom + 200)
-    :addTo(self)
+    self.jumpButton:onButtonClicked(function(tag)
+        self:jumpBtnCbk()
+    end)
 
 
-    self.jumpButton = BubbleButton.new({
-        image = "ui/jump.png",
-        sound = GAME_SFX.tapButton,
-        prepare = function()
-            audio.playSound(GAME_SFX.tapButton)
-            self.skill02Button:setButtonEnabled(false)
-        end,
-        listener = function()
-            self:jumpBtnCbk()
-        end,
-    })
-    :align(display.BOTTOM_RIGHT, display.left + 500 , display.bottom)
-    :addTo(self)
+
 
 end
+
+
+
+function MenuScene:leftCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.began then 
+        self:start_scheduler()
+        self.angle_ = 179
+    elseif touchkey == ccui.TouchEventType.moved then 
+
+    elseif touchkey == ccui.TouchEventType.ended or touchkey == ccui.TouchEventType.canceled then 
+        self:endScheduler()
+    end
+end
+
+function MenuScene:rightCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.began then 
+        self:start_scheduler()
+        self.angle_ = 1
+    elseif touchkey == ccui.TouchEventType.moved then 
+
+    elseif touchkey == ccui.TouchEventType.ended or touchkey == ccui.TouchEventType.canceled then 
+        self:endScheduler()
+    end
+end
+
+function MenuScene:endScheduler() 
+    self:stop_scheduler()
+    self.angle_ = 0
+    self.spineboy:doEvent("idle")
+end
+
 
 function MenuScene:skill00BtnCbk()  
     print("   =============skill00BtnCbk================ ")
     local state = self.spineboy:getState()
     print("   =============skill00BtnCbk=======state========= "..state)
 
+
     local to = "idle"
-    if state == "idle" then
+    if state == "idle" or state == "run" then
+        self:endScheduler()
         self.spineboy:doEvent("attack1")
     elseif state == "attack1" then
         to = "attack2"
@@ -204,14 +217,6 @@ function MenuScene:skill00BtnCbk()
 
     self.spineboy:setAckToState(to)
     
-    -- local skeletonNode = self.spineboy:getSkeletonNode()
-    -- local function ackBack()
-    --     print("ackBackackBack  ackBackackBack")
-    --     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-    --     self.spineboy:doEvent(to)
-    -- end
-
-    -- skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
 
 end
 
@@ -240,6 +245,7 @@ function MenuScene:jumpBtnCbk()
     local state = self.spineboy:getScaleX()
     print("   =============jumpBtnCbk================ "..state)
 
+    self:endScheduler()
     self.spineboy:doEvent("jump1")
 
 
@@ -322,7 +328,7 @@ function MenuScene:stickEvent( angle )
         d_posx = -speed * math.cos(math.rad(180 + angle))
         d_posy = -speed * math.sin(math.rad(180 + angle))
     end
-
+    print(" d_posx "..d_posx)
     self:moveSpineboy(d_posx, d_posy)
 
 
