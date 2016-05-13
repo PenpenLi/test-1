@@ -41,21 +41,21 @@ function MenuScene:ctor()
         
         local location = touch:getLocation()
         -- print("onTouchBegan: %0.2f, %0.2f", location.x, location.y)
-        self:on_touch("began", location.x, location.y)
+        -- self:on_touch("began", location.x, location.y)
         return true
     end
 
     local function onTouchMoved(touch, event)
         local location = touch:getLocation()
         -- print("onTouchMoved: %0.2f, %0.2f", location.x, location.y)
-        self:on_touch("moved", location.x, location.y)
+        -- self:on_touch("moved", location.x, location.y)
         return true
     end
 
     local function onTouchEnded(touch, event)
         local location = touch:getLocation()
         -- print("onTouchEnded: %0.2f, %0.2f", location.x, location.y)
-        self:on_touch("ended", location.x, location.y)
+        -- self:on_touch("ended", location.x, location.y)
         return true
     end
 
@@ -204,7 +204,7 @@ function MenuScene:skill00BtnCbk()
 
 
     local to = "idle"
-    if state == "idle" or state == "run" then
+    if state == "idle" or state == "run" or state == "jump1" or state == "jump2"  then
         self:endScheduler()
         self.spineboy:doEvent("attack1")
     elseif state == "attack1" then

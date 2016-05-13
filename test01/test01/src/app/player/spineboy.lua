@@ -61,7 +61,7 @@ function spineboy:addStateMachine()
         initial = "idle",
 
         events = {
-            {name = "run", from = {"idle", "attack1", "jump1", "jump2"}, to = "run"},
+            {name = "run", from = {"idle", "attack1", "attack2", "attack3", "jump1", "jump2"}, to = "run"},
             {name = "jump1", from = {"idle", "run"}, to = "jump1"},
             {name = "jump2", from = {"idle", "walk", "run", "jump1"}, to = "jump2"},
             {name = "idle", from = { "jump1", "jump2", "run", "attack1", "attack2", "attack3"}, to = "idle"},
@@ -73,24 +73,29 @@ function spineboy:addStateMachine()
         callbacks = {
             onenteridle = function ()
                 print(" setAnimation(0, idle, true) ")
+                self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "idle", true)
             end,
 
             onenterrun = function ()
+                self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "run", true)
             end,
 
             onenterjump1 = function ()
+                self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "jump1", false)
             end,
 
             onenterjump2 = function ()
+                self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "jump2", false)
             end,
 
             
 
             onenterattack1 = function ()
+                self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "attack1", false)
                 local skeletonNode = self.skeletonNode
                 local function ackBack()
@@ -103,6 +108,7 @@ function spineboy:addStateMachine()
             end,
 
             onenterattack2 = function ()
+                self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "attack2", false)
 
                 local skeletonNode = self.skeletonNode
@@ -117,6 +123,7 @@ function spineboy:addStateMachine()
             end,
 
             onenterattack3 = function ()
+                self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "attack3", false)
 
                 local skeletonNode = self.skeletonNode
