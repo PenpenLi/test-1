@@ -72,16 +72,22 @@ function MenuScene:ctor()
     self.touch_enable_ = true
     self.stick_pos_ = { x=100, y=100 }
 
+    self.treePos = {x = display.cx, y = self.ground}
+
     
     -- self:init_data("ui/yaogan01.png", "ui/yaogan02.png", 0.016)
     self.rate_ = 0.016
 
+    self.monster =  {}
+    self:addMonster()
 
     self:addSpineboy()
 
     self:addUI()
 
     self:addEdgeSegment()
+
+    self:start_monster_scheduler()
 
 end
 
@@ -255,10 +261,29 @@ end
 
 
 function MenuScene:addSpineboy( ... )
-    local spineboy = require("app/player/spineboy").new()
+    local spineboy = require("app/player/spineboy").new({parent = self})
     spineboy:setPosition(display.cx , display.cy)
     self:addChild(spineboy)
     self.spineboy = spineboy
+end
+
+function MenuScene:addMonster( ... )
+    for i=1,3 do
+        self:addOneMonster()
+    end
+end
+
+function MenuScene:addOneMonster( ... )
+    
+    local monster = require("app/player/monster").new()
+    -- math.randomseed(os.time())
+    local dx = math.random(-30,300)
+    print(" ==============addOneMonster=======================dx= "..dx)
+    monster:setPosition(display.right + dx , display.cy)
+    self.mapSprite:addChild(monster)
+    monster:setTargetPos( self.treePos )
+    monster:doEvent("walk")
+    table.insert(self.monster, monster)
 end
 
 function MenuScene:moveSpineboy( d_x, d_y )
@@ -335,6 +360,27 @@ function MenuScene:stickEvent( angle )
 
     
 end
+
+function MenuScene:start_monster_scheduler()
+    self:stop_monster_scheduler()
+
+    local update_func = function(dt)
+        
+        for k,v in pairs(self.monster) do
+            v:update()
+        end
+    end
+
+    self.monster_scheduler_id_ = cc.Director:getInstance():getScheduler():scheduleScriptFunc(update_func, self.rate_, false)
+end
+
+function MenuScene:stop_monster_scheduler()
+    if self.monster_scheduler_id_ ~= nil then
+        scheduler:unscheduleScriptEntry(self.monster_scheduler_id_)
+        self.monster_scheduler_id_ = nil
+    end
+end
+
 
 
 function MenuScene:start_scheduler()

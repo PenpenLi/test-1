@@ -7,7 +7,8 @@ end)
 
 local GameObject = cc.GameObject
 
-function spineboy:ctor( ... )
+function spineboy:ctor( t )
+    self.parent = t.parent
 
     local body = cc.PhysicsBody:createBox(self:getContentSize(), cc.PHYSICSBODY_MATERIAL_DEFAULT, cc.p(0,0))
 
@@ -22,6 +23,8 @@ function spineboy:ctor( ... )
     self.skeletonNode = skeletonNode
 
     self:addStateMachine()
+
+
     
 end
 
@@ -105,6 +108,8 @@ function spineboy:addStateMachine()
                 end
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
+
+                self:hit()
             end,
 
             onenterattack2 = function ()
@@ -138,6 +143,15 @@ function spineboy:addStateMachine()
 
         },
     })
+end
+
+function spineboy:hit()
+    local monster = self.parent.monster
+    local cp = cc.p(self:getPosition())
+    local state = self:getScaleX()
+    for k,v in pairs(monster) do
+        v:beHit(cp, state, 50)
+    end
 end
 
 
