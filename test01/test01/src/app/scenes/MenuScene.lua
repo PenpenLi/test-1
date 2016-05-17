@@ -11,6 +11,9 @@ local STICK_POS_FIXED = true
 
 local EDGESEGMENTNUMBER = 10
 
+GROUND_TAG   = 1
+PLAYER_TAG   = 2
+
 
 local scheduler = cc.Director:getInstance():getScheduler()
 
@@ -27,7 +30,7 @@ function MenuScene:ctor()
 
     self.world = self:getPhysicsWorld()
 
-    self.world:setGravity(cc.p(0, -200.0))
+    self.world:setGravity(cc.p(0, -400.0))
 
     self.world:setDebugDrawMask(cc.PhysicsWorld.DEBUGDRAW_ALL)
 
@@ -116,6 +119,8 @@ function MenuScene:addEdgeSegment()
     bodyBottom:setCategoryBitmask(0x1000)
     bodyBottom:setContactTestBitmask(0x0001)
     bodyBottom:setCollisionBitmask(0x0011)
+    ground:setTag(GROUND_TAG)
+
 
 end
 
@@ -210,15 +215,22 @@ function MenuScene:skill00BtnCbk()
 
 
     local to = "idle"
-    if state == "idle" or state == "run" or state == "jump1" or state == "jump2"  then
-        self:endScheduler()
+    if state == "idle" or state == "run" then
+        -- self:endScheduler()
         self.spineboy:doEvent("attack1")
+    elseif state == "jump1" or state == "jump2"  then
+        -- self:stop_scheduler()
+        -- self.angle_ = 0
+        self.spineboy:doEvent("attack4")
+        to = "idle"
     elseif state == "attack1" then
         to = "attack2"
     elseif state == "attack2" then
         to = "attack3"
     elseif state == "attack3" then
         to = "attack1"
+    elseif state == "attack4" then
+        return
     end
 
     self.spineboy:setAckToState(to)
@@ -251,7 +263,8 @@ function MenuScene:jumpBtnCbk()
     local state = self.spineboy:getScaleX()
     print("   =============jumpBtnCbk================ "..state)
 
-    self:endScheduler()
+    -- self:endScheduler()
+    self.spineboy:doEvent("idle")
     self.spineboy:doEvent("jump1")
 
 
@@ -282,7 +295,7 @@ function MenuScene:addOneMonster( ... )
     monster:setPosition(display.right + dx , display.cy)
     self.mapSprite:addChild(monster)
     monster:setTargetPos( self.treePos )
-    monster:doEvent("walk")
+    monster:doEvent("run")
     table.insert(self.monster, monster)
 end
 
@@ -313,11 +326,13 @@ function MenuScene:moveSpineboy( d_x, d_y )
     end
 
     if cp.y > self.ground then
-
-        self.spineboy:doEvent("jump2")
+        -- if  self.spineboy:getState() ~= "attack4" then
+        --     self.spineboy:doEvent("jump2")
+        -- end
     else
-        self.spineboy:doEvent("run")
-
+        if  self.spineboy:getState() == "idle" then
+            self.spineboy:doEvent("run")
+        end
     end
 
 

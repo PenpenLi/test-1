@@ -15,11 +15,11 @@ function monster:ctor( ... )
     self:setPhysicsBody(body)
     
 
-    local skeletonNode = sp.SkeletonAnimation:create("spine/spineboy/spineboy.json", "spine/spineboy/spineboy.atlas", 0.2)
+    local skeletonNode = sp.SkeletonAnimation:create("spine/monster1/monster1.json", "spine/monster1/monster1.atlas", 0.6)
     skeletonNode:setScale(0.4)
     -- skeletonNode:setPosition(960 * 0.5 , 640 * 0.5)
     self:addChild(skeletonNode)
-    skeletonNode:setAnimation(0, "idle", true)
+    skeletonNode:setAnimation(0, "run", true)
     self.skeletonNode = skeletonNode
 
     self:addStateMachine()
@@ -64,13 +64,13 @@ function monster:addStateMachine()
     GameObject.extend(self.fsm):addComponent("components.behavior.StateMachine"):exportMethods()
 
     self.fsm:setupState({
-        initial = "idle",
+        initial = "run",
 
         events = {
-            {name = "run", from = {"idle", "hit"}, to = "run"},
-            {name = "idle", from = {"walk", "hit"}, to = "idle"},
-            {name = "hit", from = {"walk", "idle"}, to = "hit"},
-            {name = "walk", from = {"walk", "idle", "hit"}, to = "walk"},
+            {name = "run", from = {"idle", "hurt"}, to = "run"},
+            {name = "idle", from = {"run", "hurt"}, to = "idle"},
+            {name = "hurt", from = {"run", "idle"}, to = "hurt"},
+            -- {name = "walk", from = {"walk", "idle", "hurt"}, to = "walk"},
         },
 
         callbacks = {
@@ -85,26 +85,26 @@ function monster:addStateMachine()
                 self.skeletonNode:setAnimation(0, "run", true)
             end,
 
-            onenterhit = function ()
+            onenterhurt = function ()
                 self.skeletonNode:setToSetupPose()
-                self.skeletonNode:setAnimation(0, "hit", true)
+                self.skeletonNode:setAnimation(0, "hurt", true)
 
                 local skeletonNode = self.skeletonNode
                 local function ackBack()
                     print("ackBackackBack  ackBackackBack")
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-                    self:doEvent("walk")
+                    self:doEvent("run")
                 end
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
 
             end,
 
-            onenterwalk = function ()
-                self.skeletonNode:setToSetupPose()
-                self.skeletonNode:setAnimation(0, "walk", true)
+            -- onenterwalk = function ()
+            --     self.skeletonNode:setToSetupPose()
+            --     self.skeletonNode:setAnimation(0, "run", true)
 
-            end,
+            -- end,
 
 
         },
@@ -112,12 +112,12 @@ function monster:addStateMachine()
 end
 
 function monster:update()
-    if self.targetPos and self:getState() == "walk" then
+    if self.targetPos and self:getState() == "run" then
 
         local cp = cc.p(self:getPosition())
         local d = math2d.dist(cp.x, cp.y, self.targetPos.x, self.targetPos.y)
         if d < self.ackDistance then
-            self:doEvent("idle")
+            -- self:doEvent("run")
         else
             if cp.x < self.targetPos.x then
                 self:setPosition(cp.x + self.speed, cp.y)
@@ -137,17 +137,17 @@ end
 function monster:beHit(playerCp, state, ackDistance)
     local cp = cc.p(self:getPosition())
     local cp = self:getParent():convertToWorldSpace(cp)
-    print(" beHit    cp.x  "..cp.x)
-    print(" beHit  playerCp.x  "..playerCp.x)
-    print(" beHit    cp.x  "..state)
+    print(" behurt    cp.x  "..cp.x)
+    print(" behurt  playerCp.x  "..playerCp.x)
+    print(" behurt    cp.x  "..state)
     local d = math2d.dist(cp.x, cp.y, playerCp.x, playerCp.y)
 
     if cp.x >= playerCp.x and  state == 1 and d < ackDistance then
-        print(" beHit    cp.x  1111111111111111")
-        self:doEvent("hit")
+        print(" behurt    cp.x  1111111111111111")
+        self:doEvent("hurt")
     elseif cp.x < playerCp.x and  state == -1 and d < ackDistance then
-        print(" beHit    cp.x  2222222222222222222")
-        self:doEvent("hit")
+        print(" behurt    cp.x  2222222222222222222")
+        self:doEvent("hurt")
     end
 end
 
