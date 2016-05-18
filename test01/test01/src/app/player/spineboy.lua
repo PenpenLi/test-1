@@ -12,6 +12,9 @@ function spineboy:ctor( t )
 
     self.rate_ = 0.016
 
+    self.ackDistance = 50
+    self.ackHurt = 3000
+
     local MATERIAL_DEFAULT = cc.PhysicsMaterial(0.0, 0.0, 0.0)
 
     local body = cc.PhysicsBody:createBox(self:getContentSize(), MATERIAL_DEFAULT, cc.p(0,0))
@@ -128,7 +131,14 @@ function spineboy:addStateMachine()
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
 
-                self:hit()
+                skeletonNode:registerSpineEventHandler(function (event)
+                    skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
+                    if event.eventData.name == "att" then
+                        self:hit()
+                    end
+                end, sp.EventType.ANIMATION_EVENT)
+
+                
             end,
 
             onenterattack2 = function ()
@@ -144,7 +154,12 @@ function spineboy:addStateMachine()
                 end
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
-                self:hit()
+                skeletonNode:registerSpineEventHandler(function (event)
+                    skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
+                    if event.eventData.name == "att" then
+                        self:hit()
+                    end
+                end, sp.EventType.ANIMATION_EVENT)
             end,
 
             onenterattack3 = function ()
@@ -160,7 +175,12 @@ function spineboy:addStateMachine()
                 end
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
-                self:hit()
+                skeletonNode:registerSpineEventHandler(function (event)
+                    skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
+                    if event.eventData.name == "att" then
+                        self:hit()
+                    end
+                end, sp.EventType.ANIMATION_EVENT)
             end,
 
             onenterattack4 = function ()
@@ -176,7 +196,13 @@ function spineboy:addStateMachine()
                 end
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
-                self:hit()
+                
+                skeletonNode:registerSpineEventHandler(function (event)
+                    skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
+                    if event.eventData.name == "att" then
+                        self:hit()
+                    end
+                end, sp.EventType.ANIMATION_EVENT)
             end,
 
         },
@@ -188,7 +214,11 @@ function spineboy:hit()
     local cp = cc.p(self:getPosition())
     local state = self:getScaleX()
     for k,v in pairs(monster) do
-        v:beHit(cp, state, 50)
+        if v and  not v:IsDie() then
+            v:beHit(cp, state, self.ackDistance, self.ackHurt)
+        else
+
+        end
     end
 end
 
@@ -255,7 +285,7 @@ function spineboy:updateScher( ... )
         elseif z < 0 then 
             self:doEvent("jump2")
         else
-            
+
         end
     end
 

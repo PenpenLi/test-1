@@ -82,7 +82,7 @@ function MenuScene:ctor()
     self.rate_ = 0.016
 
     self.monster =  {}
-    self:addMonster()
+    -- self:addMonster({blood = 10000})
 
     self:addSpineboy()
 
@@ -91,6 +91,12 @@ function MenuScene:ctor()
     self:addEdgeSegment()
 
     self:start_monster_scheduler()
+
+    self.gameTime = 0
+    self.gameMonSterNum = 0
+
+    self.chuMonsterTimes = 5
+    self.chuMonsterNum = 3
 
 end
 
@@ -280,19 +286,21 @@ function MenuScene:addSpineboy( ... )
     self.spineboy = spineboy
 end
 
-function MenuScene:addMonster( ... )
-    for i=1,3 do
-        self:addOneMonster()
+function MenuScene:addMonster( t )
+    for i=1,self.chuMonsterNum do
+        local dx = math.random(-30,200)
+        print(" ==============addOneMonster=======================dx= "..dx)
+        local pos = {x = display.right + dx, y = display.cy}
+        self:addOneMonster(pos, t)
     end
 end
 
-function MenuScene:addOneMonster( ... )
+function MenuScene:addOneMonster( pos, t )
     
-    local monster = require("app/player/monster").new()
+    local monster = require("app/player/monster").new(t)
     -- math.randomseed(os.time())
-    local dx = math.random(-30,300)
-    print(" ==============addOneMonster=======================dx= "..dx)
-    monster:setPosition(display.right + dx , display.cy)
+    
+    monster:setPosition(pos.x ,pos.y )
     self.mapSprite:addChild(monster)
     monster:setTargetPos( self.treePos )
     monster:doEvent("run")
@@ -380,9 +388,19 @@ function MenuScene:start_monster_scheduler()
     self:stop_monster_scheduler()
 
     local update_func = function(dt)
-        
+        self.gameTime = self.gameTime + dt
+        if self.gameTime > self.chuMonsterTimes then
+            self.gameTime = 0
+            self.gameMonSterNum = self.gameMonSterNum + 1
+            self:chuMonster()
+
+        end
+
         for k,v in pairs(self.monster) do
-            v:update()
+            if v and  not v:IsDie() then
+               v:update()
+            end
+            
         end
     end
 
@@ -396,7 +414,18 @@ function MenuScene:stop_monster_scheduler()
     end
 end
 
+function MenuScene:chuMonster( ... )
+    local t = {}
+    t.blood = 5000 + self.gameMonSterNum * 200
+    self:addMonster(t)
 
+    for k,v in pairs(self.monster) do
+        if v:IsDie() then
+           v:removeFromParent()
+           self.monster[k] = nil
+        end
+    end
+end
 
 function MenuScene:start_scheduler()
     self:stop_scheduler()

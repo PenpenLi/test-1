@@ -74,15 +74,23 @@ LOAD LUA FILE: F:/game/test01/test01/src/main.lua
 
 [LUA-print]  ==============addOneMonster=======================dx= 232
 
-[LUA-print] table: 0x07944fd0 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+[LUA-print] table: 0x08cd81e0 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
 
 [LUA-print]  ==============addOneMonster=======================dx= 201
 
-[LUA-print] table: 0x0780fe68 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+[LUA-print] table: 0x08cda720 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
 
 [LUA-print]  ==============addOneMonster=======================dx= 165
 
-[LUA-print] table: 0x079489f8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+[LUA-print] table: 0x08cdc540 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 219
+
+[LUA-print] table: 0x08cde378 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= -4
+
+[LUA-print] table: 0x079c3f98 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
 
 [LUA-print]  setAnimation(0, idle, true) 
 
@@ -90,57 +98,61 @@ Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
 
 Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
 
 [LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
 
@@ -150,73 +162,421 @@ Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
 
 [LUA-print]  setAnimation(0, idle, true) 
 
-[LUA-print]    =============jumpBtnCbk==========h===== 256
+[LUA-print] angle_ : 1
 
-[LUA-print]    =============jumpBtnCbk==========y===== 255.83853149414
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print]    =============jumpBtnCbk================ 1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event idle, from idle to idle
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  d_posx 2.9995430854692
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print]  setAnimation(0, idle, true) 
 
 [LUA-print]    =============skill00BtnCbk================ 
 
-[LUA-print]    =============skill00BtnCbk=======state========= jump1
+[LUA-print]    =============skill00BtnCbk=======state========= idle
 
-[LUA-print]  behurt    cp.x  1123
-
-[LUA-print]  behurt  playerCp.x  480
-
-[LUA-print]  behurt    cp.x  1
-
-[LUA-print]  behurt    cp.x  1092
+[LUA-print]  behurt    cp.x  707.0439453125
 
 [LUA-print]  behurt  playerCp.x  480
 
 [LUA-print]  behurt    cp.x  1
 
-[LUA-print]  behurt    cp.x  1056
+[LUA-print]  behurt    cp.x  676.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  640.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  694.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  471.04391479492
 
 [LUA-print]  behurt  playerCp.x  480
 
@@ -226,77 +586,71 @@ Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
 
 [LUA-print]  setAnimation(0, idle, true) 
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print]    =============skill00BtnCbk================ 
 
-[LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
+[LUA-print]    =============skill00BtnCbk=======state========= idle
 
-[LUA-print] $$$$$$$$$$$$$     contactLogic =============== GROUND_TAG 
+[LUA-print]  behurt    cp.x  688.0439453125
 
-[LUA-print] $$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG 
+[LUA-print]  behurt  playerCp.x  480
 
-[LUA-print]  setAnimation(0, idle, true) 
+[LUA-print]  behurt    cp.x  1
 
-[LUA-print]    =============jumpBtnCbk==========h===== 256
+[LUA-print]  behurt    cp.x  657.0439453125
 
-[LUA-print]    =============jumpBtnCbk==========y===== 255.89764404297
+[LUA-print]  behurt  playerCp.x  480
 
-[LUA-print]    =============jumpBtnCbk================ 1
+[LUA-print]  behurt    cp.x  1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event idle, from idle to idle
+[LUA-print]  behurt    cp.x  621.0439453125
 
-[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+[LUA-print]  behurt  playerCp.x  480
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  behurt    cp.x  1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  behurt    cp.x  675.0439453125
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  behurt  playerCp.x  480
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  behurt    cp.x  1
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  behurt    cp.x  452.04391479492
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  behurt  playerCp.x  480
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA ERROR] function refid '16' does not reference a Lua function
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
-
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from jump1 to jump1
+[LUA-print]  behurt    cp.x  1
 
 [LUA-print]    =============skill00BtnCbk================ 
 
-[LUA-print]    =============skill00BtnCbk=======state========= jump1
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
 
-[LUA-print]  behurt    cp.x  1047
+[LUA-print] ackBackackBack  ackBackackBack
 
-[LUA-print]  behurt  playerCp.x  480
-
-[LUA-print]  behurt    cp.x  1
-
-[LUA-print]  behurt    cp.x  1016
+[LUA-print]  behurt    cp.x  676.0439453125
 
 [LUA-print]  behurt  playerCp.x  480
 
 [LUA-print]  behurt    cp.x  1
 
-[LUA-print]  behurt    cp.x  980
+[LUA-print]  behurt    cp.x  645.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  609.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  663.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  440.04391479492
 
 [LUA-print]  behurt  playerCp.x  480
 
@@ -306,19 +660,403 @@ Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
 
 [LUA-print]  setAnimation(0, idle, true) 
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print]    =============skill00BtnCbk================ 
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print]    =============skill00BtnCbk=======state========= idle
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print]  ==============addOneMonster=======================dx= 188
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x074b8108 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print]  ==============addOneMonster=======================dx= 82
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print] table: 0x074bc5e8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
 
-[LUA-print] table: 0x0794bb88 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from jump2 to jump2
+[LUA-print]  ==============addOneMonster=======================dx= 213
+
+[LUA-print] table: 0x074be1f0 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 111
+
+[LUA-print] table: 0x074c0010 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 158
+
+[LUA-print] table: 0x074c1b70 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  behurt    cp.x  659.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  628.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  592.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  646.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  423.04391479492
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  859.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  753.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  884.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  782.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  829.0439453125
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]  behurt    cp.x  545.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  514.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  7000
+
+[LUA-print]  behurt    cp.x  478.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  532.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  309.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  745.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  639.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  770.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  668.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  715.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  534.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  514.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x08cda720 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  4000
+
+[LUA-print]  behurt    cp.x  467.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  521.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  7000
+
+[LUA-print]  behurt    cp.x  298.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  734.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  628.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  759.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  657.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  704.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  514.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  7000
+
+[LUA-print]  behurt    cp.x  500.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  1000
+
+[LUA-print]  behurt    cp.x  447.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  521.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  4000
+
+[LUA-print]  behurt    cp.x  278.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  714.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  608.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  739.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  637.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  684.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack1 to attack1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack1 to attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack1 to attack1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack1 to attack1
 
 [LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
 
@@ -327,4 +1065,4782 @@ Node warning: setPhysicsBody sets anchor point to Vec2::ANCHOR_MIDDLE.
 [LUA-print] $$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG 
 
 [LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack1 to attack1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  509.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  4000
+
+[LUA-print]  behurt    cp.x  495.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  -2000
+
+[LUA-print]  behurt    cp.x  423.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  516.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  1000
+
+[LUA-print]  behurt    cp.x  254.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  690.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  584.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  715.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  613.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  660.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack2 to attack2
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  509.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x08cd81e0 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  1000
+
+[LUA-print]  behurt    cp.x  413.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  516.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x08cde378 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  -2000
+
+[LUA-print]  behurt    cp.x  244.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  680.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  574.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  705.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  603.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  650.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  498.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  -2000
+
+[LUA-print]  behurt    cp.x  394.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  225.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  661.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  555.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  686.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  584.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  631.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  379.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  210.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  646.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  540.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  671.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  569.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  616.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '42' does not reference a Lua function
+
+[LUA ERROR] function refid '43' does not reference a Lua function
+
+[LUA-print]  behurt    cp.x  369.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  200.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  636.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  530.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  661.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  559.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  606.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  349.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  180.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  616.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  510.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  641.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  539.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  586.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA ERROR] function refid '48' does not reference a Lua function
+
+[LUA ERROR] function refid '42' does not reference a Lua function
+
+[LUA ERROR] function refid '43' does not reference a Lua function
+
+[LUA-print]  behurt    cp.x  332.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  599.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  510.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074bc5e8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  624.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  522.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  569.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  ==============addOneMonster=======================dx= 7
+
+[LUA-print] table: 0x07527520 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= -12
+
+[LUA-print] table: 0x074d8028 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 292
+
+[LUA-print] table: 0x0752b778 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 203
+
+[LUA-print] table: 0x0752d298 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 28
+
+[LUA-print] table: 0x0752edb8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  323.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  590.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  505.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  615.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  522.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074c0010 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  560.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  644.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  625.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  929.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  840.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  665.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  300.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  567.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  504.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  592.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  508.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  537.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  621.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  602.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  906.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  817.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  642.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  283.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  550.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  575.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  508.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074c0010 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  520.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  604.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  585.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  889.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  800.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  625.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  273.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  540.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  565.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  520.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074c1b70 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  594.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  575.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  879.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  790.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  615.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  255.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  522.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  547.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  509.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  576.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  557.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  861.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  772.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  597.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '64' does not reference a Lua function
+
+[LUA ERROR] function refid '65' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  240.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  522.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074b8108 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  532.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  509.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074c1b70 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  561.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  542.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  846.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  757.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  582.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  227.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  513.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  519.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  548.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  529.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  9000
+
+[LUA-print]  behurt    cp.x  833.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  744.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  569.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA ERROR] function refid '64' does not reference a Lua function
+
+[LUA ERROR] function refid '65' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  207.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  512.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  528.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  9000
+
+[LUA-print]  behurt    cp.x  528.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  6000
+
+[LUA-print]  behurt    cp.x  813.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  724.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  549.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA ERROR] function refid '74' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  190.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074be1f0 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  528.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x07527520 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  6000
+
+[LUA-print]  behurt    cp.x  528.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x074d8028 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  3000
+
+[LUA-print]  behurt    cp.x  796.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  707.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  532.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  176.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  508.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  3000
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  0
+
+[LUA-print]  behurt    cp.x  782.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  693.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  9000
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack2 to attack2
+
+[LUA ERROR] function refid '64' does not reference a Lua function
+
+[LUA ERROR] function refid '65' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA ERROR] function refid '74' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  517.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  0
+
+[LUA-print]  behurt    cp.x  763.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  674.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  517.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  6000
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA ERROR] function refid '84' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  744.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  655.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  517.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x0752edb8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  3000
+
+[LUA ERROR] function refid '64' does not reference a Lua function
+
+[LUA ERROR] function refid '65' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  734.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  645.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  510.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  0
+
+[LUA ERROR] function refid '74' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '92' does not reference a Lua function
+
+[LUA ERROR] function refid '94' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA ERROR] function refid '84' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  713.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  624.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '64' does not reference a Lua function
+
+[LUA ERROR] function refid '65' does not reference a Lua function
+
+[LUA ERROR] function refid '98' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  697.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  608.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA ERROR] function refid '74' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '92' does not reference a Lua function
+
+[LUA ERROR] function refid '94' does not reference a Lua function
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  684.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  595.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  ==============addOneMonster=======================dx= 292
+
+[LUA-print] table: 0x07594508 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 61
+
+[LUA-print] table: 0x07594e28 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 87
+
+[LUA-print] table: 0x07598818 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 126
+
+[LUA-print] table: 0x0759a338 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 194
+
+[LUA-print] table: 0x07595718 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack2 to attack2
+
+[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack2 to attack2
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack2 to attack2
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack2 to attack2
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack2 to attack2
+
+[LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== GROUND_TAG 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG 
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  661.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  572.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  908.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  677.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  703.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  742.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  810.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  652.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  563.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  899.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  668.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  694.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  733.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  801.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  630.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  541.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  877.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  646.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  672.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  711.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  779.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  615.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  526.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  9000
+
+[LUA-print]  behurt    cp.x  862.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  631.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  657.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  696.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  764.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  603.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  526.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x0752d298 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  6000
+
+[LUA-print]  behurt    cp.x  850.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  619.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  645.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  684.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  752.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  579.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  511.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  3000
+
+[LUA-print]  behurt    cp.x  826.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  595.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  621.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  660.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  728.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  563.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  511.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x0752d298 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  0
+
+[LUA-print]  behurt    cp.x  810.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  579.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  605.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  644.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  712.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  552.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  799.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  568.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  594.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  633.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  701.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  530.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  777.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  546.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  572.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  611.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  679.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA ERROR] function refid '124' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  514.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  9000
+
+[LUA-print]  behurt    cp.x  761.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  530.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  556.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  595.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  663.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  514.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x0752b778 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  6000
+
+[LUA-print]  behurt    cp.x  748.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  517.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  10000
+
+[LUA-print]  behurt    cp.x  543.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  582.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  650.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '124' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  503.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  3000
+
+[LUA-print]  behurt    cp.x  731.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  516.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  7000
+
+[LUA-print]  behurt    cp.x  526.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  10000
+
+[LUA-print]  behurt    cp.x  565.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  633.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  503.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x0752b778 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  0
+
+[LUA-print]  behurt    cp.x  716.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  516.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x07594e28 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  4000
+
+[LUA-print]  behurt    cp.x  526.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x07598818 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  7000
+
+[LUA-print]  behurt    cp.x  550.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  618.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  702.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  506.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  1000
+
+[LUA-print]  behurt    cp.x  516.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  4000
+
+[LUA-print]  behurt    cp.x  536.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  604.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA ERROR] function refid '124' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  ==============addOneMonster=======================dx= 160
+
+[LUA-print] table: 0x07e92408 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 233
+
+[LUA-print] table: 0x07e93f28 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 119
+
+[LUA-print] table: 0x07e71708 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 30
+
+[LUA-print] table: 0x07e97578 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 188
+
+[LUA-print] table: 0x07e959f8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  684.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  506.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x07594e28 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  -2000
+
+[LUA-print]  behurt    cp.x  516.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x07598818 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  1000
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  10000
+
+[LUA-print]  behurt    cp.x  586.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  798.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  871.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  757.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  668.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  826.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  668.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  500.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  -2000
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x0759a338 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  7000
+
+[LUA-print]  behurt    cp.x  570.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  782.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  855.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  741.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  652.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  810.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  657.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  507.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  4000
+
+[LUA-print]  behurt    cp.x  559.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  771.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  844.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  730.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  641.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  799.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '146' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  634.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  506.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  1000
+
+[LUA-print]  behurt    cp.x  536.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  748.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  821.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  707.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  618.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  776.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  616.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  506.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x0759a338 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  -2000
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  10000
+
+[LUA-print]  behurt    cp.x  730.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  803.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  689.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  600.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  758.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '153' does not reference a Lua function
+
+[LUA ERROR] function refid '146' does not reference a Lua function
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  604.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  518.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print] table: 0x07595718 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  7000
+
+[LUA-print]  behurt    cp.x  718.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  791.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  677.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  588.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  746.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  163.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  586.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  506.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  1111111111111111
+
+[LUA-print]  self.blood  4000
+
+[LUA-print]  behurt    cp.x  700.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  773.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  659.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  570.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print]  behurt    cp.x  728.04895019531
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  1
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA ERROR] function refid '159' does not reference a Lua function
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA ERROR] function refid '153' does not reference a Lua function
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA ERROR] function refid '146' does not reference a Lua function
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA ERROR] function refid '165' does not reference a Lua function
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA ERROR] function refid '159' does not reference a Lua function
+
+[LUA-print] angle_ : 1
+
+[LUA-print]  d_posx 2.9995430854692
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA ERROR] function refid '153' does not reference a Lua function
+
+[LUA ERROR] function refid '146' does not reference a Lua function
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA-print] angle_ : 179
+
+[LUA-print]  d_posx -2.9995430854692
+
+[LUA-print] angle_ : 179
+
+[LUA-print]  d_posx -2.9995430854692
+
+[LUA-print] angle_ : 179
+
+[LUA-print]  d_posx -2.9995430854692
+
+[LUA-print] angle_ : 179
+
+[LUA-print]  d_posx -2.9995430854692
+
+[LUA-print] angle_ : 179
+
+[LUA-print]  d_posx -2.9995430854692
+
+[LUA-print] angle_ : 179
+
+[LUA-print]  d_posx -2.9995430854692
+
+[LUA-print] angle_ : 179
+
+[LUA-print]  d_posx -2.9995430854692
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA ERROR] function refid '159' does not reference a Lua function
+
+[LUA ERROR] function refid '146' does not reference a Lua function
+
+[LUA ERROR] function refid '153' does not reference a Lua function
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA ERROR] function refid '159' does not reference a Lua function
+
+[LUA ERROR] function refid '153' does not reference a Lua function
+
+[LUA ERROR] function refid '146' does not reference a Lua function
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  351.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  290.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  465.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  11000
+
+[LUA-print]  behurt    cp.x  538.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  424.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  335.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  493.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  341.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  280.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  465.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x07e92408 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  528.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  414.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  325.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  483.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print]  ==============addOneMonster=======================dx= 39
+
+[LUA-print] table: 0x05768640 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 167
+
+[LUA-print] table: 0x074dec50 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 17
+
+[LUA-print] table: 0x0798edc8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 244
+
+[LUA-print] table: 0x07977240 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print]  ==============addOneMonster=======================dx= 163
+
+[LUA-print] table: 0x08cfad28 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event run, from run to run
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  321.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  260.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  454.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  508.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  394.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  305.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  463.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  11000
+
+[LUA-print]  behurt    cp.x  565.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  693.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  543.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  770.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  689.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== GROUND_TAG 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG 
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+
+[LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== GROUND_TAG 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG 
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  308.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  247.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  454.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x07e92408 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  495.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  381.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  292.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  463.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x07e959f8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  552.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  680.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  530.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  757.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  676.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack1 to attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  295.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  234.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  445.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  482.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  368.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  279.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  454.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  539.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  667.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  517.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  744.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  663.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack2 to attack2
+
+[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack2 to attack2
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack2 to attack2
+
+[LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== GROUND_TAG 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG 
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= idle
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  277.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  216.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  464.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  11000
+
+[LUA-print]  behurt    cp.x  350.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  261.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  454.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x07e959f8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  521.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  649.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  499.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  726.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  645.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  266.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  205.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  464.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x07e93f28 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  8000
+
+[LUA-print]  behurt    cp.x  339.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  250.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  445.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  510.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  638.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  488.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  715.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  634.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack2 to attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  244.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  183.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  451.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  5000
+
+[LUA-print]  behurt    cp.x  317.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  228.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  488.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  616.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  466.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  12000
+
+[LUA-print]  behurt    cp.x  693.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  612.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA ERROR] function refid '183' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  229.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  168.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  451.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x07e93f28 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  2000
+
+[LUA-print]  behurt    cp.x  302.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  213.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  473.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  12000
+
+[LUA-print]  behurt    cp.x  601.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  466.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x0798edc8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  9000
+
+[LUA-print]  behurt    cp.x  678.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  597.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  217.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  156.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  442.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  -1000
+
+[LUA-print]  behurt    cp.x  290.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  201.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  473.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x05768640 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  9000
+
+[LUA-print]  behurt    cp.x  589.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  457.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  6000
+
+[LUA-print]  behurt    cp.x  666.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  585.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA ERROR] function refid '190' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA ERROR] function refid '183' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  196.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  135.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  269.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  180.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  457.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  6000
+
+[LUA-print]  behurt    cp.x  568.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  455.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  3000
+
+[LUA-print]  behurt    cp.x  645.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  564.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  179.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  118.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  252.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  163.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  457.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x05768640 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  3000
+
+[LUA-print]  behurt    cp.x  551.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  455.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print] table: 0x0798edc8 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event hurt, from hurt to hurt
+
+[LUA-print]  self.blood  0
+
+[LUA-print]  behurt    cp.x  628.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  547.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA ERROR] function refid '190' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  170.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  109.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  243.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  154.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  450.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  2222222222222222222
+
+[LUA-print]  self.blood  0
+
+[LUA-print]  behurt    cp.x  542.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  619.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  538.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA ERROR] function refid '183' does not reference a Lua function
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack2
+
+[LUA ERROR] function refid '200' does not reference a Lua function
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] $$$$$$$$$$$$$     onContactSeperate =============== 
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] ackBackackBack  ackBackackBack
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump1, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  55.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  149.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  88.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  222.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  133.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  521.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  598.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print]  behurt    cp.x  517.0654296875
+
+[LUA-print]  behurt  playerCp.x  480
+
+[LUA-print]  behurt    cp.x  -1
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print]    =============skill00BtnCbk================ 
+
+[LUA-print]    =============skill00BtnCbk=======state========= attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print] table: 0x08ce9f90 [StateMachine] ERROR: error INVALID_TRANSITION_ERROR, event jump2, from attack3 to attack3
+
+[LUA-print] $$$$$$$$$$$$$     onContactBegin =============== 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== GROUND_TAG 
+
+[LUA-print] $$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG 
+
+[LUA-print]  setAnimation(0, idle, true) 
+
+[LUA ERROR] function refid '205' does not reference a Lua function
+
+[LUA ERROR] function refid '190' does not reference a Lua function
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA ERROR] function refid '183' does not reference a Lua function
+
+[LUA ERROR] function refid '200' does not reference a Lua function
+
+[LUA ERROR] function refid '210' does not reference a Lua function
+
+[LUA ERROR] function refid '205' does not reference a Lua function
+
+[LUA ERROR] function refid '190' does not reference a Lua function
+
+[LUA ERROR] function refid '167' does not reference a Lua function
+
+[LUA ERROR] function refid '183' does not reference a Lua function
+
+[LUA ERROR] function refid '200' does not reference a Lua function
 

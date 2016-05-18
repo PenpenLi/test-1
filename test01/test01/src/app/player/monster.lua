@@ -6,9 +6,11 @@ end)
 
 local math2d = require("math2d")
 
+local scale = 0.4
+
 local GameObject = cc.GameObject
 
-function monster:ctor( ... )
+function monster:ctor( t )
 
     local body = cc.PhysicsBody:createBox(self:getContentSize(), cc.PHYSICSBODY_MATERIAL_DEFAULT, cc.p(0,0))
 
@@ -16,7 +18,7 @@ function monster:ctor( ... )
     
 
     local skeletonNode = sp.SkeletonAnimation:create("spine/monster1/monster1.json", "spine/monster1/monster1.atlas", 0.6)
-    skeletonNode:setScale(0.4)
+    skeletonNode:setScale(scale)
     -- skeletonNode:setPosition(960 * 0.5 , 640 * 0.5)
     self:addChild(skeletonNode)
     skeletonNode:setAnimation(0, "run", true)
@@ -24,10 +26,14 @@ function monster:ctor( ... )
 
     self:addStateMachine()
 
+    self.isDie = false
 
     self.speed = 1
     self.ackDistance = 5
-    self.blood = 100
+    self.initBlood = t.blood
+    self.blood = t.blood
+
+    self:createProgress()
     
 end
 
@@ -134,7 +140,7 @@ function monster:setTargetPos( t )
     self.targetPos = t
 end
 
-function monster:beHit(playerCp, state, ackDistance)
+function monster:beHit(playerCp, state, ackDistance, ackHurt)
     local cp = cc.p(self:getPosition())
     local cp = self:getParent():convertToWorldSpace(cp)
     print(" behurt    cp.x  "..cp.x)
@@ -145,12 +151,55 @@ function monster:beHit(playerCp, state, ackDistance)
     if cp.x >= playerCp.x and  state == 1 and d < ackDistance then
         print(" behurt    cp.x  1111111111111111")
         self:doEvent("hurt")
+        self:piaoXue(ackHurt)
     elseif cp.x < playerCp.x and  state == -1 and d < ackDistance then
         print(" behurt    cp.x  2222222222222222222")
         self:doEvent("hurt")
+        self:piaoXue(ackHurt)
     end
 end
 
+function monster:piaoXue(ackHurt)
+    self.blood = self.blood - ackHurt
+    print(" self.blood  "..self.blood)
+    if self.blood > 0 then
+        self:setProPercentage(math.ceil(100 * (self.blood / self.initBlood)))
+    else
+        self:die()
+    end
+end
+
+function monster:die()
+    self:setVisible(false)
+    self.isDie = true
+end
+
+function monster:IsDie( ... )
+    return self.isDie
+end
+
+function monster:createProgress()
+    local blood = 100 -- 1
+    local progressbg = display.newSprite("ui/xt_di.png") -- 2
+    progressbg:setScale(scale)
+    self.fill = display.newProgressTimer("ui/xt_hong.png", display.PROGRESS_TIMER_BAR)  -- 3
+
+    self.fill:setMidpoint(cc.p(1, 0.5))   -- 4
+    self.fill:setBarChangeRate(cc.p(1.0, 0))   -- 5
+    -- 6
+    self.fill:setPosition(progressbg:getContentSize().width/2, progressbg:getContentSize().height/2) 
+    progressbg:addChild(self.fill)
+    self.fill:setPercentage(blood) -- 7
+
+    -- 8
+    progressbg:setAnchorPoint(cc.p(0.5, 0))
+    self:addChild(progressbg)
+    progressbg:setPosition(cc.p(0,40))
+end
+
+function monster:setProPercentage(Percentage)
+    self.fill:setPercentage(Percentage)  -- 9
+end
 
 
 return monster
