@@ -32,16 +32,9 @@ g3
   orig: 261, 230
   offset: 0, 0
   index: -1
-i1
-  rotate: true
-  xy: 497, 381
-  size: 129, 13
-  orig: 129, 13
-  offset: 0, 0
-  index: -1
 lian
   rotate: false
-  xy: 497, 357
+  xy: 497, 488
   size: 12, 22
   orig: 12, 22
   offset: 0, 0

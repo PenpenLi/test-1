@@ -1,0 +1,55 @@
+
+monster2.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+monster2/cao
+  rotate: true
+  xy: 55, 6
+  size: 29, 31
+  orig: 29, 31
+  offset: 0, 0
+  index: -1
+monster2/mei
+  rotate: true
+  xy: 88, 2
+  size: 45, 19
+  orig: 45, 19
+  offset: 0, 0
+  index: -1
+monster2/shenti
+  rotate: false
+  xy: 2, 37
+  size: 64, 87
+  orig: 64, 87
+  offset: 0, 0
+  index: -1
+monster2/yan
+  rotate: true
+  xy: 109, 86
+  size: 38, 16
+  orig: 38, 16
+  offset: 0, 0
+  index: -1
+monster2/youshou
+  rotate: false
+  xy: 68, 76
+  size: 39, 48
+  orig: 39, 48
+  offset: 0, 0
+  index: -1
+monster2/zui
+  rotate: false
+  xy: 68, 49
+  size: 41, 25
+  orig: 41, 25
+  offset: 0, 0
+  index: -1
+monster2/zuoshou
+  rotate: true
+  xy: 2, 4
+  size: 31, 51
+  orig: 31, 51
+  offset: 0, 0
+  index: -1

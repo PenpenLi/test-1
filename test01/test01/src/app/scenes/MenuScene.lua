@@ -1,6 +1,9 @@
+require("app.layers.BackgroundLayer")
 
 local AdBar = import("..views.AdBar")
 local BubbleButton = import("..views.BubbleButton")
+
+
 
 local MenuScene = class("MenuScene", function()
     return display.newPhysicsScene("MenuScene")
@@ -9,7 +12,7 @@ end)
 
 local STICK_POS_FIXED = true
 
-local EDGESEGMENTNUMBER = 10
+local EDGESEGMENTNUMBER = 100
 
 GROUND_TAG   = 1
 PLAYER_TAG   = 2
@@ -24,6 +27,9 @@ local stick_event = {
 }
 
 function MenuScene:ctor()
+    self:createCamera()
+
+    self.speed = 6
     
     cc(self):addComponent("components.behavior.EventProtocol"):exportMethods()
 
@@ -32,12 +38,12 @@ function MenuScene:ctor()
 
     self.world:setGravity(cc.p(0, -400.0))
 
-    self.world:setDebugDrawMask(cc.PhysicsWorld.DEBUGDRAW_ALL)
+    -- self.world:setDebugDrawMask(cc.PhysicsWorld.DEBUGDRAW_ALL)
 
 
-    self.ground = display.top * 4 / 10
+    self.ground = display.top * 4 / 10 - 30
 
-    self.layerColor = cc.LayerColor:create(cc.c4b(0,0,0,120))
+    self.layerColor = cc.LayerColor:create(cc.c4b(0,0,0,0))
     self:addChild(self.layerColor)
 
     local function onTouchBegan(touch, event)
@@ -70,12 +76,19 @@ function MenuScene:ctor()
     eventDispatcher:addEventListenerWithSceneGraphPriority(listener, self.layerColor)
 
 
+
     self:addMap()
+
+    -- self.backgroundLayer = BackgroundLayer.new()
+    --     :addTo(self)
+    -- self.backgroundLayer:startGame()
+
+
 
     self.touch_enable_ = true
     self.stick_pos_ = { x=100, y=100 }
 
-    self.treePos = {x = display.cx, y = self.ground}
+    self.treePos = {x = 1100, y = self.ground}
 
     
     -- self:init_data("ui/yaogan01.png", "ui/yaogan02.png", 0.016)
@@ -96,11 +109,112 @@ function MenuScene:ctor()
     self.gameMonSterNum = 0
 
     self.chuMonsterTimes = 5
-    self.chuMonsterNum = 3
+    self.chuMonsterNum = 1
 
+    self:addCastle()
+    
 end
 
 function MenuScene:onEnter()
+end
+
+function MenuScene:addCastle()
+    self.castleInitBlood = 100
+    self.castleBlood = 100
+    self.castle = display.newSprite("ui/dizuo/di_01.png")
+    self.castle:setAnchorPoint(cc.p(0.5, 0))
+    self.mapSprite:addChild(self.castle)
+    self.castle:setPosition(self.treePos.x, self.treePos.y)
+    self.castle:setCameraMask(cc.CameraFlag.USER7)
+
+    self.flower = display.newSprite("ui/flower/F_01_01.png")
+    self.flower:setAnchorPoint(cc.p(0.5, 0))
+    self.castle:addChild(self.flower)
+    self.flower:setPosition(self.castle:getContentSize().width * 0.5, self.castle:getContentSize().height )
+    self.flower:setCameraMask(cc.CameraFlag.USER7)
+
+    -- self.castle:setScale(0.3)
+
+    self:createCastleProgress()
+
+end
+
+function MenuScene:createCastleProgress()
+    local blood = 100 -- 1
+    local progressbg = display.newSprite("ui/xt_di.png") -- 2
+    -- progressbg:setScale(scale)
+    self.fill = display.newProgressTimer("ui/xt_hong.png", display.PROGRESS_TIMER_BAR)  -- 3
+
+    self.fill:setMidpoint(cc.p(0, 0.5))   -- 4
+    self.fill:setBarChangeRate(cc.p(1.0, 0))   -- 5
+    -- 6
+    self.fill:setPosition(progressbg:getContentSize().width/2, progressbg:getContentSize().height/2) 
+    progressbg:addChild(self.fill)
+    self.fill:setPercentage(blood) -- 7
+
+    -- 8
+    progressbg:setAnchorPoint(cc.p(0.5, 0))
+    self.mapSprite:addChild(progressbg)
+    progressbg:setPosition(self.treePos.x, self.treePos.y + self.castle:getContentSize().height + self.flower:getContentSize().height )
+    progressbg:setCameraMask(cc.CameraFlag.USER7)
+end
+
+function MenuScene:setCastleProPercentage(Percentage)
+    self.fill:setPercentage(Percentage)  -- 9
+end
+
+function MenuScene:ackCastle(blood)
+    self.castleBlood = self.castleBlood - blood
+    if self.castleBlood > 0 then
+        self:setCastleProPercentage(math.ceil(100 * (self.castleBlood / self.castleInitBlood)))
+    else
+        if not self.isOver then
+            self:gameOver()
+        end
+    end
+
+
+end
+
+function MenuScene:gameOver()
+    print("gameOvergameOvergameOvergameOver")
+    self.overBgSprite = display.newSprite("image/over.png")
+    self:addChild(self.overBgSprite, 1000)
+    self.overBgSprite:setAnchorPoint(cc.p(0.5,0.5))
+    self.overBgSprite:setPosition(display.width*0.5, display.height*0.5)
+
+    self.isOver = true
+end
+
+
+
+function MenuScene:createCamera()
+    self._layer = cc.Layer:create()
+    self:addChild(self._layer)
+
+    if self._camera01 == nil then
+        print(" createCamera   +++++===============     ")
+        self._camera01 = cc.Camera:createPerspective(60.0,display.width/display.height, 0, 500)
+        self._camera01:setCameraFlag(cc.CameraFlag.USER6)
+        self:addChild(self._camera01)
+        self._camera01:setPosition3D(cc.vec3(display.width*0.5, display.height*0.5, 450))
+        self._camera01:lookAt(cc.vec3(display.width*0.5, display.height*0.5,0), cc.vec3(0, 1, 0))
+    end
+
+
+    if self._camera == nil then
+        print(" createCamera   +++++===============     ")
+        self._camera = cc.Camera:createPerspective(60.0,display.width/display.height, 0, 1000)
+        self._camera:setCameraFlag(cc.CameraFlag.USER7)
+        self:addChild(self._camera)
+        self._camera:setPosition3D(cc.vec3(display.width*0.5, display.height*0.5, 450))
+        self._camera:lookAt(cc.vec3(display.width*0.5, display.height*0.5,0), cc.vec3(0, 1, 0))
+    end
+
+    
+
+    -- self:setCameraMask(2)
+
 end
 
 function MenuScene:addEdgeSegment()
@@ -109,23 +223,24 @@ function MenuScene:addEdgeSegment()
     local h2 = self.ground
 
 
-    local sky = display.newNode()
-    local bodyTop = cc.PhysicsBody:createEdgeSegment(cc.p(0, h1-EDGESEGMENTNUMBER), cc.p(w, h1-EDGESEGMENTNUMBER), cc.PhysicsMaterial(0.0, 0.0, 0.0), EDGESEGMENTNUMBER)
-    sky:setPhysicsBody(bodyTop)
-    self:addChild(sky)
-    bodyTop:setCategoryBitmask(0x1000)
-    bodyTop:setContactTestBitmask(0x0000)
-    bodyTop:setCollisionBitmask(0x0001)
+    -- local sky = display.newNode()
+    -- local bodyTop = cc.PhysicsBody:createEdgeSegment(cc.p(0, h1-EDGESEGMENTNUMBER), cc.p(w, h1-EDGESEGMENTNUMBER), cc.PhysicsMaterial(0.0, 0.0, 0.0), EDGESEGMENTNUMBER)
+    -- sky:setPhysicsBody(bodyTop)
+    -- self:addChild(sky)
+    -- bodyTop:setCategoryBitmask(0x1000)
+    -- bodyTop:setContactTestBitmask(0x0000)
+    -- bodyTop:setCollisionBitmask(0x0001)
 
 
     local ground = display.newNode()
-    local bodyBottom = cc.PhysicsBody:createEdgeSegment(cc.p(0, h2-EDGESEGMENTNUMBER), cc.p(w, h2-EDGESEGMENTNUMBER), cc.PhysicsMaterial(0.0, 0.0, 0.0), EDGESEGMENTNUMBER)
+    local bodyBottom = cc.PhysicsBody:createEdgeSegment(cc.p(-500, h2-EDGESEGMENTNUMBER), cc.p(w + 500, h2-EDGESEGMENTNUMBER), cc.PhysicsMaterial(0.0, 0.0, 0.0), EDGESEGMENTNUMBER)
     ground:setPhysicsBody(bodyBottom)
-    self:addChild(ground)
+    self.mapSprite:addChild(ground)
     bodyBottom:setCategoryBitmask(0x1000)
     bodyBottom:setContactTestBitmask(0x0001)
     bodyBottom:setCollisionBitmask(0x0011)
     ground:setTag(GROUND_TAG)
+    ground:setCameraMask(cc.CameraFlag.USER7)
 
 
 end
@@ -142,6 +257,13 @@ function MenuScene:addUI( ... )
     leftBtn:addTouchEventListener(handler(self, self.leftCbk))
     leftBtn:setAnchorPoint(cc.p(0, 0))
 
+    local minBtn = ccui.ImageView:create()
+    minBtn:loadTexture("ui/bt_fangxiang_normal.png")
+    minBtn:setTouchEnabled(false)
+    self:addChild(minBtn)
+    minBtn:setPosition(display.left + 140,display.bottom - 10)
+    minBtn:setAnchorPoint(cc.p(0, 0))
+
     local rightBtn = ccui.ImageView:create()
     rightBtn:loadTexture("ui/right.png")
     rightBtn:setTouchEnabled(true)
@@ -155,6 +277,20 @@ function MenuScene:addUI( ... )
     :addTo(self)
     self.skill00Button:onButtonClicked(function(tag)
         self:skill00BtnCbk()
+    end)
+
+    self.skill00Button = cc.ui.UIPushButton.new({normal = "ui/skill01.png"})
+    :align(display.BOTTOM_RIGHT, display.right - 135, display.bottom)
+    :addTo(self)
+    self.skill00Button:onButtonClicked(function(tag)
+        self:skill01BtnCbk()
+    end)
+
+    self.skill00Button = cc.ui.UIPushButton.new({normal = "ui/skill02.png"})
+    :align(display.BOTTOM_RIGHT, display.right - 140, display.bottom + 120 )
+    :addTo(self)
+    self.skill00Button:onButtonClicked(function(tag)
+        self:skill02BtnCbk()
     end)
 
     -- self.skill00Button = BubbleButton.new({
@@ -172,7 +308,7 @@ function MenuScene:addUI( ... )
     -- :addTo(self)
 
     self.jumpButton = cc.ui.UIPushButton.new({normal = "ui/jump.png"})
-    :align(display.BOTTOM_RIGHT, display.right , display.bottom + 120)
+    :align(display.BOTTOM_RIGHT, display.right - 15 , display.bottom + 150)
     :addTo(self)
     self.jumpButton:onButtonClicked(function(tag)
         self:jumpBtnCbk()
@@ -244,12 +380,24 @@ function MenuScene:skill00BtnCbk()
 
 end
 
-function MenuScene:skill01BtnCbk()
-    self.spineboy:doEvent("run")
+function MenuScene:skill01BtnCbk()  
+    local state = self.spineboy:getState()
+
+    local to = "idle"
+    self.spineboy:doEvent("skill1")
+
+    self.spineboy:setAckToState(to)
+    
+
 end
 
 function MenuScene:skill02BtnCbk()
-    self.spineboy:doEvent("run")
+    local state = self.spineboy:getState()
+
+    local to = "idle"
+    self.spineboy:doEvent("skill2")
+
+    self.spineboy:setAckToState(to)
 end
 
 function MenuScene:jumpBtnCbk()
@@ -274,52 +422,112 @@ function MenuScene:jumpBtnCbk()
     self.spineboy:doEvent("jump1")
 
 
-    self.spineboy:getPhysicsBody():setVelocity(cc.p(0, 200))
+    self.spineboy:getPhysicsBody():setVelocity(cc.p(0, 300))
+
+    -- self:jumpScale()
 
 end
 
+
+-- function MenuScene:jumpScale( ... )
+--     local action1 = cc.ScaleTo:create(0.2,0.95)
+--     local action2 = cc.MoveBy:create(0.2, cc.p(0,-50))
+
+--     local action3 = cc.ScaleTo:create(0.2,1)
+--     local action4 = cc.MoveBy:create(0.2, cc.p(0,50))
+
+--     local action5 = cc.Spawn:create(action1, action2)
+--     local action6 = cc.Spawn:create(action3, action4)
+
+--     local action7 = cc.Sequence:create(action5, action6)
+
+--     self.mapSprite:runAction(action7)
+-- end
 
 function MenuScene:addSpineboy( ... )
     local spineboy = require("app/player/spineboy").new({parent = self})
-    spineboy:setPosition(display.cx , display.cy)
-    self:addChild(spineboy)
+    spineboy:setPosition(display.cx , display.cy - 120)
+    self.mapSprite:addChild(spineboy)
     self.spineboy = spineboy
+    spineboy:setCameraMask(cc.CameraFlag.USER7)
+
 end
 
+
+
 function MenuScene:addMonster( t )
+    print(" ==============addOneMonster======================= "..self.gameMonSterNum)
     for i=1,self.chuMonsterNum do
         local dx = math.random(-30,200)
-        print(" ==============addOneMonster=======================dx= "..dx)
-        local pos = {x = display.right + dx, y = display.cy}
+        local pos = {x = t.chuPos.x, y = t.chuPos.y}
         self:addOneMonster(pos, t)
     end
 end
 
 function MenuScene:addOneMonster( pos, t )
-    
+    t.parent = self
     local monster = require("app/player/monster").new(t)
     -- math.randomseed(os.time())
     
     monster:setPosition(pos.x ,pos.y )
     self.mapSprite:addChild(monster)
     monster:setTargetPos( self.treePos )
-    monster:doEvent("run")
+    -- monster:doEvent("run")
     table.insert(self.monster, monster)
+
+    monster:setCameraMask(cc.CameraFlag.USER7)
 end
 
 function MenuScene:moveSpineboy( d_x, d_y )
     local cp = cc.p(self.spineboy:getPosition())
     local mapX = self.mapSprite:getPositionX()
     local mapWidth = self.mapSprite:getContentSize().width
-    if d_x > 0 and cp.x >= display.cx and ( (mapX + mapWidth - d_x) >= display.width) then
-        self.mapSprite:setPositionX(self.mapSprite:getPositionX() - d_x)
-    elseif d_x < 0 and cp.x <= display.cx and (mapX- d_x) < 0 then
-        self.mapSprite:setPositionX(self.mapSprite:getPositionX() - d_x)
-    else
-        if (cp.x + d_x) > 0 and (cp.x + d_x) < display.width then
+    -- if d_x > 0 and cp.x >= display.cx and ( (mapX + mapWidth - d_x) >= display.width) then
+    --     self.mapSprite:setPositionX(self.mapSprite:getPositionX() - d_x)
+
+    --     self.mapYuanSprite:setPositionX(self.mapYuanSprite:getPositionX() - d_x*0.5)
+    -- elseif d_x < 0 and cp.x <= display.cx and (mapX- d_x) < 0 then
+    --     self.mapSprite:setPositionX(self.mapSprite:getPositionX() - d_x)
+
+    --     self.mapYuanSprite:setPositionX(self.mapYuanSprite:getPositionX() - d_x*0.5)
+    -- else
+    --     if (cp.x + d_x) > 0 and (cp.x + d_x) < display.width then
+    --         self.spineboy:setPositionX(cp.x + d_x) 
+    --     end
+    -- end
+
+    if cp.x > 0 and cp.x < mapWidth then
+
+        local isHasMonster = false
+
+        if cp.y > self.ground + 30 then
+
+        else
+            for k,v in pairs(self.monster) do
+                if v and  not v:IsDie() then
+                   local vx = v:getPositionX()
+                   if d_x > 0 and vx > cp.x and vx < cp.x + d_x  then
+                        isHasMonster = true
+                    elseif d_x < 0 and  vx < cp.x and vx > cp.x + d_x then
+                        isHasMonster = true
+                   end
+                end
+                
+            end
+        end
+
+
+
+        if not isHasMonster then
             self.spineboy:setPositionX(cp.x + d_x) 
         end
+    elseif cp.x <= 60 then
+        self.spineboy:setPositionX(60) 
+    elseif cp.x >= mapWidth - 60 then
+        self.spineboy:setPositionX(mapWidth - 60) 
     end
+
+    
 
     -- print("  ==========moveSpineboy========= ")
     -- if (cp.y + d_y) > 0 and (cp.y + d_y + 200) < display.height then
@@ -351,15 +559,50 @@ function MenuScene:addMap( ... )
     mapNode:setAnchorPoint(cc.p(0, 0))
     self:addChild(mapNode)
 
-    self.mapSprite = display.newSprite("ui/bg_01.png")
+
+    -- audio.playMusic("sound/background.mp3", true)
+
+
+    self.mapBgSprite = display.newSprite("image/bj2.jpg")
+    self.mapBgSprite:setAnchorPoint(cc.p(0, 0))
+    mapNode:addChild(self.mapBgSprite)
+    self.mapBgSprite:setPosition3D(cc.vec3(0, 0, -300))
+    self.mapBgSprite:setScale(2)
+    self.mapBgSprite:setAnchorPoint(cc.p(0.5,0.5))
+    self.mapBgSprite:setPosition(display.width*0.5, display.height*0.5)
+
+    self.mapBgSprite:setCameraMask(cc.CameraFlag.USER6)
+
+    -- self.mapYuanSprite = display.newSprite("image/b2.png")
+    -- self.mapYuanSprite:setAnchorPoint(cc.p(0, 0))
+    -- mapNode:addChild(self.mapYuanSprite)
+    -- self.mapYuanSprite:setCameraMask(cc.CameraFlag.USER6)
+    -- self.mapYuanSprite:setPosition3D(cc.vec3(0, 0, -100))
+    -- self.mapYuanSprite:setScale(2)
+    -- self.mapYuanSprite:setAnchorPoint(cc.p(0.5,0.2))
+    -- self.mapYuanSprite:setPosition(display.width*0.5, display.height*0.5)
+    -- self.mapYuanSprite:setPosition3D(cc.vec3(0, 0, -256))
+
+    self.mapSprite = display.newSprite("image/b1.png")
     self.mapSprite:setAnchorPoint(cc.p(0, 0))
     mapNode:addChild(self.mapSprite)
+    
+
+
+    self.mapSprite:setCameraMask(cc.CameraFlag.USER7)
+    self.mapWidth = self.mapSprite:getContentSize().width
+
+
+    local emitter = cc.ParticleSystemQuad:create("particles/dirt.plist")
+    -- emitter:setBlendAdditive(false) 
+    emitter:setPosition(display.cx, display.top)
+    self:addChild(emitter, -3)
 
 
 end
 
 function MenuScene:stickEvent( angle )
-    local speed = 3
+    local speed = self.speed
     local d_posx = 0
     local d_posy = 0
     angle = math.floor(angle)
@@ -384,15 +627,34 @@ function MenuScene:stickEvent( angle )
     
 end
 
+-- function MenuScene:setCamera()
+--     local cp = cc.p(self.spineboy:getPosition())
+--     if cp.y > self.ground then
+--         self._camera:setPosition3D(cc.vec3(display.width*0.5, display.height*0.5 + (cp.y - self.ground), 450 + (cp.y - self.ground)))
+--     end
+-- end
+
 function MenuScene:start_monster_scheduler()
     self:stop_monster_scheduler()
 
     local update_func = function(dt)
+
+        --
+            -- self:setCamera()
+        --
+
+
         self.gameTime = self.gameTime + dt
         if self.gameTime > self.chuMonsterTimes then
             self.gameTime = 0
             self.gameMonSterNum = self.gameMonSterNum + 1
-            self:chuMonster()
+
+            local r = math.random(1,9)
+            if r > 5 then
+                self:chuMonster({weizi = 1})
+            else
+                self:chuMonster({weizi = -1})
+            end
 
         end
 
@@ -414,13 +676,21 @@ function MenuScene:stop_monster_scheduler()
     end
 end
 
-function MenuScene:chuMonster( ... )
+function MenuScene:chuMonster( table )
     local t = {}
-    t.blood = 5000 + self.gameMonSterNum * 200
+    t.blood = 20 + self.gameMonSterNum * 2
+    if table.weizi > 0 then
+        t.chuPos = {x = 1500,y = self.ground}
+    else
+        t.chuPos = {x = -200,y = self.ground}
+    end
+
+    
     self:addMonster(t)
 
     for k,v in pairs(self.monster) do
         if v:IsDie() then
+            print("chuMonster ------  removeFromParent  ")
            v:removeFromParent()
            self.monster[k] = nil
         end
