@@ -6,7 +6,7 @@ end)
 
 local math2d = require("math2d")
 
-local scale = 0.5
+local scale = 0.7
 
 local GameObject = cc.GameObject
 
@@ -34,7 +34,7 @@ function monster:ctor( t )
     self.isDie = false
 
     self.speed = 2
-    self.ackDistance = 5
+    self.ackDistance = 20
     self.initBlood = t.blood
     self.blood = t.blood
 
@@ -172,6 +172,8 @@ function monster:update()
             -- self:doEvent("run")
             self:doEvent("dead")
             self.scene:ackCastle(10)
+            self.scene:Shake()
+
         else
             -- if cp.x < self.targetPos.x then
             --     print("111111111")
@@ -244,6 +246,7 @@ function monster:piaoXue(ackHurt)
         self:setProPercentage(math.ceil(100 * (self.blood / self.initBlood)))
     else
         self:doEvent("dead")
+        self.scene:addNuQi(10)
     end
 end
 

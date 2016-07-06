@@ -21,7 +21,7 @@ function PlayLevelScene:ctor(levelIndex)
     self:addChild(adBar)
 
     local label = cc.ui.UILabel.new({
-        UILabelType = 1,
+        UILabelType = 2,
         text  = string.format("Level: %s", tostring(levelIndex)),
         font  = "UIFont.fnt",
         x     = display.left + 10,

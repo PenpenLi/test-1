@@ -3,6 +3,7 @@ require("app.layers.BackgroundLayer")
 local AdBar = import("..views.AdBar")
 local BubbleButton = import("..views.BubbleButton")
 
+game = {}
 
 
 local MenuScene = class("MenuScene", function()
@@ -27,16 +28,22 @@ local stick_event = {
 }
 
 function MenuScene:ctor()
+
+    --倒计时
+    self.ebdTime = 120
+
+    self:testNet()
+
     self:createCamera()
 
-    self.speed = 6
+    self.speed = 10
     
     cc(self):addComponent("components.behavior.EventProtocol"):exportMethods()
 
 
     self.world = self:getPhysicsWorld()
 
-    self.world:setGravity(cc.p(0, -400.0))
+    self.world:setGravity(cc.p(0, -1000.0))
 
     -- self.world:setDebugDrawMask(cc.PhysicsWorld.DEBUGDRAW_ALL)
 
@@ -97,6 +104,8 @@ function MenuScene:ctor()
     self.monster =  {}
     -- self:addMonster({blood = 10000})
 
+    self:addCastle()
+
     self:addSpineboy()
 
     self:addUI()
@@ -108,14 +117,87 @@ function MenuScene:ctor()
     self.gameTime = 0
     self.gameMonSterNum = 0
 
-    self.chuMonsterTimes = 5
-    self.chuMonsterNum = 1
+    self.chuMonsterTimes = 3
+    self.chuMonsterNum = 2
 
-    self:addCastle()
+    
+
+
+
     
 end
 
 function MenuScene:onEnter()
+
+end
+
+function MenuScene:addTimer( ... )
+
+end
+
+function MenuScene:onEndTimer( dt )
+    self.ebdTime = self.ebdTime - dt
+    print(string.format("self.ebdTime  ---- %02d",self.ebdTime))
+    if self.ebdTime < 0 then
+        self.ebdTime = 0
+        self:gameOver(true)
+    end
+    self.timeLabel:setString(string.format("%d",self.ebdTime))
+
+end
+
+function MenuScene:testNet()
+    local clientTCP = require("app.net.ClientTCP")
+    game.clientTCP = clientTCP:new()
+    game.clientTCP:Connect()
+
+
+    local uid = SystemUtil:getUUID(false)
+    print("uid "..uid)
+end
+
+
+--     
+--     local action2 = cc.MoveBy:create(0.2, cc.p(0,-50))
+
+--     local action3 = cc.ScaleTo:create(0.2,1)
+--     local action4 = cc.MoveBy:create(0.2, cc.p(0,50))
+
+--     local action5 = cc.Spawn:create(action1, action2)
+--     local action6 = cc.Spawn:create(action3, action4)
+
+--     local action7 = cc.Sequence:create(action5, action6)
+
+--     self.mapSprite:runAction(action7)
+
+function MenuScene:Shake( ... )
+    local t = {}
+    t[1] = self.mapSprite
+    t[2] = self.mapYuanSprite
+    for i=1,2 do
+        local action1 = cc.ScaleTo:create(0.1,1.05)
+
+        local action2 = cc.MoveBy:create(0.1, cc.p(10,10))
+        local action3 = cc.MoveBy:create(0.1, cc.p(-20,-20))
+        local action4 = cc.MoveBy:create(0.1, cc.p(10,10))
+
+        local action12 = cc.MoveBy:create(0.1, cc.p(10,10))
+        local action13 = cc.MoveBy:create(0.1, cc.p(-20,-20))
+        local action14 = cc.MoveBy:create(0.1, cc.p(10,10))
+
+        local action5 = cc.ScaleTo:create(0.1,1)
+
+        local function hurtBack( ... )
+            self.shakeImage:setVisible(false)
+        end
+
+        local action6 = cc.Sequence:create(action1, action2, action3, action4, action12, action13, action14, action5, cc.CallFunc:create(hurtBack))
+        t[i]:runAction(action6)
+    end
+    
+
+    self.shakeImage:setVisible(true)
+    
 end
 
 function MenuScene:addCastle()
@@ -137,30 +219,64 @@ function MenuScene:addCastle()
 
     self:createCastleProgress()
 
+    local gq = display.newSprite("ui/bt_zhaozi.png")
+    gq:setAnchorPoint(cc.p(0.5, 0))
+    self.castle:addChild(gq)
+    gq:setPosition(self.castle:getContentSize().width * 0.5, self.castle:getContentSize().height - 30)
+    gq:setCameraMask(cc.CameraFlag.USER7)
+
 end
 
 function MenuScene:createCastleProgress()
-    local blood = 100 -- 1
-    local progressbg = display.newSprite("ui/xt_di.png") -- 2
-    -- progressbg:setScale(scale)
-    self.fill = display.newProgressTimer("ui/xt_hong.png", display.PROGRESS_TIMER_BAR)  -- 3
+    print("createCastleProgress    1 ")
+    self.fill = {}
+    local pos = {}
+    local h = self.treePos.y + self.castle:getContentSize().height + self.flower:getContentSize().height
+    pos[1] = {x = self.treePos.x - 50 , y = h - 25}
+    pos[2] = {x = self.treePos.x, y = h}
+    pos[3] = {x = self.treePos.x + 50, y = h - 25}
+    for i=1,3 do
+        print("createCastleProgress    1 " ..i)
+        local blood = 100 -- 1
+        local progressbg = display.newSprite("ui/xt_di.png") -- 2
+        -- progressbg:setScale(scale)
+        self.fill[i] = display.newProgressTimer("ui/xt_hong.png", display.PROGRESS_TIMER_BAR)  -- 3
 
-    self.fill:setMidpoint(cc.p(0, 0.5))   -- 4
-    self.fill:setBarChangeRate(cc.p(1.0, 0))   -- 5
-    -- 6
-    self.fill:setPosition(progressbg:getContentSize().width/2, progressbg:getContentSize().height/2) 
-    progressbg:addChild(self.fill)
-    self.fill:setPercentage(blood) -- 7
+        self.fill[i]:setMidpoint(cc.p(0, 0.5))   -- 4
+        self.fill[i]:setBarChangeRate(cc.p(1.0, 0))   -- 5
+        -- 6
+        self.fill[i]:setPosition(progressbg:getContentSize().width/2, progressbg:getContentSize().height/2) 
+        progressbg:addChild(self.fill[i])
+        self.fill[i]:setPercentage(blood) -- 7
 
-    -- 8
-    progressbg:setAnchorPoint(cc.p(0.5, 0))
-    self.mapSprite:addChild(progressbg)
-    progressbg:setPosition(self.treePos.x, self.treePos.y + self.castle:getContentSize().height + self.flower:getContentSize().height )
-    progressbg:setCameraMask(cc.CameraFlag.USER7)
+        -- 8
+        progressbg:setAnchorPoint(cc.p(0.5, 0))
+        self.mapSprite:addChild(progressbg)
+        progressbg:setPosition(pos[i].x, pos[i].y )
+        progressbg:setCameraMask(cc.CameraFlag.USER7)
+    end
+
+    
 end
 
+
+
 function MenuScene:setCastleProPercentage(Percentage)
-    self.fill:setPercentage(Percentage)  -- 9
+      -- 9
+    if Percentage >= 0 and Percentage <= 33 then
+        self.fill[1]:setPercentage(Percentage / 33 * 100)
+        self.fill[2]:setPercentage(0)
+        self.fill[3]:setPercentage(0)
+    elseif Percentage > 33 and Percentage <= 67 then
+        self.fill[1]:setPercentage(100)
+        self.fill[2]:setPercentage((Percentage - 33) / 33 * 100)
+        self.fill[3]:setPercentage(0)
+    elseif Percentage > 67 and Percentage <= 100 then
+        self.fill[1]:setPercentage(100)
+        self.fill[2]:setPercentage(100)
+        self.fill[3]:setPercentage((Percentage - 67) / 33 * 100)
+    end
+
 end
 
 function MenuScene:ackCastle(blood)
@@ -176,7 +292,7 @@ function MenuScene:ackCastle(blood)
 
 end
 
-function MenuScene:gameOver()
+function MenuScene:gameOver(isSuccess)
     print("gameOvergameOvergameOvergameOver")
     self.overBgSprite = display.newSprite("image/over.png")
     self:addChild(self.overBgSprite, 1000)
@@ -184,6 +300,20 @@ function MenuScene:gameOver()
     self.overBgSprite:setPosition(display.width*0.5, display.height*0.5)
 
     self.isOver = true
+
+    self.backMainButton = cc.ui.UIPushButton.new({normal = "res/loginUI/bm_kaishi.png", 
+                                                    pressed = "res/loginUI/bm_kaishi.png", 
+                                                    disabled = "res/loginUI/bm_kaishi.png"})
+    :align(display.CENTER, display.cx, display.cy)
+    :addTo(self)
+    self.backMainButton:onButtonClicked(function(tag)
+        self:backMainBtnCbk()
+    end)
+end
+
+function MenuScene:backMainBtnCbk()  
+    print(" enterBtnCbk ")
+    appInstance:enterMainScene()
 end
 
 
@@ -199,6 +329,15 @@ function MenuScene:createCamera()
         self:addChild(self._camera01)
         self._camera01:setPosition3D(cc.vec3(display.width*0.5, display.height*0.5, 450))
         self._camera01:lookAt(cc.vec3(display.width*0.5, display.height*0.5,0), cc.vec3(0, 1, 0))
+    end
+
+    if self._camera02 == nil then
+        print(" createCamera   +++++===============     ")
+        self._camera02 = cc.Camera:createPerspective(60.0,display.width/display.height, 0, 500)
+        self._camera02:setCameraFlag(cc.CameraFlag.USER4)
+        self:addChild(self._camera02)
+        self._camera02:setPosition3D(cc.vec3(display.width*0.5, display.height*0.5, 450))
+        self._camera02:lookAt(cc.vec3(display.width*0.5, display.height*0.5,0), cc.vec3(0, 1, 0))
     end
 
 
@@ -247,7 +386,13 @@ end
 
 function MenuScene:addUI( ... )
 
-
+    self.shakeImage = ccui.ImageView:create()
+    self.shakeImage:loadTexture("image/red.png")
+    self.shakeImage:setTouchEnabled(false)
+    self.shakeImage:setVisible(false)
+    self:addChild(self.shakeImage)
+    self.shakeImage:setPosition(display.cx,display.cy)
+    self.shakeImage:setAnchorPoint(cc.p(0.5, 0.5))
 
     local leftBtn = ccui.ImageView:create()
     leftBtn:loadTexture("ui/left.png")
@@ -261,8 +406,8 @@ function MenuScene:addUI( ... )
     minBtn:loadTexture("ui/bt_fangxiang_normal.png")
     minBtn:setTouchEnabled(false)
     self:addChild(minBtn)
-    minBtn:setPosition(display.left + 140,display.bottom - 10)
-    minBtn:setAnchorPoint(cc.p(0, 0))
+    minBtn:setPosition(display.left + 180,display.bottom + 35)
+    minBtn:setAnchorPoint(cc.p(0.5, 0.5))
 
     local rightBtn = ccui.ImageView:create()
     rightBtn:loadTexture("ui/right.png")
@@ -279,17 +424,25 @@ function MenuScene:addUI( ... )
         self:skill00BtnCbk()
     end)
 
-    self.skill00Button = cc.ui.UIPushButton.new({normal = "ui/skill01.png"})
+    self.skill01Button = cc.ui.UIPushButton.new({normal = "ui/skill01.png", pressed = "ui/skill02.png", disabled = "ui/skill02.png"})
     :align(display.BOTTOM_RIGHT, display.right - 135, display.bottom)
     :addTo(self)
-    self.skill00Button:onButtonClicked(function(tag)
+    self.skill01Button:onButtonClicked(function(tag)
         self:skill01BtnCbk()
     end)
+    
 
-    self.skill00Button = cc.ui.UIPushButton.new({normal = "ui/skill02.png"})
-    :align(display.BOTTOM_RIGHT, display.right - 140, display.bottom + 120 )
+    self.skill02Button = cc.ui.UIPushButton.new({normal = "ui/skill01.png", pressed = "ui/skill02.png", disabled = "ui/skill02.png"})
+    :align(display.BOTTOM_RIGHT, display.right - 105, display.bottom + 80 )
     :addTo(self)
-    self.skill00Button:onButtonClicked(function(tag)
+    self.skill02Button:onButtonClicked(function(tag)
+        self:skill02BtnCbk()
+    end)
+
+    self.skill03Button = cc.ui.UIPushButton.new({normal = "ui/skill01.png", pressed = "ui/skill02.png", disabled = "ui/skill02.png"})
+    :align(display.BOTTOM_RIGHT, display.right - 30, display.bottom + 115 )
+    :addTo(self)
+    self.skill03Button:onButtonClicked(function(tag)
         self:skill02BtnCbk()
     end)
 
@@ -308,17 +461,125 @@ function MenuScene:addUI( ... )
     -- :addTo(self)
 
     self.jumpButton = cc.ui.UIPushButton.new({normal = "ui/jump.png"})
-    :align(display.BOTTOM_RIGHT, display.right - 15 , display.bottom + 150)
+    :align(display.BOTTOM_CENTER, display.left + 180 , display.bottom + 85)
     :addTo(self)
     self.jumpButton:onButtonClicked(function(tag)
         self:jumpBtnCbk()
     end)
 
+    self.zt1Button = cc.ui.UIPushButton.new({normal = "ui/bt_zanting_normal.png"})
+    :align(display.LEFT_TOP, display.left + 30 , display.top - 20)
+    :addTo(self)
+    self.zt1Button:onButtonClicked(function(tag)
+        -- self:jumpBtnCbk()
+    end)
 
+    self.timeLabel = cc.ui.UILabel.new({
+            UILabelType = 2,
+            text  = tostring(self.ebdTime),
+            font  = "font/huakang.TTF",
+            size = 40,
+        })
+        :align(display.LEFT_TOP, display.left + 130 , display.top - 45)
+        :addTo(self)
+
+
+    self.zt2Button = cc.ui.UIPushButton.new({normal = "ui/bt_zanting_press.png"})
+    :align(display.LEFT_TOP, display.left + 30 , display.top - 120)
+    :addTo(self)
+    self.zt2Button:onButtonClicked(function(tag)
+        -- self:jumpBtnCbk()
+    end)
+
+    self:createNuQiProgress()
+
+    local nuQiBg = ccui.ImageView:create()
+    nuQiBg:loadTexture("ui/bt_nuqi1_normal.png")
+    nuQiBg:setTouchEnabled(false)
+    self:addChild(nuQiBg)
+    nuQiBg:setPosition(display.right , display.top)
+    nuQiBg:setAnchorPoint(cc.p(1, 1))
+
+    self:createMonsterProgress()
+    
 
 
 end
 
+function MenuScene:createNuQiProgress()
+    local blood = 100 -- 1
+    local progressbg = display.newSprite("ui/bt_nuqi_normal.png") -- 2
+    -- progressbg:setScale(scale)
+    self.fillNuQi = display.newProgressTimer("ui/bt_nuqi_press.png", display.PROGRESS_TIMER_BAR)  -- 3
+
+    self.fillNuQi:setMidpoint(cc.p(0, 0.5))   -- 4
+    self.fillNuQi:setBarChangeRate(cc.p(1.0, 0))   -- 5
+    -- 6
+    self.fillNuQi:setPosition(progressbg:getContentSize().width/2, progressbg:getContentSize().height/2) 
+    progressbg:addChild(self.fillNuQi)
+    self.fillNuQi:setPercentage(blood) -- 7
+
+    -- 8
+    progressbg:setAnchorPoint(cc.p(1, 1))
+    self:addChild(progressbg)
+    progressbg:setPosition(display.right - 50 , display.top )
+    -- progressbg:setCameraMask(cc.CameraFlag.USER7)
+
+    self.nuQi = 100
+end
+
+function MenuScene:setNuQiProPercentage(Percentage)
+    self.fillNuQi:setPercentage(Percentage)  -- 9
+end
+
+function MenuScene:addNuQi(num)
+    -- print(" MenuScene:addNuQi(num)   "..num)
+    self.nuQi = self.nuQi + num
+    if self.nuQi > 100 then
+        self.nuQi = 100
+    elseif self.nuQi < 0 then
+        self.nuQi = 0
+    end
+
+    -- print(" MenuScene:addNuQi(num)self.nuQi   "..self.nuQi)
+
+    self:setNuQiProPercentage(self.nuQi)
+
+    if self.nuQi < 50 then
+        self.skill01Button:setButtonEnabled(false)
+    else
+        self.skill01Button:setButtonEnabled(true)
+    end
+
+    if self.nuQi < 100 then
+        self.skill02Button:setButtonEnabled(false)
+    else
+        self.skill02Button:setButtonEnabled(true)
+    end
+
+    if self.nuQi < 100 then
+        self.skill03Button:setButtonEnabled(false)
+    else
+        self.skill03Button:setButtonEnabled(true)
+    end
+
+end
+
+function MenuScene:createMonsterProgress()
+    self.monsterProgress = ccui.ImageView:create()
+    self.monsterProgress:loadTexture("ui/bt_jindu.png")
+    self.monsterProgress:setTouchEnabled(false)
+    self:addChild(self.monsterProgress)
+    self.monsterProgress:setPosition(display.right * 0.5,display.top - 50)
+    self.monsterProgress:setAnchorPoint(cc.p(0.5, 0.5))
+
+    self.monsterImg = ccui.ImageView:create()
+    self.monsterImg:loadTexture("ui/bt_jindubiao.png")
+    self.monsterImg:setTouchEnabled(false)
+    self.monsterProgress:addChild(self.monsterImg)
+    self.monsterImg:setPosition(30,40)
+    self.monsterImg:setAnchorPoint(cc.p(0.5, 0.5))
+end
 
 
 function MenuScene:leftCbk(widget,touchkey)
@@ -422,7 +683,7 @@ function MenuScene:jumpBtnCbk()
     self.spineboy:doEvent("jump1")
 
 
-    self.spineboy:getPhysicsBody():setVelocity(cc.p(0, 300))
+    self.spineboy:getPhysicsBody():setVelocity(cc.p(0, 600))
 
     -- self:jumpScale()
 
@@ -446,7 +707,7 @@ end
 
 function MenuScene:addSpineboy( ... )
     local spineboy = require("app/player/spineboy").new({parent = self})
-    spineboy:setPosition(display.cx , display.cy - 120)
+    spineboy:setPosition(self.mapWidth * 0.5 , display.height - 120)
     self.mapSprite:addChild(spineboy)
     self.spineboy = spineboy
     spineboy:setCameraMask(cc.CameraFlag.USER7)
@@ -458,8 +719,9 @@ end
 function MenuScene:addMonster( t )
     print(" ==============addOneMonster======================= "..self.gameMonSterNum)
     for i=1,self.chuMonsterNum do
-        local dx = math.random(-30,200)
-        local pos = {x = t.chuPos.x, y = t.chuPos.y}
+        local dx = math.random(30,80)
+        print(" ==============addOneMonster==========dx============= "..dx)
+        local pos = {x = t.chuPos.x + dx, y = t.chuPos.y}
         self:addOneMonster(pos, t)
     end
 end
@@ -496,7 +758,7 @@ function MenuScene:moveSpineboy( d_x, d_y )
     --     end
     -- end
 
-    if cp.x > 0 and cp.x < mapWidth then
+    if cp.x >= 150 and cp.x <= mapWidth - 150 then
 
         local isHasMonster = false
 
@@ -521,10 +783,10 @@ function MenuScene:moveSpineboy( d_x, d_y )
         if not isHasMonster then
             self.spineboy:setPositionX(cp.x + d_x) 
         end
-    elseif cp.x <= 60 then
-        self.spineboy:setPositionX(60) 
-    elseif cp.x >= mapWidth - 60 then
-        self.spineboy:setPositionX(mapWidth - 60) 
+    elseif cp.x <= 150 then
+        self.spineboy:setPositionX(150) 
+    elseif cp.x >= mapWidth - 150 then
+        self.spineboy:setPositionX(mapWidth - 150) 
     end
 
     
@@ -563,32 +825,32 @@ function MenuScene:addMap( ... )
     -- audio.playMusic("sound/background.mp3", true)
 
 
-    self.mapBgSprite = display.newSprite("image/bj2.jpg")
+    self.mapBgSprite = display.newSprite("image/beijing/BJ_01.png")
+    -- self.mapBgSprite:setContentSize(cc.size(1920,1280))
     self.mapBgSprite:setAnchorPoint(cc.p(0, 0))
     mapNode:addChild(self.mapBgSprite)
     self.mapBgSprite:setPosition3D(cc.vec3(0, 0, -300))
-    self.mapBgSprite:setScale(2)
+    self.mapBgSprite:setScaleX(50)
+    self.mapBgSprite:setScaleY(2)
     self.mapBgSprite:setAnchorPoint(cc.p(0.5,0.5))
-    self.mapBgSprite:setPosition(display.width*0.5, display.height*0.5)
+    self.mapBgSprite:setPosition(1100, display.height*0.5)
 
     self.mapBgSprite:setCameraMask(cc.CameraFlag.USER6)
 
-    -- self.mapYuanSprite = display.newSprite("image/b2.png")
-    -- self.mapYuanSprite:setAnchorPoint(cc.p(0, 0))
-    -- mapNode:addChild(self.mapYuanSprite)
-    -- self.mapYuanSprite:setCameraMask(cc.CameraFlag.USER6)
-    -- self.mapYuanSprite:setPosition3D(cc.vec3(0, 0, -100))
-    -- self.mapYuanSprite:setScale(2)
-    -- self.mapYuanSprite:setAnchorPoint(cc.p(0.5,0.2))
-    -- self.mapYuanSprite:setPosition(display.width*0.5, display.height*0.5)
-    -- self.mapYuanSprite:setPosition3D(cc.vec3(0, 0, -256))
+    self.mapYuanSprite = display.newSprite("image/b2.png")
+    self.mapYuanSprite:setAnchorPoint(cc.p(0, 0))
+    mapNode:addChild(self.mapYuanSprite)
+    self.mapYuanSprite:setCameraMask(cc.CameraFlag.USER4)
+    self.mapYuanSprite:setPosition3D(cc.vec3(0, 0, -100))
+    self.mapYuanSprite:setScale(1)
+    self.mapYuanSprite:setAnchorPoint(cc.p(0.5,0.5))
+    self.mapYuanSprite:setPosition(1100, display.height*0.45)
+
 
     self.mapSprite = display.newSprite("image/b1.png")
-    self.mapSprite:setAnchorPoint(cc.p(0, 0))
+    self.mapSprite:setAnchorPoint(cc.p(0.5, 0.5))
     mapNode:addChild(self.mapSprite)
-    
-
-
+    self.mapSprite:setPosition(1100, display.height*0.5)
     self.mapSprite:setCameraMask(cc.CameraFlag.USER7)
     self.mapWidth = self.mapSprite:getContentSize().width
 
@@ -643,6 +905,8 @@ function MenuScene:start_monster_scheduler()
             -- self:setCamera()
         --
 
+        self:onEndTimer(dt)
+
 
         self.gameTime = self.gameTime + dt
         if self.gameTime > self.chuMonsterTimes then
@@ -678,11 +942,14 @@ end
 
 function MenuScene:chuMonster( table )
     local t = {}
-    t.blood = 20 + self.gameMonSterNum * 2
+    t.blood = 2 + self.gameMonSterNum * 1
+    if t.blood > 10 then
+        t.blood = 10
+    end
     if table.weizi > 0 then
-        t.chuPos = {x = 1500,y = self.ground}
+        t.chuPos = {x = 2300 ,y = self.ground}
     else
-        t.chuPos = {x = -200,y = self.ground}
+        t.chuPos = {x = -200 ,y = self.ground}
     end
 
     

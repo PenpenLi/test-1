@@ -21,15 +21,21 @@ function MyApp:run()
         audio.preloadSound(v)
     end
 
-    self:enterMenuScene()
+    self:enterLoginScene()
+
+    appInstance = self
 end
 
 function MyApp:enterMenuScene()
-    self:enterScene("MenuScene", nil, "fade", 0.6, display.COLOR_WHITE)
+    self:enterScene("MenuScene", nil, "rotoZoom", 0.6, display.COLOR_WHITE)
 end
 
-function MyApp:enterMoreGamesScene()
-    self:enterScene("MoreGamesScene", nil, "fade", 0.6, display.COLOR_WHITE)
+function MyApp:enterLoginScene()
+    self:enterScene("LoginScene", nil, "fade", 0.6, display.COLOR_WHITE)
+end
+
+function MyApp:enterMainScene()
+    self:enterScene("MainScene", nil, "turnOffTiles", 0.6, display.COLOR_WHITE)
 end
 
 function MyApp:enterChooseLevelScene()
@@ -40,5 +46,5 @@ function MyApp:playLevel(levelIndex)
     self:enterScene("PlayLevelScene", {levelIndex}, "fade", 0.6, display.COLOR_WHITE)
 end
 
-appInstance = MyApp
+
 return MyApp

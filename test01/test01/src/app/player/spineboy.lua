@@ -14,7 +14,7 @@ function spineboy:ctor( t )
 
     self.rate_ = 0.016
 
-    self.ackDistance = 150
+    self.ackDistance = 300
     self.ackHurt = 3
 
     local MATERIAL_DEFAULT = cc.PhysicsMaterial(0.0, 0.0, 0.0)
@@ -28,7 +28,7 @@ function spineboy:ctor( t )
     
 
     local skeletonNode = sp.SkeletonAnimation:create("spine/hero/hero.json", "spine/hero/hero.atlas", 1)
-    skeletonNode:setScale(0.5)
+    skeletonNode:setScale(0.7)
     -- skeletonNode:setPosition(960 * 0.5 , 640 * 0.5)
     self:addChild(skeletonNode)
     skeletonNode:setAnimation(0, "idle", true)
@@ -228,9 +228,11 @@ function spineboy:addStateMachine()
                 skeletonNode:registerSpineEventHandler(function (event)
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                     if event.eventData.name == "att" then
-                        self:hit(500, 7)
+                        self:hit(600, 15)
                     end
                 end, sp.EventType.ANIMATION_EVENT)
+
+                self.parent:addNuQi(-50)
             end,
 
             onenterskill2 = function ()
@@ -250,9 +252,11 @@ function spineboy:addStateMachine()
                 skeletonNode:registerSpineEventHandler(function (event)
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                     if event.eventData.name == "att" then
-                        self:hit(700, 10)
+                        self:hit(800, 30)
                     end
                 end, sp.EventType.ANIMATION_EVENT)
+
+                self.parent:addNuQi(-100)
             end,
 
         },
@@ -335,14 +339,40 @@ function spineboy:updatePengZhuang(  )
             local d = math2d.dist(cp.x, cp.y, mcp.x, mcp.y)
 
             if cp.x > treePos.x and mstate == -1 and d < 15 and cp.y < 30 + self.parent.ground then
-                local action = cc.MoveBy:create(0.2, cc.p(-30,0))
-                self:stopAllActions()
-                self:runAction(action)
+                -- local action = cc.MoveBy:create(0.2, cc.p(-30,0))
+                -- self:stopAllActions()
+                -- self:runAction(action)
+
+                local cp = cc.p(self:getPosition())
+                local tx = math.random(20, 50) * -1
+                local ty = math.random(5, 10)
+                local bezier = {
+                    cc.p(0, 0),
+                    cc.p(tx * 0.5 , ty),
+                    cc.p(tx, 0),
+                }
+                
+                local bezierForward = cc.BezierBy:create(0.15, bezier)
+                self:runAction(bezierForward)
                 
             elseif cp.x < treePos.x and mstate == 1 and d < 15 and cp.y < 30 + self.parent.ground then
-                local action = cc.MoveBy:create(0.2, cc.p(30,0))
-                self:stopAllActions()
-                self:runAction(action)
+                -- local action = cc.MoveBy:create(0.2, cc.p(30,0))
+                -- self:stopAllActions()
+                -- self:runAction(action)
+
+                local cp = cc.p(self:getPosition())
+                local tx = math.random(20, 50) * 1
+                local ty = math.random(5, 10)
+                local bezier = {
+                    cc.p(0, 0),
+                    cc.p(tx * 0.5 , ty),
+                    cc.p(tx, 0),
+                }
+                
+                local bezierForward = cc.BezierBy:create(0.15, bezier)
+                self:runAction(bezierForward)
+
+
             end
         else
 
@@ -404,15 +434,21 @@ function spineboy:setCamera()
     -- print("setCamera ===============  2 "..display.width*0.5)
     -- print("setCamera ===============  3 "..self.parent.mapWidth)
 
-    print("setCamera ===============  cp.y "..cp.y)
-    print("setCamera ===============  self.ground "..self.ground)
+    -- print("setCamera ===============  cp.y "..cp.y)
+    -- print("setCamera ===============  self.ground "..self.ground)
 
     if cp.x <= display.width * 0.5 then
         x = display.width * 0.5
     elseif cp.x >= (self.parent.mapWidth - display.width * 0.5) then
         x = self.parent.mapWidth - display.width * 0.5
     end
-        self.parent._camera:setPosition3D(cc.vec3(x, display.height*0.5 + (cp.y - self.ground), 450 + (cp.y - self.ground)))
+
+
+    self.parent._camera:setPosition3D(cc.vec3(x, display.height*0.5 + (cp.y - self.ground), 450 + (cp.y - self.ground)))
+
+    self.parent._camera01:setPosition3D(cc.vec3(x, display.height*0.5 + (cp.y - self.ground), 450 + (cp.y - self.ground)))
+    
+    self.parent._camera02:setPosition3D(cc.vec3(x, display.height*0.5 + (cp.y - self.ground), 450 + (cp.y - self.ground)))
     -- end
 end
 
