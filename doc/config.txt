@@ -1,0 +1,9 @@
+{
+"dataWithHead":true,
+"path":"data",
+"openExeFold":true,
+"luaExtraPath":["D:/_________________17Client/dh000_0.1.17.07/src/luaBin"],
+"dataExtraPath":["D:/MMServer/trunk/exec/Data"],
+"hHeadExtraPath":"D:/MMServer/trunk/ServerShare",
+"sliteBag":[{"name":"Card", "sliteSpan":1000},{}] 
+}
