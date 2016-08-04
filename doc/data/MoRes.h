@@ -17,10 +17,27 @@
 #define CHECKPOINTTABLE_ITEM_LV_MAXNUM		3
 #define CHECKPOINTTABLE_C_RES_MAXNUM		64
 
-#define ITEM_NAME_MAXNUM		64
-#define ITEM_ITEMSRC_MAXNUM		64
-#define ITEM_ITEM_RES_MAXNUM		64
-#define ITEM_ITEMLAYERPATH_MAXNUM		32
+#define FLOWERTABLE_NAME_MAXNUM		64
+#define FLOWERTABLE_ITEMSRC_MAXNUM		64
+#define FLOWERTABLE_F_RES_MAXNUM		64
+
+#define ITEMTABLE_NAME_MAXNUM		64
+#define ITEMTABLE_ITEMSRC_MAXNUM		64
+#define ITEMTABLE_ITEM_RES_MAXNUM		64
+#define ITEMTABLE_ITEMLAYERPATH_MAXNUM		32
+
+enum EFType{
+	ef_jinyandan		=	0,
+	ef_shuaxinjuan		=	1,
+	ef_PKitem		=	2,
+	ef_lound		=	3,
+	ef_gift		=	4,
+	ef_choujiangka		=	5,
+	ef_zhibaoshengji		=	6,
+	ef_zhibaojinjie		=	7,
+	ef_huanqianzawu		=	8,
+	FTYPE_FourByte	=0x7FFFFFFF
+};
 
 enum EItemType{
 	eitem_jinyandan		=	0,
@@ -103,10 +120,27 @@ struct CheckpointTableRes{
 };
 
 
-struct ItemRes{
+struct FlowerTableRes{
 	uint32				 m_uiID;
-	char				 m_acName[ITEM_NAME_MAXNUM];
-	char				 m_acitemsrc[ITEM_ITEMSRC_MAXNUM];
+	char				 m_acName[FLOWERTABLE_NAME_MAXNUM];
+	char				 m_acitemsrc[FLOWERTABLE_ITEMSRC_MAXNUM];
+	uint32				 m_uif_count;
+	uint32				 m_uif_groupcount;
+	float				 m_ff_jinbi;
+	float				 m_ff_zuanshi;
+	EFType			m_eFType;
+	uint32				 m_uif_rate;
+	EQuality			m_eQuality;
+	float				 m_ffNum;
+	uint32				 m_uiGiftID;
+	char				 m_acf_res[FLOWERTABLE_F_RES_MAXNUM];
+};
+
+
+struct ItemTableRes{
+	uint32				 m_uiID;
+	char				 m_acName[ITEMTABLE_NAME_MAXNUM];
+	char				 m_acitemsrc[ITEMTABLE_ITEMSRC_MAXNUM];
 	uint32				 m_uieq_count;
 	uint32				 m_uieq_groupcount;
 	float				 m_fitem_jinbi;
@@ -116,8 +150,8 @@ struct ItemRes{
 	EQuality			m_eQuality;
 	float				 m_fitemNum;
 	uint32				 m_uiGiftID;
-	char				 m_acitem_res[ITEM_ITEM_RES_MAXNUM];
-	char				 m_acItemLayerPath[ITEM_ITEMLAYERPATH_MAXNUM];
+	char				 m_acitem_res[ITEMTABLE_ITEM_RES_MAXNUM];
+	char				 m_acItemLayerPath[ITEMTABLE_ITEMLAYERPATH_MAXNUM];
 };
 
 
