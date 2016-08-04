@@ -433,7 +433,7 @@ function MainScene:cardBack( index )
     elseif index == 2 then
 
     elseif index == 3 then
-        appInstance:enterMenuScene()
+        appInstance:enterCheckpointScene()
     end
 end
 
@@ -482,7 +482,7 @@ function MainScene:headBtnCbk()
 end
 
 function MainScene:huayuanBtnCbk()  
-    
+    appInstance:enterGardenScene()
 end
 
 function MainScene:setBtnCbk()  
@@ -514,7 +514,7 @@ function MainScene:taskBtnCbk()
 end
 
 function MainScene:rankBtnCbk()  
-
+    appInstance:enterPaiHangScene()
 end
 
 return MainScene

@@ -87,18 +87,18 @@ function spineboy:addStateMachine()
             {name = "run", from = {"idle", "attack1", "attack2", "attack3", "jump1", "jump2"}, to = "run"},
             {name = "jump1", from = {"idle", "run"}, to = "jump1"},
             {name = "jump2", from = {"idle", "walk", "run", "jump1", "attack4"}, to = "jump2"},
-            {name = "idle", from = { "jump1", "jump2", "run", "attack1", "attack2", "attack3", "attack4", "skill1", "skill2"}, to = "idle"},
+            {name = "idle", from = { "jump1", "jump2", "run", "attack1", "attack2", "attack3", "attack4", "skillDone"}, to = "idle"},
             {name = "attack1", from = {"run","idle", "attack2", "attack3"}, to = "attack1"},
             {name = "attack2", from = {"run", "idle", "attack1", "attack3"}, to = "attack2"},
             {name = "attack3", from = {"run", "idle", "attack1", "attack2"}, to = "attack3"},
             {name = "attack4", from = {"jump1", "jump2"}, to = "attack4"},
             {name = "skill1", from = {"run","idle", "attack1", "attack2", "attack3", "attack4","jump1", "jump2"}, to = "skill1"},
             {name = "skill2", from = {"run","idle", "attack1", "attack2", "attack3", "attack4","jump1", "jump2"}, to = "skill2"},
+            {name = "skillDone", from = {"skill1", "skill2"}, to = "skillDone"},
         },
 
         callbacks = {
             onenteridle = function ()
-                print(" setAnimation(0, idle, true) ")
                 self.skeletonNode:setToSetupPose()
                 self.skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
                 self.skeletonNode:setAnimation(0, "idle", true)
@@ -108,6 +108,11 @@ function spineboy:addStateMachine()
                 self.skeletonNode:setToSetupPose()
                 self.skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
                 self.skeletonNode:setAnimation(0, "run", true)
+            end,
+
+            onenterskillDone = function ()
+              
+                self:doEvent("idle")
             end,
 
             onenterjump1 = function ()
@@ -220,7 +225,7 @@ function spineboy:addStateMachine()
                 local function ackBack()
                     print("skill1BackackBack  skill1BackackBack")
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-                    self:doEvent(self:getAckToState())
+                    self:doEvent("skillDone")
                 end
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
@@ -238,13 +243,13 @@ function spineboy:addStateMachine()
             onenterskill2 = function ()
                 self.skeletonNode:setToSetupPose()
                 self.skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-                self.skeletonNode:setAnimation(0, "skill2", false)
+                self.skeletonNode:setAnimation(0, "skill3", false)
 
                 local skeletonNode = self.skeletonNode
                 local function ackBack()
                     print("skill2BackackBack  skill2BackackBack")
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-                    self:doEvent(self:getAckToState())
+                    self:doEvent("skillDone")
                 end
 
                 skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
@@ -280,15 +285,18 @@ function spineboy:addCollision()
 
     local function contactLogic(node)
         if node:getTag() == GROUND_TAG then
-            print("$$$$$$$$$$$$$     contactLogic =============== GROUND_TAG ")
+            -- print("$$$$$$$$$$$$$     contactLogic =============== GROUND_TAG ")
         elseif node:getTag() == PLAYER_TAG then
-            print("$$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG ")
-            self:doEvent("idle")
+            -- print("$$$$$$$$$$$$$     contactLogic =============== PLAYER_TAG ")
+            if self.doEvent then
+                print("to idle 001")
+                self:doEvent("idle")
+            end
         end
     end
 
     local function onContactBegin(contact)
-        print("$$$$$$$$$$$$$     onContactBegin =============== ")
+        -- print("$$$$$$$$$$$$$     onContactBegin =============== ")
         local a = contact:getShapeA():getBody():getNode()
         local b = contact:getShapeB():getBody():getNode()
 
@@ -298,7 +306,7 @@ function spineboy:addCollision()
     end
 
     local function onContactSeperate(contact)
-        print("$$$$$$$$$$$$$     onContactSeperate =============== ")
+        -- print("$$$$$$$$$$$$$     onContactSeperate =============== ")
     end
 
     local contactListener = cc.EventListenerPhysicsContact:create()
@@ -306,8 +314,13 @@ function spineboy:addCollision()
     contactListener:registerScriptHandler(onContactSeperate, cc.Handler.EVENT_PHYSICS_CONTACT_SEPERATE)
     local eventDispatcher = cc.Director:getInstance():getEventDispatcher()
     eventDispatcher:addEventListenerWithFixedPriority(contactListener, 1)
+    self.eventDispatcher = eventDispatcher
 end
 
+function spineboy:endChuli( ... )
+    -- local eventDispatcher = cc.Director:getInstance():getEventDispatcher()
+    -- eventDispatcher:removeEventListener(self.eventDispatcher)
+end
 
 function spineboy:start_scheduler()
     self:stop_scheduler()
@@ -344,8 +357,8 @@ function spineboy:updatePengZhuang(  )
                 -- self:runAction(action)
 
                 local cp = cc.p(self:getPosition())
-                local tx = math.random(20, 50) * -1
-                local ty = math.random(5, 10)
+                local tx = math.random(10, 30) * -1
+                local ty = math.random(5, 8)
                 local bezier = {
                     cc.p(0, 0),
                     cc.p(tx * 0.5 , ty),
@@ -361,8 +374,8 @@ function spineboy:updatePengZhuang(  )
                 -- self:runAction(action)
 
                 local cp = cc.p(self:getPosition())
-                local tx = math.random(20, 50) * 1
-                local ty = math.random(5, 10)
+                local tx = math.random(10, 30) * 1
+                local ty = math.random(5, 8)
                 local bezier = {
                     cc.p(0, 0),
                     cc.p(tx * 0.5 , ty),
@@ -391,7 +404,7 @@ end
 
 function spineboy:stop_scheduler()
     if self.scheduler_id_ ~= nil then
-        scheduler:unscheduleScriptEntry(self.scheduler_id_)
+        cc.Director:getInstance():getScheduler():unscheduleScriptEntry(self.scheduler_id_)
         self.scheduler_id_ = nil
     end
 end
@@ -403,7 +416,12 @@ function spineboy:updateScher( ... )
     local z,x = math.modf(y)
     -- print("$$$$$$$$$$$$$     updateScher =============Z== ".. z)
     -- print("$$$$$$$$$$$$$     updateScher =============x== ".. x)
-    if  self:getState() ~= "attack4" then
+
+    local cp = cc.p(self:getPosition())
+    -- print("$$$$$$$$$$$$$     updateScher =============cp.y== ".. cp.y)
+
+    self.ground = self.parent.ground
+    if  self:getState() ~= "attack4" and cp.y > self.ground + 10 then
         if z > 0 then
             if self:getState() ~= "jump1" then
                 self:doEvent("jump1")
@@ -414,6 +432,7 @@ function spineboy:updateScher( ... )
             end
         else
             if self:getState() == "jump1" or self:getState() == "jump2" then
+                print("to idle 002")
                 self:doEvent("idle")
             end
         end
