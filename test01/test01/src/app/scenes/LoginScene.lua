@@ -5,6 +5,13 @@ local LoginScene = class("LoginScene", function()
 end)
 
 function LoginScene:ctor()
+
+    game = game or {} 
+
+
+    self:testNet()
+
+
     self.Bg = display.newSprite("res/loginUI/bm_beijing1.jpg")
     self.Bg:setAnchorPoint(cc.p(0.5, 0.5))
     self:addChild(self.Bg)
@@ -66,6 +73,20 @@ function LoginScene:ctor()
     :addTo(self)
 
 
+end
+
+function LoginScene:testNet()
+    local clientTCP = require("app.net.ClientTCP")
+    game.clientTCP = clientTCP:new()
+    game.clientTCP:Connect()
+
+
+    if device.platform == "ios" then
+        game.did = SystemUtil:getUUID(false)
+    else
+        game.did = "123sfsdfesdd"
+    end
+    print("did "..game.did)
 end
 
 function LoginScene:enterBtnCbk()  

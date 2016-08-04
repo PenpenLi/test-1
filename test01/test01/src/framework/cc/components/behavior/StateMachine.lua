@@ -147,6 +147,8 @@ function StateMachine:doEvent(name, ...)
         args = args,
     }
 
+    -- printf("yjw: doEvent: event %s, from %s to %s", event.name, event.from, event.to)
+
     if self.inTransition_ then
         self:onError_(event,
                       StateMachine.PENDING_TRANSITION_ERROR,

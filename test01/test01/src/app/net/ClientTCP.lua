@@ -142,9 +142,16 @@ function ClientTCP:onStatus(msg)
     print("onStatus----msg--"..msg.name.."------")
     if msg.name == SocketTCP.EVENT_CONNECTED then
         local function back( t )
-            print("-------back------ "..t.msg)
+            dump(t)
+            print("login-----------back")
+            for k,v in pairs(t.playerInfo.base) do
+                print(k,v)
+            end
+
+            game.playerInfo = t.playerInfo
+            game.uid = game.playerInfo.base.uid
         end
-        game.clientTCP:send("handshake",nil, back)
+        game.clientTCP:send("login",{did = game.did}, back)
     else
         print("onStatus-----------4")
     end

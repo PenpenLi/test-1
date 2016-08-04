@@ -6,11 +6,13 @@ end)
 
 local math2d = require("math2d")
 
-local scale = 0.7
+local scale = 0.6
 
 local GameObject = cc.GameObject
 
 function monster:ctor( t )
+
+    self.scene = t.parent
 
     local MATERIAL_DEFAULT = cc.PhysicsMaterial(0.0, 0.0, 0.0)
     local body = cc.PhysicsBody:createBox(self:getContentSize(), MATERIAL_DEFAULT, cc.p(0,0))
@@ -18,9 +20,15 @@ function monster:ctor( t )
     body:setContactTestBitmask(0x1111)
     body:setCollisionBitmask(0x1001)
     
+    if t.isBoss then
+        scale = 2
+        print("boss::: "..t.path..".json")
+    else
+        scale = 0.6
+    end
     
 
-    local skeletonNode = sp.SkeletonAnimation:create("spine/monster1/monster1.json", "spine/monster1/monster1.atlas", 1)
+    local skeletonNode = sp.SkeletonAnimation:create(t.path..".json", t.path..".atlas", 1)
     skeletonNode:setScale(scale)
     -- skeletonNode:setPosition(960 * 0.5 , 640 * 0.5)
     self:addChild(skeletonNode)
@@ -33,7 +41,7 @@ function monster:ctor( t )
 
     self.isDie = false
 
-    self.speed = 2
+    self.speed = t.speed
     self.ackDistance = 20
     self.initBlood = t.blood
     self.blood = t.blood
@@ -42,7 +50,8 @@ function monster:ctor( t )
 
     self:createProgress()
 
-    self.scene = t.parent
+    
+
     
 end
 
@@ -105,6 +114,9 @@ function monster:addStateMachine()
                 self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "hurt", true)
 
+                self:getPhysicsBody():setVelocity(cc.p(0, 200))
+                print(" setVelocitysetVelocitysetVelocity     ===============   setVelocity")
+
                 local skeletonNode = self.skeletonNode
                 local function ackBack()
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
@@ -119,6 +131,7 @@ function monster:addStateMachine()
             onenterdead = function ()
                 self.skeletonNode:setToSetupPose()
                 self.skeletonNode:setAnimation(0, "dead", true)
+                self:addGold()
 
                 local skeletonNode = self.skeletonNode
                 local function ackBack()
@@ -147,6 +160,104 @@ function monster:addStateMachine()
 
         },
     })
+end
+
+function monster:addGold( ... )
+    print("addGold    1111111111")
+    local cp = cc.p(self:getPosition())
+    for i=1,2 do
+        local jibiNode = cc.Node:create()
+        self.scene.mapSprite:addChild(jibiNode)
+        jibiNode:setPosition(cp.x, cp.y)
+
+        local jinbiImageView = display.newSprite("res/mainUI/bt_jinbi.png")
+        jibiNode:addChild(jinbiImageView)
+        jinbiImageView:setName("jinbi")
+        jinbiImageView:setScale(0.6)    
+        jinbiImageView:setPosition(0, 0)
+        self:jinbiFly(jinbiImageView , appCurScene.flower, jibiNode)
+        jibiNode:setCameraMask(cc.CameraFlag.USER7)
+        jinbiImageView:setCameraMask(cc.CameraFlag.USER7)
+
+        print("addGold    22222222")
+    end
+end
+
+
+
+function monster:jinbiFly(  jinbi, uiJinbi , jibiNode)
+    local function fly( ... )
+        local function flyBack( ... )
+
+            local function performWithDelay1(node, callback, delay)
+                print("1111")
+                local delay = cc.DelayTime:create(delay)
+                local sequence = cc.Sequence:create(delay, cc.CallFunc:create(callback))
+                node:runAction(sequence)
+                return sequence
+            end
+
+            -- "res/effect/jb/jb.ExportJson"
+           local skeletonNode = sp.SkeletonAnimation:create("res/effect/jb/jb_0000.json", "res/effect/jb/jb_0000.atlas", 1)
+            skeletonNode:setPosition(70 , 0)
+            uiJinbi:addChild(skeletonNode)
+            skeletonNode:setAnimation(0, "zs", false)
+            skeletonNode:setCameraMask(cc.CameraFlag.USER7)
+            performWithDelay1(uiJinbi, function( ... )
+                skeletonNode:removeFromParent()
+                
+                jibiNode:removeFromParent()
+            end, 0.4)
+
+            
+        end
+
+        local xcam = appCurScene._camera:getPosition3D()
+        print("xxxxx xcam "..xcam.x)
+        local x, y = jinbi:getPosition()
+        local p0 = jinbi:getParent():convertToWorldSpace(cc.p(x, y))
+        print("xxxxx p0.x "..p0.x)
+        print("xxxxx p0.y "..p0.y)
+       
+        print("xxxxx  wwwwwwwwwwwwwww     p0.x "..p0.x)
+        local x, y = uiJinbi:getPosition()
+        local p1 = uiJinbi:getParent():convertToWorldSpace(cc.p(x, y))
+        print("xxxxx p1.x "..p1.x)
+        print("xxxxx p1.y "..p1.y)
+        local mx = p1.x - p0.x
+        local my = p1.y - p0.y
+        local bezier = {
+            cc.p(0, 0),
+            cc.p(mx + math.random(-200,200), math.random(100,200)),
+            cc.p(mx, my),
+        }
+        local bezierForward = cc.BezierBy:create(0.8, bezier)
+
+
+        jibiNode:runAction(cc.Sequence:create(cc.DelayTime:create(math.random(10,20) * 0.01),bezierForward, cc.CallFunc:create(flyBack) ))
+    end
+    local b = 1.5
+    local mx = math.random(-40 * b,40 * b)
+    local my = 0--math.random(-40 * b,30 * b)
+    local bezier = {
+        cc.p(0, 0),
+        cc.p(mx * 0.5, math.random(160 * b,180 * b)),
+        cc.p(mx, my),
+    }
+    local time = math.random(40,70) * 0.01
+    local bezierForward = cc.BezierBy:create(time, bezier)
+    local actionTo = cc.RotateTo:create(time, mx * (45/(360 * b)))
+    local spawn = cc.Spawn:create(bezierForward, actionTo)
+
+    jibiNode:runAction(cc.Sequence:create(
+                spawn, 
+                cc.MoveBy:create(0.1,cc.p(0,20)),
+                cc.MoveBy:create(0.1,cc.p(0,-20)),
+                cc.MoveBy:create(0.05,cc.p(0,10)),
+                cc.MoveBy:create(0.05,cc.p(0,-10)), 
+                cc.CallFunc:create(fly)))
+
+
 end
 
 function monster:playDeaAm()

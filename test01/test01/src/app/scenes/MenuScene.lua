@@ -1,9 +1,13 @@
 require("app.layers.BackgroundLayer")
 
+require("app/res/BeastTableRes")
+require("app/res/BossTableRes")
+require("app/res/CheckpointTableRes")
+
 local AdBar = import("..views.AdBar")
 local BubbleButton = import("..views.BubbleButton")
 
-game = {}
+
 
 
 local MenuScene = class("MenuScene", function()
@@ -27,12 +31,15 @@ local stick_event = {
     notify_to_stick_event_ended = "stick.event_ended"
 }
 
-function MenuScene:ctor()
-
+function MenuScene:ctor(id)
+    local id = id
+    self.checkId = id
+    self.checkTab = CheckpointTable[self.checkId]
+    print(" MenuScene:ctor   "..id)
     --倒计时
-    self.ebdTime = 120
+    self.ebdTime = 60
+    self.bossNum = 0
 
-    self:testNet()
 
     self:createCamera()
 
@@ -117,12 +124,13 @@ function MenuScene:ctor()
     self.gameTime = 0
     self.gameMonSterNum = 0
 
-    self.chuMonsterTimes = 3
-    self.chuMonsterNum = 2
+    self.initChuMonsterTimes = self.checkTab["M01_time"]
+    self.chuMonsterTimes = self.checkTab["M01_time"]
+    self.chuMonsterNum = self.checkTab["M01_num"]
 
     
 
-
+    appCurScene = self
 
     
 end
@@ -131,30 +139,56 @@ function MenuScene:onEnter()
 
 end
 
+function MenuScene:toJieSuan()
+    print(" MenuScene:onCleanup()  ================ ")
+    self:stop_monster_scheduler()
+    self:stop_scheduler()
+    self.spineboy:endChuli()
+    self.spineboy:stop_scheduler()
+end
+
+function MenuScene:onExit()
+    print(" MenuScene:onExit()  ================ ")
+end
+
 function MenuScene:addTimer( ... )
 
 end
 
+function MenuScene:addBoss( ... )
+    if self.checkTab["B01_ID"] > 0 then
+        self:chuMonster({weizi = 1, isBoss = true})
+    end
+end
+
 function MenuScene:onEndTimer( dt )
     self.ebdTime = self.ebdTime - dt
-    print(string.format("self.ebdTime  ---- %02d",self.ebdTime))
+    -- print(string.format("self.ebdTime  ---- %02d",self.ebdTime))
     if self.ebdTime < 0 then
         self.ebdTime = 0
-        self:gameOver(true)
+        
+        print("00000")
+        local isAllDie = true
+        for k,v in pairs(self.monster) do
+            print("1111111")
+            if v and  not v:IsDie() then
+               isAllDie = false
+            end
+        end
+        if isAllDie then
+            self:gameOver(true)
+        end
     end
     self.timeLabel:setString(string.format("%d",self.ebdTime))
 
+    if self.ebdTime < 15 and  self.bossNum == 0 then
+        self.bossNum = 1
+        self:addBoss()
+    end
+
 end
 
-function MenuScene:testNet()
-    local clientTCP = require("app.net.ClientTCP")
-    game.clientTCP = clientTCP:new()
-    game.clientTCP:Connect()
 
-
-    local uid = SystemUtil:getUUID(false)
-    print("uid "..uid)
-end
 
 
 --     
@@ -227,6 +261,8 @@ function MenuScene:addCastle()
 
 end
 
+
+
 function MenuScene:createCastleProgress()
     print("createCastleProgress    1 ")
     self.fill = {}
@@ -285,7 +321,7 @@ function MenuScene:ackCastle(blood)
         self:setCastleProPercentage(math.ceil(100 * (self.castleBlood / self.castleInitBlood)))
     else
         if not self.isOver then
-            self:gameOver()
+            self:gameOver(false)
         end
     end
 
@@ -293,27 +329,15 @@ function MenuScene:ackCastle(blood)
 end
 
 function MenuScene:gameOver(isSuccess)
-    print("gameOvergameOvergameOvergameOver")
-    self.overBgSprite = display.newSprite("image/over.png")
-    self:addChild(self.overBgSprite, 1000)
-    self.overBgSprite:setAnchorPoint(cc.p(0.5,0.5))
-    self.overBgSprite:setPosition(display.width*0.5, display.height*0.5)
-
-    self.isOver = true
-
-    self.backMainButton = cc.ui.UIPushButton.new({normal = "res/loginUI/bm_kaishi.png", 
-                                                    pressed = "res/loginUI/bm_kaishi.png", 
-                                                    disabled = "res/loginUI/bm_kaishi.png"})
-    :align(display.CENTER, display.cx, display.cy)
-    :addTo(self)
-    self.backMainButton:onButtonClicked(function(tag)
-        self:backMainBtnCbk()
-    end)
+    self:toJieSuan()
+    local checkId = self.checkId
+    local jieguo = isSuccess
+    appInstance:enterjieSuanScene(jieguo,checkId)
 end
 
 function MenuScene:backMainBtnCbk()  
     print(" enterBtnCbk ")
-    appInstance:enterMainScene()
+    
 end
 
 
@@ -443,7 +467,7 @@ function MenuScene:addUI( ... )
     :align(display.BOTTOM_RIGHT, display.right - 30, display.bottom + 115 )
     :addTo(self)
     self.skill03Button:onButtonClicked(function(tag)
-        self:skill02BtnCbk()
+        -- self:jumpBtnCbk()
     end)
 
     -- self.skill00Button = BubbleButton.new({
@@ -490,6 +514,8 @@ function MenuScene:addUI( ... )
     self.zt2Button:onButtonClicked(function(tag)
         -- self:jumpBtnCbk()
     end)
+    self.timeLabel:setVisible(false)
+
 
     self:createNuQiProgress()
 
@@ -579,6 +605,8 @@ function MenuScene:createMonsterProgress()
     self.monsterProgress:addChild(self.monsterImg)
     self.monsterImg:setPosition(30,40)
     self.monsterImg:setAnchorPoint(cc.p(0.5, 0.5))
+
+    self.monsterImg:runAction(cc.MoveBy:create(60, cc.p(110,0)))
 end
 
 
@@ -683,7 +711,7 @@ function MenuScene:jumpBtnCbk()
     self.spineboy:doEvent("jump1")
 
 
-    self.spineboy:getPhysicsBody():setVelocity(cc.p(0, 600))
+    self.spineboy:getPhysicsBody():setVelocity(cc.p(0, 400))
 
     -- self:jumpScale()
 
@@ -718,7 +746,11 @@ end
 
 function MenuScene:addMonster( t )
     print(" ==============addOneMonster======================= "..self.gameMonSterNum)
-    for i=1,self.chuMonsterNum do
+    local num = math.random(self.chuMonsterNum,self.chuMonsterNum + 2)
+    if t.isBoss then
+        num = 1
+    end
+    for i=1, num do
         local dx = math.random(30,80)
         print(" ==============addOneMonster==========dx============= "..dx)
         local pos = {x = t.chuPos.x + dx, y = t.chuPos.y}
@@ -727,6 +759,7 @@ function MenuScene:addMonster( t )
 end
 
 function MenuScene:addOneMonster( pos, t )
+    local t = t or {}
     t.parent = self
     local monster = require("app/player/monster").new(t)
     -- math.randomseed(os.time())
@@ -809,6 +842,7 @@ function MenuScene:moveSpineboy( d_x, d_y )
         -- end
     else
         if  self.spineboy:getState() == "idle" then
+            print("    hahahahahah  ============   hahahaahh ")
             self.spineboy:doEvent("run")
         end
     end
@@ -909,8 +943,17 @@ function MenuScene:start_monster_scheduler()
 
 
         self.gameTime = self.gameTime + dt
-        if self.gameTime > self.chuMonsterTimes then
+        if self.gameTime > self.chuMonsterTimes and self.ebdTime > 0 then
             self.gameTime = 0
+
+            if self.gameTime < 15 then
+                self.chuMonsterTimes = self.initChuMonsterTimes + math.random(4,5) * 0.1
+            elseif self.gameTime > 15 and self.gameTime < 35 then
+                self.chuMonsterTimes = self.initChuMonsterTimes + math.random(2,3) * 0.1
+            else
+                self.chuMonsterTimes = self.initChuMonsterTimes + math.random(1,2) * 0.1
+            end
+
             self.gameMonSterNum = self.gameMonSterNum + 1
 
             local r = math.random(1,9)
@@ -942,10 +985,25 @@ end
 
 function MenuScene:chuMonster( table )
     local t = {}
-    t.blood = 2 + self.gameMonSterNum * 1
-    if t.blood > 10 then
-        t.blood = 10
+    if table.isBoss then
+        local monsterId =  self.checkTab["B01_ID"]
+        
+        t.isBoss = table.isBoss
+        t.monsterId = monsterId
+        t.blood = math.floor(BossTable[monsterId].b_blood * (1 + self.checkTab["B01_b_add"]))
+        t.speed = math.floor(BossTable[monsterId].b_speed * (1 + self.checkTab["B01_s_add"]))
+        t.path = BossTable[monsterId].b_res
+    else
+        local index = math.random(1,2)
+        local monsterId =  self.checkTab["M0"..index.."_ID"]
+        print("monsterId " ..monsterId)
+      
+        t.monsterId = monsterId
+        t.blood = math.floor(BeastTable[monsterId].b_blood * (1 + self.checkTab["M0"..index.."_b_add"]))
+        t.speed = math.floor(BeastTable[monsterId].b_speed * (1 + self.checkTab["M0"..index.."_s_add"]))
+        t.path = BeastTable[monsterId].m_res
     end
+    
     if table.weizi > 0 then
         t.chuPos = {x = 2300 ,y = self.ground}
     else

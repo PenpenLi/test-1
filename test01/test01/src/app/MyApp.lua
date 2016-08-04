@@ -5,6 +5,9 @@ require("framework.init")
 require("framework.shortcodes")
 require("framework.cc.init")
 
+
+require("app/util/util")
+
 local MyApp = class("MyApp", cc.mvc.AppBase)
 
 function MyApp:ctor()
@@ -22,12 +25,13 @@ function MyApp:run()
     end
 
     self:enterLoginScene()
+    -- self:enterGardenScene()
 
     appInstance = self
 end
 
-function MyApp:enterMenuScene()
-    self:enterScene("MenuScene", nil, "rotoZoom", 0.6, display.COLOR_WHITE)
+function MyApp:enterMenuScene(t)
+    self:enterScene("MenuScene", t, "rotoZoom", 0.6, display.COLOR_WHITE)
 end
 
 function MyApp:enterLoginScene()
@@ -40,6 +44,22 @@ end
 
 function MyApp:enterChooseLevelScene()
     self:enterScene("ChooseLevelScene", nil, "fade", 0.6, display.COLOR_WHITE)
+end
+
+function MyApp:enterCheckpointScene()
+    self:enterScene("CheckpointScene", nil, "splitRows", 0.6, display.COLOR_WHITE)
+end
+
+function MyApp:enterGardenScene()
+    self:enterScene("GardenScene", nil, "splitRows", 0.6, display.COLOR_WHITE)
+end
+
+function MyApp:enterjieSuanScene(jieguo, checkId)
+    self:enterScene("jieSuanScene", {jieguo, checkId}, "moveInT", 0.1, display.COLOR_WHITE)
+end
+
+function MyApp:enterPaiHangScene()
+    self:enterScene("PaiHangScene", nil, "moveInT", 0.1, display.COLOR_WHITE)
 end
 
 function MyApp:playLevel(levelIndex)
