@@ -131,7 +131,9 @@ struct FlowerTableRes{
 	EFType			m_eFType;
 	uint32				 m_uif_rate;
 	EQuality			m_eQuality;
-	float				 m_ffNum;
+	float				 m_ff_time01;
+	float				 m_ff_time02;
+	float				 m_ff_time03;
 	uint32				 m_uiGiftID;
 	char				 m_acf_res[FLOWERTABLE_F_RES_MAXNUM];
 };
