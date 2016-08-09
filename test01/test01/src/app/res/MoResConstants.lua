@@ -1,3 +1,15 @@
+MM.EFType = {
+	f_jinyandan		=	0,
+	f_shuaxinjuan		=	1,
+	f_PKitem		=	2,
+	f_lound		=	3,
+	f_gift		=	4,
+	f_choujiangka		=	5,
+	f_zhibaoshengji		=	6,
+	f_zhibaojinjie		=	7,
+	f_huanqianzawu		=	8,
+}
+
 MM.EItemType = {
 	item_jinyandan		=	0,
 	item_shuaxinjuan		=	1,

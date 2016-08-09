@@ -27,6 +27,8 @@ function jieSuanScene:ctor(jieguo, checkId)
     self:addUI()
 end
 
+
+
 function jieSuanScene:toServer( ... )
     local req = {}
     req.uid = game.uid

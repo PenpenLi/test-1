@@ -1,7 +1,11 @@
 
-require("app/res/ItemRes")
+require("app/res/ItemTableRes")
+require("app/res/FlowerTableRes")
 
 local __one = {class=cc.FilteredSpriteWithOne}
+
+
+local scheduler = cc.Director:getInstance():getScheduler()
 
 local GardenScene = class("GardenScene", function()
     return display.newScene("GardenScene")
@@ -13,11 +17,121 @@ function GardenScene:ctor()
     self:addChild(self.Bg)
     self.Bg:setPosition(display.cx, display.cy)
 
+    self:initDate()
     
     self:createPageView()
     self:addUI()
+
+    self.rate_ = 0.016
+    self.time = 0
+    self:start_monster_scheduler()
+end
+
+function GardenScene:onExit()
+    print(" MenuScene:onExit()  ================ ")
     
 end
+
+function GardenScene:stop_monster_scheduler()
+    if self.monster_scheduler_id_ ~= nil then
+        scheduler:unscheduleScriptEntry(self.monster_scheduler_id_)
+        self.monster_scheduler_id_ = nil
+    end
+end
+
+function GardenScene:start_monster_scheduler()
+    self:stop_monster_scheduler()
+
+    local update_func = function(dt)
+
+        self.time = self.time + dt
+        if self.time > 1 then
+            self.time = self.time - 1
+            self:update()
+        end
+        
+    end
+
+    self.monster_scheduler_id_ = cc.Director:getInstance():getScheduler():scheduleScriptFunc(update_func, self.rate_, false)
+end
+
+function GardenScene:update()
+    local tag = nil
+    if self.shouhuoLabel then
+        tag = self.shouhuoLabel:getTag()
+    end
+
+
+    local hasNum = 3
+
+    local AllNum = 4
+    local lie = 3
+    -- add items
+    for i=1,AllNum do
+
+
+        for index=1,3 do
+            local number = ((i-1)*3 + index)
+
+            local huaImg = ""
+            local h = 25
+
+            local text = ""
+        
+            print("number " ..number)
+            local tab = self.gardenDate[number]
+            if tab then
+                local id  = tab["id"]
+                if id and id > 0 then
+                    local fTab = FlowerTable[id]
+                    local newTime = os.time()
+                    local d_time = newTime - tab.startTime
+                    print("newTime " ..newTime)
+                    print("tab.startTime " ..tab.startTime)
+                    print("d_time " ..d_time)
+                    if d_time < fTab.f_time01 then
+                        huaImg = fTab["f_res"] .."_01.png"
+                        text = util.timeFmt(fTab.f_time03 - d_time)
+                    elseif d_time >= fTab.f_time01 and d_time < fTab.f_time03 then
+                        huaImg = fTab["f_res"] .."_02.png"
+                        text = util.timeFmt(fTab.f_time03 - d_time)
+                    elseif d_time >= fTab.f_time03 then
+                        huaImg = fTab["f_res"] .."_03.png"
+                        text = "可收获"
+                    end
+                    print("f_res " ..fTab["f_res"])
+                    print("huaImg " ..huaImg)
+                else
+                    huaImg = "res/gardenUI/bt_zhongzhi.png"
+                    text = "请种植"
+                end
+            else
+                huaImg = "res/gardenUI/bm_shitou.png"
+                text = "待开垦"
+            end
+
+
+            self.image[number]:setTexture(huaImg)
+
+
+            self.label[number]:setString(text)
+
+            if tag == number then
+                if self.shouhuoLabel then
+                    self.shouhuoLabel:setString(text)
+                end
+            end
+
+        end
+
+    end
+
+end
+
+
+
+
+
 
 function GardenScene:addUI( ... )
     self.backButton = cc.ui.UIPushButton.new({normal = "res/checkpointUI/check_ui/bt_fanhui.png", 
@@ -72,11 +186,34 @@ function GardenScene:addUI( ... )
     
 end
 
+
+function GardenScene:initDate( ... )
+    self.uid = 10000001
+    self.curUid = 10000001
+
+    if game.gardenDate then
+        self.gardenDate = game.gardenDate
+    else
+        self.gardenDate = {
+            [1] = {id = 1177563185, startTime = 1470628800,work = {},},
+            [2] = {id = 1177563185, startTime = 1470572400,work = {},},
+            [3] = {id = 1177563185, startTime = 1470564000,work = {},},
+            [4] = {id = nil, startTime = nil,work = nil,},
+        }
+        game.gardenDate = self.gardenDate
+    end
+    
+
+end
+
 function GardenScene:createPageView()
+    self.label = self.label or {}
+    self.image = self.image or {}
+
     local huajiaBg = ccui.ImageView:create()
     huajiaBg:loadTexture("res/gardenUI/bm_huajia.png")
     self:addChild(huajiaBg)
-    huajiaBg:setPosition(display.right + 35,display.bottom)
+    huajiaBg:setPosition(display.right + 25,display.bottom)
     huajiaBg:setAnchorPoint(cc.p(1, 0))
 
 
@@ -86,7 +223,7 @@ function GardenScene:createPageView()
     self.pv = cc.ui.UIListView.new {
         -- bgColor = cc.c4b(200, 200, 200, 120),
         -- bg = "res/checkpointUI/bm_xuangguandi.png",
-        viewRect = cc.rect(display.right - item_width - 50, display.bottom, item_width, item_height * 2.2),
+        viewRect = cc.rect(display.right - item_width + 5, display.bottom, item_width, item_height * 2.2),
         direction = cc.ui.UIScrollView.DIRECTION_VERTICAL}
         :onTouch(handler(self, self.touchListener))
         :addTo(self)
@@ -109,29 +246,77 @@ function GardenScene:createPageView()
         img:setTexture("res/gardenUI/bm_huajiatiao.png")
         img:setPosition(item_width*0.5, 0)
         img:setAnchorPoint(cc.p(0.5, 0))
-        img:setTouchEnabled(false)
+        -- img:setTouchEnabled(false)
         layer:addChild(img)
 
         for index=1,3 do
+            local number = ((i-1)*3 + index)
             local imgbg = display.newSprite(nil, nil,nil , __one)
             imgbg:setTexture("res/gardenUI/bm_yinying.png")
-            imgbg:setPosition(120 + (index - 1 ) * 200, 10)
+            imgbg:setPosition(140 + (index - 1 ) * 200, 10)
             imgbg:setAnchorPoint(cc.p(0.5, 0))
-            imgbg:setTouchEnabled(false)
+            -- imgbg:setTouchEnabled(false)
             layer:addChild(imgbg)
             local huaImg = ""
             local h = 25
-            if ((i-1)*3 + index) <= hasNum then
-                huaImg = "res/gardenUI/ZW01_0"..index..".png"
+
+            local text = ""
+        
+            print("number " ..number)
+            local tab = self.gardenDate[number]
+            if tab then
+                local id  = tab["id"]
+                if id and id > 0 then
+                    local fTab = FlowerTable[id]
+                    local newTime = os.time()
+                    local d_time = newTime - tab.startTime
+                    print("newTime " ..newTime)
+                    print("tab.startTime " ..tab.startTime)
+                    print("d_time " ..d_time)
+                    if d_time < fTab.f_time01 then
+                        huaImg = fTab["f_res"] .."_01.png"
+                        text = util.timeFmt(fTab.f_time03 - d_time)
+                    elseif d_time >= fTab.f_time01 and d_time < fTab.f_time03 then
+                        huaImg = fTab["f_res"] .."_02.png"
+                        text = util.timeFmt(fTab.f_time03 - d_time)
+                    elseif d_time >= fTab.f_time03 then
+                        huaImg = fTab["f_res"] .."_03.png"
+                        text = "可收获"
+                    end
+                    print("f_res " ..fTab["f_res"])
+                    print("huaImg " ..huaImg)
+                else
+                    huaImg = "res/gardenUI/bt_zhongzhi.png"
+                    text = "请种植"
+                end
             else
                 huaImg = "res/gardenUI/bm_shitou.png"
-            end 
+                text = "待开垦"
+            end
+
             local img = display.newSprite(nil, nil,nil , __one)
             img:setTexture(huaImg)
-            img:setPosition(120 + (index - 1 ) * 200, 25)
+            img:setPosition(140 + (index - 1 ) * 200, 10)
             img:setAnchorPoint(cc.p(0.5, 0))
-            img:setTouchEnabled(false)
+            img:setTouchEnabled(true)
             layer:addChild(img)
+            self.image[number] = img
+            img:setTag(number)
+
+            img:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+                return self:huaOnTouch(img, event, layer)
+            end)
+
+            local label = cc.ui.UILabel.new({
+                UILabelType = 2,
+                text  = text,
+                font  = "font/huakang.TTF",
+                size = 24,
+            })
+            :align(display.CENTER, 140 + (index - 1 ) * 200, 0)
+            :addTo(layer)
+            self.label[number] = label
+
         end
         
 
@@ -145,15 +330,611 @@ function GardenScene:createPageView()
     self.pv:reload(self.curOpenItem)
 
 
-
-    
-
-    
-
-        
         
 
 end
+
+function GardenScene:huaOnTouch(img, event, layer)
+    print("-------------------endedendedendedendedended----------2222img "..img:getTag())
+    local number = img:getTag()
+    local index = number%3
+    if index == 0 then index = 3 end
+    if event.name == "ended" then
+        print("number " ..number)
+            local tab = self.gardenDate[number]
+            if tab then
+                local id  = tab["id"]
+                if id and id > 0 then
+                    local fTab = FlowerTable[id]
+                    local newTime = os.time()
+                    local d_time = newTime - tab.startTime
+                    print("newTime " ..newTime)
+                    print("tab.startTime " ..tab.startTime)
+                    print("d_time " ..d_time)
+                    if d_time < fTab.f_time03 then
+                        if layer:getChildByTag(101) then
+                            layer:getChildByTag(101):removeFromParent()
+                        else
+                            local img = display.newSprite(nil, nil,nil , __one)
+                            img:setTexture("res/gardenUI/bm_anniutiao.png")
+                            img:setPosition(140 + (index - 1 ) * 200, 120)
+                            img:setAnchorPoint(cc.p(0.5, 0))
+                            img:setTouchEnabled(true)
+                            layer:addChild(img)
+                            img:setTag(101)
+                        end
+                        
+                        if layer:getChildByTag(102) then
+                            layer:getChildByTag(102):removeFromParent()
+                        else
+                            local img = display.newSprite(nil, nil,nil , __one)
+                            img:setTexture("res/gardenUI/bt_wancheng.png")
+                            img:setPosition(140 + (index - 1 ) * 200 - 50, 175)
+                            img:setAnchorPoint(cc.p(0.5, 0))
+                            img:setTouchEnabled(true)
+                            layer:addChild(img)
+                            img:setTag(102)
+                            img:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+                                -- return self:huaOnTouch(img, event, layer)
+                                print("bt_wanchengbt_wanchengbt_wanchengbt_wancheng "..event.name)
+                                if event.name == "ended" then
+                                    self:shouhuoLayer(number, layer)
+                                end
+                                return true
+                            end)
+                        end
+
+
+
+                        if layer:getChildByTag(103) then
+                            layer:getChildByTag(103):removeFromParent()
+                        else
+                            local img = display.newSprite(nil, nil,nil , __one)
+                            img:setTexture("res/gardenUI/bt_jiaoshui.png")
+                            img:setPosition(140 + (index - 1 ) * 200 + 50, 175)
+                            img:setAnchorPoint(cc.p(0.5, 0))
+                            img:setTouchEnabled(true)
+                            layer:addChild(img)
+                            img:setTag(103)
+                        end
+
+                        
+                    elseif d_time >= fTab.f_time03 then
+                        if self.uid ~= self.curUid then
+                            if layer:getChildByTag(101) then
+                                layer:getChildByTag(101):removeFromParent()
+                            else
+                                local img = display.newSprite(nil, nil,nil , __one)
+                                img:setTexture("res/gardenUI/bm_anniutiao.png")
+                                img:setPosition(140 + (index - 1 ) * 200, 120)
+                                img:setAnchorPoint(cc.p(0.5, 0))
+                                img:setTouchEnabled(true)
+                                layer:addChild(img)
+                                img:setTag(101)
+                            end
+
+                            if layer:getChildByTag(102) then
+                                layer:getChildByTag(102):removeFromParent()
+                            else
+                                local img = display.newSprite(nil, nil,nil , __one)
+                                img:setTexture("res/gardenUI/bt_touqu.png")
+                                img:setPosition(140 + (index - 1 ) * 200 , 175)
+                                img:setAnchorPoint(cc.p(0.5, 0))
+                                img:setTouchEnabled(true)
+                                layer:addChild(img)
+                                img:setTag(102)
+                            end
+                        else
+                            --弹收获框
+                            self:caiZhaiLayer(number)
+                        end
+                    end
+                    
+                else 
+                    -- 弹选择种子界面
+                    self:zhongzhiLayer(number)
+                end
+            else
+                -- 弹花钱开垦界面
+                self:kaikenLayer()
+            end
+
+
+
+    end
+    return true
+end
+
+function GardenScene:shouhuoLayer(number, flayer)  
+    local layer = display.newColorLayer(cc.c4b(0, 0, 0, 160))
+    layer:setContentSize(display.width, display.height)
+    self:addChild(layer)
+    layer:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+        if event.name == "ended" then
+            layer:removeFromParent()
+        end
+        return true
+    end)
+
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_yijidi.png", 50, 50, cc.size(700, 360))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_sanjidi.png", 50, 50, cc.size(660, 280))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 20)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_erjidi.png", 70, 50, cc.size(645, 105))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 100)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "太阳花",
+        font  = "font/huakang.TTF",
+        size = 40,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 150)
+    :addTo(layer)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "花费钻石使植物立即成熟",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 100)
+    :addTo(layer)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_wenzige.png")
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 + 75)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_shuzitiao.png")
+    sprite:setPosition(display.width * 0.5 - 150, display.height * 0.5 + 25)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "金币:1000 - 2000",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 - 150, display.height * 0.5 + 25)
+    :addTo(layer)
+
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_shuzitiao.png")
+    sprite:setPosition(display.width * 0.5 + 150, display.height * 0.5 + 25)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "道具:3",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 + 150, display.height * 0.5 + 25)
+    :addTo(layer)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "成熟倒计时:",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 - 180, display.height * 0.5 - 65)
+    :addTo(layer)
+    
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_shuzitiao.png")
+    sprite:setPosition(display.width * 0.5 + 150, display.height * 0.5 + 25)
+    layer:addChild(sprite)
+
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "00:00:00",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 - 180, display.height * 0.5 - 110)
+    :addTo(layer)
+    self.shouhuoLabel = label
+    self.shouhuoLabel:setTag(number)
+
+    self.check_btn = cc.ui.UIPushButton.new({normal = "res/gardenUI/bt_yijianniu.png", 
+                                                    pressed = "res/gardenUI/bt_yijianniu.png", 
+                                                    disabled = "res/gardenUI/bt_yijianniu.png"})
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 100)
+    :addTo(layer)
+    self.check_btn:onButtonClicked(function(event)
+        self:yijianchenshuCbk(event, number, flayer, layer)
+    end)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "10",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 + 160, display.height * 0.5 - 85)
+    :addTo(layer)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bt_zuanshi.png")
+    sprite:setPosition(display.width * 0.5 + 180 + 30, display.height * 0.5 - 85)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "立即成熟",
+        font  = "font/youyuan.TTF",
+        size = 24,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 110)
+    :addTo(layer)
+end
+
+function GardenScene:kaikenLayer()  
+    local layer = display.newColorLayer(cc.c4b(0, 0, 0, 160))
+    layer:setContentSize(display.width, display.height)
+    self:addChild(layer)
+    layer:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+        if event.name == "ended" then
+            self.shouhuoLabel = nil
+            layer:removeFromParent()
+        end
+        return true
+    end)
+
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_yijidi.png", 50, 50, cc.size(700, 360))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_sanjidi.png", 50, 50, cc.size(660, 280))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 20)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_erjidi.png", 70, 50, cc.size(645, 105))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 100)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "开垦",
+        font  = "font/huakang.TTF",
+        size = 40,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 150)
+    :addTo(layer)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "你确定要开垦这块位置吗？",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 100)
+    :addTo(layer)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_wenzige.png")
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 + 75)
+    layer:addChild(sprite)
+
+    
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "(开垦后可种植更多植物)",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 25)
+    :addTo(layer)
+
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "开放等级:10",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 - 180, display.height * 0.5 - 80)
+    :addTo(layer)
+
+
+
+
+    self.check_btn = cc.ui.UIPushButton.new({normal = "res/gardenUI/bt_yijianniu.png", 
+                                                    pressed = "res/gardenUI/bt_yijianniu.png", 
+                                                    disabled = "res/gardenUI/bt_yijianniu.png"})
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 100)
+    :addTo(layer)
+    self.check_btn:onButtonClicked(function(event)
+        self:kaikenCbk(event, layer)
+    end)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "10",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 + 160, display.height * 0.5 - 85)
+    :addTo(layer)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bt_zuanshi.png")
+    sprite:setPosition(display.width * 0.5 + 180 + 30, display.height * 0.5 - 85)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "开垦",
+        font  = "font/youyuan.TTF",
+        size = 24,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 110)
+    :addTo(layer)
+end
+
+function GardenScene:zhongzhiLayer(number)  
+    local layer = display.newColorLayer(cc.c4b(0, 0, 0, 160))
+    layer:setContentSize(display.width, display.height)
+    self:addChild(layer)
+    layer:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+        if event.name == "ended" then
+            self.shouhuoLabel = nil
+            layer:removeFromParent()
+        end
+        return true
+    end)
+
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_yijidi.png", 50, 50, cc.size(700, 360))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_sanjidi.png", 50, 50, cc.size(660, 280))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 20)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_erjidi.png", 70, 50, cc.size(645, 105))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 100)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "种植",
+        font  = "font/huakang.TTF",
+        size = 40,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 150)
+    :addTo(layer)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "请选择一颗种子种植",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 100)
+    :addTo(layer)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_wenzige.png")
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 + 75)
+    layer:addChild(sprite)
+
+    
+
+    
+
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "太阳花种子",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 - 180, display.height * 0.5 - 80)
+    :addTo(layer)
+
+
+
+
+    self.check_btn = cc.ui.UIPushButton.new({normal = "res/gardenUI/bt_yijianniu.png", 
+                                                    pressed = "res/gardenUI/bt_yijianniu.png", 
+                                                    disabled = "res/gardenUI/bt_yijianniu.png"})
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 100)
+    :addTo(layer)
+    self.check_btn:onButtonClicked(function(event)
+        self:zhongzhiCbk(event, layer, number)
+    end)
+
+
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "种植",
+        font  = "font/youyuan.TTF",
+        size = 40,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 90)
+    :addTo(layer)
+end
+
+function GardenScene:zhongzhiLayer(number)  
+    local layer = display.newColorLayer(cc.c4b(0, 0, 0, 160))
+    layer:setContentSize(display.width, display.height)
+    self:addChild(layer)
+    layer:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+        if event.name == "ended" then
+            self.shouhuoLabel = nil
+            layer:removeFromParent()
+        end
+        return true
+    end)
+
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_yijidi.png", 50, 50, cc.size(700, 360))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_sanjidi.png", 50, 50, cc.size(660, 280))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 20)
+    layer:addChild(sprite)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_erjidi.png", 70, 50, cc.size(645, 105))
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 - 100)
+    layer:addChild(sprite)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "种植",
+        font  = "font/huakang.TTF",
+        size = 40,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 150)
+    :addTo(layer)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "请选择一颗种子种植",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 100)
+    :addTo(layer)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_wenzige.png")
+    sprite:setPosition(display.width * 0.5, display.height * 0.5 + 75)
+    layer:addChild(sprite)
+
+    
+
+    
+
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "太阳花种子",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 - 180, display.height * 0.5 - 80)
+    :addTo(layer)
+
+
+
+
+    self.check_btn = cc.ui.UIPushButton.new({normal = "res/gardenUI/bt_yijianniu.png", 
+                                                    pressed = "res/gardenUI/bt_yijianniu.png", 
+                                                    disabled = "res/gardenUI/bt_yijianniu.png"})
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 100)
+    :addTo(layer)
+    self.check_btn:onButtonClicked(function(event)
+        self:zhongzhiCbk(event, layer, number)
+    end)
+
+
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "种植",
+        font  = "font/youyuan.TTF",
+        size = 40,
+        -- color = display.COLOR_BLACK,
+    })
+    :align(display.CENTER, display.width * 0.5 + 180, display.height * 0.5 - 90)
+    :addTo(layer)
+end
+
+function GardenScene:caiZhaiLayer(number)  
+    local layer = display.newColorLayer(cc.c4b(0, 0, 0, 160))
+    layer:setContentSize(display.width, display.height)
+    self:addChild(layer)
+    layer:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+        if event.name == "ended" then
+            self.gardenDate[number] = {id = nil, startTime = nil,work = nil,}
+            self.shouhuoLabel = nil
+            layer:removeFromParent()
+        end
+        return true
+    end)
+
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_huayuanBJ.jpg")
+    sprite:setPosition(display.width * 0.5, display.height * 0.5)
+    layer:addChild(sprite)
+
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "金币",
+        font  = "font/huakang.TTF",
+        size = 52,
+        color = cc.c3b(255, 193, 37),--#FFC125
+    })
+    :align(display.CENTER, display.width * 0.5 - 100, display.height * 0.5 + 200)
+    :addTo(layer)
+
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "你的金币",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        color = cc.c3b(255, 193, 37),--#FFC125
+    })
+    :align(display.CENTER, display.width * 0.5 + 80, display.height * 0.5 + 200)
+    :addTo(layer)
+
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_jinbidui.png")
+    sprite:setPosition(display.width * 0.5 - 100, display.height * 0.5 + 100)
+    layer:addChild(sprite)
+
+    
+    local label = cc.ui.UILabel.new({
+        UILabelType = 2,
+        text  = "100000",
+        font  = "font/youyuan.TTF",
+        size = 32,
+        color = cc.c3b(255, 193, 37),--#FFC125
+    })
+    :align(display.CENTER, display.width * 0.5, display.height * 0.5 + 100)
+    :addTo(layer)
+
+
+
+    local sprite = display.newSprite("res/gardenUI/bm_jianglitai.png")
+    sprite:setPosition(display.width * 0.5, display.bottom + 0)
+    sprite:setAnchorPoint(cc.p(0.5,0))
+    layer:addChild(sprite)
+
+    local sprite = display.newSprite("res/icon/flowers/ZW01_03.png")
+    sprite:setPosition(display.width * 0.5, display.bottom + 140)
+    sprite:setAnchorPoint(cc.p(0.5,0))
+    layer:addChild(sprite)
+    
+end
+
 
 
 function GardenScene:touchListener(event)
@@ -172,6 +953,7 @@ end
 
 
 function GardenScene:backBtnCbk()  
+    self:stop_monster_scheduler()
     appInstance:enterMainScene()
 end
 
@@ -183,9 +965,36 @@ function GardenScene:rightBtnCbk()
 
 end
 
-function GardenScene:btn01BtnCbk()  
+function GardenScene:yijianchenshuCbk(event, number, flayer,layer)  
 
+    local time = self.gardenDate[number].startTime - 1000000
+    self.gardenDate[number] = {id = 1177563185, startTime = time,work = {},}
+
+    for i=101,103 do
+        local node = flayer:getChildByTag(i)
+        if node then
+            node:removeFromParent()
+        end
+    end
+
+    self.shouhuoLabel = nil
+    layer:removeFromParent()
 end
+
+function GardenScene:kaikenCbk(event, layer)  
+    
+    table.insert(self.gardenDate, {id = nil, startTime = nil,work = nil,})
+
+    layer:removeFromParent()
+end
+
+function GardenScene:zhongzhiCbk(event, layer, number)  
+    local curtime = os.time()
+    self.gardenDate[number] = {id = 1177563185, startTime = curtime,work = {},}
+
+    layer:removeFromParent()
+end
+
 
 
 return GardenScene
