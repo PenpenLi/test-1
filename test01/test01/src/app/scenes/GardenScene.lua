@@ -2,7 +2,9 @@
 require("app/res/ItemTableRes")
 require("app/res/FlowerTableRes")
 
+
 local __one = {class=cc.FilteredSpriteWithOne}
+game = game or {}
 
 
 local scheduler = cc.Director:getInstance():getScheduler()
@@ -17,7 +19,7 @@ function GardenScene:ctor()
     self:addChild(self.Bg)
     self.Bg:setPosition(display.cx, display.cy)
 
-    self:initDate()
+    self:initDate({id = 1000001, name = "我的", lv = "10", isHelp = 0})
     
     self:createPageView()
     self:addUI()
@@ -177,19 +179,125 @@ function GardenScene:addUI( ... )
     local leftBtn = cc.ui.UIPushButton.new({normal = "res/gardenUI/bt_haoyou_normal.png", 
                                                     pressed = "res/gardenUI/bt_haoyou__press.png", 
                                                     disabled = "res/gardenUI/bt_haoyou__press.png"})
-    :align(display.CENTER_LEFT, display.left, display.cy)
+    :align(display.CENTER_LEFT, display.left, display.cy + 100)
     :addTo(self)
     leftBtn:onButtonClicked(function(event)
         self:leftBtnCbk(event)
     end)
+    self.haoyouBtn = leftBtn
 
+    self:openHaoyou()
+end
+
+function GardenScene:openHaoyou( ... )
+
+    game.haoyouList = {
+        [1] = {id = 1000001, name = "我的", lv = "10", isHelp = 1},
+        [2] = {id = 1000002, name = "诸葛亮", lv = "5", isHelp = 1},
+        [3] = {id = 1000004, name = "诸葛亮", lv = "5", isHelp = 1},
+        [4] = {id = 1000005, name = "诸葛亮", lv = "5", isHelp = 1},
+        [5] = {id = 1000006, name = "诸葛亮", lv = "5", isHelp = 1},
+        [6] = {id = 1000007, name = "诸葛亮", lv = "5", isHelp = 1},
+    }
     
+    local sprite = display.newScale9Sprite("res/gardenUI/bm_yijidi.png", 50, 50, cc.size(310, 450))
+    sprite:setPosition(display.left - 10 - 320, display.bottom + 160)
+    sprite:setAnchorPoint(cc.p(0,0))
+    self:addChild(sprite)
+    self.haoyouSprite = sprite
+
+    local item_width = 300
+    local item_height = 110
+
+    self.pv = cc.ui.UIListView.new {
+        -- bgColor = cc.c4b(200, 200, 200, 120),
+        -- bg = "res/checkpointUI/bm_xuangguandi.png",
+        viewRect = cc.rect(0, 10, item_width, 430),
+        direction = cc.ui.UIScrollView.DIRECTION_VERTICAL}
+        :onTouch(handler(self, self.haoyouTouchListener))
+        :addTo(sprite)
+
+    local number = #game.haoyouList
+
+    -- add items
+    for i=1,number do
+
+
+        local item = self.pv:newItem()
+
+        local img = display.newScale9Sprite("res/gardenUI/bm_erjidi.png", 50, 50, cc.size(item_width, 110))
+        img:setPosition(item_width*0.5, item_height)
+        img:setAnchorPoint(cc.p(0.5, 0.5))
+
+
+        local img01 = ccui.ImageView:create()
+        img01:loadTexture("res/gardenUI/bm_dengjidi.png")
+        img01:setPosition(50, 50)
+        img01:setAnchorPoint(cc.p(0.5, 0.5))
+        img01:setTouchEnabled(false)
+        img:addChild(img01)
+
+        local numLabel = cc.ui.UILabel.new({
+            UILabelType = 2,
+            text  = game.haoyouList[i].lv,
+            font  = "font/huakang.TTF",
+            size = 20,
+        })
+        :align(display.CENTER, 32,32)
+        :addTo(img01)
+
+
+        local textLabel = cc.ui.UILabel.new({
+            UILabelType = 2,
+            text  = game.haoyouList[i].name,
+            font  = "font/youyuan.TTF",
+            size = 40,
+        })
+        :align(display.CENTER_LEFT, 80 , 50)
+        :addTo(img)
+
+        local imgHelp = display.newSprite(nil, nil,nil , __one)
+        imgHelp:setTexture("res/gardenUI/bt_touqu.png")
+        imgHelp:setPosition(250, 55)
+        imgHelp:setAnchorPoint(cc.p(0.5, 0.5))
+        imgHelp:setTouchEnabled(false)
+        img:addChild(imgHelp)
+
+ 
+        item:addContent(img)
+
+        item:setItemSize(item_width, item_height)
+        
+        self.pv:addItem(item)        
+    end
+    self.pv:reload(self.curOpenItem)
+
+
+
+
 end
 
 
-function GardenScene:initDate( ... )
-    self.uid = 10000001
-    self.curUid = 10000001
+function GardenScene:haoyouTouchListener(event)
+    dump(event, "GardenScene TestUIPageViewScene - event:")
+    if event.name == "clicked" then
+        
+        print("clicked "..event.itemPos)
+
+        self:initDate( game.haoyouList[event.itemPos] )
+
+        self:createPageView()
+        
+    end
+
+    
+
+end
+
+
+function GardenScene:initDate( t )
+    self.uid = 1000001
+    self.curUid = t.id or 1000001
 
     if game.gardenDate then
         self.gardenDate = game.gardenDate
@@ -207,14 +315,31 @@ function GardenScene:initDate( ... )
 end
 
 function GardenScene:createPageView()
-    self.label = self.label or {}
-    self.image = self.image or {}
+    if self.huajiaBg and self.pagePv then
+        local aa = self.huajiaBg
+        local bb = self.pagePv
+        self.huajiaBg:runAction(cc.MoveBy:create(0.3,cc.p(0, display.height)) )
+
+        function aaa( ... )
+            aa:removeFromParent()
+            bb:removeFromParent()
+        end
+        self.pagePv:runAction(cc.Sequence:create(
+                            cc.MoveBy:create(0.3,cc.p(0, display.height)),
+                            cc.CallFunc:create(aaa)
+                            )
+                        )
+    end
+
+    self.label = {}
+    self.image = {}
 
     local huajiaBg = ccui.ImageView:create()
     huajiaBg:loadTexture("res/gardenUI/bm_huajia.png")
     self:addChild(huajiaBg)
-    huajiaBg:setPosition(display.right + 25,display.bottom)
+    huajiaBg:setPosition(display.right + 25,display.bottom - display.height)
     huajiaBg:setAnchorPoint(cc.p(1, 0))
+    self.huajiaBg = huajiaBg
 
 
     local item_width = 720
@@ -223,11 +348,11 @@ function GardenScene:createPageView()
     self.pv = cc.ui.UIListView.new {
         -- bgColor = cc.c4b(200, 200, 200, 120),
         -- bg = "res/checkpointUI/bm_xuangguandi.png",
-        viewRect = cc.rect(display.right - item_width + 5, display.bottom, item_width, item_height * 2.2),
+        viewRect = cc.rect(display.right - item_width + 5, display.bottom - display.height , item_width, item_height * 2.2),
         direction = cc.ui.UIScrollView.DIRECTION_VERTICAL}
         :onTouch(handler(self, self.touchListener))
         :addTo(self)
-
+    self.pagePv = self.pv
 
 
     local hasNum = 3
@@ -329,7 +454,17 @@ function GardenScene:createPageView()
     end
     self.pv:reload(self.curOpenItem)
 
+    --move
+    huajiaBg:runAction(cc.MoveBy:create(0.3,cc.p(0, display.height)) )
 
+    function aaa( ... )
+        -- body
+    end
+    self.pv:runAction(cc.Sequence:create(
+                        cc.MoveBy:create(0.3,cc.p(0, display.height)),
+                        cc.CallFunc:create(aaa)
+                        )
+                    )
         
 
 end
@@ -364,38 +499,38 @@ function GardenScene:huaOnTouch(img, event, layer)
                             img:setTag(101)
                         end
                         
-                        if layer:getChildByTag(102) then
-                            layer:getChildByTag(102):removeFromParent()
+                        if self.uid == self.curUid then
+                            if layer:getChildByTag(102) then
+                                layer:getChildByTag(102):removeFromParent()
+                            else
+                                local img = display.newSprite(nil, nil,nil , __one)
+                                img:setTexture("res/gardenUI/bt_wancheng.png")
+                                img:setPosition(140 + (index - 1 ) * 200, 175)
+                                img:setAnchorPoint(cc.p(0.5, 0))
+                                img:setTouchEnabled(true)
+                                layer:addChild(img)
+                                img:setTag(102)
+                                img:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
+                                    -- return self:huaOnTouch(img, event, layer)
+                                    print("bt_wanchengbt_wanchengbt_wanchengbt_wancheng "..event.name)
+                                    if event.name == "ended" then
+                                        self:shouhuoLayer(number, layer)
+                                    end
+                                    return true
+                                end)
+                            end
                         else
-                            local img = display.newSprite(nil, nil,nil , __one)
-                            img:setTexture("res/gardenUI/bt_wancheng.png")
-                            img:setPosition(140 + (index - 1 ) * 200 - 50, 175)
-                            img:setAnchorPoint(cc.p(0.5, 0))
-                            img:setTouchEnabled(true)
-                            layer:addChild(img)
-                            img:setTag(102)
-                            img:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
-                                -- return self:huaOnTouch(img, event, layer)
-                                print("bt_wanchengbt_wanchengbt_wanchengbt_wancheng "..event.name)
-                                if event.name == "ended" then
-                                    self:shouhuoLayer(number, layer)
-                                end
-                                return true
-                            end)
-                        end
-
-
-
-                        if layer:getChildByTag(103) then
-                            layer:getChildByTag(103):removeFromParent()
-                        else
-                            local img = display.newSprite(nil, nil,nil , __one)
-                            img:setTexture("res/gardenUI/bt_jiaoshui.png")
-                            img:setPosition(140 + (index - 1 ) * 200 + 50, 175)
-                            img:setAnchorPoint(cc.p(0.5, 0))
-                            img:setTouchEnabled(true)
-                            layer:addChild(img)
-                            img:setTag(103)
+                            if layer:getChildByTag(103) then
+                                layer:getChildByTag(103):removeFromParent()
+                            else
+                                local img = display.newSprite(nil, nil,nil , __one)
+                                img:setTexture("res/gardenUI/bt_jiaoshui.png")
+                                img:setPosition(140 + (index - 1 ) * 200, 175)
+                                img:setAnchorPoint(cc.p(0.5, 0))
+                                img:setTouchEnabled(true)
+                                layer:addChild(img)
+                                img:setTag(103)
+                            end
                         end
 
                         
@@ -957,7 +1092,36 @@ function GardenScene:backBtnCbk()
     appInstance:enterMainScene()
 end
 
-function GardenScene:leftBtnCbk()  
+function GardenScene:leftBtnCbk(event)  
+    local x = self.haoyouSprite:getPositionX()
+    print(" haoyouSprite  x "..x)
+
+    if x < -100 then
+        local function aaa( ... )
+            self.haoyouBtn:setTouchEnabled(true)
+        end
+        
+        self.haoyouBtn:setTouchEnabled(false)
+        self.haoyouSprite:runAction(cc.MoveBy:create(0.1,cc.p(320,0)) )
+
+        self.haoyouBtn:runAction(cc.Sequence:create(
+                        cc.MoveBy:create(0.1,cc.p(290,0)),
+                        cc.CallFunc:create(aaa)))
+    else
+        local function aaa( ... )
+            self.haoyouBtn:setTouchEnabled(true)
+        end
+        
+        self.haoyouBtn:setTouchEnabled(false)
+        self.haoyouSprite:runAction(cc.MoveBy:create(0.1,cc.p(-320,0)) )
+
+        self.haoyouBtn:runAction(cc.Sequence:create(
+                        cc.MoveBy:create(0.1,cc.p(-290,0)),
+                        cc.CallFunc:create(aaa)))
+
+    end
+
+    
 
 end
 

@@ -3,6 +3,7 @@ require("app/res/BeastTableRes")
 require("app/res/BossTableRes")
 require("app/res/CheckpointTableRes")
 require("app/res/ItemTableRes")
+Item = ItemTable
 
 local __one = {class=cc.FilteredSpriteWithOne}
 

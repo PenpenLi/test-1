@@ -4,6 +4,7 @@ require("app/res/BeastTableRes")
 require("app/res/BossTableRes")
 require("app/res/CheckpointTableRes")
 
+
 local AdBar = import("..views.AdBar")
 local BubbleButton = import("..views.BubbleButton")
 
