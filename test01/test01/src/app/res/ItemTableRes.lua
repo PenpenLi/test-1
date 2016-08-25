@@ -1,4 +1,4 @@
-Item= {
+ItemTable= {
 [1227894833] = {ID=1227894833,Name="鱼丸",itemsrc="使用获得金币1000",eq_count=99,eq_groupcount=1,item_jinbi=0,item_zuanshi=0,ItemType=8,eq_rate=0,Quality=1,itemNum=1000,GiftID=0,item_res="res/icon/item/I044",ItemLayerPath="",},
 [1227894834] = {ID=1227894834,Name="竹子",itemsrc="使用获得金币2000",eq_count=99,eq_groupcount=1,item_jinbi=0,item_zuanshi=0,ItemType=8,eq_rate=0,Quality=1,itemNum=2000,GiftID=0,item_res="res/icon/item/I045",ItemLayerPath="",},
 [1227894835] = {ID=1227894835,Name="饭团",itemsrc="使用获得金币5000",eq_count=99,eq_groupcount=1,item_jinbi=0,item_zuanshi=0,ItemType=8,eq_rate=0,Quality=2,itemNum=5000,GiftID=0,item_res="res/icon/item/I046",ItemLayerPath="",},

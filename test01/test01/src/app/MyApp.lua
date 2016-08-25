@@ -24,8 +24,8 @@ function MyApp:run()
         audio.preloadSound(v)
     end
 
-    self:enterLoginScene()
-    -- self:enterGardenScene()
+    -- self:enterLoginScene()
+    self:enterGardenScene()
 
     appInstance = self
 end
