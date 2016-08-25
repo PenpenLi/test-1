@@ -5,9 +5,11 @@
 
 #define BEASTTABLE_DSC_MAXNUM		128
 #define BEASTTABLE_M_RES_MAXNUM		64
+#define BEASTTABLE_M_SHIPEI_MAXNUM		64
 
 #define BOSSTABLE_DSC_MAXNUM		128
 #define BOSSTABLE_B_RES_MAXNUM		64
+#define BOSSTABLE_B_SHIPEI_MAXNUM		64
 
 #define CHECKPOINTTABLE_CHAPTER_T_MAXNUM		128
 #define CHECKPOINTTABLE_CHAPTER_NAME_MAXNUM		128
@@ -74,6 +76,7 @@ struct BeastTableRes{
 	uint32				 m_uiclothes;
 	char				 m_acdsc[BEASTTABLE_DSC_MAXNUM];
 	char				 m_acm_res[BEASTTABLE_M_RES_MAXNUM];
+	char				 m_acm_shipei[BEASTTABLE_M_SHIPEI_MAXNUM];
 };
 
 
@@ -85,6 +88,7 @@ struct BossTableRes{
 	uint32				 m_uiaccessories;
 	char				 m_acdsc[BOSSTABLE_DSC_MAXNUM];
 	char				 m_acb_res[BOSSTABLE_B_RES_MAXNUM];
+	char				 m_acb_shipei[BOSSTABLE_B_SHIPEI_MAXNUM];
 };
 
 
