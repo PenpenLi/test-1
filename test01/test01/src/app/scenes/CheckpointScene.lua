@@ -167,7 +167,7 @@ end
 function CheckpointScene:createPageView()
     local curCheckPoint = self:getCurCheckPoint()
 
-    local chapterNumber = 7
+    local chapterNumber = 7 
     
     self.imgTab = {}
     self.curOpenItem = CheckpointTable[curCheckPoint]["chapter"]
@@ -396,6 +396,7 @@ end
 
 
 function CheckpointScene:getCurCheckPoint( ... )
+    --game.playerInfo.stage.chapter
     local id = cc.UserDefault:getInstance():getIntegerForKey("checkId", 1093677105)
     print("CheckpointScene:getCurCheckPoint "..id)
     return id

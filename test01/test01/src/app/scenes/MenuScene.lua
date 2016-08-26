@@ -994,6 +994,7 @@ function MenuScene:chuMonster( table )
         t.blood = math.floor(BossTable[monsterId].b_blood * (1 + self.checkTab["B01_b_add"]))
         t.speed = math.floor(BossTable[monsterId].b_speed * (1 + self.checkTab["B01_s_add"]))
         t.path = BossTable[monsterId].b_res
+        t.peishiPath = BossTable[monsterId].b_shipei
     else
         local index = math.random(1,2)
         local monsterId =  self.checkTab["M0"..index.."_ID"]
@@ -1003,6 +1004,7 @@ function MenuScene:chuMonster( table )
         t.blood = math.floor(BeastTable[monsterId].b_blood * (1 + self.checkTab["M0"..index.."_b_add"]))
         t.speed = math.floor(BeastTable[monsterId].b_speed * (1 + self.checkTab["M0"..index.."_s_add"]))
         t.path = BeastTable[monsterId].m_res
+        t.peishiPath = BeastTable[monsterId].m_shipei
     end
     
     if table.weizi > 0 then

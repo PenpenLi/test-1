@@ -84,7 +84,7 @@ function LoginScene:testNet()
     if device.platform == "ios" then
         game.did = SystemUtil:getUUID(false)
     else
-        game.did = "123sfsdfesdd"
+        game.did = "yejunwei00001"
     end
     print("did "..game.did)
 end

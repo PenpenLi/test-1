@@ -35,6 +35,13 @@ function monster:ctor( t )
     skeletonNode:setAnimation(0, "run", true)
     self.skeletonNode = skeletonNode
 
+    -- local skeletonNode01 = sp.SkeletonAnimation:create(t.peishiPath..".json", t.peishiPath..".atlas", 1)
+    -- skeletonNode01:setScale(scale)
+    -- skeletonNode01:setPosition(0 , 50)
+    -- self:addChild(skeletonNode01)
+    -- skeletonNode01:setAnimation(0, "idle", true)
+    -- self.skeletonNode01 = skeletonNode01
+
     self:setPhysicsBody(body)
 
     self:addStateMachine()

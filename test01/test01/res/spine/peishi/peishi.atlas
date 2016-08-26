@@ -1,0 +1,27 @@
+
+peishi.png
+size: 256,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+peishi1
+  rotate: false
+  xy: 2, 2
+  size: 63, 60
+  orig: 63, 60
+  offset: 0, 0
+  index: -1
+peishi2
+  rotate: false
+  xy: 67, 2
+  size: 63, 60
+  orig: 63, 60
+  offset: 0, 0
+  index: -1
+peishi3
+  rotate: false
+  xy: 132, 2
+  size: 63, 60
+  orig: 63, 60
+  offset: 0, 0
+  index: -1

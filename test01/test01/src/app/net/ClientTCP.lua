@@ -54,7 +54,7 @@ end
 
 
 function ClientTCP:Connect(ip,port)
-    local LOTA_TCP = "192.168.17.251"
+    local LOTA_TCP = "115.29.148.25"
     local LOTA_TCP_PORT = 8888
     print("----------------Connect----------------start-"..LOTA_TCP..":"..LOTA_TCP_PORT)
     self.socket = SocketTCP.new(LOTA_TCP, LOTA_TCP_PORT, false)

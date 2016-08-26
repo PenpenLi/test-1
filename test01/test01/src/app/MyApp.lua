@@ -25,7 +25,8 @@ function MyApp:run()
     end
 
     -- self:enterLoginScene()
-    self:enterGardenScene()
+    -- self:enterGardenScene()
+    self:enterCheckpointScene()
 
     appInstance = self
 end
