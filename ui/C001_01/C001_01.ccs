@@ -1,0 +1,18 @@
+<Solution>
+  <PropertyGroup Name="C001_01" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="login">
+          <Image Name="bm_beijing1.jpg" />
+          <Image Name="bm_kaishi.png" />
+          <Image Name="bt_facebook.png" />
+          <Image Name="bt_renyuan.png" />
+          <Image Name="bt_shezhi.png" />
+          <Image Name="bt_weixin.png" />
+        </Folder>
+        <Project Name="Scene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
