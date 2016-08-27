@@ -150,8 +150,59 @@ function ClientTCP:onStatus(msg)
 
             game.playerInfo = t.playerInfo
             game.uid = game.playerInfo.base.uid
+
+
+
+            local function back( t )
+                print("test-----------back   1")
+                dump(t)
+                print("test-----------back   2")
+            end
+
+            local reqTab = {uid = game.uid}
+            -- game.clientTCP:send("rename",{uid = game.uid, name = "叶"}, back)
+
+            -- game.clientTCP:send("stageStart",{uid = game.uid, stageId = 1093677107}, back)
+
+
+            -- reqTab.stageId = 1093677105
+            -- reqTab.result = 0
+            -- print("req-----------   2")
+            -- dump(reqTab)
+            -- print("req-----------   2")
+            -- game.clientTCP:send("stageAccount",reqTab , back)
+
+
+            -- print("req----------- gardenEnter  2")
+            -- dump(reqTab)
+            -- print("req----------- gardenEnter  2")
+            -- game.clientTCP:send("gardenEnter",reqTab , back)
+
+            -- print("req----------- getNewLand  2")
+            -- reqTab.index = 2
+            -- dump(reqTab)
+            -- print("req----------- getNewLand  2")
+            -- game.clientTCP:send("getNewLand",reqTab , back)
+
+            print("req----------- cutFlowerTime  2")
+            reqTab.index = 1
+            dump(reqTab)
+            print("req----------- cutFlowerTime  2")
+            game.clientTCP:send("cutFlowerTime",reqTab , back)
+
+
+
         end
         game.clientTCP:send("login",{did = game.did}, back)
+
+
+
+
+
+
+
+
+
     else
         print("onStatus-----------4")
     end

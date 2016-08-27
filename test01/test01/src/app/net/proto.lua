@@ -42,7 +42,8 @@ quit 2 {}
 }
 
 .dropTab {
-	item		0 : *item
+	gold 		0 : integer
+	item		1 : *item
 }
 
 login 3 {
@@ -93,6 +94,7 @@ stageAccount 6 {
 	optType			1 : integer		# 操作类型  1、偷 2、帮助
 	optIndex		2 : integer		# 操作植物下标
 	optResult		3 : integer		# 操作结果  （增益值或减益值）
+	optTime			4 : integer		# 操作时间
 }
 
 .flower{
@@ -100,11 +102,6 @@ stageAccount 6 {
 	index 		1 : integer
 	beginTime	2 : integer
 	state 		3 : integer 	# 0、无法操作    1、可以收取    2、可以帮助
-}
-
-.playerGarden{
-	record		0 : *record
-	flower		1 : *flower
 }
 
 .friendState{
@@ -118,9 +115,10 @@ gardenEnter 7 {
 	request {
 	}
 	response {
-		playerGarden	0 : playerGarden
+		playerGarden	0 : *flower
 		friendList		1 : *friendState
-		item 			2 : *item
+		record			2 : *record
+		item 			3 : *item
 	}
 }
 
@@ -129,7 +127,7 @@ friendGarden 8 {
 		uid 			0 : string
 	}
 	response {
-		playerGarden	0 : playerGarden
+		playerGarden	0 : *flower
 	}
 }
 
