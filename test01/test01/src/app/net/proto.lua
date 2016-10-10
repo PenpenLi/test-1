@@ -136,13 +136,13 @@ friendGarden 8 {
 gatherFlower 9 {
 	request {
 		uid		0 : string
-		index 	2 : integer
+		index 	1 : integer
 	}
 	response {
 		result 		0 : integer
 		gold 		1 : integer
 		dropTab		2 : dropTab
-		index       3 : index
+		index       3 : integer
 		diamond	    4 : integer
 		addgold	    5 : integer
 		adddiamond	6 : integer
@@ -152,7 +152,7 @@ gatherFlower 9 {
 stealFlower 10 {
 	request {
 		uid		0 : string
-		index 	2 : integer
+		index 	1 : integer
 	}
 	response {
 		result 		0 : integer
