@@ -42,7 +42,7 @@ quit 2 {}
 }
 
 .dropTab {
-	gold 		0 : integer
+	gold		0 : integer
 	item		1 : *item
 }
 
@@ -102,6 +102,8 @@ stageAccount 6 {
 	index 		1 : integer
 	beginTime	2 : integer
 	state 		3 : integer 	# 0、无法操作    1、可以收取    2、可以帮助
+	helpCount	4 : integer
+	stealCount	5 : integer
 }
 
 .friendState{
@@ -180,6 +182,16 @@ getNewLand 13 {
 	}
 	response {
 		result 		0 : integer
+	}
+}
+
+plantLand 14 {
+	request {
+		index	1 : integer
+		id		2 : integer
+	}
+	response {
+		result		0 : integer
 	}
 }
 
