@@ -19,14 +19,68 @@ function GardenScene:ctor()
     self:addChild(self.Bg)
     self.Bg:setPosition(display.cx, display.cy)
 
-    self:initDate({id = 1000001, name = "我的", lv = "10", isHelp = 0})
+    local reqTab = {}
+    game.clientTCP:send("gardenEnter", reqTab, handler(self, self.gardenEnterBack))
+
+
+
+    -- self:initDate({id = game.uid, name = "我的", lv = "10", isHelp = 0})
     
-    self:createPageView()
-    self:addUI()
+    
 
     self.rate_ = 0.016
     self.time = 0
     self:start_monster_scheduler()
+end
+
+-- function GardenScene:initDate( t )
+--     self.uid = game.uid
+--     self.curUid = t.id or 1000001
+
+--     if game.gardenDate then
+--         self.gardenDate = game.gardenDate
+--     else
+--         self.gardenDate = {
+--             [1] = {id = 1177563185, startTime = 1470628800,work = {},},
+--             [2] = {id = 1177563185, startTime = 1470572400,work = {},},
+--             [3] = {id = 1177563185, startTime = 1470564000,work = {},},
+--             [4] = {id = nil, startTime = nil,work = nil,},
+--         }
+--         game.gardenDate = self.gardenDate
+--     end
+    
+
+-- end
+
+
+function GardenScene:gardenEnterBack(t)
+    print(" GardenScene:gardenEnterBack()  ================1 ")
+    dump(t)
+    print(" GardenScene:gardenEnterBack()  ================2 ")
+
+
+    self.gardenDate = {}
+
+    for i=1,#t.playerGarden do
+        dump(t.playerGarden[i])
+
+        local tempT = {}
+        tempT.id = t.playerGarden[i].id
+        tempT.startTime = t.playerGarden[i].beginTime
+        tempT.state = t.playerGarden[i].state
+        tempT.helpCount = t.playerGarden[i].helpCount
+        tempT.stealCount = t.playerGarden[i].stealCount
+
+        self.gardenDate[t.playerGarden[i].index] = tempT
+    end
+
+
+    self:createPageView()
+    self:addUI()
+
+
+
+
 end
 
 function GardenScene:onExit()
@@ -295,24 +349,6 @@ function GardenScene:haoyouTouchListener(event)
 end
 
 
-function GardenScene:initDate( t )
-    self.uid = 1000001
-    self.curUid = t.id or 1000001
-
-    if game.gardenDate then
-        self.gardenDate = game.gardenDate
-    else
-        self.gardenDate = {
-            [1] = {id = 1177563185, startTime = 1470628800,work = {},},
-            [2] = {id = 1177563185, startTime = 1470572400,work = {},},
-            [3] = {id = 1177563185, startTime = 1470564000,work = {},},
-            [4] = {id = nil, startTime = nil,work = nil,},
-        }
-        game.gardenDate = self.gardenDate
-    end
-    
-
-end
 
 function GardenScene:createPageView()
     if self.huajiaBg and self.pagePv then
@@ -1145,16 +1181,43 @@ function GardenScene:yijianchenshuCbk(event, number, flayer,layer)
     layer:removeFromParent()
 end
 
+function GardenScene:getNewLandBack(t)
+    print(" GardenScene:getNewLandBack()  ================1 ")
+    dump(t)
+    print(" GardenScene:getNewLandBack()  ================2 ")
+
+    if t.result == 0 then
+        table.insert(self.gardenDate, {id = nil, startTime = nil,work = nil,})
+    end
+
+end
+
 function GardenScene:kaikenCbk(event, layer)  
-    
-    table.insert(self.gardenDate, {id = nil, startTime = nil,work = nil,})
+
+    local reqTab = {id = 1177563185, index = #self.gardenDate + 1}
+    game.clientTCP:send("getNewLand", reqTab, handler(self, self.getNewLandBack))
+
 
     layer:removeFromParent()
 end
 
+function GardenScene:plantLandBack(t)
+    print(" GardenScene:plantLandBack()  ================1 ")
+    dump(t)
+    print(" GardenScene:plantLandBack()  ================2 ")
+
+    if t.result == 0 then
+        self.gardenDate[number] = {id = 1177563185, startTime = curtime,work = {},}
+    end
+
+end
+
 function GardenScene:zhongzhiCbk(event, layer, number)  
     local curtime = os.time()
-    self.gardenDate[number] = {id = 1177563185, startTime = curtime,work = {},}
+    
+
+    local reqTab = {id = 1177563185, index = number}
+    game.clientTCP:send("plantLand", reqTab, handler(self, self.plantLandBack))
 
     layer:removeFromParent()
 end

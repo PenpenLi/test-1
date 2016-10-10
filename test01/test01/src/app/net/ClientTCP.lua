@@ -153,13 +153,13 @@ function ClientTCP:onStatus(msg)
 
 
 
-            local function back( t )
-                print("test-----------back   1")
-                dump(t)
-                print("test-----------back   2")
-            end
+            -- local function back( t )
+            --     print("test-----------back   1")
+            --     dump(t)
+            --     print("test-----------back   2")
+            -- end
 
-            local reqTab = {uid = game.uid}
+            -- local reqTab = {uid = game.uid}
             -- game.clientTCP:send("rename",{uid = game.uid, name = "叶"}, back)
 
             -- game.clientTCP:send("stageStart",{uid = game.uid, stageId = 1093677107}, back)
@@ -184,11 +184,11 @@ function ClientTCP:onStatus(msg)
             -- print("req----------- getNewLand  2")
             -- game.clientTCP:send("getNewLand",reqTab , back)
 
-            print("req----------- cutFlowerTime  2")
-            reqTab.index = 1
-            dump(reqTab)
-            print("req----------- cutFlowerTime  2")
-            game.clientTCP:send("cutFlowerTime",reqTab , back)
+            -- print("req----------- cutFlowerTime  2")
+            -- reqTab.index = 1
+            -- dump(reqTab)
+            -- print("req----------- cutFlowerTime  2")
+            -- game.clientTCP:send("cutFlowerTime",reqTab , back)
 
 
 
