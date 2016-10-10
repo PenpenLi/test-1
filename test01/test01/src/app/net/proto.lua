@@ -173,6 +173,7 @@ cutFlowerTime 12 {
 	}
 	response {
 		result 		0 : integer
+		flower	    1 : flower
 	}
 }
 
