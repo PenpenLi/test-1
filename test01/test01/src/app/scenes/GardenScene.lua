@@ -1207,7 +1207,8 @@ function GardenScene:plantLandBack(t)
     print(" GardenScene:plantLandBack()  ================2 ")
 
     if t.result == 0 then
-        self.gardenDate[number] = {id = 1177563185, startTime = curtime,work = {},}
+        local flower = t.flower
+        self.gardenDate[flower.index] = {id = flower.id, startTime = flower.beginTime , index = flower.index, state = flower.state, helpCount = flower.helpCount, stealCount = flower.stealCount, work = {},}
     end
 
 end
