@@ -19,7 +19,7 @@ quit 2 {}
 .playerBase {
 	did			0 : string
 	uid			1 : integer
-	nickname	2 : string
+	name		2 : string
 	gold		3 : integer
 	diamond		4 : integer
 	stamina		5 : integer
