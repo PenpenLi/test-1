@@ -75,6 +75,17 @@ function GardenScene:gardenEnterBack(t)
     end
 
 
+    game.haoyouList = {
+        [1] = {id = game.uid, name = game.playerInfo.base.name or "我的", lv = game.playerInfo.base.lv or "10", isHelp = 0},
+    }
+
+    for i=1,#t.friendList do
+        local tt = t.friendList[i]
+        local tempF = {id = tt.uid, name = tt.name, lv = tt.level, isHelp = tt.type}
+        table.insert(game.haoyouList, tempF)
+    end
+
+
     self:createPageView()
     self:addUI()
 
@@ -194,7 +205,7 @@ function GardenScene:addUI( ... )
                                                 pressed = "res/checkpointUI/check_ui/bt_fanhui.png", 
                                                 disabled = "res/checkpointUI/check_ui/bt_fanhui.png"})
     :align(display.RIGHT_TOP, display.right - 10, display.top - 10)
-    :addTo(self)
+    :addTo(self, 9999)
     self.backButton:onButtonClicked(function(tag)
         self:backBtnCbk()
     end)
@@ -245,14 +256,7 @@ end
 
 function GardenScene:openHaoyou( ... )
 
-    game.haoyouList = {
-        [1] = {id = 1000001, name = "我的", lv = "10", isHelp = 1},
-        [2] = {id = 1000002, name = "诸葛亮", lv = "5", isHelp = 1},
-        [3] = {id = 1000004, name = "诸葛亮", lv = "5", isHelp = 1},
-        [4] = {id = 1000005, name = "诸葛亮", lv = "5", isHelp = 1},
-        [5] = {id = 1000006, name = "诸葛亮", lv = "5", isHelp = 1},
-        [6] = {id = 1000007, name = "诸葛亮", lv = "5", isHelp = 1},
-    }
+    
     
     local sprite = display.newScale9Sprite("res/gardenUI/bm_yijidi.png", 50, 50, cc.size(310, 450))
     sprite:setPosition(display.left - 10 - 320, display.bottom + 160)
@@ -338,13 +342,43 @@ function GardenScene:haoyouTouchListener(event)
         
         print("clicked "..event.itemPos)
 
-        self:initDate( game.haoyouList[event.itemPos] )
+        -- self:initDate( game.haoyouList[event.itemPos] )
+        local t = game.haoyouList[event.itemPos]
 
-        self:createPageView()
+        local reqTab = {uid = t.id}
+        game.clientTCP:send("friendGarden", reqTab, handler(self, self.friendGardenBack))
+
+        self.curfriendId = t.id
         
     end
 
     
+
+end
+
+function GardenScene:friendGardenBack(t)
+    print(" GardenScene:friendGardenBack()  ================1 ")
+    dump(t)
+    print(" GardenScene:friendGardenBack()  ================2 ")
+
+    self.curUid = self.curfriendId 
+
+    self.gardenDate = {}
+
+    for i=1,#t.playerGarden do
+        dump(t.playerGarden[i])
+
+        local tempT = {}
+        tempT.id = t.playerGarden[i].id
+        tempT.startTime = t.playerGarden[i].beginTime
+        tempT.state = t.playerGarden[i].state
+        tempT.helpCount = t.playerGarden[i].helpCount
+        tempT.stealCount = t.playerGarden[i].stealCount
+
+        self.gardenDate[t.playerGarden[i].index] = tempT
+    end
+
+    self:createPageView()
 
 end
 
@@ -550,9 +584,8 @@ function GardenScene:huaOnTouch(img, event, layer)
                                     -- return self:huaOnTouch(img, event, layer)
                                     print("bt_wanchengbt_wanchengbt_wanchengbt_wancheng "..event.name)
                                     if event.name == "ended" then
-                                        local reqTab = {id = id, index = number}
-                                        game.clientTCP:send("gatherFlower", reqTab, handler(self, self.gatherFlowerBack))
-                                        -- self:shouhuoLayer(number, layer)
+                                        
+                                        self:shouhuoLayer(number, layer)
                                     end
                                     return true
                                 end)
@@ -599,7 +632,9 @@ function GardenScene:huaOnTouch(img, event, layer)
                             end
                         else
                             --弹收获框
-                            self:caiZhaiLayer(number)
+                            -- self:caiZhaiLayer(number)
+                            local reqTab = {id = id, index = number}
+                            game.clientTCP:send("gatherFlower", reqTab, handler(self, self.gatherFlowerBack))
                         end
                     end
                     
@@ -624,11 +659,12 @@ function GardenScene:gatherFlowerBack(t)
     print(" GardenScene:gatherFlowerBack()  ================2 ")
 
     if t.result == 0 then
-        table.insert(self.gardenDate, {id = nil, startTime = nil,work = nil,})
+        self.gardenDate[t.index] = {id = nil, startTime = nil,work = nil,}
+        self:caiZhaiLayer(t.index)
     end
 
 
-    
+
 end
 
 function GardenScene:shouhuoLayer(number, flayer)  
@@ -1059,7 +1095,7 @@ function GardenScene:caiZhaiLayer(number)
     self:addChild(layer)
     layer:addNodeEventListener(cc.NODE_TOUCH_EVENT, function(event)
         if event.name == "ended" then
-            self.gardenDate[number] = {id = nil, startTime = nil,work = nil,}
+            -- self.gardenDate[number] = {id = nil, startTime = nil,work = nil,}
             self.shouhuoLabel = nil
             layer:removeFromParent()
         end
