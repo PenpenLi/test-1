@@ -550,7 +550,9 @@ function GardenScene:huaOnTouch(img, event, layer)
                                     -- return self:huaOnTouch(img, event, layer)
                                     print("bt_wanchengbt_wanchengbt_wanchengbt_wancheng "..event.name)
                                     if event.name == "ended" then
-                                        self:shouhuoLayer(number, layer)
+                                        local reqTab = {id = id, index = number}
+                                        game.clientTCP:send("gatherFlower", reqTab, handler(self, self.gatherFlowerBack))
+                                        -- self:shouhuoLayer(number, layer)
                                     end
                                     return true
                                 end)
@@ -614,6 +616,19 @@ function GardenScene:huaOnTouch(img, event, layer)
 
     end
     return true
+end
+
+function GardenScene:gatherFlowerBack(t)
+    print(" GardenScene:gatherFlowerBack()  ================1 ")
+    dump(t)
+    print(" GardenScene:gatherFlowerBack()  ================2 ")
+
+    if t.result == 0 then
+        table.insert(self.gardenDate, {id = nil, startTime = nil,work = nil,})
+    end
+
+
+    
 end
 
 function GardenScene:shouhuoLayer(number, flayer)  
@@ -1165,10 +1180,22 @@ function GardenScene:rightBtnCbk()
 
 end
 
+function GardenScene:cutFlowerTimeBack(t)
+    print(" GardenScene:cutFlowerTimeBack()  ================1 ")
+    dump(t)
+    print(" GardenScene:cutFlowerTimeBack()  ================2 ")
+
+    if t.result == 0 then
+        local flower = t.flower
+        self.gardenDate[flower.index] = {id = flower.id, startTime = flower.beginTime , index = flower.index, state = flower.state, helpCount = flower.helpCount, stealCount = flower.stealCount, work = {},}
+    end
+
+end
+
 function GardenScene:yijianchenshuCbk(event, number, flayer,layer)  
 
-    local time = self.gardenDate[number].startTime - 1000000
-    self.gardenDate[number] = {id = 1177563185, startTime = time,work = {},}
+    local reqTab = {index = number}
+    game.clientTCP:send("cutFlowerTime", reqTab, handler(self, self.cutFlowerTimeBack))
 
     for i=101,103 do
         local node = flayer:getChildByTag(i)
