@@ -142,6 +142,10 @@ gatherFlower 9 {
 		result 		0 : integer
 		gold 		1 : integer
 		dropTab		2 : dropTab
+		index       3 : index
+		diamond	    4 : integer
+		addgold	    5 : integer
+		adddiamond	6 : integer
 	}
 }
 
