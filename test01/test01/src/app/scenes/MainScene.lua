@@ -102,7 +102,7 @@ function MainScene:initUI()
             end
         })
         editBox2:setReturnType(cc.KEYBOARD_RETURNTYPE_SEND)
-        editBox2:setPosition(700,100)
+        editBox2:setPosition(800,30)
         self:addChild(editBox2)
     ------------
 
@@ -240,6 +240,8 @@ function MainScene:initUI()
     })
     :align(display.BOTTOM_LEFT, 110, display.top - 35)
     :addTo(self)
+    self.namelabel = namelabel
+    self.namelabel:setString(game.playerInfo.base.name)
 
     local explabel = cc.ui.UILabel.new({
         UILabelType = 2,
@@ -290,8 +292,9 @@ function MainScene:renameBack(t)
     dump(t)
     print(" GardenScene:renameBack()  ================2 ")
 
+    self.namelabel:setString(t.name)
+    game.playerInfo.base.name = t.name
 
-    
 end
 
 function MainScene:createProgress()
