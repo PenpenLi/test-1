@@ -192,6 +192,7 @@ plantLand 14 {
 	}
 	response {
 		result		0 : integer
+		flower	    1 : flower
 	}
 }
 
