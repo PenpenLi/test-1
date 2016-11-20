@@ -1,0 +1,20 @@
+
+SD236.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+xueye
+  rotate: false
+  xy: 2, 71
+  size: 213, 146
+  orig: 213, 146
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 2, 2
+  size: 75, 67
+  orig: 75, 67
+  offset: 0, 0
+  index: -1

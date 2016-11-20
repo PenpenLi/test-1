@@ -1,0 +1,62 @@
+
+D005.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baoshi
+  rotate: false
+  xy: 195, 158
+  size: 39, 39
+  orig: 39, 39
+  offset: 0, 0
+  index: -1
+houfa
+  rotate: false
+  xy: 115, 26
+  size: 68, 73
+  orig: 68, 73
+  offset: 0, 0
+  index: -1
+huoyan
+  rotate: true
+  xy: 115, 2
+  size: 22, 42
+  orig: 22, 42
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: true
+  xy: 123, 101
+  size: 146, 70
+  orig: 146, 70
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 121
+  size: 119, 126
+  orig: 119, 126
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: true
+  xy: 195, 112
+  size: 44, 33
+  orig: 44, 33
+  offset: 0, 0
+  index: -1
+zhang
+  rotate: false
+  xy: 2, 3
+  size: 111, 116
+  orig: 111, 116
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 195, 199
+  size: 45, 48
+  orig: 45, 48
+  offset: 0, 0
+  index: -1

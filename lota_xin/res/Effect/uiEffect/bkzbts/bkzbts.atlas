@@ -1,0 +1,13 @@
+
+bkzbts.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bkzbts_0000
+  rotate: false
+  xy: 2, 2
+  size: 141, 141
+  orig: 141, 141
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,48 @@
+
+SL005.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+diguang
+  rotate: false
+  xy: 2, 2
+  size: 82, 50
+  orig: 82, 50
+  offset: 0, 0
+  index: -1
+guangzhu
+  rotate: true
+  xy: 2, 54
+  size: 147, 251
+  orig: 147, 251
+  offset: 0, 0
+  index: -1
+jiutong
+  rotate: false
+  xy: 261, 397
+  size: 138, 104
+  orig: 138, 104
+  offset: 0, 0
+  index: -1
+quanguang
+  rotate: false
+  xy: 261, 321
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1
+shicheng
+  rotate: false
+  xy: 401, 432
+  size: 73, 69
+  orig: 73, 69
+  offset: 0, 0
+  index: -1
+yan
+  rotate: false
+  xy: 2, 203
+  size: 257, 298
+  orig: 257, 298
+  offset: 0, 0
+  index: -1

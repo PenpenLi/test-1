@@ -1,0 +1,34 @@
+
+SL391.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jianxue
+  rotate: false
+  xy: 257, 286
+  size: 238, 209
+  orig: 238, 209
+  offset: 0, 0
+  index: -1
+xuanzhuan1
+  rotate: false
+  xy: 194, 36
+  size: 181, 229
+  orig: 181, 229
+  offset: 0, 0
+  index: -1
+xuanzhuan2
+  rotate: false
+  xy: 2, 267
+  size: 253, 228
+  orig: 253, 228
+  offset: 0, 0
+  index: -1
+xueci
+  rotate: true
+  xy: 2, 3
+  size: 262, 190
+  orig: 262, 190
+  offset: 0, 0
+  index: -1

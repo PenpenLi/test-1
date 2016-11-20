@@ -1,0 +1,104 @@
+
+SL151.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baozha
+  rotate: false
+  xy: 269, 388
+  size: 128, 122
+  orig: 128, 122
+  offset: 0, 0
+  index: -1
+daodan
+  rotate: false
+  xy: 2, 388
+  size: 265, 122
+  orig: 265, 122
+  offset: 0, 0
+  index: -1
+quanguang
+  rotate: false
+  xy: 129, 237
+  size: 149, 149
+  orig: 149, 149
+  offset: 0, 0
+  index: -1
+tengwu
+  rotate: false
+  xy: 2, 203
+  size: 125, 183
+  orig: 125, 183
+  offset: 0, 0
+  index: -1
+yan1
+  rotate: false
+  xy: 399, 413
+  size: 67, 36
+  orig: 67, 36
+  offset: 0, 0
+  index: -1
+yan10
+  rotate: false
+  xy: 2, 83
+  size: 23, 11
+  orig: 23, 11
+  offset: 0, 0
+  index: -1
+yan2
+  rotate: false
+  xy: 2, 96
+  size: 94, 39
+  orig: 94, 39
+  offset: 0, 0
+  index: -1
+yan3
+  rotate: true
+  xy: 488, 469
+  size: 41, 22
+  orig: 41, 22
+  offset: 0, 0
+  index: -1
+yan4
+  rotate: false
+  xy: 2, 137
+  size: 100, 64
+  orig: 100, 64
+  offset: 0, 0
+  index: -1
+yan5
+  rotate: false
+  xy: 280, 343
+  size: 107, 43
+  orig: 107, 43
+  offset: 0, 0
+  index: -1
+yan6
+  rotate: false
+  xy: 280, 298
+  size: 78, 43
+  orig: 78, 43
+  offset: 0, 0
+  index: -1
+yan7
+  rotate: false
+  xy: 399, 451
+  size: 87, 59
+  orig: 87, 59
+  offset: 0, 0
+  index: -1
+yan8
+  rotate: false
+  xy: 129, 203
+  size: 55, 32
+  orig: 55, 32
+  offset: 0, 0
+  index: -1
+yan9
+  rotate: false
+  xy: 104, 191
+  size: 31, 10
+  orig: 31, 10
+  offset: 0, 0
+  index: -1

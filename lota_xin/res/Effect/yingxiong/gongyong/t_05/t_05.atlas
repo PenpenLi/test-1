@@ -1,0 +1,34 @@
+
+t_05.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baozhakulou
+  rotate: false
+  xy: 130, 144
+  size: 65, 59
+  orig: 65, 59
+  offset: 0, 0
+  index: -1
+baozhayanwu
+  rotate: false
+  xy: 2, 89
+  size: 126, 114
+  orig: 126, 114
+  offset: 0, 0
+  index: -1
+toushekulou
+  rotate: false
+  xy: 2, 2
+  size: 45, 42
+  orig: 45, 42
+  offset: 0, 0
+  index: -1
+tousheyanwu
+  rotate: false
+  xy: 2, 46
+  size: 87, 41
+  orig: 87, 41
+  offset: 0, 0
+  index: -1

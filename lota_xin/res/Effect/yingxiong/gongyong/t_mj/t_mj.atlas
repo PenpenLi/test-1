@@ -1,0 +1,41 @@
+
+t_mj.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+1
+  rotate: false
+  xy: 2, 70
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+2
+  rotate: false
+  xy: 199, 271
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+3
+  rotate: false
+  xy: 2, 2
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+4
+  rotate: false
+  xy: 70, 70
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+huan
+  rotate: false
+  xy: 2, 138
+  size: 195, 199
+  orig: 195, 199
+  offset: 0, 0
+  index: -1

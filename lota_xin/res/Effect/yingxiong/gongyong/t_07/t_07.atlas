@@ -1,0 +1,20 @@
+
+t_07.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baiquan
+  rotate: false
+  xy: 173, 89
+  size: 82, 398
+  orig: 82, 398
+  offset: 0, 0
+  index: -1
+ci
+  rotate: false
+  xy: 2, 2
+  size: 169, 485
+  orig: 169, 485
+  offset: 0, 0
+  index: -1

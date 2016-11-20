@@ -1,0 +1,76 @@
+
+D064.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+chibangyou
+  rotate: false
+  xy: 2, 41
+  size: 75, 95
+  orig: 75, 95
+  offset: 0, 0
+  index: -1
+chibangzuo
+  rotate: false
+  xy: 142, 293
+  size: 49, 72
+  orig: 49, 72
+  offset: 0, 0
+  index: -1
+daoguang
+  rotate: false
+  xy: 2, 283
+  size: 138, 191
+  orig: 138, 191
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 142, 367
+  size: 75, 107
+  orig: 75, 107
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 138
+  size: 94, 143
+  orig: 94, 143
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: false
+  xy: 219, 419
+  size: 90, 55
+  orig: 90, 55
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 2, 2
+  size: 19, 37
+  orig: 19, 37
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 79, 118
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 219, 388
+  size: 20, 29
+  orig: 20, 29
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 98, 248
+  size: 29, 33
+  orig: 29, 33
+  offset: 0, 0
+  index: -1

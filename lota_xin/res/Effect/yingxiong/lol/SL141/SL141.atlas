@@ -1,0 +1,13 @@
+
+SL141.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+daoguang
+  rotate: false
+  xy: 2, 92
+  size: 472, 382
+  orig: 472, 382
+  offset: 0, 0
+  index: -1

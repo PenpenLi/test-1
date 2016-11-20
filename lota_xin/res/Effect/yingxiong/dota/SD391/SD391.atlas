@@ -1,0 +1,13 @@
+
+SD391.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+youling
+  rotate: false
+  xy: 2, 2
+  size: 96, 112
+  orig: 96, 112
+  offset: 0, 0
+  index: -1

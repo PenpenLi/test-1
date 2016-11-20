@@ -1,0 +1,20 @@
+
+SL180.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baozha
+  rotate: false
+  xy: 2, 39
+  size: 83, 85
+  orig: 83, 85
+  offset: 0, 0
+  index: -1
+guang
+  rotate: false
+  xy: 2, 2
+  size: 58, 35
+  orig: 58, 35
+  offset: 0, 0
+  index: -1

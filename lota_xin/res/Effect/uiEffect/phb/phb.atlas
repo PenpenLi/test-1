@@ -1,0 +1,97 @@
+
+phb.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bt_paihang
+  rotate: true
+  xy: 529, 663
+  size: 122, 105
+  orig: 122, 105
+  offset: 0, 0
+  index: -1
+phb_100
+  rotate: true
+  xy: 180, 394
+  size: 188, 172
+  orig: 188, 172
+  offset: 0, 0
+  index: -1
+phb_101
+  rotate: true
+  xy: 2, 392
+  size: 190, 176
+  orig: 190, 176
+  offset: 0, 0
+  index: -1
+phb_102
+  rotate: true
+  xy: 2, 584
+  size: 191, 182
+  orig: 191, 182
+  offset: 0, 0
+  index: -1
+phb_103
+  rotate: false
+  xy: 2, 777
+  size: 190, 185
+  orig: 190, 185
+  offset: 0, 0
+  index: -1
+phb_104
+  rotate: true
+  xy: 2, 7
+  size: 190, 172
+  orig: 190, 172
+  offset: 0, 0
+  index: -1
+phb_105
+  rotate: false
+  xy: 772, 790
+  size: 190, 172
+  orig: 190, 172
+  offset: 0, 0
+  index: -1
+phb_106
+  rotate: true
+  xy: 355, 595
+  size: 188, 172
+  orig: 188, 172
+  offset: 0, 0
+  index: -1
+phb_107
+  rotate: false
+  xy: 387, 787
+  size: 190, 175
+  orig: 190, 175
+  offset: 0, 0
+  index: -1
+phb_108
+  rotate: false
+  xy: 194, 785
+  size: 191, 177
+  orig: 191, 177
+  offset: 0, 0
+  index: -1
+phb_109
+  rotate: true
+  xy: 2, 199
+  size: 191, 174
+  orig: 191, 174
+  offset: 0, 0
+  index: -1
+phb_110
+  rotate: true
+  xy: 186, 584
+  size: 191, 167
+  orig: 191, 167
+  offset: 0, 0
+  index: -1
+phb_111
+  rotate: false
+  xy: 579, 790
+  size: 191, 172
+  orig: 191, 172
+  offset: 0, 0
+  index: -1

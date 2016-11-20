@@ -1,0 +1,90 @@
+
+D081.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+daoguang
+  rotate: false
+  xy: 2, 262
+  size: 138, 191
+  orig: 138, 191
+  offset: 0, 0
+  index: -1
+houfa
+  rotate: false
+  xy: 244, 390
+  size: 14, 63
+  orig: 14, 63
+  offset: 0, 0
+  index: -1
+langtou
+  rotate: true
+  xy: 2, 107
+  size: 153, 87
+  orig: 153, 87
+  offset: 0, 0
+  index: -1
+pifeng
+  rotate: false
+  xy: 142, 320
+  size: 62, 41
+  orig: 62, 41
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: true
+  xy: 91, 194
+  size: 66, 38
+  orig: 66, 38
+  offset: 0, 0
+  index: -1
+shu
+  rotate: false
+  xy: 2, 2
+  size: 40, 34
+  orig: 40, 34
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 38
+  size: 76, 67
+  orig: 76, 67
+  offset: 0, 0
+  index: -1
+toufa
+  rotate: false
+  xy: 142, 363
+  size: 100, 90
+  orig: 100, 90
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 142, 281
+  size: 27, 37
+  orig: 27, 37
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 244, 371
+  size: 14, 17
+  orig: 14, 17
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 91, 155
+  size: 31, 37
+  orig: 31, 37
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 206, 343
+  size: 19, 18
+  orig: 19, 18
+  offset: 0, 0
+  index: -1

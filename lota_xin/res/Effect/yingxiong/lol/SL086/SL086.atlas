@@ -1,0 +1,27 @@
+
+SL086.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baozha
+  rotate: true
+  xy: 151, 128
+  size: 116, 93
+  orig: 116, 93
+  offset: 0, 0
+  index: -1
+bian
+  rotate: false
+  xy: 2, 139
+  size: 147, 105
+  orig: 147, 105
+  offset: 0, 0
+  index: -1
+huoqiu
+  rotate: false
+  xy: 2, 56
+  size: 138, 81
+  orig: 138, 81
+  offset: 0, 0
+  index: -1

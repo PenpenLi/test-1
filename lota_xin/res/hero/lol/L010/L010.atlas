@@ -1,0 +1,90 @@
+
+L010.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+fajia
+  rotate: false
+  xy: 361, 452
+  size: 111, 37
+  orig: 111, 37
+  offset: 0, 0
+  index: -1
+houfa
+  rotate: false
+  xy: 181, 310
+  size: 178, 179
+  orig: 178, 179
+  offset: 0, 0
+  index: -1
+lian
+  rotate: false
+  xy: 2, 160
+  size: 113, 113
+  orig: 113, 113
+  offset: 0, 0
+  index: -1
+qunhou
+  rotate: false
+  xy: 361, 413
+  size: 57, 37
+  orig: 57, 37
+  offset: 0, 0
+  index: -1
+qunzi
+  rotate: false
+  xy: 2, 57
+  size: 53, 41
+  orig: 53, 41
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 181, 279
+  size: 50, 29
+  orig: 50, 29
+  offset: 0, 0
+  index: -1
+toufa
+  rotate: false
+  xy: 2, 275
+  size: 177, 214
+  orig: 177, 214
+  offset: 0, 0
+  index: -1
+wuguan
+  rotate: false
+  xy: 2, 100
+  size: 78, 58
+  orig: 78, 58
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 82, 104
+  size: 19, 54
+  orig: 19, 54
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: true
+  xy: 117, 210
+  size: 63, 47
+  orig: 63, 47
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 361, 356
+  size: 17, 55
+  orig: 17, 55
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 474, 476
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1

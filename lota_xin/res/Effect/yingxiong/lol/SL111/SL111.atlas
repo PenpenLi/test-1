@@ -1,0 +1,13 @@
+
+SL111.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+daoguang
+  rotate: false
+  xy: 2, 2
+  size: 165, 229
+  orig: 165, 229
+  offset: 0, 0
+  index: -1

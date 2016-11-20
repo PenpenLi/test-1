@@ -1,0 +1,34 @@
+
+t_08.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dianliu
+  rotate: false
+  xy: 2, 140
+  size: 112, 110
+  orig: 112, 110
+  offset: 0, 0
+  index: -1
+diantoushe
+  rotate: true
+  xy: 2, 2
+  size: 136, 61
+  orig: 136, 61
+  offset: 0, 0
+  index: -1
+waihu
+  rotate: true
+  xy: 65, 68
+  size: 70, 69
+  orig: 70, 69
+  offset: 0, 0
+  index: -1
+waiquan
+  rotate: false
+  xy: 116, 163
+  size: 88, 87
+  orig: 88, 87
+  offset: 0, 0
+  index: -1

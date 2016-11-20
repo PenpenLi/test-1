@@ -1,0 +1,34 @@
+
+SD350.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+weiba
+  rotate: false
+  xy: 2, 164
+  size: 199, 37
+  orig: 199, 37
+  offset: 0, 0
+  index: -1
+weihuo
+  rotate: false
+  xy: 2, 33
+  size: 65, 35
+  orig: 65, 35
+  offset: 0, 0
+  index: -1
+xuanzhuanweiba
+  rotate: false
+  xy: 2, 118
+  size: 135, 44
+  orig: 135, 44
+  offset: 0, 0
+  index: -1
+zidan
+  rotate: false
+  xy: 2, 70
+  size: 67, 46
+  orig: 67, 46
+  offset: 0, 0
+  index: -1

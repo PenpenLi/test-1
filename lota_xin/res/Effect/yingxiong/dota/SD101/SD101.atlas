@@ -1,0 +1,41 @@
+
+SD101.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baoqi
+  rotate: true
+  xy: 2, 2
+  size: 147, 196
+  orig: 147, 196
+  offset: 0, 0
+  index: -1
+dian
+  rotate: false
+  xy: 2, 293
+  size: 232, 211
+  orig: 232, 211
+  offset: 0, 0
+  index: -1
+guangzhu
+  rotate: true
+  xy: 2, 151
+  size: 140, 299
+  orig: 140, 299
+  offset: 0, 0
+  index: -1
+huan
+  rotate: false
+  xy: 236, 298
+  size: 202, 106
+  orig: 202, 106
+  offset: 0, 0
+  index: -1
+pudi
+  rotate: false
+  xy: 236, 406
+  size: 244, 98
+  orig: 244, 98
+  offset: 0, 0
+  index: -1

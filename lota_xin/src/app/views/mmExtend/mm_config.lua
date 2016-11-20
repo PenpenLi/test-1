@@ -1,0 +1,1 @@
+LOTA_CUR_VERSION = "0.0.04.32"

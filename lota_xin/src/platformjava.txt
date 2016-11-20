@@ -1,0 +1,2 @@
+PLATFORMVER = '01' 
+PLATFORM = 'dhsdk'

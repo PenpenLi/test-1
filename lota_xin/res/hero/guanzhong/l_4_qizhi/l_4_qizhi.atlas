@@ -1,0 +1,167 @@
+
+l_4_qizhi.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+icon_jin_shuzi0
+  rotate: false
+  xy: 758, 623
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi1
+  rotate: false
+  xy: 2, 29
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi2
+  rotate: false
+  xy: 846, 765
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi3
+  rotate: false
+  xy: 929, 935
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi4
+  rotate: false
+  xy: 758, 559
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi5
+  rotate: false
+  xy: 57, 29
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi6
+  rotate: false
+  xy: 846, 701
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi7
+  rotate: false
+  xy: 929, 871
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi8
+  rotate: false
+  xy: 758, 495
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+icon_jin_shuzi9
+  rotate: false
+  xy: 112, 29
+  size: 53, 62
+  orig: 53, 62
+  offset: 0, 0
+  index: -1
+l_4_shenti
+  rotate: false
+  xy: 846, 829
+  size: 81, 168
+  orig: 81, 168
+  offset: 0, 0
+  index: -1
+l_4_youshou
+  rotate: false
+  xy: 2, 2
+  size: 27, 25
+  orig: 27, 25
+  offset: 0, 0
+  index: -1
+l_qigan_1
+  rotate: false
+  xy: 2, 697
+  size: 220, 300
+  orig: 220, 300
+  offset: 0, 0
+  index: -1
+l_qigan_2
+  rotate: false
+  xy: 2, 395
+  size: 220, 300
+  orig: 220, 300
+  offset: 0, 0
+  index: -1
+l_qigan_3
+  rotate: false
+  xy: 224, 697
+  size: 220, 300
+  orig: 220, 300
+  offset: 0, 0
+  index: -1
+l_qigan_4
+  rotate: false
+  xy: 2, 93
+  size: 220, 300
+  orig: 220, 300
+  offset: 0, 0
+  index: -1
+l_qigan_5
+  rotate: false
+  xy: 224, 395
+  size: 220, 300
+  orig: 220, 300
+  offset: 0, 0
+  index: -1
+l_qimian_1
+  rotate: false
+  xy: 446, 687
+  size: 198, 310
+  orig: 198, 310
+  offset: 0, 0
+  index: -1
+l_qimian_2
+  rotate: false
+  xy: 646, 687
+  size: 198, 310
+  orig: 198, 310
+  offset: 0, 0
+  index: -1
+l_qimian_3
+  rotate: true
+  xy: 446, 487
+  size: 198, 310
+  orig: 198, 310
+  offset: 0, 0
+  index: -1
+l_qimian_4
+  rotate: false
+  xy: 224, 83
+  size: 198, 310
+  orig: 198, 310
+  offset: 0, 0
+  index: -1
+l_qimian_5
+  rotate: true
+  xy: 446, 287
+  size: 198, 310
+  orig: 198, 310
+  offset: 0, 0
+  index: -1
+tibu
+  rotate: true
+  xy: 813, 637
+  size: 48, 25
+  orig: 48, 25
+  offset: 0, 0
+  index: -1

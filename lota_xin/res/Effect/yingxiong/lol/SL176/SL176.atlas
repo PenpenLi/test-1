@@ -1,0 +1,13 @@
+
+SL176.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+guangbo
+  rotate: false
+  xy: 2, 234
+  size: 378, 146
+  orig: 378, 146
+  offset: 0, 0
+  index: -1

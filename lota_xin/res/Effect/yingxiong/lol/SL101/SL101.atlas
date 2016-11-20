@@ -1,0 +1,41 @@
+
+SL101.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+huan
+  rotate: false
+  xy: 128, 322
+  size: 277, 36
+  orig: 277, 36
+  offset: 0, 0
+  index: -1
+jianqi
+  rotate: true
+  xy: 429, 380
+  size: 110, 61
+  orig: 110, 61
+  offset: 0, 0
+  index: -1
+liuxingza
+  rotate: false
+  xy: 2, 23
+  size: 124, 467
+  orig: 124, 467
+  offset: 0, 0
+  index: -1
+suibing
+  rotate: false
+  xy: 128, 360
+  size: 299, 130
+  orig: 299, 130
+  offset: 0, 0
+  index: -1
+yingzi
+  rotate: false
+  xy: 128, 205
+  size: 172, 115
+  orig: 172, 115
+  offset: 0, 0
+  index: -1

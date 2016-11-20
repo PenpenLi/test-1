@@ -1,0 +1,27 @@
+
+SL076.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baozha1
+  rotate: false
+  xy: 2, 60
+  size: 298, 200
+  orig: 298, 200
+  offset: 0, 0
+  index: -1
+baozha2
+  rotate: false
+  xy: 2, 262
+  size: 328, 232
+  orig: 328, 232
+  offset: 0, 0
+  index: -1
+feipan
+  rotate: true
+  xy: 332, 137
+  size: 357, 162
+  orig: 357, 162
+  offset: 0, 0
+  index: -1

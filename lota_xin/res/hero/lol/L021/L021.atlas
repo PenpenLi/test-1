@@ -1,0 +1,69 @@
+
+L021.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+shenti
+  rotate: false
+  xy: 2, 4
+  size: 79, 53
+  orig: 79, 53
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 128, 179
+  size: 80, 75
+  orig: 80, 75
+  offset: 0, 0
+  index: -1
+weiba
+  rotate: false
+  xy: 2, 148
+  size: 124, 106
+  orig: 124, 106
+  offset: 0, 0
+  index: -1
+youchigen
+  rotate: false
+  xy: 143, 118
+  size: 56, 59
+  orig: 56, 59
+  offset: 0, 0
+  index: -1
+youchijian
+  rotate: false
+  xy: 2, 59
+  size: 85, 87
+  orig: 85, 87
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 210, 206
+  size: 19, 12
+  orig: 19, 12
+  offset: 0, 0
+  index: -1
+zuochigen
+  rotate: true
+  xy: 210, 220
+  size: 34, 44
+  orig: 34, 44
+  offset: 0, 0
+  index: -1
+zuochijian
+  rotate: false
+  xy: 89, 69
+  size: 52, 77
+  orig: 52, 77
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: true
+  xy: 128, 158
+  size: 19, 11
+  orig: 19, 11
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,55 @@
+
+sl.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+g_a
+  rotate: false
+  xy: 2, 224
+  size: 238, 183
+  orig: 238, 183
+  offset: 0, 0
+  index: -1
+g_b30
+  rotate: false
+  xy: 2, 57
+  size: 59, 57
+  orig: 59, 57
+  offset: 0, 0
+  index: -1
+guang_0
+  rotate: false
+  xy: 2, 116
+  size: 105, 106
+  orig: 105, 106
+  offset: 0, 0
+  index: -1
+jm_shengli1
+  rotate: false
+  xy: 242, 340
+  size: 132, 67
+  orig: 132, 67
+  offset: 0, 0
+  index: -1
+star_0
+  rotate: false
+  xy: 376, 378
+  size: 31, 29
+  orig: 31, 29
+  offset: 0, 0
+  index: -1
+x_a
+  rotate: false
+  xy: 109, 209
+  size: 71, 13
+  orig: 71, 13
+  offset: 0, 0
+  index: -1
+x_b
+  rotate: false
+  xy: 242, 325
+  size: 71, 13
+  orig: 71, 13
+  offset: 0, 0
+  index: -1

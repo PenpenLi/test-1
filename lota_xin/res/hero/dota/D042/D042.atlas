@@ -1,0 +1,55 @@
+
+D042.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+shenti
+  rotate: false
+  xy: 134, 345
+  size: 73, 71
+  orig: 73, 71
+  offset: 0, 0
+  index: -1
+tou
+  rotate: true
+  xy: 2, 45
+  size: 133, 102
+  orig: 133, 102
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 106, 129
+  size: 20, 49
+  orig: 20, 49
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 134, 307
+  size: 53, 36
+  orig: 53, 36
+  offset: 0, 0
+  index: -1
+zhua
+  rotate: false
+  xy: 2, 180
+  size: 130, 236
+  orig: 130, 236
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 209, 383
+  size: 53, 33
+  orig: 53, 33
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 2, 2
+  size: 55, 41
+  orig: 55, 41
+  offset: 0, 0
+  index: -1

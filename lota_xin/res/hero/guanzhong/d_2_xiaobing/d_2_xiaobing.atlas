@@ -1,0 +1,27 @@
+
+d_2_xiaobing.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+d_2_shenti
+  rotate: false
+  xy: 2, 30
+  size: 114, 135
+  orig: 114, 135
+  offset: 0, 0
+  index: -1
+d_2_youshou
+  rotate: false
+  xy: 2, 2
+  size: 20, 26
+  orig: 20, 26
+  offset: 0, 0
+  index: -1
+d_2_zuoshou
+  rotate: false
+  xy: 118, 143
+  size: 19, 22
+  orig: 19, 22
+  offset: 0, 0
+  index: -1

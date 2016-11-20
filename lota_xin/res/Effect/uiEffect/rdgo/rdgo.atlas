@@ -1,0 +1,76 @@
+
+rdgo.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+cs
+  rotate: false
+  xy: 480, 818
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+go_01
+  rotate: false
+  xy: 2, 84
+  size: 234, 144
+  orig: 234, 144
+  offset: 0, 0
+  index: -1
+gt_01
+  rotate: false
+  xy: 2, 821
+  size: 487, 90
+  orig: 487, 90
+  offset: 0, 0
+  index: -1
+icon_go
+  rotate: false
+  xy: 2, 230
+  size: 235, 144
+  orig: 235, 144
+  offset: 0, 0
+  index: -1
+icon_ready
+  rotate: false
+  xy: 2, 454
+  size: 368, 134
+  orig: 368, 134
+  offset: 0, 0
+  index: -1
+rdgo_011
+  rotate: false
+  xy: 2, 727
+  size: 476, 92
+  orig: 476, 92
+  offset: 0, 0
+  index: -1
+rdgo_012
+  rotate: false
+  xy: 491, 827
+  size: 420, 84
+  orig: 420, 84
+  offset: 0, 0
+  index: -1
+rdgo_013
+  rotate: false
+  xy: 2, 376
+  size: 329, 76
+  orig: 329, 76
+  offset: 0, 0
+  index: -1
+rdgo_014
+  rotate: false
+  xy: 2, 58
+  size: 149, 24
+  orig: 149, 24
+  offset: 0, 0
+  index: -1
+ready_001
+  rotate: false
+  xy: 2, 590
+  size: 370, 135
+  orig: 370, 135
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,55 @@
+
+SD151.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+diaoxiang
+  rotate: false
+  xy: 2, 42
+  size: 58, 83
+  orig: 58, 83
+  offset: 0, 0
+  index: -1
+hui1
+  rotate: false
+  xy: 28, 22
+  size: 32, 18
+  orig: 32, 18
+  offset: 0, 0
+  index: -1
+hui2
+  rotate: false
+  xy: 92, 59
+  size: 29, 18
+  orig: 29, 18
+  offset: 0, 0
+  index: -1
+hui3
+  rotate: false
+  xy: 62, 51
+  size: 28, 26
+  orig: 28, 26
+  offset: 0, 0
+  index: -1
+hui4
+  rotate: false
+  xy: 62, 25
+  size: 26, 24
+  orig: 26, 24
+  offset: 0, 0
+  index: -1
+hui5
+  rotate: false
+  xy: 62, 79
+  size: 63, 46
+  orig: 63, 46
+  offset: 0, 0
+  index: -1
+hui6
+  rotate: false
+  xy: 2, 8
+  size: 24, 32
+  orig: 24, 32
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,27 @@
+
+yd.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bt_sz
+  rotate: false
+  xy: 223, 318
+  size: 62, 89
+  orig: 62, 89
+  offset: 0, 0
+  index: -1
+yd_1
+  rotate: false
+  xy: 2, 2
+  size: 186, 184
+  orig: 186, 184
+  offset: 0, 0
+  index: -1
+yd_2
+  rotate: false
+  xy: 2, 188
+  size: 219, 219
+  orig: 219, 219
+  offset: 0, 0
+  index: -1

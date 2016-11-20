@@ -1,0 +1,13 @@
+
+SD401.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+guangquan
+  rotate: false
+  xy: 2, 32
+  size: 150, 120
+  orig: 150, 120
+  offset: 0, 0
+  index: -1

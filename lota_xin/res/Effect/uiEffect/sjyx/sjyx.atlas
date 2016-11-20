@@ -1,0 +1,83 @@
+
+sjyx.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+sjyx_0000
+  rotate: true
+  xy: 386, 51
+  size: 82, 114
+  orig: 82, 114
+  offset: 0, 0
+  index: -1
+sjyx_0001
+  rotate: false
+  xy: 258, 135
+  size: 122, 177
+  orig: 122, 177
+  offset: 0, 0
+  index: -1
+sjyx_0002
+  rotate: false
+  xy: 2, 87
+  size: 130, 205
+  orig: 130, 205
+  offset: 0, 0
+  index: -1
+sjyx_0003
+  rotate: false
+  xy: 2, 294
+  size: 126, 213
+  orig: 126, 213
+  offset: 0, 0
+  index: -1
+sjyx_0004
+  rotate: false
+  xy: 130, 294
+  size: 122, 213
+  orig: 122, 213
+  offset: 0, 0
+  index: -1
+sjyx_0005
+  rotate: false
+  xy: 134, 98
+  size: 122, 194
+  orig: 122, 194
+  offset: 0, 0
+  index: -1
+sjyx_0006
+  rotate: false
+  xy: 254, 314
+  size: 118, 193
+  orig: 118, 193
+  offset: 0, 0
+  index: -1
+sjyx_0007
+  rotate: false
+  xy: 374, 320
+  size: 108, 187
+  orig: 108, 187
+  offset: 0, 0
+  index: -1
+sjyx_0008
+  rotate: true
+  xy: 193, 2
+  size: 94, 191
+  orig: 94, 191
+  offset: 0, 0
+  index: -1
+sjyx_0009
+  rotate: true
+  xy: 2, 3
+  size: 82, 189
+  orig: 82, 189
+  offset: 0, 0
+  index: -1
+sjyx_0010
+  rotate: false
+  xy: 382, 135
+  size: 80, 183
+  orig: 80, 183
+  offset: 0, 0
+  index: -1

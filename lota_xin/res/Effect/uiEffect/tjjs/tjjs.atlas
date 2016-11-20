@@ -1,0 +1,13 @@
+
+tjjs.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
++
+  rotate: false
+  xy: 2, 4
+  size: 89, 87
+  orig: 89, 87
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,34 @@
+
+t_03.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baozhayanwu
+  rotate: false
+  xy: 2, 193
+  size: 221, 212
+  orig: 221, 212
+  offset: 0, 0
+  index: -1
+baozhazhongxin
+  rotate: false
+  xy: 2, 38
+  size: 162, 153
+  orig: 162, 153
+  offset: 0, 0
+  index: -1
+huoqiu
+  rotate: false
+  xy: 2, 2
+  size: 81, 34
+  orig: 81, 34
+  offset: 0, 0
+  index: -1
+huoqiuyan
+  rotate: false
+  xy: 225, 369
+  size: 124, 36
+  orig: 124, 36
+  offset: 0, 0
+  index: -1

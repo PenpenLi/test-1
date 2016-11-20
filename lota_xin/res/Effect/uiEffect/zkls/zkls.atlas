@@ -1,0 +1,83 @@
+
+zkls.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+zkls_0
+  rotate: false
+  xy: 2, 2
+  size: 73, 73
+  orig: 73, 73
+  offset: 0, 0
+  index: -1
+zkls_1
+  rotate: false
+  xy: 278, 387
+  size: 89, 92
+  orig: 89, 92
+  offset: 0, 0
+  index: -1
+zkls_10
+  rotate: false
+  xy: 186, 279
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_2
+  rotate: false
+  xy: 2, 380
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_3
+  rotate: false
+  xy: 2, 279
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_4
+  rotate: false
+  xy: 94, 380
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_5
+  rotate: false
+  xy: 2, 178
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_6
+  rotate: false
+  xy: 94, 279
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_7
+  rotate: false
+  xy: 186, 380
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_8
+  rotate: false
+  xy: 2, 77
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+zkls_9
+  rotate: false
+  xy: 94, 178
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1

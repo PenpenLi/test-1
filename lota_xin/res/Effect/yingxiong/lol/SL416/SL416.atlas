@@ -1,0 +1,69 @@
+
+SL416.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+wu1
+  rotate: false
+  xy: 318, 334
+  size: 156, 176
+  orig: 156, 176
+  offset: 0, 0
+  index: -1
+wu2
+  rotate: true
+  xy: 390, 104
+  size: 122, 120
+  orig: 122, 120
+  offset: 0, 0
+  index: -1
+wu3
+  rotate: false
+  xy: 230, 11
+  size: 154, 105
+  orig: 154, 105
+  offset: 0, 0
+  index: -1
+wu4
+  rotate: true
+  xy: 318, 228
+  size: 104, 177
+  orig: 104, 177
+  offset: 0, 0
+  index: -1
+wu5
+  rotate: false
+  xy: 230, 118
+  size: 158, 108
+  orig: 158, 108
+  offset: 0, 0
+  index: -1
+xuerenshen
+  rotate: false
+  xy: 2, 96
+  size: 226, 149
+  orig: 226, 149
+  offset: 0, 0
+  index: -1
+xuerenshouyou
+  rotate: false
+  xy: 53, 45
+  size: 45, 49
+  orig: 45, 49
+  offset: 0, 0
+  index: -1
+xuerenshouzuo
+  rotate: false
+  xy: 2, 31
+  size: 49, 63
+  orig: 49, 63
+  offset: 0, 0
+  index: -1
+xuerentou
+  rotate: false
+  xy: 2, 247
+  size: 314, 263
+  orig: 314, 263
+  offset: 0, 0
+  index: -1

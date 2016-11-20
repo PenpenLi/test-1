@@ -1,0 +1,34 @@
+
+t_02.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+baozhasuibing
+  rotate: false
+  xy: 2, 2
+  size: 193, 202
+  orig: 193, 202
+  offset: 0, 0
+  index: -1
+baozhawu
+  rotate: false
+  xy: 2, 206
+  size: 265, 260
+  orig: 265, 260
+  offset: 0, 0
+  index: -1
+toushewuqi
+  rotate: false
+  xy: 269, 409
+  size: 165, 57
+  orig: 165, 57
+  offset: 0, 0
+  index: -1
+toushewusuibing
+  rotate: true
+  xy: 197, 85
+  size: 119, 49
+  orig: 119, 49
+  offset: 0, 0
+  index: -1

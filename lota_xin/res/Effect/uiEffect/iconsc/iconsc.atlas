@@ -1,0 +1,69 @@
+
+iconsc.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+icon_sc01
+  rotate: false
+  xy: 226, 274
+  size: 57, 53
+  orig: 57, 53
+  offset: 0, 0
+  index: -1
+icon_sc02
+  rotate: false
+  xy: 114, 134
+  size: 81, 75
+  orig: 81, 75
+  offset: 0, 0
+  index: -1
+icon_sc03
+  rotate: false
+  xy: 226, 329
+  size: 108, 106
+  orig: 108, 106
+  offset: 0, 0
+  index: -1
+icon_sc04
+  rotate: false
+  xy: 2, 324
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+icon_sc05
+  rotate: false
+  xy: 2, 211
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+icon_sc06
+  rotate: false
+  xy: 114, 324
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+icon_sc07
+  rotate: false
+  xy: 2, 98
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+icon_sc08
+  rotate: false
+  xy: 114, 211
+  size: 110, 111
+  orig: 110, 111
+  offset: 0, 0
+  index: -1
+icon_sc09
+  rotate: false
+  xy: 2, 2
+  size: 98, 94
+  orig: 98, 94
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,13 @@
+
+SL346.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+miaozhunqi
+  rotate: false
+  xy: 2, 11
+  size: 208, 199
+  orig: 208, 199
+  offset: 0, 0
+  index: -1

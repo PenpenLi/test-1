@@ -1,0 +1,146 @@
+
+icon4.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+Icon4_01
+  rotate: false
+  xy: 446, 569
+  size: 93, 102
+  orig: 93, 102
+  offset: 0, 0
+  index: -1
+Icon4_200
+  rotate: false
+  xy: 150, 367
+  size: 146, 146
+  orig: 146, 146
+  offset: 0, 0
+  index: -1
+Icon4_201
+  rotate: false
+  xy: 298, 522
+  size: 146, 146
+  orig: 146, 146
+  offset: 0, 0
+  index: -1
+Icon4_202
+  rotate: false
+  xy: 446, 673
+  size: 146, 146
+  orig: 146, 146
+  offset: 0, 0
+  index: -1
+Icon4_203
+  rotate: false
+  xy: 2, 32
+  size: 146, 146
+  orig: 146, 146
+  offset: 0, 0
+  index: -1
+Icon4_204
+  rotate: false
+  xy: 2, 329
+  size: 146, 151
+  orig: 146, 151
+  offset: 0, 0
+  index: -1
+Icon4_205
+  rotate: false
+  xy: 2, 482
+  size: 146, 162
+  orig: 146, 162
+  offset: 0, 0
+  index: -1
+Icon4_206
+  rotate: false
+  xy: 2, 646
+  size: 146, 173
+  orig: 146, 173
+  offset: 0, 0
+  index: -1
+Icon4_207
+  rotate: false
+  xy: 150, 219
+  size: 146, 146
+  orig: 146, 146
+  offset: 0, 0
+  index: -1
+Icon4_208
+  rotate: false
+  xy: 2, 180
+  size: 146, 147
+  orig: 146, 147
+  offset: 0, 0
+  index: -1
+Icon4_209
+  rotate: false
+  xy: 150, 515
+  size: 146, 149
+  orig: 146, 149
+  offset: 0, 0
+  index: -1
+Icon4_210
+  rotate: false
+  xy: 298, 670
+  size: 146, 149
+  orig: 146, 149
+  offset: 0, 0
+  index: -1
+Icon4_211
+  rotate: false
+  xy: 150, 666
+  size: 146, 153
+  orig: 146, 153
+  offset: 0, 0
+  index: -1
+Icon4_212
+  rotate: false
+  xy: 298, 374
+  size: 146, 146
+  orig: 146, 146
+  offset: 0, 0
+  index: -1
+icon4=0
+  rotate: true
+  xy: 541, 616
+  size: 55, 28
+  orig: 55, 28
+  offset: 0, 0
+  index: -1
+icon4=1
+  rotate: false
+  xy: 446, 539
+  size: 69, 28
+  orig: 69, 28
+  offset: 0, 0
+  index: -1
+icon4=2
+  rotate: false
+  xy: 298, 344
+  size: 81, 28
+  orig: 81, 28
+  offset: 0, 0
+  index: -1
+icon4=3
+  rotate: false
+  xy: 594, 791
+  size: 93, 28
+  orig: 93, 28
+  offset: 0, 0
+  index: -1
+icon4=4
+  rotate: false
+  xy: 2, 2
+  size: 93, 28
+  orig: 93, 28
+  offset: 0, 0
+  index: -1
+icon4=5
+  rotate: false
+  xy: 150, 189
+  size: 82, 28
+  orig: 82, 28
+  offset: 0, 0
+  index: -1

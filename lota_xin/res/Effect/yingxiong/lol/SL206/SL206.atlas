@@ -1,0 +1,41 @@
+
+SL206.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dilie
+  rotate: true
+  xy: 2, 2
+  size: 306, 179
+  orig: 306, 179
+  offset: 0, 0
+  index: -1
+guang
+  rotate: true
+  xy: 300, 239
+  size: 271, 193
+  orig: 271, 193
+  offset: 0, 0
+  index: -1
+suishi
+  rotate: false
+  xy: 2, 310
+  size: 296, 200
+  orig: 296, 200
+  offset: 0, 0
+  index: -1
+yan1
+  rotate: true
+  xy: 183, 88
+  size: 220, 98
+  orig: 220, 98
+  offset: 0, 0
+  index: -1
+yan2
+  rotate: false
+  xy: 183, 2
+  size: 216, 84
+  orig: 216, 84
+  offset: 0, 0
+  index: -1

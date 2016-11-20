@@ -1,0 +1,13 @@
+
+SL196.png
+size: 128,128
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+chongfeng
+  rotate: false
+  xy: 2, 22
+  size: 112, 92
+  orig: 112, 92
+  offset: 0, 0
+  index: -1

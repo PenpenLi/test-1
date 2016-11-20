@@ -1,0 +1,48 @@
+
+D085.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+toufa
+  rotate: false
+  xy: 125, 147
+  size: 77, 78
+  orig: 77, 78
+  offset: 0, 0
+  index: -1
+toushen
+  rotate: true
+  xy: 2, 2
+  size: 47, 84
+  orig: 47, 84
+  offset: 0, 0
+  index: -1
+tuijiao
+  rotate: false
+  xy: 2, 51
+  size: 99, 80
+  orig: 99, 80
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: false
+  xy: 2, 133
+  size: 121, 92
+  orig: 121, 92
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 204, 208
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 103, 115
+  size: 17, 16
+  orig: 17, 16
+  offset: 0, 0
+  index: -1

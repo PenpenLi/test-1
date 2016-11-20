@@ -1,0 +1,76 @@
+
+D038_1.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dizuohuo
+  rotate: false
+  xy: 99, 155
+  size: 109, 91
+  orig: 109, 91
+  offset: 0, 0
+  index: -1
+hezidi
+  rotate: false
+  xy: 91, 17
+  size: 81, 71
+  orig: 81, 71
+  offset: 0, 0
+  index: -1
+jiao
+  rotate: false
+  xy: 99, 90
+  size: 85, 63
+  orig: 85, 63
+  offset: 0, 0
+  index: -1
+shenti2
+  rotate: false
+  xy: 210, 155
+  size: 36, 23
+  orig: 36, 23
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 17
+  size: 87, 116
+  orig: 87, 116
+  offset: 0, 0
+  index: -1
+touhuo
+  rotate: false
+  xy: 2, 135
+  size: 95, 111
+  orig: 95, 111
+  offset: 0, 0
+  index: -1
+youjian
+  rotate: false
+  xy: 186, 74
+  size: 51, 79
+  orig: 51, 79
+  offset: 0, 0
+  index: -1
+youshou2
+  rotate: false
+  xy: 174, 39
+  size: 26, 33
+  orig: 26, 33
+  offset: 0, 0
+  index: -1
+zuojian
+  rotate: false
+  xy: 210, 180
+  size: 34, 66
+  orig: 34, 66
+  offset: 0, 0
+  index: -1
+zuoshou2
+  rotate: false
+  xy: 202, 49
+  size: 24, 23
+  orig: 24, 23
+  offset: 0, 0
+  index: -1

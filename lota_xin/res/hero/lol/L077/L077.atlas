@@ -1,0 +1,62 @@
+
+L077.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+shenti
+  rotate: false
+  xy: 101, 201
+  size: 92, 54
+  orig: 92, 54
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 101, 257
+  size: 180, 102
+  orig: 180, 102
+  offset: 0, 0
+  index: -1
+toudai
+  rotate: true
+  xy: 2, 32
+  size: 119, 66
+  orig: 119, 66
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: false
+  xy: 2, 153
+  size: 97, 206
+  orig: 97, 206
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 2, 2
+  size: 34, 28
+  orig: 34, 28
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 70, 123
+  size: 25, 28
+  orig: 25, 28
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 283, 330
+  size: 46, 29
+  orig: 46, 29
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 101, 175
+  size: 21, 24
+  orig: 21, 24
+  offset: 0, 0
+  index: -1

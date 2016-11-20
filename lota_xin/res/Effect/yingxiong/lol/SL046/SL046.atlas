@@ -1,0 +1,27 @@
+
+SL046.png
+size: 1024,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jiguang
+  rotate: false
+  xy: 2, 636
+  size: 777, 143
+  orig: 777, 143
+  offset: 0, 0
+  index: -1
+qiu
+  rotate: false
+  xy: 2, 433
+  size: 224, 201
+  orig: 224, 201
+  offset: 0, 0
+  index: -1
+quanquan
+  rotate: false
+  xy: 2, 225
+  size: 190, 206
+  orig: 190, 206
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,62 @@
+
+D014.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+lunzi
+  rotate: false
+  xy: 92, 146
+  size: 37, 33
+  orig: 37, 33
+  offset: 0, 0
+  index: -1
+tong
+  rotate: false
+  xy: 2, 65
+  size: 78, 76
+  orig: 78, 76
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 143
+  size: 88, 76
+  orig: 88, 76
+  offset: 0, 0
+  index: -1
+toufa
+  rotate: false
+  xy: 92, 181
+  size: 48, 38
+  orig: 48, 38
+  offset: 0, 0
+  index: -1
+yanbai
+  rotate: false
+  xy: 82, 133
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 142, 201
+  size: 19, 18
+  orig: 19, 18
+  offset: 0, 0
+  index: -1
+zhadan
+  rotate: false
+  xy: 2, 18
+  size: 28, 45
+  orig: 28, 45
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 2, 2
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,3 @@
+PLATFORMVER = '01' 
+PLATFORM = 'dhsdk'
+TOPCHANNEL = '2'

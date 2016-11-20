@@ -1,0 +1,62 @@
+
+D010.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+huzi
+  rotate: false
+  xy: 213, 210
+  size: 29, 39
+  orig: 29, 39
+  offset: 0, 0
+  index: -1
+ma
+  rotate: true
+  xy: 109, 109
+  size: 59, 79
+  orig: 59, 79
+  offset: 0, 0
+  index: -1
+meimao
+  rotate: true
+  xy: 86, 98
+  size: 25, 17
+  orig: 25, 17
+  offset: 0, 0
+  index: -1
+mofabang
+  rotate: false
+  xy: 109, 170
+  size: 102, 79
+  orig: 102, 79
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 2, 125
+  size: 105, 124
+  orig: 105, 124
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 2
+  size: 82, 121
+  orig: 82, 121
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 190, 149
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 213, 191
+  size: 18, 17
+  orig: 18, 17
+  offset: 0, 0
+  index: -1

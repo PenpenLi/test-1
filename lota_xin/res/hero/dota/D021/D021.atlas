@@ -1,0 +1,48 @@
+
+D021.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+jiao
+  rotate: false
+  xy: 96, 174
+  size: 114, 66
+  orig: 114, 66
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 2, 138
+  size: 92, 102
+  orig: 92, 102
+  offset: 0, 0
+  index: -1
+tou
+  rotate: true
+  xy: 2, 43
+  size: 93, 92
+  orig: 93, 92
+  offset: 0, 0
+  index: -1
+weiba
+  rotate: false
+  xy: 2, 7
+  size: 31, 34
+  orig: 31, 34
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 212, 216
+  size: 28, 24
+  orig: 28, 24
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 96, 145
+  size: 26, 27
+  orig: 26, 27
+  offset: 0, 0
+  index: -1

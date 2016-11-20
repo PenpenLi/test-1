@@ -1,0 +1,55 @@
+
+SD385.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+chongji
+  rotate: false
+  xy: 2, 341
+  size: 349, 101
+  orig: 349, 101
+  offset: 0, 0
+  index: -1
+dianguang
+  rotate: false
+  xy: 2, 17
+  size: 87, 86
+  orig: 87, 86
+  offset: 0, 0
+  index: -1
+dianhu
+  rotate: false
+  xy: 2, 105
+  size: 140, 138
+  orig: 140, 138
+  offset: 0, 0
+  index: -1
+dianquan
+  rotate: false
+  xy: 353, 353
+  size: 89, 89
+  orig: 89, 89
+  offset: 0, 0
+  index: -1
+kulou
+  rotate: false
+  xy: 144, 167
+  size: 53, 76
+  orig: 53, 76
+  offset: 0, 0
+  index: -1
+shandian
+  rotate: false
+  xy: 2, 245
+  size: 287, 94
+  orig: 287, 94
+  offset: 0, 0
+  index: -1
+shanguang
+  rotate: true
+  xy: 291, 262
+  size: 77, 60
+  orig: 77, 60
+  offset: 0, 0
+  index: -1

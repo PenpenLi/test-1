@@ -1,0 +1,41 @@
+
+t_sf.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+neiquan
+  rotate: true
+  xy: 2, 2
+  size: 159, 65
+  orig: 159, 65
+  offset: 0, 0
+  index: -1
+waiquan
+  rotate: false
+  xy: 2, 163
+  size: 236, 91
+  orig: 236, 91
+  offset: 0, 0
+  index: -1
+xbq0001
+  rotate: false
+  xy: 240, 208
+  size: 6, 46
+  orig: 6, 46
+  offset: 0, 0
+  index: -1
+xbq0002
+  rotate: false
+  xy: 69, 89
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+xbq0003
+  rotate: false
+  xy: 69, 80
+  size: 8, 7
+  orig: 8, 7
+  offset: 0, 0
+  index: -1

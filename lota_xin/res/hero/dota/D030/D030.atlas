@@ -1,0 +1,83 @@
+
+D030.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ciji
+  rotate: false
+  xy: 2, 419
+  size: 196, 60
+  orig: 196, 60
+  offset: 0, 0
+  index: -1
+huzi
+  rotate: true
+  xy: 200, 425
+  size: 54, 65
+  orig: 54, 65
+  offset: 0, 0
+  index: -1
+jiaoyou
+  rotate: false
+  xy: 2, 2
+  size: 39, 75
+  orig: 39, 75
+  offset: 0, 0
+  index: -1
+jiaozuo
+  rotate: false
+  xy: 267, 435
+  size: 47, 44
+  orig: 47, 44
+  offset: 0, 0
+  index: -1
+neijiao
+  rotate: false
+  xy: 159, 385
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 2, 273
+  size: 117, 82
+  orig: 117, 82
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 159
+  size: 73, 112
+  orig: 73, 112
+  offset: 0, 0
+  index: -1
+toufa
+  rotate: false
+  xy: 2, 79
+  size: 75, 78
+  orig: 75, 78
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: false
+  xy: 2, 357
+  size: 155, 60
+  orig: 155, 60
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 77, 254
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 121, 338
+  size: 19, 17
+  orig: 19, 17
+  offset: 0, 0
+  index: -1

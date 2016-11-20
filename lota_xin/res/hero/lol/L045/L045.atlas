@@ -1,0 +1,76 @@
+
+L045.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+houfa
+  rotate: false
+  xy: 98, 209
+  size: 99, 45
+  orig: 99, 45
+  offset: 0, 0
+  index: -1
+qianfa
+  rotate: false
+  xy: 2, 169
+  size: 94, 85
+  orig: 94, 85
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 2, 56
+  size: 53, 26
+  orig: 53, 26
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 84
+  size: 92, 83
+  orig: 92, 83
+  offset: 0, 0
+  index: -1
+toujing1
+  rotate: true
+  xy: 98, 183
+  size: 24, 51
+  orig: 24, 51
+  offset: 0, 0
+  index: -1
+toujing2
+  rotate: false
+  xy: 199, 227
+  size: 55, 27
+  orig: 55, 27
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: true
+  xy: 57, 54
+  size: 28, 36
+  orig: 28, 36
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 30, 2
+  size: 22, 18
+  orig: 22, 18
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 2, 22
+  size: 42, 32
+  orig: 42, 32
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 2, 2
+  size: 26, 18
+  orig: 26, 18
+  offset: 0, 0
+  index: -1

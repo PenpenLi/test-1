@@ -1,0 +1,55 @@
+
+L056.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+ciji
+  rotate: false
+  xy: 2, 181
+  size: 196, 60
+  orig: 196, 60
+  offset: 0, 0
+  index: -1
+leidian
+  rotate: false
+  xy: 162, 96
+  size: 61, 83
+  orig: 61, 83
+  offset: 0, 0
+  index: -1
+qunzi
+  rotate: false
+  xy: 2, 2
+  size: 72, 36
+  orig: 72, 36
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 109, 21
+  size: 64, 56
+  orig: 64, 56
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 40
+  size: 105, 139
+  orig: 105, 139
+  offset: 0, 0
+  index: -1
+youdao
+  rotate: false
+  xy: 109, 79
+  size: 51, 100
+  orig: 51, 100
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 200, 224
+  size: 17, 17
+  orig: 17, 17
+  offset: 0, 0
+  index: -1

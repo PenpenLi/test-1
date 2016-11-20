@@ -1,0 +1,27 @@
+
+SL196.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+chongfeng
+  rotate: false
+  xy: 2, 313
+  size: 106, 89
+  orig: 106, 89
+  offset: 0, 0
+  index: -1
+daoguang
+  rotate: false
+  xy: 2, 404
+  size: 418, 92
+  orig: 418, 92
+  offset: 0, 0
+  index: -1
+quanguang
+  rotate: false
+  xy: 422, 422
+  size: 74, 74
+  orig: 74, 74
+  offset: 0, 0
+  index: -1

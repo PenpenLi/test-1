@@ -1,0 +1,20 @@
+
+SL236.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dabuzhi
+  rotate: false
+  xy: 2, 2
+  size: 56, 61
+  orig: 56, 61
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 2, 65
+  size: 149, 125
+  orig: 149, 125
+  offset: 0, 0
+  index: -1

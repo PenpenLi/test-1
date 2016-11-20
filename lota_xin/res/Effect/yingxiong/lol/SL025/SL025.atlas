@@ -1,0 +1,13 @@
+
+SL025.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dandan
+  rotate: false
+  xy: 2, 2
+  size: 173, 173
+  orig: 173, 173
+  offset: 0, 0
+  index: -1

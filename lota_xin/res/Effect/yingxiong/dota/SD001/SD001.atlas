@@ -1,0 +1,34 @@
+
+SD001.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+bingdi
+  rotate: false
+  xy: 2, 131
+  size: 140, 66
+  orig: 140, 66
+  offset: 0, 0
+  index: -1
+bingkuai
+  rotate: false
+  xy: 332, 418
+  size: 134, 48
+  orig: 134, 48
+  offset: 0, 0
+  index: -1
+bingqi
+  rotate: false
+  xy: 2, 199
+  size: 411, 66
+  orig: 411, 66
+  offset: 0, 0
+  index: -1
+weiqi
+  rotate: false
+  xy: 2, 267
+  size: 328, 199
+  orig: 328, 199
+  offset: 0, 0
+  index: -1

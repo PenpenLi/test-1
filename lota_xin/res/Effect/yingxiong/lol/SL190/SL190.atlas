@@ -1,0 +1,13 @@
+
+SL190.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+feibiao
+  rotate: false
+  xy: 2, 2
+  size: 193, 193
+  orig: 193, 193
+  offset: 0, 0
+  index: -1

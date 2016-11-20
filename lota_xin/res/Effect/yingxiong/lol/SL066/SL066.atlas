@@ -1,0 +1,69 @@
+
+SL066.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dimian
+  rotate: false
+  xy: 227, 427
+  size: 259, 80
+  orig: 259, 80
+  offset: 0, 0
+  index: -1
+guang
+  rotate: false
+  xy: 372, 177
+  size: 21, 95
+  orig: 21, 95
+  offset: 0, 0
+  index: -1
+mogunei
+  rotate: true
+  xy: 395, 307
+  size: 118, 112
+  orig: 118, 112
+  offset: 0, 0
+  index: -1
+moguwai
+  rotate: false
+  xy: 227, 274
+  size: 166, 151
+  orig: 166, 151
+  offset: 0, 0
+  index: -1
+qi1
+  rotate: false
+  xy: 2, 192
+  size: 222, 138
+  orig: 222, 138
+  offset: 0, 0
+  index: -1
+qi2
+  rotate: false
+  xy: 226, 142
+  size: 144, 130
+  orig: 144, 130
+  offset: 0, 0
+  index: -1
+qi3
+  rotate: false
+  xy: 2, 18
+  size: 154, 172
+  orig: 154, 172
+  offset: 0, 0
+  index: -1
+qi4
+  rotate: false
+  xy: 2, 332
+  size: 223, 175
+  orig: 223, 175
+  offset: 0, 0
+  index: -1
+quanguang
+  rotate: false
+  xy: 158, 41
+  size: 99, 99
+  orig: 99, 99
+  offset: 0, 0
+  index: -1

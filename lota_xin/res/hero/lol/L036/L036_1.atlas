@@ -1,0 +1,69 @@
+
+L036_1.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+shenti
+  rotate: false
+  xy: 372, 399
+  size: 102, 75
+  orig: 102, 75
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 2, 187
+  size: 153, 119
+  orig: 153, 119
+  offset: 0, 0
+  index: -1
+toufa
+  rotate: false
+  xy: 2, 308
+  size: 209, 166
+  orig: 209, 166
+  offset: 0, 0
+  index: -1
+yanzhao
+  rotate: false
+  xy: 213, 369
+  size: 157, 105
+  orig: 157, 105
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: false
+  xy: 157, 248
+  size: 52, 58
+  orig: 52, 58
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 90, 152
+  size: 36, 33
+  orig: 36, 33
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 2, 21
+  size: 71, 62
+  orig: 71, 62
+  offset: 0, 0
+  index: -1
+zuonu
+  rotate: false
+  xy: 2, 85
+  size: 86, 100
+  orig: 86, 100
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 213, 329
+  size: 35, 38
+  orig: 35, 38
+  offset: 0, 0
+  index: -1

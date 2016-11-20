@@ -1,0 +1,76 @@
+
+L016.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+beishuduan
+  rotate: false
+  xy: 2, 72
+  size: 54, 42
+  orig: 54, 42
+  offset: 0, 0
+  index: -1
+daoguang
+  rotate: false
+  xy: 2, 193
+  size: 138, 191
+  orig: 138, 191
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 288, 288
+  size: 51, 42
+  orig: 51, 42
+  offset: 0, 0
+  index: -1
+shubei
+  rotate: false
+  xy: 288, 332
+  size: 72, 52
+  orig: 72, 52
+  offset: 0, 0
+  index: -1
+tou
+  rotate: false
+  xy: 142, 226
+  size: 144, 158
+  orig: 144, 158
+  offset: 0, 0
+  index: -1
+wuqi
+  rotate: false
+  xy: 2, 116
+  size: 111, 75
+  orig: 111, 75
+  offset: 0, 0
+  index: -1
+youjiao
+  rotate: true
+  xy: 115, 160
+  size: 31, 24
+  orig: 31, 24
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: false
+  xy: 2, 51
+  size: 16, 19
+  orig: 16, 19
+  offset: 0, 0
+  index: -1
+zuojiao
+  rotate: false
+  xy: 142, 201
+  size: 33, 23
+  orig: 33, 23
+  offset: 0, 0
+  index: -1
+zuoshou
+  rotate: false
+  xy: 362, 367
+  size: 22, 17
+  orig: 22, 17
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,20 @@
+
+SL146.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+gunzihua
+  rotate: false
+  xy: 2, 95
+  size: 120, 142
+  orig: 120, 142
+  offset: 0, 0
+  index: -1
+houzicanying
+  rotate: true
+  xy: 124, 104
+  size: 133, 113
+  orig: 133, 113
+  offset: 0, 0
+  index: -1

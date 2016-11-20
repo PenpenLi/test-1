@@ -1,0 +1,48 @@
+
+SD186.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+kulou1
+  rotate: false
+  xy: 236, 177
+  size: 117, 79
+  orig: 117, 79
+  offset: 0, 0
+  index: -1
+kulou2
+  rotate: false
+  xy: 391, 428
+  size: 117, 80
+  orig: 117, 80
+  offset: 0, 0
+  index: -1
+kulou3
+  rotate: true
+  xy: 391, 300
+  size: 126, 47
+  orig: 126, 47
+  offset: 0, 0
+  index: -1
+kulou4
+  rotate: true
+  xy: 236, 49
+  size: 126, 47
+  orig: 126, 47
+  offset: 0, 0
+  index: -1
+piaowu
+  rotate: false
+  xy: 2, 258
+  size: 387, 250
+  orig: 387, 250
+  offset: 0, 0
+  index: -1
+piaowuhou
+  rotate: false
+  xy: 2, 46
+  size: 232, 210
+  orig: 232, 210
+  offset: 0, 0
+  index: -1

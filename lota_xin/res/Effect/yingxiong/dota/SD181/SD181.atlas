@@ -1,0 +1,41 @@
+
+SD181.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+dian1
+  rotate: true
+  xy: 286, 227
+  size: 276, 151
+  orig: 276, 151
+  offset: 0, 0
+  index: -1
+dian2
+  rotate: false
+  xy: 2, 25
+  size: 278, 156
+  orig: 278, 156
+  offset: 0, 0
+  index: -1
+dianhua
+  rotate: false
+  xy: 286, 65
+  size: 170, 160
+  orig: 170, 160
+  offset: 0, 0
+  index: -1
+dianhuo
+  rotate: false
+  xy: 2, 183
+  size: 282, 320
+  orig: 282, 320
+  offset: 0, 0
+  index: -1
+dianxin
+  rotate: false
+  xy: 439, 437
+  size: 64, 66
+  orig: 64, 66
+  offset: 0, 0
+  index: -1

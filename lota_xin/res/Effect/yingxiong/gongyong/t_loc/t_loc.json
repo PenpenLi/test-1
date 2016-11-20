@@ -1,0 +1,1 @@
+{"skeleton":{"hash":"Qf/J+e07GsIwyuaiSGnNXrdr3p8","spine":"2.1.27","width":0,"height":0,"images":"./images/"},"bones":[{"name":"root"},{"name":"bone","parent":"root"}],"events":{"HurtHold":{}},"animations":{"mbd":{"bones":{"bone":{"translate":[{"time":1,"x":0,"y":0}]}},"events":[{"time":0.2333,"name":"HurtHold"}]}}}

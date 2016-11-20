@@ -1,0 +1,41 @@
+
+SL221.png
+size: 512,512
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+guanghuan
+  rotate: false
+  xy: 2, 166
+  size: 354, 338
+  orig: 354, 338
+  offset: 0, 0
+  index: -1
+hou
+  rotate: false
+  xy: 193, 98
+  size: 179, 66
+  orig: 179, 66
+  offset: 0, 0
+  index: -1
+hou2
+  rotate: false
+  xy: 2, 2
+  size: 175, 57
+  orig: 175, 57
+  offset: 0, 0
+  index: -1
+qian
+  rotate: false
+  xy: 2, 61
+  size: 189, 103
+  orig: 189, 103
+  offset: 0, 0
+  index: -1
+qian2
+  rotate: true
+  xy: 358, 314
+  size: 190, 99
+  orig: 190, 99
+  offset: 0, 0
+  index: -1

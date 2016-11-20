@@ -1,0 +1,13 @@
+
+SL181.png
+size: 256,256
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+zidan
+  rotate: false
+  xy: 2, 181
+  size: 217, 38
+  orig: 217, 38
+  offset: 0, 0
+  index: -1
