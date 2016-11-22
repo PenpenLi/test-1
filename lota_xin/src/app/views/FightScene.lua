@@ -23,6 +23,9 @@ require("app.res.PreciousUpRes")
 
 require("app.res.BossRes")
 
+local CheckpointCount = 9 --每一关小怪个数
+local BossTime = 30 --boss的击杀时间
+
 
 local size  = cc.Director:getInstance():getWinSize()
 
@@ -58,6 +61,55 @@ function FightScene:onCreate()
 
     self:TapTapUI()
 
+    self:setCheckpointShow()
+
+    self:timeUpdate()
+end
+
+function FightScene:timeUpdate()
+    local function time( dt )
+        --处理获得的金币后续修改
+        -- local curGold = self.goldTextNum
+        -- if self.mbGold and self.mbGold > curGold and self.mbGold < 1000000 then
+        --     if ( self.mbGold - curGold ) < 5 then
+        --         self.goldText:setString(self.mbGold)
+        --         self.goldTextNum = self.mbGold
+        --     else
+        --         local jianGeGold = math.floor((self.mbGold - curGold) / 8)
+        --         self.goldText:setString(curGold + jianGeGold)
+        --         self.goldTextNum = curGold + jianGeGold
+        --     end
+        -- else
+        --     self.goldText:setString(gameUtil.dealNumber(mm.data.playerinfo.gold))
+        --     self.goldTextNum = mm.data.playerinfo.gold
+        -- end
+
+        if self.NodeTimeNum > 0 and self.curBloodText then
+            self.NodeTimeNum = self.NodeTimeNum - dt
+            self.NodeTimeBar:setPercent(math.ceil(self.NodeTimeNum / BossTime * 100))
+            self.curBloodText:setString( string.format("%.2f", self.NodeTimeNum))
+
+            if self.NodeTimeNum <= 0 then
+                --时间到，失败
+                fight:setTimeZero()
+                --小于0就显示0
+                self.curBloodText:setString( string.format("%.2f", 0))
+            end
+        else
+
+        end
+        
+    end
+    self.goldTick =  self:getScheduler():scheduleScriptFunc(time, 0.064,false)
+
+
+end
+
+function FightScene:setCheckpointShow()
+    local num = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
+    self.scene:getChildByName("Image_old"):getChildByName("Text"):setString(num - 1)
+    self.scene:getChildByName("Image_now"):getChildByName("Text"):setString(num)
+    self.scene:getChildByName("Image_new"):getChildByName("Text"):setString(num + 1)
 end
 
 
@@ -135,20 +187,22 @@ function FightScene:nnffInfo(  )
     local tab = {}
     local nnffID = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
     print("YYYYY         11111111111111111111111111    nnffInfo              111  "..nnffID)
-    tab.blood = G_BossTable[nnffID].blood
+    tab.blood = G_BossTable[nnffID].blood * (0.5 +  self.curNnffId * 0.05)
     tab.size = 1
     tab.time = 0
-    if self.curNnffId > 9 then
+    if self.curNnffId > CheckpointCount then
         tab.blood = G_BossTable[nnffID].blood
         self.curNnffId = 0
         tab.size = 1.2
-        tab.time = 30
+        tab.time = BossTime
 
         self:showBlood()
     else
         self.NodeTimeNum = 0
         self.Node_Time:setVisible(false)
     end
+
+    self:setCheckpointShow()
 
     return tab
 end
@@ -169,7 +223,7 @@ function FightScene:showBlood( ... )
         loadingBar:setVisible(true)
         self.NodeTimeBar = loadingBar
 
-        self.curBloodText = ccui.Text:create("30", "fonts/huakang.TTF", 30)
+        self.curBloodText = ccui.Text:create(BBossTime, "fonts/huakang.TTF", 30)
         self.curBloodText:setColor(cc.c3b(205, 149, 12))
         self.curBloodText:setPosition(cc.p(-50,10))
         self.NodeTimeBar:addChild(self.curBloodText)
@@ -177,7 +231,7 @@ function FightScene:showBlood( ... )
         self.NodeTimeBar:setVisible(true)
     end
 
-    self.NodeTimeNum = 30
+    self.NodeTimeNum = BossTime
     self.Node_Time:setVisible(true)
 end
 
