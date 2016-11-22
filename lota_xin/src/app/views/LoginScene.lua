@@ -71,12 +71,14 @@ function LoginScene:onCreate()
     -- 得到服务器列表
     self:GetHttp()
 
-    mm.musicOpen = cc.UserDefault:getInstance():getIntegerForKey("musicOpen")
-    if mm.musicOpen == 0 then
-        AudioEngine.playMusic("res/sounds/music/Main.mp3", true)
-    else
+    -- mm.musicOpen = cc.UserDefault:getInstance():getIntegerForKey("musicOpen")
+    -- if mm.musicOpen == 0 then
+    --     AudioEngine.playMusic("res/sounds/music/Main.mp3", true)
+    -- else
         AudioEngine.stopMusic(true)
-    end
+    -- end
+
+    cc.UserDefault:getInstance():setIntegerForKey("effectOpen", 1)
 
     self:addGlobalEventListener(EventDef.SERVER_MSG, handler(self, self.globalEventsListener))
     self:addGlobalEventListener(EventDef.UI_MSG, handler(self, self.globalEventsListener))
@@ -269,7 +271,8 @@ function LoginScene:login()
                     print("getDiRenListBack ！！！！！！！！！！！ 11")
                 end
                 print("getDiRenListBack ！！！！！！！！！！！ 22")
-                self:LoadingScence()
+                -- self:LoadingScence()
+                self.app_:run("FightScene")
                 
             end
             self.app_.clientTCP:send("getDiRenList",{type=0},getDiRenListBack)
@@ -303,25 +306,24 @@ function LoginScene:login()
     game.LoginSDkData.token = '123456'
 end
 local loadRes = {
-    "res/FightBg/land_guaji.png",
-    "res/FightBg/ground_lvdi.png",
-    "res/UI/icon_ditu_lvdi.png",
-    "res/icon/jiemian/icon_liansheng4.png",
-    "res/UI/pc_disucai.png",
-    "res/hero/guanzhong/d_4_qizhi/d_4_qizhi.png",
-    "res/hero/guanzhong/l_4_qizhi/l_4_qizhi.png",
-    "res/UI/pc_vs.png",
-    "res/UI/jm_buzhendi.png",
-    "res/UI/bt_yingxiong_normal.png",
-    "res/UI/bt_yingxiong_select.png",
-    "res/UI/bt_shouzhi_normal.png",
-    "res/UI/bt_shouzhi_select.png",
-    "res/UI/bt_shangcheng_normal.png",
-    "res/UI/bt_shangcheng_select.png",
-    "res/UI/bt_guanqia_normal.png",
-    "res/UI/bt_guanqia_select.png",
-    "res/UI/bt_qizhidota_normal.png",
-    "res/UI/bt_qizhilol_normal.png",
+    -- "res/FightBg/fight_bg.png",
+    -- "res/UI/icon_ditu_lvdi.png",
+    -- "res/icon/jiemian/icon_liansheng4.png",
+    -- "res/UI/pc_disucai.png",
+    -- "res/hero/guanzhong/d_4_qizhi/d_4_qizhi.png",
+    -- "res/hero/guanzhong/l_4_qizhi/l_4_qizhi.png",
+    -- "res/UI/pc_vs.png",
+    -- "res/UI/jm_buzhendi.png",
+    -- "res/UI/bt_yingxiong_normal.png",
+    -- "res/UI/bt_yingxiong_select.png",
+    -- "res/UI/bt_shouzhi_normal.png",
+    -- "res/UI/bt_shouzhi_select.png",
+    -- "res/UI/bt_shangcheng_normal.png",
+    -- "res/UI/bt_shangcheng_select.png",
+    -- "res/UI/bt_guanqia_normal.png",
+    -- "res/UI/bt_guanqia_select.png",
+    -- "res/UI/bt_qizhidota_normal.png",
+    -- "res/UI/bt_qizhilol_normal.png",
 }
 
 function LoginScene:LoadingScence( ... )

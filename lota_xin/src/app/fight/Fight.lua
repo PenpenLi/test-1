@@ -433,12 +433,14 @@ function Fight:getRoundSKill(skillSeq, Index, Unit, TgType,t)
                     bgjectUnit:setJiHuoTime( time + JiHuoTime )
                 end
 
-                bgjectUnit:calculateCurBlood(hurt, damageStyle)
+                --以前是先算所有回合所以直接扣
+                -- bgjectUnit:calculateCurBlood(hurt, damageStyle)
 
                 if bgjectUnit:getCurBlood() < 0 and bgjectUnit:getCampType() == CAMP_B_TYPE then
                     self.lastKillUnitTime = time
                 end
 
+                --重生
                 local reburthNum = bgjectUnit:getRebirth()
                 if bgjectUnit:getCurBlood() <= 0 and reburthNum > 0 then
                     
@@ -447,8 +449,9 @@ function Fight:getRoundSKill(skillSeq, Index, Unit, TgType,t)
                     bgjectUnit:setRebirth()
                 end
 
-                unit:calculateCurBlood(t.myHurt, damageStyle)
-                
+                --以前是先算所有回合所以直接扣
+                -- unit:calculateCurBlood(t.myHurt, damageStyle)
+
             end
         end
 
@@ -1064,6 +1067,8 @@ function Fight:sifangSkill( param )
                 skeletonNode:setTimeScale(scale)
             end
             self:playSiFaEffect()
+
+            print("playTouSewu ====================================   1")
             
             local function ackBack()
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
@@ -1082,6 +1087,8 @@ function Fight:sifangSkill( param )
             end, sp.EventType.ANIMATION_EVENT)
             coroutine.yield()
 
+            print("playTouSewu ====================================   2")
+
             local skeletonNode = gameUtil.createSkeletonAnimation(skillTab.hurtEffect..".json", skillTab.hurtEffect..".atlas",1)
             unitA:addChild(skeletonNode)
             skeletonNode:setAnimation(0, "tsw", false)
@@ -1099,6 +1106,8 @@ function Fight:sifangSkill( param )
             end
             
             skeletonNode:setRotation(angel)
+            print("playTouSewu ====================================   3")
+
             local paowu = 0
             if texiaoEffect == MM.EtexiaoEffect.touzhi then
                 paowu = math.random(60,80 )
@@ -1127,7 +1136,13 @@ function Fight:sifangSkill( param )
 
             coroutine.yield()
 
+            print("playTouSewu ====================================   4")
+
             self:PlayHurtAction( param )
+
+            print("playTouSewu ====================================   5")
+
+
             gameUtil.playEffect(skillTab.End_Sound,false)
 
             local action = cc.Sequence:create(
@@ -1707,7 +1722,7 @@ function Fight:PlayHurtAction( param )
         local isJihuo = skillSeq.Object[i].isJihuo  --集火时间
         local HuJia = skillSeq.Object[i].HuJia  --护盾
         local WuLiHuDun = skillSeq.Object[i].WuLiHuDun  --物理护盾
-
+        print("playTouSewu ====================================   7")
         if not hurtSkeletonNode then
             self.allHurt = self.allHurt - 1
         else
@@ -1733,10 +1748,12 @@ function Fight:PlayHurtAction( param )
                 hujiaZhi = hujiaZhi,
                 wuLiHuDunZhi = wuLiHuDunZhi,
             }
-           
+            print("playTouSewu ====================================   8")
             hurtSkeletonNode:PlayHurt(t)
+            print("playTouSewu ====================================   10")
         end
         if myHurt ~= 0 then
+            print("playTouSewu ====================================   9")
             unitA:PlayHurt({
                                 hurt = myHurt,
                                 shoujiPath = skillTab.shoujiEffect,

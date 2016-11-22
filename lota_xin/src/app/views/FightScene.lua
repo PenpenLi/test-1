@@ -21,6 +21,9 @@ Guide = require("app/models/guide")
 require("app.res.PreciousUpRes")
 
 
+require("app.res.BossRes")
+
+
 local size  = cc.Director:getInstance():getWinSize()
 
 function FightScene:onCreate()
@@ -88,7 +91,7 @@ function FightScene:jinshouzhiBtnCbk(widget,touchkey)
 
 
             if fight:UnitB1() then
-                fight:UnitB1():setPiaoxue(-100, 0, MM.EDamageStyle.Wuli, true)
+                fight:UnitB1():setPiaoxue(-2, nil, MM.EDamageStyle.Wuli, true)
             end
 
 
@@ -132,11 +135,11 @@ function FightScene:nnffInfo(  )
     local tab = {}
     local nnffID = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
     print("YYYYY         11111111111111111111111111    nnffInfo              111  "..nnffID)
-    tab.blood = 5000 + nnffID * 1000 + math.random(3000, 5000) 
+    tab.blood = G_BossTable[nnffID].blood
     tab.size = 1
     tab.time = 0
-    if self.curNnffId > 1 then
-        tab.blood = 5000 + nnffID * 3000 + math.random(3000, 5000) 
+    if self.curNnffId > 9 then
+        tab.blood = G_BossTable[nnffID].blood
         self.curNnffId = 0
         tab.size = 1.2
         tab.time = 30

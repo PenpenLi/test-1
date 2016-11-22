@@ -1306,7 +1306,9 @@ function Unit:getSkillAck( mbUnit ,skillid, TgType)
     beishu = beishu + gh_BP_Crit
 
 
-    local hurt = math.ceil(hurt * add) * beishu
+    --tap 修改 原先是 ：
+    --local hurt = math.ceil(hurt * add) * beishu
+    local hurt = math.ceil(hurt * add) * beishu / 100
     ccfightLog("初始伤害3: " .. hurt)
 
     --计算物理免疫 魔法免疫
@@ -2455,29 +2457,44 @@ function Unit:playDieTeXiao( time )
     self:addChild(DieNode)
     DieNode:setAnimation(0, "mb", false)
 
+    print("playDieTeXiao  1")
+
     gameUtil.playEffect("res/sounds/effect/all/t_sw_start",false)
 
     --DieNode:setLocalZOrder(-10)
     DieNode:setName("DieTeXiao")
+    print("playDieTeXiao  1        1")
     local function ackPlayBack()
+        print("playDieTeXiao  1        2")
         DieNode:setVisible(false)
+        print("playDieTeXiao  1        3")
         self.barImageBg:setVisible(false)
+        print("playDieTeXiao  1        4")
         self.loadingBar:setVisible(false)
+        print("playDieTeXiao  1        5")
     end
     local action = cc.Sequence:create(
                 cc.DelayTime:create(0.67),
                 cc.CallFunc:create(ackPlayBack)
             )
-    DieNode:runAction(action)    
+    DieNode:runAction(action) 
+
+    print("playDieTeXiao  2")   
 
     if self.fightType == 1 then 
+        print("playDieTeXiao  3")
         if self.campType == CAMP_B_TYPE then
             self:sendReward(time)
         end
     else
+        print("playDieTeXiao  4")
         if self.campType == CAMP_B_TYPE then
+            print("playDieTeXiao  5")
             local uiJinbi = self.fight.fScene.scene:getChildByName("Image_jinbi")
+            print("playDieTeXiao  6")
             self:sendReward(time)
+            print("playDieTeXiao  7")
+
             for i=1,math.random(5,6) do
                 local jibiNode = cc.Node:create()
                 self:addChild(jibiNode)
@@ -2491,22 +2508,9 @@ function Unit:playDieTeXiao( time )
 
                 self:jinbiMove(jinbiImageView, uiJinbi, jibiNode)
 
-                
+                print("playDieTeXiao  5")
 
             end
-
-            -- local uiExp = self.fight.fScene.scene:getChildByName("Image_jingyan")
-            -- local expNode = cc.Node:create()
-            -- self:addChild(expNode)
-            -- expNode:setPosition(0,0)
-            -- self:expMove(expNode, uiExp)
-
-            -- gameUtil.addArmatureFile("res/Effect/uiEffect/explizi/explizi.ExportJson")
-            -- local particle = cc.ParticleSystemQuad:create("res/Effect/uiEffect/explizi/explizi.plist")
-            -- expNode:addChild(particle, -1)
-            -- particle:setPosition(cc.p(0, 0))
-            -- particle:setAutoRemoveOnFinish(true)
-            -- particle:setDuration(1.2)
         end
     end
 
@@ -2798,11 +2802,16 @@ function Unit:PlayHurt(param)
     if WuLiHuDun then
     else
     end
+    print("PlayHurt  ================   11")
 
+    print("当前血量  000   "..math.ceil(self:getCurBlood()))
     if self:isDead() then
+        print("PlayHurt  ================   22")
         --self.fight:hurtEndCount()
         return
     end
+
+    print("PlayHurt  ================   33")
 
     if hurt < 0 then
         local function hurtBack()
@@ -2864,18 +2873,18 @@ function Unit:PlayHurt(param)
             end
             
         end
-        ccfightLog("受伤")
+        print("受伤")
         self:getSkeletonNode():setAnimation(0, "hurt", false)
         self:getSkeletonNode():registerSpineEventHandler(hurtBack,sp.EventType.ANIMATION_COMPLETE)
         self:getSkeletonNode():setTimeScale(speedScale)
     else
         --是否护甲
-        ccfightLog(" 是否 护甲 "..skillId)
+        print(" 是否 护甲 "..skillId)
         if HuJia then
             local skillTab = gameUtil.getHeroSkillTab( skillId )
             local res = INITLUA:getBuffByid( skillTab.BUFFID ).texiaoRes
             local HuJiaTime = INITLUA:getBuffByid( skillTab.BUFFID ).chixuhuihe
-            ccfightLog(" 是否 护甲 "..res)
+            print(" 是否 护甲 "..res)
             self:addHuJiaTexiao(res)
             self:setHuJiaTime(time + HuJiaTime)
             self.initHuJiaXue = hujiaZhi
@@ -2897,6 +2906,7 @@ function Unit:PlayHurt(param)
     end
     ---飘雪
     if not self:isDead() then
+        print("没死")
         -- self:setCurBlood(self:getCurBlood() + hurt) 
         self:calculateCurBlood(hurt, DamageStyle)
         if self.loadingHuJiaBar then
@@ -2921,22 +2931,30 @@ function Unit:PlayHurt(param)
                 end
             end
         end
+    else
+        print("死了")
     end
+    print("当前血量  001   "..math.ceil(self:getCurBlood()))
+
     if math.ceil(self:getCurBlood()) <= 0 then
+        print("死了算掉了什么的")
         if reburthNum and reburthNum > 0 then
+            print("死了算掉了什么的      1")
             self:setCurBlood(reburthNum)
 
             gameUtil:addTishi( {p = self, s = "重生" , z = 1000,width = 25, height = 50})
         else
+            print("死了算掉了什么的     2")
             --计算掉落
             self:playDieTeXiao(time)
-            
-            game:dispatchEvent({name = EventDef.UI_MSG, code = "CountHeroDiedTime", heroId = self.HeroId, camp = self.campType})
+            print("死了算掉了什么的      3")
+            -- game:dispatchEvent({name = EventDef.UI_MSG, code = "CountHeroDiedTime", heroId = self.HeroId, camp = self.campType})
         end
 
         
 
     else
+        print("没死就处理血条什么的")
         self.loadingBar:setPercent(math.ceil(self:getCurBlood() / self.initialBlood * 100))
         self.barImageBg:setVisible(true)
         self.loadingBar:setVisible(true)
@@ -2946,7 +2964,7 @@ function Unit:PlayHurt(param)
         end
         self:runAction( cc.Sequence:create(cc.DelayTime:create(1),cc.CallFunc:create(showbarBack)))
     end
-    ccfightLog("==================================3")
+    print("==================================3")
     local fut = "res/font/fnt_02.fnt"
     if DamageStyle == MM.EDamageStyle.Wuli then
         fut = "res/font/fnt_03.fnt"
@@ -2989,8 +3007,10 @@ function Unit:PlayHurt(param)
 
     ---飘雪
 
+    print("当前血量  002   "..math.ceil(self:getCurBlood()))
+
     --播放受击
-    ccfightLog("  播放受击  播放受击 1 ")
+    print("  播放受击  播放受击 1 ")
     if #shoujiPath > 0 then 
         --if 1144271409 == skillId then
             ccfightLog("  播放受击 : "..shoujiPath)
@@ -3012,10 +3032,12 @@ function Unit:PlayHurt(param)
         end 
         shoujiNode:registerSpineEventHandler(toPlayHurtAction,sp.EventType.ANIMATION_COMPLETE)
     end
-    ccfightLog("  播放受击  播放受击 222 ")
+    print("  播放受击  播放受击 222 ")
     if debug_xue == 1 then
         self.curBloodText:setString(math.ceil(self.curBlood))
     end
+
+    print("当前血量  003   "..math.ceil(self:getCurBlood()))
 end
 
 --先手 反杀 抢人头
@@ -3057,6 +3079,8 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
         self:getSkeletonNode():registerSpineEventHandler(hurtBack,sp.EventType.ANIMATION_COMPLETE)
     end
 
+    print("setPiaoxue    飘雪     ============================== 1")
+
     if not self:isDead() then
         local b = self:getCurBlood() + hurt
         -- if b <= 0 then
@@ -3091,6 +3115,9 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
             end
         -- end
     end
+
+    print("setPiaoxue    飘雪     ============================== 2")
+
     if math.ceil(self:getCurBlood()) <= 0 then
         self.loadingBar:setPercent(0)
     else
@@ -3140,10 +3167,12 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
     self.fight:setAllBlood()
     ---飘雪
 
+    print("setPiaoxue    飘雪     ============================== 3")
+
     --播放受击
-    if #shoujiPath > 0 then 
-        if 1144271409 == skillId then
-        end
+    if shoujiPath and #shoujiPath > 0 then 
+
+        print("setPiaoxue    飘雪     ============================== 4")
         
         local shoujiNode = gameUtil.createSkeletonAnimation(shoujiPath..".json", shoujiPath..".atlas",1)
         self:getSkeletonNode():addChild(shoujiNode)
@@ -3161,33 +3190,43 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
         shoujiNode:registerSpineEventHandler(toPlayHurtAction,sp.EventType.ANIMATION_COMPLETE)
     end
 
+    print("setPiaoxue    飘雪     ============================== 5")
+
     if debug_xue == 1 then
         self.curBloodText:setString(math.ceil(self.curBlood))
     end
 
+    print("setPiaoxue    飘雪     ============================== 6")
+
+    if isZhuJue then
+        self.fight:cteateSkillSequence()
+    end
 
 end
 
     -- a)死亡单位金币产量 =  (100 + 等级 * 1.2) / 60 * (单位死亡单位时间 * 0.2)
     -- b)死亡单位经验产量 = 7.6 * (单位死亡时间 * 0.2)
 function Unit:sendReward( time )
-
+    print("sendReward    11     ============================== 6   "..time)
+    
     local addGold = math.ceil((1000 + mm.data.playerinfo.level * 20) / 60 * (time * 0.2/3))
     local addExp = math.ceil(7.6 * (time * 0.2))
     local addExppool = math.ceil(7.6 * (time * 0.2))
-    mm.onePlayAddGold = mm.onePlayAddGold + addGold
-    mm.onePlayAddExp = mm.onePlayAddExp + addExp
-    mm.onePlayaddExppool = mm.onePlayaddExppool + addExppool
-    
-    if self.fightType == 1 then 
-        mm.req("killMelee",{num = 1})
-    else
 
-        if time then
-            mm.req("killReward",{time = math.ceil(time), userAction = game.userAction})
-        else
-        end
-    end
+    -- mm.onePlayAddGold = mm.onePlayAddGold + addGold
+    -- mm.onePlayAddExp = mm.onePlayAddExp + addExp
+    -- mm.onePlayaddExppool = mm.onePlayaddExppool + addExppool
+    print("sendReward    11     ============================== 7   "..time)
+    
+    -- if self.fightType == 1 then 
+    --     mm.req("killMelee",{num = 1})
+    -- else
+
+    --     if time then
+    --         mm.req("killReward",{time = math.ceil(time), userAction = game.userAction})
+    --     else
+    --     end
+    -- end
 
 
 
@@ -3344,13 +3383,13 @@ function Unit:getCurBlood()
 end
 
 function Unit:setCurBlood(curBlood)
-    ccfightLog(self:getHeroName().." 2015-11-20     ===========================================1111====血变化 前 血      "..self.curBlood)
-    ccfightLog(self:getHeroName().." 2015-11-20     =============================================1111=====血变化       "..curBlood)
+    print(self:getHeroName().." 2015-11-20     ===========================================1111====血变化 前 血      "..self.curBlood)
+    print(self:getHeroName().." 2015-11-20     =============================================1111=====血变化       "..curBlood)
     if curBlood > self.initialBlood then
         curBlood = self.initialBlood
     end
     self.curBlood = curBlood
-    ccfightLog(self:getHeroName().." 2015-11-20     ==============================================1111======血变化 后 血      "..self.curBlood)
+    print(self:getHeroName().." 2015-11-20     ==============================================1111======血变化 后 血      "..self.curBlood)
 end
 
 function Unit:calculateCurBlood(hurt, damageStyle)
