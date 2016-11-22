@@ -984,7 +984,6 @@ function Fight:StartAck(roundIndex)
     self.ackPlayEnd = false
 
     self:sifangSkill({skillSeq = skillSeq[roundIndex], roundIndex = roundIndex})
-    print("YYYYY         11111111111111111111111111       0")
     
 end
 
@@ -1033,7 +1032,6 @@ function Fight:sifangSkill( param )
     local TgType = skillSeq.TgType
 
     unitA:showSkillIcon( TgType )
-    print("ttttttttttxxxxxxxxxxxx           skillId "..skillId)
     local skillTab = gameUtil.getHeroSkillTab( skillId )
 
     local texiaoEffect = gameUtil.getHeroSkillTab( skillId ).texiaoEffect 
@@ -1068,7 +1066,6 @@ function Fight:sifangSkill( param )
             end
             self:playSiFaEffect()
 
-            print("playTouSewu ====================================   1")
             
             local function ackBack()
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
@@ -1087,7 +1084,6 @@ function Fight:sifangSkill( param )
             end, sp.EventType.ANIMATION_EVENT)
             coroutine.yield()
 
-            print("playTouSewu ====================================   2")
 
             local skeletonNode = gameUtil.createSkeletonAnimation(skillTab.hurtEffect..".json", skillTab.hurtEffect..".atlas",1)
             unitA:addChild(skeletonNode)
@@ -1106,7 +1102,6 @@ function Fight:sifangSkill( param )
             end
             
             skeletonNode:setRotation(angel)
-            print("playTouSewu ====================================   3")
 
             local paowu = 0
             if texiaoEffect == MM.EtexiaoEffect.touzhi then
@@ -1136,11 +1131,9 @@ function Fight:sifangSkill( param )
 
             coroutine.yield()
 
-            print("playTouSewu ====================================   4")
 
             self:PlayHurtAction( param )
 
-            print("playTouSewu ====================================   5")
 
 
             gameUtil.playEffect(skillTab.End_Sound,false)
@@ -1166,7 +1159,6 @@ function Fight:sifangSkill( param )
     elseif texiaoEffect == MM.EtexiaoEffect.bo then
         local skillTab = gameUtil.getHeroSkillTab( skillId )
         local function playBo( ... )
-            print("YYYYY         11111111111111111111111111    1")
             local Skilltype = skillTab.SkillEffType
             local isAnimationHold = param.isAnimationHold
             local scale = skillTab.speed_scale * game.speedBuff
@@ -1198,7 +1190,6 @@ function Fight:sifangSkill( param )
             end, sp.EventType.ANIMATION_EVENT)
             coroutine.yield()
 
-            print("YYYYY         11111111111111111111111111    2")
 
             self:playHurtEffect({skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "bo", texiaoEffect = texiaoEffect})
 
@@ -1214,7 +1205,6 @@ function Fight:sifangSkill( param )
             unitA:runAction(action)
             coroutine.yield()
 
-            print("YYYYY         11111111111111111111111111    3")
             self:AckIsPlayEnd()
 
         end
@@ -1430,7 +1420,6 @@ function Fight:sifangSkill( param )
 
         
     elseif texiaoEffect == MM.EtexiaoEffect.danwei then 
-        print("ttttttttttxxxxxxxxxxxx           单位")
         local skillTab = gameUtil.getHeroSkillTab( skillId )
 
         local function playDanwei( ... )
@@ -1497,7 +1486,6 @@ function Fight:sifangSkill( param )
 
     
     elseif texiaoEffect == MM.EtexiaoEffect.yuandi then 
-        print("ttttttttttxxxxxxxxxxxx           原地")
         local skillTab = gameUtil.getHeroSkillTab( skillId )
         local function playYuandi( ... )
             local Skilltype = skillTab.SkillEffType
@@ -1722,7 +1710,6 @@ function Fight:PlayHurtAction( param )
         local isJihuo = skillSeq.Object[i].isJihuo  --集火时间
         local HuJia = skillSeq.Object[i].HuJia  --护盾
         local WuLiHuDun = skillSeq.Object[i].WuLiHuDun  --物理护盾
-        print("playTouSewu ====================================   7")
         if not hurtSkeletonNode then
             self.allHurt = self.allHurt - 1
         else
@@ -1748,12 +1735,9 @@ function Fight:PlayHurtAction( param )
                 hujiaZhi = hujiaZhi,
                 wuLiHuDunZhi = wuLiHuDunZhi,
             }
-            print("playTouSewu ====================================   8")
             hurtSkeletonNode:PlayHurt(t)
-            print("playTouSewu ====================================   10")
         end
         if myHurt ~= 0 then
-            print("playTouSewu ====================================   9")
             unitA:PlayHurt({
                                 hurt = myHurt,
                                 shoujiPath = skillTab.shoujiEffect,
@@ -1779,16 +1763,13 @@ function Fight:hurtEndCount( ... )
 end
 
 function Fight:AckIsPlayEnd( ... )
-        print("YYYYY         11111111111111111111111111   10")
         self.ackPlayEnd = true
     --if self.allHurt and self.hurtEnd and self.hurtEnd >= self.allHurt then
         self.hurtEnd = nil
         self.allHurt = nil
         self.ackPlayEnd = false
-        print("YYYYY         11111111111111111111111111   11")
         -- self.roundIndex = self.roundIndex + 1
         -- self:StartAck(self.roundIndex)
-        print("YYYYY         11111111111111111111111111   12")
         self:cteateSkillSequence()
         
         
