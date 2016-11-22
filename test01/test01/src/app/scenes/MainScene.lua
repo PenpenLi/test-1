@@ -75,6 +75,37 @@ function MainScene:initUI()
         self:rankBtnCbk()
     end)
 
+    --------------
+        local editBox2 = cc.ui.UIInput.new({
+            image = "res/mainUI/bm_xinxi2.png",
+            size = cc.size(219, 38),
+            x = display.cx,
+            y = display.cy,
+            listener = function(event, editbox)
+                if event == "began" then
+                    -- self:onEditBoxBegan(editbox)
+                elseif event == "ended" then
+                    -- self:onEditBoxEnded(editbox)
+                elseif event == "return" then
+                    -- self:onEditBoxReturn(editbox)
+                    local name = editbox:getText()
+
+                    local reqTab = {uid = game.uid, name = name}
+                    game.clientTCP:send("rename", reqTab, handler(self, self.renameBack))
+
+
+                elseif event == "changed" then
+                    -- self:onEditBoxChanged(editbox)
+                else
+                    printf("EditBox event %s", tostring(event))
+                end
+            end
+        })
+        editBox2:setReturnType(cc.KEYBOARD_RETURNTYPE_SEND)
+        editBox2:setPosition(800,30)
+        self:addChild(editBox2)
+    ------------
+
     self.setButton = cc.ui.UIPushButton.new({normal = "res/loginUI/bt_shezhi.png", 
                                             pressed = "res/loginUI/bt_shezhi.png", 
                                             disabled = "res/loginUI/bt_shezhi.png"})
@@ -209,6 +240,8 @@ function MainScene:initUI()
     })
     :align(display.BOTTOM_LEFT, 110, display.top - 35)
     :addTo(self)
+    self.namelabel = namelabel
+    self.namelabel:setString(game.playerInfo.base.name)
 
     local explabel = cc.ui.UILabel.new({
         UILabelType = 2,
@@ -251,6 +284,16 @@ function MainScene:initUI()
     self:addChild(jinbiImg)
     jinbiImg:setPosition(display.right - 240,display.top * 0.45 + 160)
     jinbiImg:setAnchorPoint(cc.p(0.5, 0.5))
+
+end
+
+function MainScene:renameBack(t)
+    print(" GardenScene:renameBack()  ================1 ")
+    dump(t)
+    print(" GardenScene:renameBack()  ================2 ")
+
+    self.namelabel:setString(t.name)
+    game.playerInfo.base.name = t.name
 
 end
 
