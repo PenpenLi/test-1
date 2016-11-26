@@ -1193,7 +1193,7 @@ function Fight:sifangSkill( param )
             end, sp.EventType.ANIMATION_EVENT)
             coroutine.yield()
 
-            self:playHurtEffect({resume = self.boCo,skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "bo", texiaoEffect = texiaoEffect})
+            self:playHurtEffect({resume = self.boCo[skillId],skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "bo", texiaoEffect = texiaoEffect})
 
             self:PlayHurtAction( param )
             gameUtil.playEffect(skillTab.End_Sound,false)
@@ -1298,7 +1298,7 @@ function Fight:sifangSkill( param )
 
             coroutine.yield()
 
-            self:playHurtEffect({resume = self.tiaoCo,skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "zs", texiaoEffect = texiaoEffect})
+            self:playHurtEffect({resume = self.tiaoCo[skillId],skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "zs", texiaoEffect = texiaoEffect})
 
             self:PlayHurtAction( param )
             gameUtil.playEffect(skillTab.End_Sound,false)
@@ -1465,7 +1465,7 @@ function Fight:sifangSkill( param )
             end, sp.EventType.ANIMATION_EVENT)
             coroutine.yield()
 
-            self:playHurtEffect({resume = self.dianweiCo,skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "mb", texiaoEffect = texiaoEffect})
+            self:playHurtEffect({resume = self.dianweiCo[skillId],skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "mb", texiaoEffect = texiaoEffect})
             self:PlayHurtAction(param)
             local action = cc.Sequence:create(
                     cc.DelayTime:create(1 ),
@@ -1530,7 +1530,7 @@ function Fight:sifangSkill( param )
 
             coroutine.yield()
 
-            self:playHurtEffect({resume = self.yuandiCo,skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "zs", texiaoEffect = texiaoEffect})
+            self:playHurtEffect({resume = self.yuandiCo[skillId],skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "zs", texiaoEffect = texiaoEffect})
 
             self:PlayHurtAction(param)
             local action = cc.Sequence:create(
