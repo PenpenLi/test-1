@@ -167,8 +167,11 @@ end
 g_msgCode["saveFormation"] = function( t )
     cclog("saveFormation back")
     mm.data.playerFormation = t.playerFormation or {}
-    print(" &&&&&&&&&&&&&&&&&&&&     102    "..  json.encode(mm.data.playerFormation))
-    print(" GH_Add 11111111111111111111111   222  "..  json.encode(t.playerFormation))
+    print(" saveFormation   ")
+    print(" saveFormation   "..  json.encode(t))
+    print(" saveFormation   ")
+    print(" saveFormation    "..  json.encode(mm.data.playerFormation))
+    print(" saveFormation "..  json.encode(t.playerFormation))
     mm.data.playerExtra.pkTimes = t.pkTimes or mm.data.playerExtra.pkTimes
     mm.dispatchEvent("saveFormation",t)
 end

@@ -6,6 +6,7 @@ INITLUA = require("app.models.initLua")
 PEIZHI = require("app.res.peizhi")
 INITLUA:fightSceneLoad()
 local fight = require("app.fight.Fight")
+fight:init()
 local PlayFight = require("app.fight.PlayFight")
 
 require("app.views.mmExtend.gameUtil")
@@ -64,26 +65,28 @@ function FightScene:onCreate()
     self:setCheckpointShow()
 
     self:timeUpdate()
+
+
+end
+
+function FightScene:onEnter() 
+    game.G_FightScene = self
+end
+
+function FightScene:globalEventsListener( event )
+    if event.name == EventDef.SERVER_MSG then
+        if event.code == "saveFormation" then
+        end
+    end
+    if event.name == EventDef.UI_MSG then
+        if event.code == "refreshMainUI" then
+        
+        end
+    end
 end
 
 function FightScene:timeUpdate()
     local function time( dt )
-        --处理获得的金币后续修改
-        -- local curGold = self.goldTextNum
-        -- if self.mbGold and self.mbGold > curGold and self.mbGold < 1000000 then
-        --     if ( self.mbGold - curGold ) < 5 then
-        --         self.goldText:setString(self.mbGold)
-        --         self.goldTextNum = self.mbGold
-        --     else
-        --         local jianGeGold = math.floor((self.mbGold - curGold) / 8)
-        --         self.goldText:setString(curGold + jianGeGold)
-        --         self.goldTextNum = curGold + jianGeGold
-        --     end
-        -- else
-        --     self.goldText:setString(gameUtil.dealNumber(mm.data.playerinfo.gold))
-        --     self.goldTextNum = mm.data.playerinfo.gold
-        -- end
-
         if self.NodeTimeNum > 0 and self.curBloodText then
             self.NodeTimeNum = self.NodeTimeNum - dt
             self.NodeTimeBar:setPercent(math.ceil(self.NodeTimeNum / BossTime * 100))
@@ -100,6 +103,7 @@ function FightScene:timeUpdate()
         end
         
     end
+    
     self.goldTick =  self:getScheduler():scheduleScriptFunc(time, 0.064,false)
 
 
@@ -126,35 +130,26 @@ function FightScene:jinshouzhiBtnCbk(widget,touchkey)
         local unitB = self.scene:getChildByName("b_1")
          
         local skeletonNode = self.tianShiSkeletonNode
-        
-
-        local function playTouSewu( ... )
-            print("     playTouSewuplayTouSewu ###########    11111111      ")
+        local function attack( ... )
+            print("  点击 杀    ")
             skeletonNode:setAnimation(0, "attack", false)
             skeletonNode:setTimeScale(3)
             local function ackBack()
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
                     skeletonNode:setAnimation(0, "stand", true)
-                    -- skeletonNode:setRotation(0)
             end
             skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
-
-            print("     playTouSewuplayTouSewu ###########    2222222222      ")
-
 
             if fight:UnitB1() then
                 fight:UnitB1():setPiaoxue(-2, nil, MM.EDamageStyle.Wuli, true)
             end
-
-
         end
-        
 
-
-        self.co = coroutine.create(function()
-            playTouSewu()
-        end)
-        coroutine.resume(self.co, self)
+        attack()
+        -- self.co = coroutine.create(function()
+        --     attack()
+        -- end)
+        -- coroutine.resume(self.co, self)
 
 
     end
@@ -183,10 +178,9 @@ function FightScene:nnffInit(  )
 end
 
 function FightScene:nnffInfo(  )
-    print("YYYYY         11111111111111111111111111    nnffInfo              111  ")
     local tab = {}
     local nnffID = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
-    print("YYYYY         11111111111111111111111111    nnffInfo              111  "..nnffID)
+    print("当前关卡  "..nnffID)
     tab.blood = G_BossTable[nnffID].blood * (0.5 +  self.curNnffId * 0.05)
     tab.size = 1
     tab.time = 0
@@ -236,7 +230,6 @@ function FightScene:showBlood( ... )
 end
 
 function FightScene:nnff(  )
-    print("YYYYY         11111111111111111111111111    isOverisOverisOverisOverisOver       1111")
 
     if self.NodeTimeNum > 0 then
         local nnffID = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
@@ -244,6 +237,7 @@ function FightScene:nnff(  )
     end
 
     fight:initNode()
+    self:updateFormationInfo()
     fight:initBattlefield({scene = self, unitTA = mm.puTongZhen, myplayerHero = mm.data.playerHero, typeA = 1,
                     unitTB = self:nnffInit(), diplayerHero = mm.data.playerHero, typeB = 1, GuaiWu = 1, nnffInfo = self:nnffInfo()
                     })
@@ -263,12 +257,16 @@ function FightScene:TapTapUI()
     self.tianShiSkeletonNode = skeletonNode
 
 
-
-
-    print("TapTapUI          "..#mm.puTongZhen)
     game.speedBuff = 1
 
+    
+    self:updateFormationInfo()
+
+end
+
+function FightScene:updateFormationInfo( ... )
     game.skillBtnTab = {}
+    print("TapTapUI          "..#mm.puTongZhen)
     for i=1,#mm.puTongZhen do
         local id = mm.puTongZhen[i]
         print("TapTapUI   id       "..id)
@@ -294,8 +292,6 @@ function FightScene:TapTapUI()
         self.scene:getChildByName("Node_skill_0"..i):addChild(iconImageView)
 
     end
-
-
 end
 
 function FightScene:SkillBtnCbk(widget,touchkey)
@@ -384,7 +380,7 @@ end
 function FightScene:buzhenBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
         if gameUtil.getPlayerLv(mm.data.playerinfo.exp) > 1 then
-            local BuZhenLayer = require("src.app.views.layer.BuZhenNewLayer").new({app = self.app_})
+            local BuZhenLayer = require("src.app.views.layer.Formation.BuZhenNewLayer").new({app = self.app_})
             self:addChild(BuZhenLayer, MoGlobalZorder[2000002])
             BuZhenLayer:setContentSize(cc.size(size.width, size.height))
             ccui.Helper:doLayout(BuZhenLayer)

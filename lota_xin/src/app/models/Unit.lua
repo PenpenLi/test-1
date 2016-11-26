@@ -207,6 +207,23 @@ function Unit:init(param)
 
 end
 
+function Unit:setAckTime( time )
+    self.AckTime = time
+end
+
+function Unit:getAckTime( ... )
+    return self.AckTime
+end
+
+function Unit:startAck( ... )
+    self.startActTime = os.time()
+    print("startAck ================ "..self.startActTime)
+end
+
+function Unit:getStartAckTime( ... )
+    return self.startActTime
+end
+
 function Unit:initValue(param)
     self.skillID = self:getHeroSkillsId()
     self.skillTAB = gameUtil.getHeroSkillTab( self.skillID )
@@ -287,7 +304,11 @@ function Unit:initValue(param)
     self.initWuLiHuDunXue = 0
     self.WuLiHuDunXue = 0
 
-    ccfightLog(" getHeroSkillsEx       siji  0001")
+
+    local time = math.random(100, 200) / 100
+    print("timetimetimetime  66666666               "..time)
+    self:setAckTime(time)
+    self:startAck()
 
 end
 
@@ -1626,42 +1647,8 @@ function Unit:getCurSkillId( TgType,heroid  )
         id = self:getHeroPuGongId()
     end
 
-
-
     return id
 
-
-    -- local id  = ""
-    -- if TgType  then
-    --     id = self:getHeroSkillsId()
-    --     self.actTimes = self.actTimes - 1
-    -- -- elseif self.TriggerType == (- MM.ETriggerType.TrXianshou) or
-    -- --     self.TriggerType == (- MM.ETriggerType.TrFansha) or
-    -- --        self.TriggerType == (- MM.ETriggerType.TrQiangrentou)   then
-    -- --     id = self:getHeroPuGongId()
-    -- else
-    --     ccfightLog("当前时间当前时间当前时间 "..time)
-    --     ccfightLog("沉默时间沉默时间沉默时间 "..self:getSilenceTime())
-    --     local sid = self:getHeroSkillsId()
-    --     local skillTab = gameUtil.getHeroSkillTab( sid )
-    --     local gl = 10 - skillTab.AckProbability*10
-
-    --     local r = math.random(1,10)
-    --     if time <= self:getSilenceTime() then
-    --         r = -1
-    --     end
-    --     if r > gl and self.actTimes > 0 then
-    --         id = self:getHeroSkillsId()
-    --         self.actTimes = self.actTimes - 1
-    --     else
-    --         id = self:getHeroPuGongId()
-    --     end
-    -- end
-
-    -- --设置当前技能类型
-    -- self.effectType = gameUtil.getHeroSkillTab( id ).Target
-
-    -- return id
 end
 
 function Unit:getHeroSkillsEx( heroid )
@@ -2403,6 +2390,8 @@ function Unit:clear( ... )
     self.WuLiHuDunTime = 0
     self.WuLiHuDunXue = 0
     self.initWuLiHuDunXue = 0
+
+    self.loadingBar = nil
 end
 
 function Unit:ReInitValue()
@@ -3038,10 +3027,6 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
 
     if not self:isDead() then
         local b = self:getCurBlood() + hurt
-        -- if b <= 0 then
-        --     self:setCurBlood(1) 
-        -- else
-            -- self:setCurBlood(b)
             self:calculateCurBlood(hurt, DamageStyle) 
             if self.loadingHuJiaBar then
                 self.loadingHuJiaBar:setPercent(math.ceil(self:getHuJiaXue() / self.initHuJiaXue * 100))
@@ -3070,13 +3055,16 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
             end
         -- end
     end
-
+    if not self.loadingBar then
+        return
+    end
 
     if math.ceil(self:getCurBlood()) <= 0 then
         self.loadingBar:setPercent(0)
     else
         self.loadingBar:setPercent(math.ceil(self:getCurBlood() / self.initialBlood * 100))
     end
+
     self.barImageBg:setVisible(true)
     self.loadingBar:setVisible(true)
     local function showbarBack( ... )
@@ -3147,9 +3135,9 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
     end
 
 
-    if isZhuJue then
-        self.fight:cteateSkillSequence()
-    end
+    -- if isZhuJue then
+    --     self.fight:cteateSkillSequence()
+    -- end
 
 end
 
