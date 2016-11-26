@@ -109,16 +109,8 @@ function Fight:initBattlefield(param)
         math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
         -- self:cteateSkillSequence(self.timetime)
     end 
-    local delayTime = 2
-    local st = 1
-    if #unitTB > #unitTA then
-        delayTime = time[#unitTB]
-        st = shaketime[#unitTB]
-    else
-        delayTime = time[#unitTA]
-        st = shaketime[#unitTA]
-    end
-    performWithDelay(self.fScene, startPK, delayTime)
+
+    performWithDelay(self.fScene, startPK, 1)
 
    -- self:seceneBeginShake(0.4, st)
    self:setAllBlood()
@@ -210,7 +202,7 @@ function Fight:cteateSkillSequence(unit)
     
     local MAX_CYCLE = 200*100
     self.skillSeq = self.skillSeq or {}
-    print("cteateSkillSequence 1")
+    -- print("cteateSkillSequence 1")
     --循环
     local seqIndex = 0
 
@@ -249,7 +241,7 @@ function Fight:checkattack( )
     if not self.timetime then
         return
     end
-    local curTime = os.time()
+    local curTime = os.clock()
     for k,v in pairs(self.UnitA) do
         local time = curTime - v:getStartAckTime()
         local AckTime = v:getAckTime()
@@ -1037,6 +1029,14 @@ function Fight:sifangSkill( param )
     local roundIndex = param.roundIndex
     local TgType = skillSeq.TgType
 
+    self.tousewuCo = self.tousewuCo or {}
+    self.boCo = self.boCo or {}
+    self.tiaoCo = self.tiaoCo or {}
+    self.dianCo = self.dianCo or {}
+    self.dianweiCo = self.dianweiCo or {}
+    self.yuandiCo = self.yuandiCo or {}
+
+
     unitA:showSkillIcon( TgType )
     local skillTab = gameUtil.getHeroSkillTab( skillId )
     local texiaoEffect = gameUtil.getHeroSkillTab( skillId ).texiaoEffect 
@@ -1083,7 +1083,7 @@ function Fight:sifangSkill( param )
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                 if event.eventData.name == "HurtHold" then
                 elseif event.eventData.name == "AnimationHold" then
-                    coroutine.resume(self.tousewuCo, self)
+                    coroutine.resume(self.tousewuCo[skillId], self)
                 end
               
             end, sp.EventType.ANIMATION_EVENT)
@@ -1127,7 +1127,7 @@ function Fight:sifangSkill( param )
                     bezierForward,
                     cc.CallFunc:create(function( ... )
                         skeletonNode:setVisible(false)
-                        coroutine.resume(self.tousewuCo, self)
+                        coroutine.resume(self.tousewuCo[skillId], self)
                     end)
                 )
             skeletonNode:runAction(action)
@@ -1142,23 +1142,23 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                     cc.DelayTime:create(0.5 / game.speedBuff ),
                     cc.CallFunc:create(function( ... )
-                        coroutine.resume(self.tousewuCo, self)
+                        coroutine.resume(self.tousewuCo[skillId], self)
                     end)
                 )
             unitA:runAction(action)
             coroutine.yield()
             self:AckIsPlayEnd()
         end
+        
 
-        self.tousewuCo = coroutine.create(function()
+        self.tousewuCo[skillId] = coroutine.create(function()
             playTouSewu()
         end)
-        coroutine.resume(self.tousewuCo, self)
+        coroutine.resume(self.tousewuCo[skillId], self)
 
 
 
     elseif texiaoEffect == MM.EtexiaoEffect.bo then
-        print("sifangSkill ====================       2 ")
         local skillTab = gameUtil.getHeroSkillTab( skillId )
         local function playBo( ... )
             local Skilltype = skillTab.SkillEffType
@@ -1176,27 +1176,22 @@ function Fight:sifangSkill( param )
             end
             self:playSiFaEffect()
 
-            print("sifangSkill ====================       3 ")
             
             local function ackBack()
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
                 skeletonNode:setAnimation(0, "stand", true)
-                print("sifangSkill ====================       32 ")
             end
             skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
-            print("sifangSkill ====================       31 ")
 
             skeletonNode:registerSpineEventHandler(function (event)
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                 if event.eventData.name == "HurtHold" then
                 elseif event.eventData.name == "AnimationHold" then
-                    print("sifangSkill ====================       33 ")
-                    coroutine.resume(self.boCo, self)
+                    coroutine.resume(self.boCo[skillId], self)
                 end
               
             end, sp.EventType.ANIMATION_EVENT)
             coroutine.yield()
-            print("sifangSkill ====================       4 ")
 
             self:playHurtEffect({resume = self.boCo,skillTab = skillTab, skillSeq = skillSeq, unitA = unitA, animationName = "bo", texiaoEffect = texiaoEffect})
 
@@ -1206,19 +1201,18 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                     cc.DelayTime:create(0.5 / game.speedBuff ),
                     cc.CallFunc:create(function( ... )
-                        coroutine.resume(self.boCo, self)
+                        coroutine.resume(self.boCo[skillId], self)
                     end)
                 )
             unitA:runAction(action)
             coroutine.yield()
-            print("sifangSkill ====================       5 ")
             self:AckIsPlayEnd()
 
         end
-        self.boCo = coroutine.create(function()
+        self.boCo[skillId] = coroutine.create(function()
             playBo()
         end)
-        coroutine.resume(self.boCo, self)
+        coroutine.resume(self.boCo[skillId], self)
 
 
         
@@ -1255,7 +1249,7 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                     cc.MoveBy:create(0.15  / speedScale / game.speedBuff , cp),
                     cc.CallFunc:create(function()
-                        coroutine.resume(self.tiaoCo, self)
+                        coroutine.resume(self.tiaoCo[skillId], self)
                     end)
                     
                 )
@@ -1288,11 +1282,11 @@ function Fight:sifangSkill( param )
             skeletonNode:registerSpineEventHandler(function (event)
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                 if event.eventData.name == "HurtHold" then
-                    coroutine.resume(self.tiaoCo, self)
+                    coroutine.resume(self.tiaoCo[skillId], self)
                 elseif event.eventData.name == "AnimationHold" then
-                    coroutine.resume(self.tiaoCo, self)
+                    coroutine.resume(self.tiaoCo[skillId], self)
                 elseif event.eventData.name == "DefHold" then
-                    coroutine.resume(self.tiaoCo, self)
+                    coroutine.resume(self.tiaoCo[skillId], self)
                 end
               print(string.format("[spine] %d event: %s, %d, %f, %s", 
                       event.trackIndex,
@@ -1312,7 +1306,7 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                     cc.DelayTime:create(0.6 / game.speedBuff),
                     cc.CallFunc:create(function( ... )
-                        coroutine.resume(self.tiaoCo, self)
+                        coroutine.resume(self.tiaoCo[skillId], self)
                     end)
                 )
             unitA:runAction(action)
@@ -1321,7 +1315,7 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                         cc.MoveBy:create(0.15 / speedScale / game.speedBuff, cc.p(cp.x*(-1),cp.y*(-1))),
                         cc.CallFunc:create(function( ... )
-                            coroutine.resume(self.tiaoCo, self)
+                            coroutine.resume(self.tiaoCo[skillId], self)
                         end)
                     )
             unitA:runAction(action)    
@@ -1331,10 +1325,10 @@ function Fight:sifangSkill( param )
 
         end
 
-        self.tiaoCo = coroutine.create(function()
+        self.tiaoCo[skillId] = coroutine.create(function()
             playTiao()
         end)
-        coroutine.resume(self.tiaoCo, self)
+        coroutine.resume(self.tiaoCo[skillId], self)
         
         
 
@@ -1368,7 +1362,7 @@ function Fight:sifangSkill( param )
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                     if event.eventData.name == "HurtHold" then
                     elseif event.eventData.name == "AnimationHold" then
-                        coroutine.resume(self.dianCo, self)
+                        coroutine.resume(self.dianCo[skillId], self)
                     end
                   
               end, sp.EventType.ANIMATION_EVENT)
@@ -1397,7 +1391,7 @@ function Fight:sifangSkill( param )
             skeletonNode:registerSpineEventHandler(function (event)
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                 if event.eventData.name == "HurtHold" then
-                    coroutine.resume(self.dianCo, self)
+                    coroutine.resume(self.dianCo[skillId], self)
                 end
             end, sp.EventType.ANIMATION_EVENT)
 
@@ -1410,7 +1404,7 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                     cc.DelayTime:create(0.5 / game.speedBuff ),
                     cc.CallFunc:create(function( ... )
-                        coroutine.resume(self.dianCo, self)
+                        coroutine.resume(self.dianCo[skillId], self)
                     end)
                 )
             unitA:runAction(action)
@@ -1420,10 +1414,10 @@ function Fight:sifangSkill( param )
 
         end
 
-        self.dianCo = coroutine.create(function()
+        self.dianCo[skillId] = coroutine.create(function()
             playDian()
         end)
-        coroutine.resume(self.dianCo, self)
+        coroutine.resume(self.dianCo[skillId], self)
 
         
     elseif texiaoEffect == MM.EtexiaoEffect.danwei then 
@@ -1463,9 +1457,9 @@ function Fight:sifangSkill( param )
             skeletonNode:registerSpineEventHandler(function (event)
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                 if event.eventData.name == "HurtHold" then
-                    coroutine.resume(self.dianweiCo, self)
+                    coroutine.resume(self.dianweiCo[skillId], self)
                 elseif event.eventData.name == "AnimationHold" then
-                    coroutine.resume(self.dianweiCo, self)
+                    coroutine.resume(self.dianweiCo[skillId], self)
                 end
               
             end, sp.EventType.ANIMATION_EVENT)
@@ -1476,7 +1470,7 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                     cc.DelayTime:create(1 ),
                     cc.CallFunc:create(function( ... )
-                        coroutine.resume(self.dianweiCo, self)
+                        coroutine.resume(self.dianweiCo[skillId], self)
                     end)
                 )
             unitA:runAction(action)
@@ -1484,10 +1478,10 @@ function Fight:sifangSkill( param )
             self:AckIsPlayEnd()
 
         end
-        self.dianweiCo = coroutine.create(function()
+        self.dianweiCo[skillId] = coroutine.create(function()
             playDanwei()
         end)
-        coroutine.resume(self.dianweiCo, self)
+        coroutine.resume(self.dianweiCo[skillId], self)
 
 
 
@@ -1517,13 +1511,13 @@ function Fight:sifangSkill( param )
             skeletonNode:registerSpineEventHandler(function (event)
                 skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_EVENT)
                 if event.eventData.name == "HurtHold" then
-                    coroutine.resume(self.yuandiCo, self)
+                    coroutine.resume(self.yuandiCo[skillId], self)
                 elseif event.eventData.name == "AnimationHold" then
                     
-                    coroutine.resume(self.yuandiCo, self)
+                    coroutine.resume(self.yuandiCo[skillId], self)
                 elseif event.eventData.name == "DefHold" then
                     
-                    coroutine.resume(self.yuandiCo, self)
+                    coroutine.resume(self.yuandiCo[skillId], self)
                 end
                 print(string.format("[spine] %d event: %s, %d, %f, %s", 
                       event.trackIndex,
@@ -1542,7 +1536,7 @@ function Fight:sifangSkill( param )
             local action = cc.Sequence:create(
                     cc.DelayTime:create(0.5 / game.speedBuff ),
                     cc.CallFunc:create(function( ... )
-                        coroutine.resume(self.yuandiCo, self)
+                        coroutine.resume(self.yuandiCo[skillId], self)
                     end)
                 )
             unitA:runAction(action)
@@ -1551,10 +1545,10 @@ function Fight:sifangSkill( param )
 
         end
 
-        self.yuandiCo = coroutine.create(function()
+        self.yuandiCo[skillId] = coroutine.create(function()
             playYuandi()
         end)
-        coroutine.resume(self.yuandiCo, self)
+        coroutine.resume(self.yuandiCo[skillId], self)
 
         
 
@@ -1743,6 +1737,8 @@ function Fight:PlayHurtAction( param )
                 hujiaZhi = hujiaZhi,
                 wuLiHuDunZhi = wuLiHuDunZhi,
             }
+
+            print("font  hurt    PlayHurt                1")
             hurtSkeletonNode:PlayHurt(t)
         end
         if myHurt ~= 0 then

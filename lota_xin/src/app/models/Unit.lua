@@ -164,8 +164,12 @@ function Unit:init(param)
 
     end
 
-    --添加出现特效
-    -- if self.campType == 2 then
+    
+
+    if self.campType == CAMP_A_TYPE then
+        addHero()
+    else
+        --添加出现特效
         local function addDrcx(  )
             local anime = gameUtil.createSkeAnmion( {name = "drcx",scale = 1} )
             anime:setAnimation(0, "stand", false)
@@ -175,28 +179,12 @@ function Unit:init(param)
             gameUtil.playUIEffect( "Enemy_Birth" )
             anime:setScale(1)
         end
-
-
-        
         self:runAction( cc.Sequence:create(cc.DelayTime:create(delay[self.index]), cc.CallFunc:create(addDrcx), cc.DelayTime:create(0.5), cc.CallFunc:create(addHero) ))
 
-    -- elseif self.campType == 1 then
-    --     local fuhuoPath = "res/Effect/yingxiong/gongyong/t_10/t_10"
-    --     local fuhuoNode = gameUtil.createSkeletonAnimation(fuhuoPath..".json", fuhuoPath..".atlas",0.5)
-    --     self:addChild(fuhuoNode)
-    --     fuhuoNode:setAnimation(0, "mb", false)
-    --     --fuhuoNode:setPosition(0,50)
 
-    --     self:runAction( cc.Sequence:create(cc.DelayTime:create(0.2), cc.CallFunc:create(addHero) ))
-    -- end
-
-
-
-    ccfightLog(" getHeroSkillsEx       siji  0005")
-    
+    end
 
     
-
     if debug_xue == 1 then
         self.curBloodText = ccui.Text:create(math.ceil(self.curBlood), "fonts/huakang.TTF", 24)
         self.curBloodText:setFontName("curBloodText")
@@ -216,7 +204,7 @@ function Unit:getAckTime( ... )
 end
 
 function Unit:startAck( ... )
-    self.startActTime = os.time()
+    self.startActTime = os.clock()
     print("startAck ================ "..self.startActTime)
 end
 
@@ -2776,11 +2764,12 @@ function Unit:PlayHurt(param)
     else
     end
 
+    print("font  hurt                    1")
+
     if self:isDead() then
         --self.fight:hurtEndCount()
         return
     end
-
 
     if hurt < 0 then
         local function hurtBack()
@@ -2840,6 +2829,7 @@ function Unit:PlayHurt(param)
         self:getSkeletonNode():setAnimation(0, "hurt", false)
         self:getSkeletonNode():registerSpineEventHandler(hurtBack,sp.EventType.ANIMATION_COMPLETE)
         self:getSkeletonNode():setTimeScale(speedScale)
+
     else
         --是否护甲
         if HuJia then
@@ -2864,6 +2854,7 @@ function Unit:PlayHurt(param)
             -- hurt = 0 --如果是护盾则不加到血条
         end
     end
+
     ---飘雪
     if not self:isDead() then
         -- self:setCurBlood(self:getCurBlood() + hurt) 
@@ -2926,6 +2917,8 @@ function Unit:PlayHurt(param)
     else
         fut = "res/font/fnt_02.fnt"
     end
+
+    print("font  hurt      "..hurt)
     local hurtText = ccui.TextBMFont:create()
     if hurt > 0 then
         hurtText:setFntFile("res/font/fnt_01.fnt")
@@ -3083,6 +3076,8 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
     else
         fut = "res/font/fnt_02.fnt"
     end
+
+    print("font  hurt  111111    "..hurt)
 
     local hurtText = ccui.TextBMFont:create()
     if hurt > 0 then
