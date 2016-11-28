@@ -22,13 +22,38 @@ Guide = require("app/models/guide")
 require("app.res.PreciousUpRes")
 
 
-require("app.res.BossRes")
+G_BossTable = require("app.res.BossRes")
+G_LvTable = require("app.res.LvRes")
+G_PetTable = require("app.res.PetRes")
 
 local CheckpointCount = 9 --每一关小怪个数
 local BossTime = 30 --boss的击杀时间
 
 
 local size  = cc.Director:getInstance():getWinSize()
+
+mm.data.player = {
+    {id = 10000001, lv = 1, skillLv = 1, eq01 = 1, eq02 = 1, eq03 = 1, },
+}
+
+mm.data.playerPet = {
+    {id = 1278226736, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278226744, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278226993, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278227249, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278227254, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+}
+
+mm.puTongZhen = {
+        1278226736,
+        1278226744,
+        1278226993,
+        1278227249,
+        1278227254,
+    }
+
+
+mm.data.playerHero = mm.data.playerPet
 
 function FightScene:onCreate()
 
@@ -156,21 +181,13 @@ function FightScene:jinshouzhiBtnCbk(widget,touchkey)
 end
 
 function FightScene:nnffInit(  )
-
-    if not self.herpNNFF then
-        self.herpNNFF = {}
-        for k,v in pairs(LOL) do
-            if v.Nation ~= 9 then
-                table.insert(self.herpNNFF,v.ID)
-            end
-        end
-
-        for k,v in pairs(DOTA) do
-            if v.Nation ~= 9 then
-                table.insert(self.herpNNFF,v.ID)
-            end
-        end
-    end
+    self.herpNNFF = {
+        1278226736,
+        1278226744,
+        1278226993,
+        1278227249,
+        1278227254,
+    }
 
     local num = math.random(1,#self.herpNNFF)
     local TB = {self.herpNNFF[num]}
@@ -269,27 +286,27 @@ function FightScene:updateFormationInfo( ... )
     print("TapTapUI          "..#mm.puTongZhen)
     for i=1,#mm.puTongZhen do
         local id = mm.puTongZhen[i]
-        print("TapTapUI   id       "..id)
-        local HeroRes = gameUtil.getHeroTab( id )
+        -- print("TapTapUI   id       "..id)
+        -- local HeroRes = gameUtil.getHeroTab( id )
 
-        local skillId = HeroRes.Skills[1]
-        local skillRes = gameUtil.getHeroSkillTab( skillId )
-        local skillIconRes = skillRes.sicon
+        -- local skillId = HeroRes.Skills[1]
+        -- local skillRes = gameUtil.getHeroSkillTab( skillId )
+        -- local skillIconRes = skillRes.sicon
 
-        print("TapTapUI   skillId       "..skillId)
+        -- print("TapTapUI   skillId       "..skillId)
 
-        print("TapTapUI   skillIconRes       "..skillIconRes)
+        -- print("TapTapUI   skillIconRes       "..skillIconRes)
 
-        local iconImageView = ccui.ImageView:create()
-        iconImageView:loadTexture(skillIconRes..".png")  
-        iconImageView:setTouchEnabled(true)
-        iconImageView:addTouchEventListener(handler(self, self.SkillBtnCbk))
-        iconImageView:setTag(id)
+        -- local iconImageView = ccui.ImageView:create()
+        -- iconImageView:loadTexture(skillIconRes..".png")  
+        -- iconImageView:setTouchEnabled(true)
+        -- iconImageView:addTouchEventListener(handler(self, self.SkillBtnCbk))
+        -- iconImageView:setTag(id)
         game.skillBtnTab[id] = {}
         game.skillBtnTab[id].can = false
 
 
-        self.scene:getChildByName("Node_skill_0"..i):addChild(iconImageView)
+        -- self.scene:getChildByName("Node_skill_0"..i):addChild(iconImageView)
 
     end
 end
@@ -408,18 +425,18 @@ end
 
 --初始化普通阵
 function FightScene:initPuTongZhen()
-    mm.puTongZhen = {}
-    if not mm.data.playerFormation or #mm.data.playerFormation <= 0 then
-        mm.puTongZhen = self:getUnitIDA()
-    else
-        for i=1,#mm.data.playerFormation do
-            if mm.data.playerFormation[i].type == 1 then
-                for j=1,#mm.data.playerFormation[i].formationTab do
-                    table.insert(mm.puTongZhen, mm.data.playerFormation[i].formationTab[j].id)
-                end
-            end
-        end
-    end
+    -- mm.puTongZhen = {}
+    -- if not mm.data.playerFormation or #mm.data.playerFormation <= 0 then
+    --     mm.puTongZhen = self:getUnitIDA()
+    -- else
+    --     for i=1,#mm.data.playerFormation do
+    --         if mm.data.playerFormation[i].type == 1 then
+    --             for j=1,#mm.data.playerFormation[i].formationTab do
+    --                 table.insert(mm.puTongZhen, mm.data.playerFormation[i].formationTab[j].id)
+    --             end
+    --         end
+    --     end
+    -- end
 end
 
 

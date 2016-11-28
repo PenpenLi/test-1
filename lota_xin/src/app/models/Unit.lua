@@ -45,8 +45,12 @@ function Unit:init(param)
     self.meleeTab = param.meleeTab
 
     self.HeroId = param.HeroId
-    ccfightLog(" ID ID ID ID ".. self.HeroId)
+    print(" Unit:init  ID ".. self.HeroId)
+    -- print(" Unit:init  ID ".. json.encode(param.playHero))
     self.playHero = param.playHero
+    self.playPet = param.playHero
+    self.pet = self:getPetTab(self.HeroId)
+    self.petRes = G_PetTable[self.pet.id]
 
     self.type = param.playType  -- 3 关卡
 
@@ -58,47 +62,6 @@ function Unit:init(param)
 
     self:setLocalZOrder(self.zorder)
 
-    local heroTab = nil
-
-    if self.type == MONSTERTYPE then
-        --ccfightLog("关卡 怪物 ID ".. self.HeroId)
-        self.monsterTab = INITLUA:getMonsterResById( self.HeroId )
-        heroTab = {}
-        heroTab.id = self.HeroId
-        heroTab.lv = self.monsterTab.monster_lv
-        heroTab.xinlv = self.monsterTab.chushixin
-        heroTab.jinlv = self.monsterTab.monster_rank
-        heroTab.exp  = 0
-        heroTab.eqTab  = {}
-
-    else
-
-        if self.playHero  then
-            for i=1,#self.playHero do
-                if self.playHero[i].id == self.HeroId then
-                    heroTab = self.playHero[i]
-                    break
-                end
-            end
-        end
-        if not heroTab then
-            heroTab = {}
-            heroTab.id = self.HeroId
-            heroTab.lv = 1
-            heroTab.xinlv = 1
-            heroTab.jinlv = 1
-            heroTab.exp  = 0
-            heroTab.eqTab  = {}
-        end
-    end
-    self.heroTab = heroTab
-    if self.heroTab.preciousInfo then
-    else
-    end
-
-
-
-    heroTab.lv = gameUtil.getHeroLv(heroTab.exp, heroTab.jinlv)
 
     self:initValue(param)
 
@@ -193,6 +156,15 @@ function Unit:init(param)
         self:addChild(self.curBloodText)
     end
 
+end
+
+function Unit:getPetTab( id )
+    for k,v in pairs(self.playPet) do
+        if v.id == id then
+            return v
+        end
+    end
+    return nil
 end
 
 function Unit:setAckTime( time )
@@ -304,58 +276,6 @@ function Unit:getInitBlood( ... )
     return self.initialBlood
 end
 
-function Unit:getExemptAD( ... )
-    local gh_BP_ExemptAD = self:GH_Add( MM.EPassiveProperty.BP_ExemptAD).gh_BP_ExemptAD
-
-    return self.curExemptAD + gh_BP_ExemptAD
-end
-
-function Unit:getExemptAP( ... )
-    local gh_BP_ExemptAP = self:GH_Add( MM.EPassiveProperty.BP_ExemptAP).gh_BP_ExemptAP
-
-    return self.curExemptAP
-end
-
-function Unit:getADParry( ... )
-    local gh_BP_ADParry = self:GH_Add( MM.EPassiveProperty.BP_ADParry).gh_BP_ADParry
-
-    return self.curADParry + gh_BP_ADParry
-end
-
-function Unit:getAPParry( ... )
-    local gh_BP_APParry = self:GH_Add( MM.EPassiveProperty.BP_APParry).gh_BP_APParry
-
-    return self.curAPParry + gh_BP_APParry
-end
-
-function Unit:getArmorP( ... )
-    --光环
-    local gh_BP_ArmorP = self:GH_Add( MM.EPassiveProperty.BP_ArmorP).gh_BP_ArmorP
-
-    return self.curArmorP + gh_BP_ArmorP
-end
-
-function Unit:geMAP( ... )
-    local gh_BP_MAP = self:GH_Add( MM.EPassiveProperty.BP_MAP).gh_BP_MAP
-
-    return self.curWufang * (1 + gh_BP_MAP) 
-end
-
-function Unit:getADRebound( ... )
-    local gh_BP_ADRebound = self:GH_Add( MM.EPassiveProperty.BP_ADRebound).gh_BP_ADRebound
-
-    return self.curADRebound + gh_BP_ADRebound
-end
-
-function Unit:getAPRebound( ... )
-    local gh_BP_APRebound = self:GH_Add( MM.EPassiveProperty.BP_APRebound).gh_BP_APRebound
-    return self.curAPRebound + gh_BP_APRebound
-end
-
-function Unit:getADxixue( ... )
-    local gh_BP_ADxixue = self:GH_Add( MM.EPassiveProperty.BP_ADxixue).gh_BP_ADxixue
-    return self.curADxixue + gh_BP_ADxixue
-end
 
 function Unit:getRebirth( ... )
     return self.curRebirth
@@ -365,35 +285,9 @@ function Unit:setRebirth()
     self.curRebirth = 0
 end
 
-function Unit:getIgnoreAD()
-    local gh_BP_IgnoreAD = self:GH_Add( MM.EPassiveProperty.BP_IgnoreAD).gh_BP_IgnoreAD
-    return self.curIgnoreAD + gh_BP_IgnoreAD
-end
-
-function Unit:getIgnoreAP()
-    local gh_BP_IgnoreAP = self:GH_Add( MM.EPassiveProperty.BP_IgnoreAP).gh_BP_IgnoreAP
-    return self.curIgnoreAP + gh_BP_IgnoreAP
-end
-
-function Unit:getADDeep()
-    local gh_BP_ADDeep = self:GH_Add( MM.EPassiveProperty.BP_ADDeep).gh_BP_ADDeep
-    return self.curADDeep + gh_BP_ADDeep
-end
-
-function Unit:getAPDeep()
-    local gh_BP_APDeep = self:GH_Add( MM.EPassiveProperty.BP_APDeep).gh_BP_APDeep
-    return self.curAPDeep + gh_BP_APDeep
-end
 
 function Unit:getInitialAPDeep( ... )
     local APDeep = 0
-
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        APDeep = APDeep + self:BPAPDeep( skillsExTab[i], SkillLv )
-    end
 
     return APDeep
 end
@@ -401,25 +295,12 @@ end
 function Unit:getInitialADDeep( ... )
     local ADDeep = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        ADDeep = ADDeep + self:BPADDeep( skillsExTab[i], SkillLv )
-    end
-
     return ADDeep
 end
 
 function Unit:getInitialIgnoreAP( ... )
     local IgnoreAP = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        IgnoreAP = IgnoreAP + self:BPIgnoreAP( skillsExTab[i], SkillLv )
-    end
 
     return IgnoreAP
 end
@@ -427,38 +308,18 @@ end
 function Unit:getInitialIgnoreAD( ... )
     local IgnoreAD = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        IgnoreAD = IgnoreAD + self:BPIgnoreAD( skillsExTab[i], SkillLv )
-    end
 
     return IgnoreAD
 end
 
 function Unit:getInitialRebirth( ... )
     local Rebirth = 0
-
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        Rebirth = Rebirth + self:BPRebirth( skillsExTab[i], SkillLv )
-    end
-
     return Rebirth
 end
 
 function Unit:getInitialADxixue( ... )
     local ADxixue = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        ADxixue = ADxixue + self:BPADxixue( skillsExTab[i], SkillLv )
-    end
 
     return ADxixue
 end
@@ -466,12 +327,6 @@ end
 function Unit:getInitialAPRebound( ... )
     local APRebound = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        APRebound = APRebound + self:BPAPRebound( skillsExTab[i], SkillLv )
-    end
 
     return APRebound
 end
@@ -479,25 +334,11 @@ end
 function Unit:getInitialADRebound( ... )
     local ADRebound = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        ADRebound = ADRebound + self:BPADRebound( skillsExTab[i], SkillLv )
-    end
-
     return ADRebound
 end
 
 function Unit:getInitialExemptAP( ... )
     local ExemptAP = 0
-
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        ExemptAP = ExemptAP + self:BPExemptAP( skillsExTab[i], SkillLv )
-    end
 
     return ExemptAP
 end
@@ -505,12 +346,6 @@ end
 function Unit:getInitialExemptAD( ... )
     local ExemptAD = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        ExemptAD = ExemptAD + self:BPExemptAD( skillsExTab[i], SkillLv )
-    end
 
     return ExemptAD
 end
@@ -518,12 +353,6 @@ end
 function Unit:getInitialAPParry( ... )
     local APParry = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        APParry = APParry + self:BPAPParry( skillsExTab[i], SkillLv )
-    end
 
     return APParry
 end
@@ -531,25 +360,11 @@ end
 function Unit:getInitialADParry( ... )
     local ADParry = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        ADParry = ADParry + self:BPADParry( skillsExTab[i], SkillLv )
-    end
-
     return ADParry
 end
 
 function Unit:getInitialMAP( ... )
     local MAP = 0
-
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        MAP = MAP + self:BPMAP( skillsExTab[i], SkillLv )
-    end
 
     return MAP
 end
@@ -557,392 +372,15 @@ end
 function Unit:getInitialArmorP( ... )
     local armorP = 0
 
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        armorP = armorP + self:BPArmorP( skillsExTab[i], SkillLv )
-    end
-
     return armorP
 end
 
 function Unit:getInitialCritTimes( ... )
-    local critTimes = 1.5
-
-    local skillsExTab = self.HeroSkillsEx
-    --todo
-    for i=1,#skillsExTab do
-        local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-        critTimes = critTimes + self:BPCrit( skillsExTab[i], SkillLv )
-    end
+    local critTimes = 2
 
     return critTimes
 end
 
-function Unit:BPLife( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Life then
-        if SkillLv and SkillLv > 0 then
-            return math.ceil(tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1))
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPAttack( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Attack then
-        if SkillLv and SkillLv > 0 then
-            return math.ceil(tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1))
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPCrit( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Crit then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPCrit( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Crit then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPSpeed( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Speed then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPArmor( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Armor then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPMA( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_MA then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPArmorP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ArmorP then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPMAP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_MAP then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPLifePre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_LifePre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPAttackPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_AttackPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPSpeedPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_SpeedPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPDADPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_DADPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPDAPPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_DAPPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPADParry( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADParry then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPAPParry( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_APParry then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPExemptAD( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ExemptAD then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPExemptAP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ExemptAP then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPADRebound( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADRebound then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPAPRebound( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_APRebound then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPADxixue( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADxixue then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPRebirth( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Rebirth then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPADDeep( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADDeep then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPAPDeep( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_APDeep then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPIgnoreAD( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_IgnoreAD then
-        if SkillLv and SkillLv > 0 then
-            return 1
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:BPIgnoreAP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_IgnoreAP then
-        if SkillLv and SkillLv > 0 then
-            return 1
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
 
 function Unit:getInitActTimes( ... )
     return self.skillTAB.actTimes
@@ -971,86 +409,22 @@ end
 
 function Unit:getInitialMofang( ... )
     local mofangNum = 0
-    if self.type == MONSTERTYPE then
-        mofangNum = self.monsterTab.MoFang
-    else
-        mofangNum = gameUtil.mofangMBAck( { heroid = self.heroTab.id, lv = self.heroTab.lv, xinlv = self.heroTab.xinlv, jinlv = self.heroTab.jinlv, eqTab = self.heroTab.eqTab, preciousInfo = self.heroTab.preciousInfo, skinInfo = self.heroTab.skinInfo} )
-        local skillsExTab = self.HeroSkillsEx
-        --todo
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            mofangNum = mofangNum + self:BPMA( skillsExTab[i], SkillLv )
-        end
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            mofangNum = mofangNum * (1 + self:BPDAPPre( skillsExTab[i], SkillLv )) 
-        end
-
-    end
     return mofangNum
 
 end
 
-function Unit:getMofang( ... )
-    local curMofang = self.curMofang
-    --添加光环护甲
-    local gh_BP_MA = self:GH_Add( MM.EPassiveProperty.BP_MA).gh_BP_MA
-    curMofang = curMofang + gh_BP_MA
-
-    local gh_BP_DAPPre = self:GH_Add( MM.EPassiveProperty.BP_DAPPre).gh_BP_DAPPre
-    curMofang = curMofang * (1 + gh_BP_DAPPre) 
-
-    return curMofang
-end
 
 function Unit:getInitialWufang( ... )
-    local wufangNum = 0
-    if self.type == MONSTERTYPE then
-        wufangNum =  self.monsterTab.WuFang
-    else
-        wufangNum = gameUtil.wufangMBAck( { heroid = self.heroTab.id, lv = self.heroTab.lv, xinlv = self.heroTab.xinlv,  jinlv = self.heroTab.jinlv, eqTab = self.heroTab.eqTab, preciousInfo = self.heroTab.preciousInfo, skinInfo = self.heroTab.skinInfo} )
-        local skillsExTab = self.HeroSkillsEx
-        --todo
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            wufangNum = wufangNum + self:BPArmor( skillsExTab[i], SkillLv )
-        end
-
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            wufangNum = wufangNum * (1 + self:BPDADPre( skillsExTab[i], SkillLv )) 
-        end
-
-        
-    end
-
-    return wufangNum
+    local wufangNum = 1
+    return 1
 
 end
 
-function Unit:getWufang( ... )
-    local curWufang = self.curWufang
-    --添加光环护甲
-    local gh_BP_Armor = self:GH_Add( MM.EPassiveProperty.BP_Armor).gh_BP_Armor
-    curWufang = curWufang + gh_BP_Armor
-
-    local gh_BP_DADPre = self:GH_Add( MM.EPassiveProperty.BP_DADPre).gh_BP_DADPre
-    curWufang = curWufang * (1 + gh_BP_DADPre) 
-
-    return curWufang
-end
 
 function Unit:getInitialCrit( ... )
-    if self.type == MONSTERTYPE then
-        return self.monsterTab.Crit
-    end
-
-    local critNum = gameUtil.critMBAck( { heroid = self.heroTab.id, lv = self.heroTab.lv, xinlv = self.heroTab.xinlv,  jinlv = self.heroTab.jinlv, eqTab = self.heroTab.eqTab, preciousInfo = self.heroTab.preciousInfo, skinInfo = self.heroTab.skinInfo} )
+    local critNum = 0
     
-    if not critNum then
-        ccfightLog("有没有  3    ")
-    end
-
+    critNum = self.petRes.Crit +  self.pet.lv * 1.1 --todo 公式
     return critNum
 
 end
@@ -1060,17 +434,8 @@ function Unit:getCrit( ... )
 end
 
 function Unit:getInitialDodge( ... )
-    if self.type == MONSTERTYPE then
-        return self.monsterTab.Dodge
-    end
 
-    local dodgeNum = gameUtil.dodgeMBAck( { heroid = self.heroTab.id, lv = self.heroTab.lv, xinlv = self.heroTab.xinlv,  jinlv = self.heroTab.jinlv, eqTab = self.heroTab.eqTab, skinInfo = self.heroTab.skinInfo} )
-    
-    if not dodgeNum then
-        ccfightLog("有没有  4    ")
-    end
-
-    return dodgeNum
+    return 1
 
 end
 
@@ -1080,64 +445,9 @@ end
 
 function Unit:getInitialAck( ... )
     local ackNum = 0
-    if self.type == MONSTERTYPE then
-        ackNum =  self.monsterTab.Attack
-    else
-        ackNum = gameUtil.heroMBAck( { heroid = self.heroTab.id, lv = self.heroTab.lv, xinlv = self.heroTab.xinlv,  jinlv = self.heroTab.jinlv, eqTab = self.heroTab.eqTab, preciousInfo = self.heroTab.preciousInfo, skinInfo = self.heroTab.skinInfo} )
-        
-        --替补修正，抢夺战力修正
-        local myplayerHero = self.fightParam.myplayerHero
-        local diplayerHero = self.fightParam.diplayerHero
-        local myPkValue = self.fightParam.myPkValue
-        local diPkValue = self.fightParam.diPkValue
+    
+    ackNum = self.petRes.Attack +  self.pet.lv * 1.1 --todo 公式
 
-        local heroTab = nil
-        local pkValue = nil
-        if self.campType == CAMP_A_TYPE then
-            heroTab = myplayerHero
-            pkValue =  myPkValue
-        else
-            heroTab = diplayerHero
-            pkValue =  diPkValue
-        end
-
-        local allHeroTiBuBeiLvXiShu = gameUtil.allHeroTiBuBeiLvXiShu( heroTab )
-
-        ackNum = gameUtil.AckTBXZ( ackNum, allHeroTiBuBeiLvXiShu, pkValue )
-
-
-        local skillsExTab = self.HeroSkillsEx
-        --被动固定
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            ackNum = ackNum + self:BPAttack( skillsExTab[i], SkillLv )
-        end
-
-        --光环固定攻击
-        local gh_BP_Attack = self:GH_Add( MM.EPassiveProperty.BP_Attack).gh_BP_Attack
-        ackNum = ackNum + gh_BP_Attack
-        
-        --被动比例
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            ackNum = ackNum * (1 + self:BPAttackPre( skillsExTab[i], SkillLv ))
-        end
-
-        --光环攻击比例
-        local gh_BP_AttackPre = self:GH_Add( MM.EPassiveProperty.BP_AttackPre).gh_BP_AttackPre
-        ackNum = ackNum * (1 + gh_BP_AttackPre)
-
-
-        --修正攻击力 = 正常最终攻击力 * (1 + X * 当前祝福次数）
-        --乱斗加成
-        if self.fightType == 1 then 
-            local zhufuTimes = self.meleeTab.zhufuTimes
-            local X = self.meleeTab.X
-            ackNum = ackNum * (1 + zhufuTimes * X) 
-        end
-
-
-    end
    
     return ackNum 
 
@@ -1162,281 +472,15 @@ A→B法术伤害 = （A伤害基础值 + A技能附加值 + A技能附加值成
 魔法减伤 = 魔抗/（ABS(魔抗)+10000）*2
 ]]
 function Unit:getSkillAck( mbUnit ,skillid, TgType)
-    local id = skillid --self:getHeroSkillsId()
-    
-    local skillTab = gameUtil.getHeroSkillTab( id )
-    local skillLv = gameUtil.getHeroSkillLv( self.HeroId, skillid ,self:getHero())
-
-    if skillTab.SkillEffType == MM.ESkillEffType.NormalACK then
-        skillLv = 1
-    end
-
-    if skillLv == nil  then
-        skillLv = 1
-        --gameUtil:addTishi( {p = mm.scene(), f = 30, s = "error:技能等级为空 " , z = 1000})
-    else
-        --gameUtil:addTishi( {p = mm.scene(), f = 30, s = "skillLv： "..skillLv , z = 1000})
-    end
-
-    local SJMB_A = skillTab.SJMB_A
-    local SZTYPE_A = skillTab.SZTYPE_A
-    local fixedHurt_A = skillTab.fixedHurt_A
-    local fuhao = skillTab.Operators
-    local DamageStyle = skillTab.DamageStyle
-
-    local Target = skillTab.Target
-
-
-    local SJMB_B = skillTab.SJMB_B
-    local SZTYPE_B = skillTab.SZTYPE_B
-    local fixedHurt_B = skillTab.fixedHurt_B
-
-    local fixedHurt_C = skillTab.fixedHurt_C
-    local UfixedHurt_C = skillTab.UfixedHurt_C
-
-    
-
-    local baseHurt = nil
-    local baseA = nil
-    if fixedHurt_A > 0 then
-        baseA = fixedHurt_A
-    else
-        local mbUt = self:getSjmbUnit(SJMB_A,mbUnit)
-        if not mbUt then
-            ccfightLog("mbUt作用方为空！！")
-        end
-        baseA = self:getSjmbNum(mbUt, SZTYPE_A)
-        if not baseA then
-            ccfightLog("baseA作用方为空！！")
-        end
-    end
-
-    local baseB = nil
-    if fixedHurt_B > 0 then
-        baseB = fixedHurt_B
-    else
-        local mbUt = self:getSjmbUnit(SJMB_B,mbUnit)
-        if not mbUt then
-            ccfightLog("mbUt作用方为空！！")
-        end
-        baseB = self:getSjmbNum(mbUt, SZTYPE_B)
-        if not baseB then
-            ccfightLog("baseB作用方为空！！")
-        end
-    end
-
-    local base = nil
-    if fuhao == MM.EOperators.jia then
-        base = baseA + baseB
-    elseif fuhao == MM.EOperators.jian then
-        base = baseA - baseB
-    elseif fuhao == MM.EOperators.chen then
-        base = baseA * baseB
-    elseif fuhao == MM.EOperators.chu then
-        base = baseA / baseB
-    else 
-        base = baseA
-    end
-
-    local wufang = mbUnit:getWufang()
-    --物理穿透
-    if self:getArmorP() > 0 then
-        wufang = wufang - self:getArmorP()
-    end
-    local wujian = nil
-    if wufang >= 0 then
-        wujian = wufang / (math.abs(wufang) + 10000)
-    else
-        wujian = wufang / (math.abs(wufang) + 10000) * 2
-    end
-
-    local mofang = mbUnit:getMofang()
-    --法术穿透
-    if self:geMAP() > 0 then
-        mofang = mofang - self:geMAP()
-    end
-    local mojian = nil
-    if mofang >= 0 then
-        mojian = mofang / (math.abs(mofang) + 10000)
-    else
-        mojian = mofang / (math.abs(mofang) + 10000) * 2
-    end
-    --[[
-        A→B物理伤害 = （A伤害基础值 + A技能附加值 + A技能附加值成长* A技能等级）* （1 - B物理减伤） * 波动随机值
-        A→B法术伤害 = （A伤害基础值 + A技能附加值 + A技能附加值成长* A技能等级）* （1 - B法术减伤） * 波动随机值
-    ]]
-    
-    local hurt = nil
-    local bodong = math.random(80,120) * 0.01
-    if DamageStyle == MM.EDamageStyle.Wuli then
-        hurt = (base + fixedHurt_C + UfixedHurt_C * (skillLv - 1)) * (1 - wujian) * bodong
-    elseif DamageStyle == MM.EDamageStyle.Mofa then
-        hurt = (base + fixedHurt_C + UfixedHurt_C * (skillLv - 1)) * (1 - mojian) * bodong
-    elseif DamageStyle == MM.EDamageStyle.Shen then
-        hurt = (base + fixedHurt_C + UfixedHurt_C * (skillLv - 1)) * bodong
-    else
-        hurt = (base + fixedHurt_C + UfixedHurt_C * (skillLv - 1)) * bodong
-        ccfightLog("没有伤害类型？？？？？先用神圣代替")
-    end
-
-    ccfightLog("初始伤害: " .. hurt)
-    local add = -1
-    if Target == MM.ETarget.Friend or Target == MM.ETarget.me or Target == MM.ETarget.AllFriend  then
-        add = 1
-    elseif Target == MM.ETarget.Enemy then
-        add = -1
-    else
-        ccfightLog("有些类型没有写")
-    end
-    ccfightLog("初始伤害1: " .. hurt)
-    local beishu = 1
-    if TgType then
-        beishu = 2
-    else
-        beishu = 1
-    end
-
-    local wuliCrit = nil
-    if skillTab.SkillEffType == MM.ESkillEffType.NormalACK then
-        local crit = math.random(1, 10000)
-        -- ccfightLog("普通攻击暴击1111111111111        "..crit)
-        -- ccfightLog("普通攻击暴击2222222222222        "..self.curCrit)
-        if crit < self.curCrit then
-            beishu = self.curCritTimes
-            wuliCrit = beishu
-        end
-        
-    else
-
-    end
-    ccfightLog("初始伤害2: " .. hurt)
-    --光环暴击倍率
-    local gh_BP_Crit = self:GH_Add( MM.EPassiveProperty.BP_Crit).gh_BP_Crit
-    beishu = beishu + gh_BP_Crit
-
-
-    --tap 修改 原先是 ：
-    --local hurt = math.ceil(hurt * add) * beishu
-    local hurt = math.ceil(hurt * add) * beishu / 100
-    ccfightLog("初始伤害3: " .. hurt)
-
-    --计算物理免疫 魔法免疫
-    local wumian = nil
-    local momian = nil
-    local IgnoreAD = mbUnit:getIgnoreAD()
-    local IgnoreAP = mbUnit:getIgnoreAP()
-    if skillTab.DamageStyle == MM.EDamageStyle.Wuli then
-        
-        --物理加深
-        if self:getADDeep() > 0 then
-            hurt = hurt * (1 + self:getADDeep())
-        end
-
-        --物理减免
-        if mbUnit:getExemptAD() > 0 then
-            hurt = hurt * (1 - mbUnit:getExemptAD())
-            if hurt > 0 then
-                hurt = -1
-            end
-        end
-
-        --物理格挡
-        if mbUnit:getADParry() > 0 and hurt < 0 then
-            hurt = hurt + mbUnit:getADParry()
-            if hurt > 0 then
-                hurt = -1
-            end
-        end
-
-        if IgnoreAD > 0 then
-            ccfightLog("物免物免物免物免物免物免物免物免物免物免物免物免")
-            hurt = 0
-            wumian = 1
-        end
-        
-    elseif skillTab.DamageStyle == MM.EDamageStyle.Mofa  then
-        
-        --法术加深
-        if self:getAPDeep() > 0 then
-            hurt = hurt * (1 + self:getAPDeep())
-        end
-
-        --法术减免
-        if mbUnit:getExemptAP() > 0 then
-            hurt = hurt * (1 - mbUnit:getExemptAP())
-            if hurt > 0 then
-                hurt = -1
-            end
-        end
-
-        --法术格挡
-        if mbUnit:getAPParry() > 0 and hurt < 0 then
-            hurt = hurt + mbUnit:getAPParry()
-            if hurt > 0 then
-                hurt = -1
-            end
-        end
-
-        if hurt < 0 and IgnoreAP > 0 then
-            ccfightLog("魔免魔免魔免魔免魔免魔免魔免魔免魔免")
-            hurt = 0
-            momian = 1
-        end
-    elseif skillTab.DamageStyle == MM.EDamageStyle.Shen then
-        --todo
-
-    else
-        gameUtil:addTishi( {p = mm.scene(), f = 30, s = "技能类型没填 物理 魔法 神圣" , z = 1000})
-    end
-
-
-    local myHurt = 0
-    if hurt < 0 then
-        --计算反弹
-        local skillidTab = gameUtil.getHeroSkillTab( skillid )
-        if skillidTab.DamageStyle == MM.EDamageStyle.Wuli then
-            local ADRebound = mbUnit:getADRebound()
-            if ADRebound > 0 then
-                myHurt = hurt * ADRebound
-            end
-
-            
-        elseif skillidTab.DamageStyle == MM.EDamageStyle.Mofa then
-            local APRebound = mbUnit:getAPRebound()
-            if APRebound > 0 then
-                myHurt = hurt * APRebound
-            end
-
-        elseif skillidTab.DamageStyle == MM.EDamageStyle.Shen then
-            --todo
-
-        else
-            gameUtil:addTishi( {p = mm.scene(), s = "技能类型没填 物理 魔法 神圣" , z = 1000})
-        end
-
-        --计算吸血
-        if skillTab.SkillEffType == MM.ESkillEffType.NormalACK then
-            local ADxixue = self:getADxixue()
-            if ADxixue > 0 then
-                myHurt = myHurt - hurt * ADxixue
-            end
-        end
-
-    end
-
-    ccfightLog("最终伤害: " .. hurt)
-
-    if mm.GuildId == 10001 then
-        hurt = hurt * 1000
-    end
+    local hurt = self.curAck * (-1)
 
     return {
                 hurt = hurt, 
-                wuliCrit = wuliCrit,
-                myHurt = myHurt,
-                wumian = wumian,
-                momian = momian,
-                damageStyle = skillTab.DamageStyle
+                wuliCrit = 1,
+                myHurt = 0,
+                wumian = nil,
+                momian = nil,
+                damageStyle = MM.EDamageStyle.Wuli
             }
 end
 
@@ -1582,16 +626,7 @@ end
 
 
 function Unit:getSRC( HeroId )
-    if self.type == MONSTERTYPE then
-        return self.monsterTab.Src
-    end
-
-    if self.heroTab.skinInfo and self.heroTab.skinInfo.id and self.heroTab.skinInfo.id > 1 then
-        local skinId = gameUtil.getHeroTab(HeroId).SkinId[self.heroTab.skinInfo.id]
-        return skin[skinId].Src
-    else
-        return gameUtil.getHeroTab(HeroId).Src
-    end
+    return self.petRes.Src
 end
 
 function Unit:getHeroId( ... )
@@ -1657,64 +692,8 @@ function Unit:getInitialBlood( ... )
 
     if self.GuaiWu == 1 and self.nnffInfo then
         hpNum = self.nnffInfo.blood or 5000
-    elseif self.type == MONSTERTYPE then
-        hpNum = self.monsterTab.HP
     else
-        hpNum = gameUtil.hpMBAck( { heroid = self.heroTab.id, lv = self.heroTab.lv, xinlv = self.heroTab.xinlv,  jinlv = self.heroTab.jinlv, eqTab = self.heroTab.eqTab, preciousInfo = self.heroTab.preciousInfo, skinInfo = self.heroTab.skinInfo} )
-        --替补修正，抢夺战力修正
-        local myplayerHero = self.fightParam.myplayerHero
-        local diplayerHero = self.fightParam.diplayerHero
-        local myPkValue = self.fightParam.myPkValue
-        local diPkValue = self.fightParam.diPkValue
-
-        local heroTab = nil
-        local pkValue = nil
-        if self.campType == CAMP_A_TYPE then
-            heroTab = myplayerHero
-            pkValue =  myPkValue
-        else
-            heroTab = diplayerHero
-            pkValue =  diPkValue
-        end
-
-        local allHeroTiBuBeiLvXiShu = gameUtil.allHeroTiBuBeiLvXiShu( heroTab )
-
-
-        hpNum = gameUtil.HpTBXZ( hpNum, allHeroTiBuBeiLvXiShu, pkValue )
-
-
-        local skillsExTab = self.HeroSkillsEx
-        --todo
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            hpNum = hpNum + self:BPLife( skillsExTab[i], SkillLv )
-        end
-
-        
-
-        --添加光环血量
-        local gh_bp_life = self:GH_Add( MM.EPassiveProperty.BP_Life).gh_bp_life
-        hpNum = hpNum + gh_bp_life
-
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            hpNum = hpNum * (1 + self:BPLifePre( skillsExTab[i], SkillLv )) 
-        end
-
-        --添加光环百分比加血
-        local gh_bp_lifepre = self:GH_Add( MM.EPassiveProperty.BP_LifePre).gh_bp_lifepre
-        hpNum = hpNum * (1 + gh_bp_lifepre) 
-
-
-        --修正生命值 = 正常最终生命值 *(1 + X * 当前祝福次数）
-        --乱斗加成
-        if self.fightType == 1 then 
-            local zhufuTimes = self.meleeTab.zhufuTimes
-            local X = self.meleeTab.X
-            hpNum = hpNum * (1 + zhufuTimes * X) 
-        end
-
-
+        hpNum = 1000
     end
 
     return math.floor(hpNum)
@@ -1815,455 +794,9 @@ function Unit:GH_Add(PassivePropertytType)
 
     -- 计算光环固定加血
 
-    local function jisuan( hero,uint, EPTargetType,isZhu)
-        local isYingXiang = false
-        for k,v in pairs(hero) do
-            local heroid = v.id
-            local isLife = true
-            for k,v in pairs(uint) do
-                if v:getHeroId() == heroid then
-                    if v:getCurBlood() and v:getCurBlood() <= 0 then
-                        isLife = false
-                    end
-                end
-            end
-
-            if isLife then
-                local skillsExTab = gameUtil.getHeroTab( heroid ).SkillsEx
-
-                local CardSex = 0
-                if self.type == MONSTERTYPE then
-                    local monsterTab = INITLUA:getMonsterResById( self:getHeroId() )
-                    CardSex = monsterTab.CardSex
-                else
-                    CardSex = gameUtil.getHeroTab( self:getHeroId() ).CardSex
-                end
-
-                if skillsExTab then
-                    for i=1,#skillsExTab do
-                        local SkillLv = gameUtil.getHeroSkillLv( heroid, skillsExTab[i],  hero)
-                        local xinlv = v.xinlv
-                        local xinADD = 1
-                        if isZhu then
-                            xinADD = xinADD * (1 + xinlv)
-                        end
-                        local curskillsExTab = INITLUA:getPassiveResById( skillsExTab[i] )
-                        local isZuoYong = self:IsZuoYong( curskillsExTab.PTargetType,  self.index, CardSex)
-                        if curskillsExTab.PTarget == EPTargetType and isZuoYong == true then
-                            isYingXiang = true
-                            if tonumber(curskillsExTab.PassiveProperty) == tonumber(PassivePropertytType) then
-                                if tonumber(MM.EPassiveProperty.BP_Life) == tonumber(PassivePropertytType) then
-                                    t.gh_bp_life = t.gh_bp_life + self:GH_BPLife( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_LifePre) == tonumber(PassivePropertytType) then
-                                    t.gh_bp_lifepre = t.gh_bp_lifepre + self:GH_BPLifePre( skillsExTab[i],SkillLv ) *xinADD
-                                    
-                                elseif tonumber(MM.EPassiveProperty.BP_Attack) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_Attack = t.gh_BP_Attack + self:GH_BPAttack( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_AttackPre) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_AttackPre = t.gh_BP_AttackPre + self:GH_BPAttackPre( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_Crit) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_Crit = t.gh_BP_Crit + self:GH_BPCrit( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_Speed) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_Speed = t.gh_BP_Speed + self:GH_BP_Speed( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_SpeedPre) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_SpeedPre = t.gh_BP_SpeedPre + self:GH_BP_SpeedPre( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_Armor) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_Armor = t.gh_BP_Armor + self:GH_BP_Armor( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_DADPre) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_DADPre = t.gh_BP_DADPre + self:GH_BP_DADPre( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_MA) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_MA = t.gh_BP_MA + self:GH_BP_MA( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_DAPPre) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_DAPPre = t.gh_BP_DAPPre + self:GH_BP_DAPPre( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_ArmorP) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_ArmorP = t.gh_BP_ArmorP + self:GH_BP_ArmorP( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_MAP) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_MAP = t.gh_BP_MAP + self:GH_BP_MAP( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_ADParry) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_ADParry = t.gh_BP_ADParry + self:GH_BP_ADParry( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_APParry) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_APParry = t.gh_BP_APParry + self:GH_BP_APParry( skillsExTab[i],SkillLv ) *xinADD
-
-                                elseif tonumber(MM.EPassiveProperty.BP_ExemptAD) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_ExemptAD = t.gh_BP_ExemptAD + self:GH_BP_ExemptAD( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_ExemptAP) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_ExemptAP = t.gh_BP_ExemptAP + self:GH_BP_ExemptAP( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_ADRebound) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_ADRebound = t.gh_BP_ADRebound + self:GH_BP_ADRebound( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_APRebound) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_APRebound = t.gh_BP_APRebound + self:GH_BP_APRebound( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_ADxixue) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_ADxixue = t.gh_BP_ADxixue + self:GH_BP_ADxixue( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_IgnoreAD) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_IgnoreAD = t.gh_BP_IgnoreAD + self:GH_BP_IgnoreAD( skillsExTab[i],SkillLv ) *xinADD
-
-                                elseif tonumber(MM.EPassiveProperty.BP_IgnoreAP) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_IgnoreAP = t.gh_BP_IgnoreAP + self:GH_BP_IgnoreAP( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_SkillPre) == tonumber(PassivePropertytType) then
-                                    --技能伤害
-                                    -- t.GH_BP_SkillPre = t.GH_BP_SkillPre + self:GH_BP_SkillPre( skillsExTab[i],SkillLv )
-                                elseif tonumber(MM.EPassiveProperty.BP_ADDeep) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_ADDeep = t.gh_BP_ADDeep + self:GH_BP_ADDeep( skillsExTab[i],SkillLv ) *xinADD
-                                elseif tonumber(MM.EPassiveProperty.BP_APDeep) == tonumber(PassivePropertytType) then
-                                    t.gh_BP_APDeep = t.gh_BP_APDeep + self:GH_BP_APDeep( skillsExTab[i],SkillLv ) *xinADD
-                                    
-
-                                    -- ccfightLog("光环 护甲 ----------------------------------------   skillsExTab[i] "..skillsExTab[i])
-                                    -- ccfightLog("光环 护甲 ----------------------------------------   SkillLv "..SkillLv)
-                                    -- ccfightLog("光环 护甲 ----------------------------------------   t.gh_BP_ArmorP "..t.gh_BP_ArmorP)
-                                end
-                            end
-                                --todo
-                        end
-                    end
-                end
-            end
-        end
-
-    end
-    jisuan( curMyHero, curMyUnit, MM.EPTarget.PFriend)
-    jisuan( curDiHero, curDiUnit, MM.EPTarget.PEnemy)
-
-    jisuan( curMyZhu, curMyUnit, MM.EPTarget.PFriend, true)
-    jisuan( curDiZhu, curDiUnit, MM.EPTarget.PEnemy, true)
-        
-
-    -- ccfightLog("光环 血 ----------------------------------------   t.gh_bp_life "..t.gh_bp_life)
-    -- ccfightLog("光环 比例血 ----------------------------------------   t.gh_bp_lifepre "..t.gh_bp_lifepre)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_Attack "..t.gh_BP_Attack)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_AttackPre "..t.gh_BP_AttackPre)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_Crit "..t.gh_BP_Crit)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_Speed "..t.gh_BP_Speed)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_SpeedPre "..t.gh_BP_SpeedPre)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_Armor "..t.gh_BP_Armor)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_DADPre "..t.gh_BP_DADPre)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_MA "..t.gh_BP_MA)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_DAPPre "..t.gh_BP_DAPPre)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_ArmorP "..t.gh_BP_ArmorP)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_MAP "..t.gh_BP_MAP)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_ADParry "..t.gh_BP_ADParry)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_APParry "..t.gh_BP_APParry)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_ExemptAD "..t.gh_BP_ExemptAD)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_ExemptAP "..t.gh_BP_ExemptAP)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_ADRebound "..t.gh_BP_ADRebound)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_APRebound "..t.gh_BP_APRebound)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_ADxixue "..t.gh_BP_ADxixue)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_IgnoreAD "..t.gh_BP_IgnoreAD)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_IgnoreAP "..t.gh_BP_IgnoreAP)
-    -- ccfightLog("光环  ----------------------------------------   t.GH_BP_SkillPre "..t.GH_BP_SkillPre)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_ADDeep "..t.gh_BP_ADDeep)
-    -- ccfightLog("光环  ----------------------------------------   t.gh_BP_APDeep "..t.gh_BP_APDeep)
-
     return t
 end
 
-function Unit:GH_BP_ADDeep( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADDeep then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_APDeep( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_APDeep then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_IgnoreAP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_IgnoreAP then
-        if SkillLv and SkillLv > 0 then
-            return 1
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_IgnoreAD( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_IgnoreAD then
-        if SkillLv and SkillLv > 0 then
-            return 1
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_ADxixue( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADxixue then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_ADRebound( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADRebound then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_APRebound( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_APRebound then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_ExemptAD( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ExemptAD then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_ExemptAP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ExemptAP then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_APParry( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_APParry then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_ADParry( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ADParry then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_MAP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_MAP then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_ArmorP( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_ArmorP then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_DAPPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_DAPPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_MA( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_MA then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_DADPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_DADPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_Armor( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Armor then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_SpeedPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_SpeedPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BP_Speed( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Speed then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BPCrit( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Crit then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BPAttackPre( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_AttackPre then
-        if SkillLv and SkillLv > 0 then
-            return tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1)
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
-
-function Unit:GH_BPAttack( SkillId,SkillLv )
-    local tab = INITLUA:getPassiveResById( SkillId )
-    local t = tab["PassiveProperty"]
-    if t == MM.EPassiveProperty.BP_Attack then
-        if SkillLv and SkillLv > 0 then
-            return math.ceil(tab["BPNum"] + tab["BPIncrement"] * (SkillLv - 1))
-        else
-            return 0
-        end
-    else
-        return 0 
-    end
-end
 
 function Unit:IsZuoYong( PTargetType,  index, CardSex)
     local isZuoYong = false
@@ -2341,26 +874,7 @@ end
 
 -- todo
 function Unit:getInitialSpeed( ... )
-    local speed = 0
-    if self.type == MONSTERTYPE then
-        speed =  self.monsterTab.Speed
-    else
-        speed = gameUtil.speedMBAck( { heroid = self.heroTab.id, lv = self.heroTab.lv, xinlv = self.heroTab.xinlv,  jinlv = self.heroTab.jinlv, eqTab = self.heroTab.eqTab, preciousInfo = self.heroTab.preciousInfo, skinInfo = self.heroTab.skinInfo} )
-        
-        local skillsExTab = self.HeroSkillsEx
-        --todo
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            speed = speed + self:BPSpeed( skillsExTab[i], SkillLv )
-        end
-
-        for i=1,#skillsExTab do
-            local SkillLv = gameUtil.getHeroSkillLv( self.HeroId, skillsExTab[i] )
-            speed = speed * (1 + self:BPSpeedPre( skillsExTab[i], SkillLv )) 
-        end
-
-        
-    end
+    local speed = 1
 
     return speed
 end

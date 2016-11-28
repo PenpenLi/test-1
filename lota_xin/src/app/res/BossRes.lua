@@ -59,3 +59,5 @@ G_BossTable= {
 
 
 }
+
+return G_BossTable
