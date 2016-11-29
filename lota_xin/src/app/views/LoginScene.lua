@@ -38,12 +38,10 @@ function LoginScene:onCreate()
     self.panelLayer = self.scene:getChildByName("Panel_layer")
 
     local bgImageView = ccui.ImageView:create()
-    bgImageView:loadTexture("res/UI/dljm_bg00000.png")
+    bgImageView:loadTexture("res/UI/bigImage/yijidi.png")
     self.panelLayer:addChild(bgImageView)
     bgImageView:setPosition(size.width * 0.5, size.height * 0.5)
     bgImageView:setScale(CC_DESIGN_RESOLUTION.height / 960)
-
-    self:addNewEffect()
 
     -- 初始化按钮
     self:initBtn()
@@ -84,14 +82,6 @@ function LoginScene:onCreate()
     self:addGlobalEventListener(EventDef.UI_MSG, handler(self, self.globalEventsListener))
 end
 
-function LoginScene:addNewEffect()
-    self.effSkeletonNode = gameUtil.createSkeletonAnimation("res/Effect/uiEffect/dljmdh/goon.json", "res/Effect/uiEffect/dljmdh/goon.atlas",1)
-    self.panelLayer:addChild(self.effSkeletonNode)
-    self.effSkeletonNode:setAnimation(0, "stand", true)
-    
-    self.effSkeletonNode:setPosition(size.width * 0.5, size.height * 0.5)
-    self.effSkeletonNode:setScale(CC_DESIGN_RESOLUTION.height / 960)
-end
 
 
 function LoginScene:globalEventsListener( event )
@@ -127,26 +117,6 @@ function LoginScene:ConnectAndLogin()
             return
         end
     end
-
-    -- local severId = cc.UserDefault:getInstance():getIntegerForKey("severId",0)
-    -- if 0 == severId then
-    --     gameUtil:addTishi({s = "大区不存在", z = 100})
-    --     return
-    -- else
-    --     for k,v in pairs(self.httpTable) do
-    --         if v.id == severId then
-    --             if v.Status == "4" then
-    --                 gameUtil:addTishi({s = "大区维护中", z = 100})
-    --                 return
-    --             end
-    --         end
-    --     end
-    -- end
-
-    -- if self.app_.clientTCP ~= nil then
-    --     self.app_.clientTCP:disconnect()
-    --     self.app_.clientTCP = nil
-    -- end
 
     self:showLoading(true)
 
@@ -401,21 +371,6 @@ function LoginScene:showLoading( show )
         self.loadingUI:setContentSize(cc.size(size.width, size.height))
         ccui.Helper:doLayout(self.loadingUI)
 
-        local animNode = self.loadingUI:getChildByName("Node_1")
-        local player = cc.Sprite:create("res/hero/loading/loading0001.png")
-        player:setScale(1.0)
-        animNode:addChild(player)
-
-        local animation = cc.Animation:create()
-        animation:addSpriteFrameWithFile("res/hero/loading/loading0001.png")
-        animation:addSpriteFrameWithFile("res/hero/loading/loading0002.png")
-        animation:addSpriteFrameWithFile("res/hero/loading/loading0003.png")
-        animation:setDelayPerUnit(0.1)
-        -- animation:setLoops(-1)
-        local action = cc.Animate:create(animation)
-        local delay = cc.DelayTime:create(0.0)
-        local sequence =  cc.Sequence:create(action, delay)
-        player:runAction(cc.RepeatForever:create(sequence))
 
         require("app.res.TipsRes")
         

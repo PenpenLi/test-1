@@ -70,6 +70,9 @@ function FightScene:onCreate()
     --点击初始化相关数据
     self:taptapInit()
 
+    --初始化主界面UI
+    self:UIInit()
+
     self.scene:getChildByName("Button_buzhen"):addTouchEventListener(handler(self, self.buzhenBtnCbk))
 
     self.scene:getChildByName("Panel_tap"):addTouchEventListener(handler(self, self.jinshouzhiBtnCbk))
@@ -97,6 +100,21 @@ end
 function FightScene:onEnter() 
     game.G_FightScene = self
 end
+
+function FightScene:UIInit() 
+    self.zhujueBtn = self.scene:getChildByName("Button_zhujue")
+    self.zhujueBtn:addTouchEventListener(handler(self, self.zhujueBtnCbk))
+end
+
+function FightScene:zhujueBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        mm.pushLayoer( {scene = self, clear = 1, zord = MoGlobalZorder[2000002], res = "src.app.views.layer.Player.PlayerLayer",
+                            resName = "PlayerLayer",params = {}} )
+    end
+end
+
+
+
 
 function FightScene:globalEventsListener( event )
     if event.name == EventDef.SERVER_MSG then
