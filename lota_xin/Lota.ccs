@@ -1,0 +1,92 @@
+<Solution>
+  <PropertyGroup Name="Lota" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="FightBg">
+          <Image Name="fight_bg.png" />
+          <Image Name="ground_lvdi.png" />
+          <Image Name="ground_rongyan.png" />
+          <Image Name="ground_xuedi.png" />
+          <Image Name="land_guaji.png" />
+          <Image Name="land_lvdi.png" />
+          <Image Name="land_rongyan.png" />
+          <Image Name="land_xuedi.png" />
+          <Image Name="sky_lvdi.png" />
+          <Image Name="sky_rongyan.png" />
+          <Image Name="sky_xuedi.png" />
+        </Folder>
+        <Folder Name="font">
+          <File Name="huakang.TTF" />
+          <TTF Name="youyuan.TTF" />
+        </Folder>
+        <Folder Name="UI">
+          <Folder Name="base">
+            <Image Name="biaoqing1.png" />
+            <Image Name="biaoqing2.png" />
+            <Image Name="biaoqingdi.png" />
+            <Image Name="erjianniu1.png" />
+            <Image Name="erjianniu2.png" />
+            <Image Name="erjimianban.png" />
+            <Image Name="fenye1.png" />
+            <Image Name="fenye2.png" />
+            <Image Name="fenyedi.png" />
+            <Image Name="gold.png" />
+            <Image Name="guanbi1.png" />
+            <Image Name="icondi.png" />
+            <Image Name="jiantou.png" />
+            <Image Name="jindu1.png" />
+            <Image Name="jindu2.png" />
+            <Image Name="jindudi.png" />
+            <Image Name="jinengdi.png" />
+            <Image Name="renwudi.png" />
+            <Image Name="shuxingdi.png" />
+            <Image Name="touxiangkuang.png" />
+            <Image Name="touxiangkuang1.png" />
+            <Image Name="yijianniu1.png" />
+            <Image Name="yijianniu2.png" />
+            <Image Name="zhaungbeidi.png" />
+            <Image Name="zhuangbeidi1.png" />
+          </Folder>
+          <Folder Name="bigImage">
+            <Image Name="fight_bg.png" />
+            <Image Name="yijidi.png" />
+          </Folder>
+          <Folder Name="palyerEquipIcon">
+            <Image Name="icon_ZB001.png" />
+            <Image Name="icon_ZB002.png" />
+            <Image Name="icon_ZB003.png" />
+          </Folder>
+          <Folder Name="skillIcon">
+            <Image Name="icon_JN0001.png" />
+          </Folder>
+          <Image Name="bt_yiji_normal.png" />
+          <Image Name="icon_deng_lvse.png" />
+          <Image Name="jm_Loading.png" />
+          <Image Name="jm_Loadingdi.png" />
+          <Image Name="jm_shurukuang.png" />
+        </Folder>
+        <Project Name="BarrageLayer.csd" Type="Layer" />
+        <Project Name="BuZhenItem.csd" Type="Layer" />
+        <Project Name="BuZhenLayer.csd" Type="Layer" />
+        <Project Name="BuZhenListItem.csd" Type="Layer" />
+        <Project Name="Chongzhi.csd" Type="Layer" />
+        <Project Name="chongzhiLayer1.csd" Type="Layer" />
+        <Project Name="CreateScene.csd" Type="Scene" />
+        <Project Name="Dengjitisheng.csd" Type="Layer" />
+        <Project Name="Dianjinshou.csd" Type="Layer" />
+        <Project Name="DianjinshouLayer.csd" Type="Layer" />
+        <Project Name="FightScene.csd" Type="Scene" />
+        <Project Name="heiloading.csd" Type="Layer" />
+        <Project Name="LoadingScene.csd" Type="Scene" />
+        <Project Name="LoginScene.csd" Type="Scene" />
+        <Project Name="TalkItem_0.csd" Type="Layer" />
+        <Project Name="TalkLayer.csd" Type="Layer" />
+        <Project Name="talkMsgBox.csd" Type="Layer" />
+        <Folder Name="player">
+          <Project Name="PlayerLayer.csd" Type="Layer" />
+        </Folder>
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
