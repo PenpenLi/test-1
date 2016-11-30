@@ -948,7 +948,7 @@ end
     开始战斗
 ]]
 function Fight:StartAck(roundIndex)
-    print("StartAck ")
+    -- print("StartAck ")
     local skillSeq = self.skillSeq
 
     local round = #skillSeq
@@ -1022,7 +1022,7 @@ end
     skillSeq 此次技能序列
 ]]
 function Fight:sifangSkill( param )
-    print("sifangSkill ")
+    -- print("sifangSkill ")
     local skillSeq = param.skillSeq
     local skillId = skillSeq.curSkillId
     local unitA = self.Unit[skillSeq.id]
@@ -1040,7 +1040,7 @@ function Fight:sifangSkill( param )
     unitA:showSkillIcon( TgType )
     local skillTab = gameUtil.getHeroSkillTab( skillId )
     local texiaoEffect = gameUtil.getHeroSkillTab( skillId ).texiaoEffect 
-    print("sifangSkill ====================       1 ")
+    -- print("sifangSkill ====================       1 ")
     if texiaoEffect == MM.EtexiaoEffect.null then
 
     elseif texiaoEffect == MM.EtexiaoEffect.tousewu or  texiaoEffect == MM.EtexiaoEffect.touzhi then
@@ -1288,12 +1288,12 @@ function Fight:sifangSkill( param )
                 elseif event.eventData.name == "DefHold" then
                     coroutine.resume(self.tiaoCo[skillId], self)
                 end
-              print(string.format("[spine] %d event: %s, %d, %f, %s", 
-                      event.trackIndex,
-                      event.eventData.name,
-                      event.eventData.intValue,
-                      event.eventData.floatValue,
-                      event.eventData.stringValue))
+              -- print(string.format("[spine] %d event: %s, %d, %f, %s", 
+              --         event.trackIndex,
+              --         event.eventData.name,
+              --         event.eventData.intValue,
+              --         event.eventData.floatValue,
+              --         event.eventData.stringValue))
             end, sp.EventType.ANIMATION_EVENT)
 
             coroutine.yield()
@@ -1519,12 +1519,12 @@ function Fight:sifangSkill( param )
                     
                     coroutine.resume(self.yuandiCo[skillId], self)
                 end
-                print(string.format("[spine] %d event: %s, %d, %f, %s", 
-                      event.trackIndex,
-                      event.eventData.name,
-                      event.eventData.intValue,
-                      event.eventData.floatValue,
-                      event.eventData.stringValue))
+                -- print(string.format("[spine] %d event: %s, %d, %f, %s", 
+                --       event.trackIndex,
+                --       event.eventData.name,
+                --       event.eventData.intValue,
+                --       event.eventData.floatValue,
+                --       event.eventData.stringValue))
               
             end, sp.EventType.ANIMATION_EVENT)
 
@@ -1643,12 +1643,12 @@ function Fight:playHurtEffect( param )
                 elseif event.eventData.name == "VibrationHold" then
                     -- self:seceneBeginShake( 0, 0.5 )
                 end
-            print(string.format("[spine11] %d event: %s, %d, %f, %s", 
-                      event.trackIndex,
-                      event.eventData.name,
-                      event.eventData.intValue,
-                      event.eventData.floatValue,
-                      event.eventData.stringValue))
+            -- print(string.format("[spine11] %d event: %s, %d, %f, %s", 
+            --           event.trackIndex,
+            --           event.eventData.name,
+            --           event.eventData.intValue,
+            --           event.eventData.floatValue,
+            --           event.eventData.stringValue))
         end, sp.EventType.ANIMATION_EVENT)
         coroutine.yield()
         
@@ -1738,7 +1738,7 @@ function Fight:PlayHurtAction( param )
                 wuLiHuDunZhi = wuLiHuDunZhi,
             }
 
-            print("font  hurt    PlayHurt                1")
+            -- print("font  hurt    PlayHurt                1")
             hurtSkeletonNode:PlayHurt(t)
         end
         if myHurt ~= 0 then

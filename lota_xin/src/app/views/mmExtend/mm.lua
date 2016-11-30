@@ -80,8 +80,8 @@ function mm:popLayer()
         table.remove(mm.Layout)
 
         if #mm.Layout == 0 then
-            mm.GuildScene:backFightScene()
-            mm.GuildScene:backFightSceneBackup()
+            -- mm.GuildScene:backFightScene()
+            -- mm.GuildScene:backFightSceneBackup()
         end
     else
         

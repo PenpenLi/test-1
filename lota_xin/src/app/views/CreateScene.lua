@@ -238,8 +238,8 @@ function CreateScene:createBtnCbk(widget,touchkey)
                         mm.direnIndex = 1
                     else
                     end
-
-                    self:LoadingScence()
+                    self.app_:run("FightScene")
+                    -- self:LoadingScence()
                 end
                 self.app_.clientTCP:send("getDiRenList",{type=0},getDiRenListBack)
 
