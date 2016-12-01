@@ -20,6 +20,9 @@
           <File Name="huakang.TTF" />
           <TTF Name="youyuan.TTF" />
         </Folder>
+        <Folder Name="player">
+          <Project Name="PlayerLayer.csd" Type="Layer" />
+        </Folder>
         <Folder Name="UI">
           <Folder Name="base">
             <Image Name="biaoqing1.png" />
@@ -76,6 +79,7 @@
         <Project Name="Dengjitisheng.csd" Type="Layer" />
         <Project Name="Dianjinshou.csd" Type="Layer" />
         <Project Name="DianjinshouLayer.csd" Type="Layer" />
+        <Project Name="equipLayer.csd" Type="Layer" />
         <Project Name="FightScene.csd" Type="Scene" />
         <Project Name="heiloading.csd" Type="Layer" />
         <Project Name="LoadingScene.csd" Type="Scene" />
@@ -83,8 +87,10 @@
         <Project Name="TalkItem_0.csd" Type="Layer" />
         <Project Name="TalkLayer.csd" Type="Layer" />
         <Project Name="talkMsgBox.csd" Type="Layer" />
-        <Folder Name="player">
-          <Project Name="PlayerLayer.csd" Type="Layer" />
+        <Folder Name="pet">
+          <Project Name="PetListLayer.csd" Type="Layer" />
+          <Project Name="PetLayer.csd" Type="Layer" />
+          <Project Name="petListitem.csd" Type="Layer" />
         </Folder>
       </RootFolder>
     </Group>

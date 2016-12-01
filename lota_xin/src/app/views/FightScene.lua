@@ -104,6 +104,9 @@ end
 function FightScene:UIInit() 
     self.zhujueBtn = self.scene:getChildByName("Button_zhujue")
     self.zhujueBtn:addTouchEventListener(handler(self, self.zhujueBtnCbk))
+
+    self.petBtn = self.scene:getChildByName("Button_pet")
+    self.petBtn:addTouchEventListener(handler(self, self.petBtnCbk))
 end
 
 function FightScene:zhujueBtnCbk(widget,touchkey)
@@ -113,6 +116,12 @@ function FightScene:zhujueBtnCbk(widget,touchkey)
     end
 end
 
+function FightScene:petBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        mm.pushLayoer( {scene = self, clear = 1, zord = MoGlobalZorder[2000002], res = "src.app.views.layer.Pet.PetListLayer",
+                            resName = "PetListLayer",params = {}} )
+    end
+end
 
 
 
