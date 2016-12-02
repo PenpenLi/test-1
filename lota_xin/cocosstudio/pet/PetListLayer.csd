@@ -58,7 +58,7 @@
             <PreSize X="1.0000" Y="0.9956" />
             <FileData Type="Normal" Path="UI/bigImage/yijidi.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ScrollView" ActionTag="458898915" Tag="96" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="136.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+          <AbstractNodeData Name="ScrollView" ActionTag="458898915" Tag="96" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="136.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
             <Size X="630.0000" Y="850.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
             <Position X="320.0000" Y="1000.0000" />
@@ -72,20 +72,14 @@
             <ColorVector ScaleY="1.0000" />
             <InnerNodeSize Width="630" Height="850" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button" ActionTag="792231556" Tag="249" IconVisible="False" LeftMargin="154.6609" RightMargin="385.3391" TopMargin="590.4650" BottomMargin="445.5350" TouchEnable="True" FontSize="14" ButtonText="Button" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="100.0000" Y="100.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="204.6609" Y="495.5350" />
+          <AbstractNodeData Name="Node_Scrollview" ActionTag="-1538729970" Tag="18" IconVisible="True" LeftMargin="5.0000" RightMargin="635.0000" TopMargin="976.0000" BottomMargin="160.0000" ctype="SingleNodeObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint />
+            <Position X="5.0000" Y="160.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.3198" Y="0.4362" />
-            <PreSize X="0.1563" Y="0.0880" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
+            <PrePosition X="0.0078" Y="0.1408" />
+            <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

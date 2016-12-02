@@ -17,6 +17,16 @@ require("app.views.mmExtend.mm_config")
 
 require("app.views.mmExtend.MoGameRet")
 
+
+game.HorListView = "app.views.rollView.HorListView"
+game.HorPageView = "app.views.rollView.HorPageView"
+game.VerListView = "app.views.rollView.VerListView"
+game.VerPageView = "app.views.rollView.VerPageView"
+
+cs = cs or {}
+cs.ObjectPoolManager = require("app.pool.ObjectPoolManager").new()
+
+
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 LoginScene.RESOURCE_FILENAME = "LoginScene.csb"
 
@@ -102,8 +112,14 @@ end
 
 function LoginScene:loginBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then
-        self:ConnectAndLogin()
+        -- self:ConnectAndLogin()
+        self:loginTest()
     end
+end
+
+function LoginScene:loginTest( ... )
+    local PetListLayer = require("src.app.views.layer.Pet.PetListLayer").new({})
+    self:addChild(PetListLayer, 100)
 end
 
 function LoginScene:ConnectAndLogin()
