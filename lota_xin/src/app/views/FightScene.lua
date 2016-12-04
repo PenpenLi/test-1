@@ -221,7 +221,8 @@ function FightScene:jinshouzhiBtnCbk(widget,touchkey)
             skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
 
             if fight:UnitB1() then
-                fight:UnitB1():setPiaoxue(-2, nil, MM.EDamageStyle.Wuli, true)
+                local hurt = (-1) * (mm.data.player.lv + mm.data.player.skillLv)
+                fight:UnitB1():setPiaoxue(hurt, nil, MM.EDamageStyle.Wuli, true)
             end
         end
 

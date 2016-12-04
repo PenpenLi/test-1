@@ -509,6 +509,15 @@ g_msgCode["skillup"] = function( t )
     end
 end
 
+g_msgCode["petlevelup"] = function( t )
+    cclog("petlevelup back   ")
+    if t.result == 0 then
+        mm.dispatchEvent("petlevelup",t)
+    else
+        cclog("petlevelup error   ")
+    end
+end
+
 g_msgCode["killmonster"] = function( t )
     cclog("killmonster back   ")
     if t.result == 0 then

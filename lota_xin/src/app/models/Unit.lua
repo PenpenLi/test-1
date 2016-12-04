@@ -446,7 +446,7 @@ end
 function Unit:getInitialAck( ... )
     local ackNum = 0
     
-    ackNum = self.petRes.Attack +  self.pet.lv * 1.1 --todo 公式
+    ackNum = self.petRes.Attack +  self.pet.lv * 1 +  self.pet.skillLv * 1--todo 公式
 
    
     return ackNum 
