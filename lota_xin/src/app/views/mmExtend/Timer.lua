@@ -41,19 +41,8 @@ function Timer:updateTimer( dt )
     end
 
     --技能时间
-	mm.data.time.skillTime = dTime(mm.data.time.skillTime)
-	mm.data.time.pkTime = dTime(mm.data.time.pkTime)
-	mm.data.time.serverTime = aTime(mm.data.time.serverTime)
-	if mm.data.time.meleeTime then
-		mm.data.time.meleeTime = dTime(mm.data.time.meleeTime)
-	end
-	if mm.data.time.meleeCDTime then
-		mm.data.time.meleeCDTime = dTime(mm.data.time.meleeCDTime)
-	end
+	-- mm.data.time.skillTime = dTime(mm.data.time.skillTime)
 
-	if mm.data.ranktime then 
-		mm.data.ranktime = dTime(mm.data.ranktime)
-	end
 end
 
 

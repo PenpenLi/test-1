@@ -3785,7 +3785,7 @@ function gameUtil.getCSLoaderObj(tab)
     local type = tab.type                  --类型   
     local removeTab = tab.removeTab or {}  --需要删除的孩子
     local name = tab.name                  --名字
-    print("getCSLoaderObj                        name "..name)
+    -- print("getCSLoaderObj                        name "..name)
     game[name] = game[name] or {}
     local node
     for k,v in pairs(game[name]) do
@@ -4018,7 +4018,7 @@ function gameUtil.getDefaultServerInfo( serverlist )
     local curSeverId = cc.UserDefault:getInstance():getStringForKey("severId", "0")
 
     for k,v in pairs(serverlist) do
-        if v.Areaid == curSeverId then
+        if v.areaId == curSeverId then
             info = v
             return info
         end
@@ -4027,14 +4027,14 @@ function gameUtil.getDefaultServerInfo( serverlist )
     if info == nil then
         info = serverlist[1]
         for k,v in pairs(serverlist) do
-            if v.Status ~= 4 and v.Status ~= 5 then  ---维护和测试状态
+            if v.status ~= 4 and v.status ~= 5 then  ---维护和测试状态
                 info = v
                 break
             end
         end
     end
     
-    cc.UserDefault:getInstance():setStringForKey("severId",info.Areaid)
+    cc.UserDefault:getInstance():setStringForKey("severId",info.areaId)
 
     return info
 end

@@ -58,20 +58,6 @@
             <PreSize X="1.0000" Y="0.9956" />
             <FileData Type="Normal" Path="UI/bigImage/yijidi.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="ScrollView" ActionTag="458898915" Tag="96" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="136.0000" BottomMargin="150.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
-            <Size X="630.0000" Y="850.0000" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
-            <Position X="320.0000" Y="1000.0000" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.8803" />
-            <PreSize X="0.9844" Y="0.7482" />
-            <SingleColor A="255" R="255" G="150" B="100" />
-            <FirstColor A="255" R="255" G="150" B="100" />
-            <EndColor A="255" R="255" G="255" B="255" />
-            <ColorVector ScaleY="1.0000" />
-            <InnerNodeSize Width="630" Height="850" />
-          </AbstractNodeData>
           <AbstractNodeData Name="Node_Scrollview" ActionTag="-1538729970" Tag="18" IconVisible="True" LeftMargin="5.0000" RightMargin="635.0000" TopMargin="976.0000" BottomMargin="160.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <AnchorPoint />

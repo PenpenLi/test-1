@@ -37,11 +37,11 @@ mm.data.player = {
 }
 
 mm.data.playerPet = {
-    {id = 1278226736, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278226744, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278226993, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278227249, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278227254, lv = 1, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278226736, lv = 3, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278226744, lv = 6, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278226993, lv = 11, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278227249, lv = 19, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 1278227254, lv = 10, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
 }
 
 mm.puTongZhen = {
@@ -51,6 +51,21 @@ mm.puTongZhen = {
         1278227249,
         1278227254,
     }
+
+
+mm.data.playerBag = {
+    {id = 1278227255, num = 10, },
+    {id = 1278227256, num = 20, },
+    {id = 1278227257, num = 15, },
+    {id = 1278227258, num = 14, },
+}
+
+game.qualityTab = {
+    {str = "R"},
+    {str = "S"},
+    {str = "SR"},
+    {str = "SSR"}
+}
 
 
 mm.data.playerHero = mm.data.playerPet

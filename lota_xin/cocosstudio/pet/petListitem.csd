@@ -6,7 +6,7 @@
       <ObjectData Name="Layer" Tag="97" ctype="GameLayerObjectData">
         <Size X="630.0000" Y="122.0000" />
         <Children>
-          <AbstractNodeData Name="Image_bg" ActionTag="-1455081797" Tag="98" IconVisible="False" LeftMargin="-5.0000" RightMargin="-5.0000" TopMargin="-0.5000" BottomMargin="1.5000" LeftEage="211" RightEage="211" TopEage="39" BottomEage="39" Scale9OriginX="211" Scale9OriginY="39" Scale9Width="218" Scale9Height="43" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_bg" ActionTag="-1455081797" Tag="98" IconVisible="False" LeftMargin="-5.0000" RightMargin="-5.0000" TopMargin="-0.5000" BottomMargin="1.5000" TouchEnable="True" LeftEage="211" RightEage="211" TopEage="39" BottomEage="39" Scale9OriginX="211" Scale9OriginY="39" Scale9Width="218" Scale9Height="43" ctype="ImageViewObjectData">
             <Size X="640.0000" Y="121.0000" />
             <Children>
               <AbstractNodeData Name="Image_icon" ActionTag="-323008741" Tag="99" IconVisible="False" LeftMargin="36.1888" RightMargin="519.8112" TopMargin="14.6081" BottomMargin="22.3919" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
@@ -19,26 +19,26 @@
                 <PreSize X="0.1312" Y="0.6942" />
                 <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_lv" ActionTag="1506234545" Tag="100" IconVisible="False" LeftMargin="125.0000" RightMargin="394.0000" TopMargin="19.0000" BottomMargin="66.0000" FontSize="36" LabelText="Lv:99" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="121.0000" Y="36.0000" />
+              <AbstractNodeData Name="Text_lv" ActionTag="1506234545" Tag="100" IconVisible="False" LeftMargin="125.0000" RightMargin="433.0000" TopMargin="25.0000" BottomMargin="72.0000" FontSize="24" LabelText="Lv:99" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="82.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="125.0000" Y="84.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="165" B="0" />
                 <PrePosition X="0.1953" Y="0.6942" />
-                <PreSize X="0.1891" Y="0.2975" />
+                <PreSize X="0.1281" Y="0.1983" />
                 <FontResource Type="Normal" Path="font/huakang.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_name" ActionTag="-843731790" Tag="101" IconVisible="False" LeftMargin="125.0000" RightMargin="405.0000" TopMargin="58.0000" BottomMargin="27.0000" FontSize="36" LabelText="加菲猫" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="110.0000" Y="36.0000" />
+              <AbstractNodeData Name="Text_name" ActionTag="-843731790" Tag="101" IconVisible="False" LeftMargin="125.0000" RightMargin="441.0000" TopMargin="64.0000" BottomMargin="33.0000" FontSize="24" LabelText="加菲猫" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="74.0000" Y="24.0000" />
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="125.0000" Y="45.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="128" B="0" />
                 <PrePosition X="0.1953" Y="0.3719" />
-                <PreSize X="0.1719" Y="0.2975" />
+                <PreSize X="0.1156" Y="0.1983" />
                 <FontResource Type="Normal" Path="font/huakang.TTF" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -54,7 +54,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Node_bar" ActionTag="1896423096" Tag="106" IconVisible="True" LeftMargin="262.1628" RightMargin="377.8372" TopMargin="65.8076" BottomMargin="55.1924" ctype="SingleNodeObjectData">
+              <AbstractNodeData Name="Node_bar" ActionTag="1896423096" Tag="106" IconVisible="True" LeftMargin="320.0000" RightMargin="320.0000" TopMargin="65.8076" BottomMargin="55.1924" ctype="SingleNodeObjectData">
                 <Size X="0.0000" Y="0.0000" />
                 <Children>
                   <AbstractNodeData Name="Image_Barbg" ActionTag="1141047718" Tag="104" IconVisible="False" RightMargin="-266.0000" TopMargin="-23.0000" BottomMargin="-23.0000" LeftEage="87" RightEage="87" TopEage="15" BottomEage="15" Scale9OriginX="87" Scale9OriginY="15" Scale9Width="92" Scale9Height="16" ctype="ImageViewObjectData">
@@ -89,10 +89,10 @@
                   </AbstractNodeData>
                 </Children>
                 <AnchorPoint />
-                <Position X="262.1628" Y="55.1924" />
+                <Position X="320.0000" Y="55.1924" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.4096" Y="0.4561" />
+                <PrePosition X="0.5000" Y="0.4561" />
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>

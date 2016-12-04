@@ -3,8 +3,8 @@
        "isLandscape": false,
        "isWindowTop": false,
        "name": "lota",
-       "width": 448,
-       "height": 795,
+       "width": 403,
+       "height": 715,
        "entry": "src/main.lua",
        "consolePort": 6050,
        "uploadPort": 6060

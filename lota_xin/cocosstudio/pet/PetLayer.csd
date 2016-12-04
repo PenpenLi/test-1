@@ -246,7 +246,7 @@
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="398.5518" Y="509.9909" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
+            <CColor A="255" R="0" G="128" B="0" />
             <PrePosition X="0.6227" Y="0.4489" />
             <PreSize X="0.5250" Y="0.0423" />
             <FontResource Type="Normal" Path="font/huakang.TTF" Plist="" />

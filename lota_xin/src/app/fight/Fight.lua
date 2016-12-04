@@ -207,7 +207,7 @@ function Fight:cteateSkillSequence(unit)
     local seqIndex = 0
 
     if self:isOver() or self.zeroOver then
-        print("isOver")
+        -- print("isOver")
         self.timetime = nil
 
         self.zeroOver = false

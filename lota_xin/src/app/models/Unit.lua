@@ -45,7 +45,7 @@ function Unit:init(param)
     self.meleeTab = param.meleeTab
 
     self.HeroId = param.HeroId
-    print(" Unit:init  ID ".. self.HeroId)
+    -- print(" Unit:init  ID ".. self.HeroId)
     -- print(" Unit:init  ID ".. json.encode(param.playHero))
     self.playHero = param.playHero
     self.playPet = param.playHero
@@ -177,7 +177,7 @@ end
 
 function Unit:startAck( ... )
     self.startActTime = os.clock()
-    print("startAck ================ "..self.startActTime)
+    -- print("startAck ================ "..self.startActTime)
 end
 
 function Unit:getStartAckTime( ... )
@@ -266,7 +266,7 @@ function Unit:initValue(param)
 
 
     local time = math.random(100, 200) / 100
-    print("timetimetimetime  66666666               "..time)
+    -- print("timetimetimetime  66666666               "..time)
     self:setAckTime(time)
     self:startAck()
 
@@ -1278,7 +1278,7 @@ function Unit:PlayHurt(param)
     else
     end
 
-    print("font  hurt                    1")
+    -- print("font  hurt                    1")
 
     if self:isDead() then
         --self.fight:hurtEndCount()
@@ -1432,7 +1432,7 @@ function Unit:PlayHurt(param)
         fut = "res/font/fnt_02.fnt"
     end
 
-    print("font  hurt      "..hurt)
+    -- print("font  hurt      "..hurt)
     local hurtText = ccui.TextBMFont:create()
     if hurt > 0 then
         hurtText:setFntFile("res/font/fnt_01.fnt")
@@ -1500,13 +1500,13 @@ function Unit:showSkillIcon( TgType )
     local skillIcon = ccui.ImageView:create()
     if MM.ETriggerType.TrXianshou == TgType then
         skillIcon:loadTexture("res/icon/jiemian/icon_tanxianshou.png")
-        print("showSkillIconshowSkillIconshowSkillIconshowSkillIcon      先手")
+        -- print("showSkillIconshowSkillIconshowSkillIconshowSkillIcon      先手")
     elseif MM.ETriggerType.TrFansha == TgType then
         skillIcon:loadTexture("res/icon/jiemian/icon_tanfansha.png")
-        print("showSkillIconshowSkillIconshowSkillIconshowSkillIcon      反杀")
+        -- print("showSkillIconshowSkillIconshowSkillIconshowSkillIcon      反杀")
     elseif MM.ETriggerType.TrQiangrentou == TgType then
         skillIcon:loadTexture("res/icon/jiemian/icon_tanrentou.png")
-        print("showSkillIconshowSkillIconshowSkillIconshowSkillIcon      抢人头")
+        -- print("showSkillIconshowSkillIconshowSkillIconshowSkillIcon      抢人头")
     end
 
     self:addChild(skillIcon)
@@ -1591,7 +1591,7 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
         fut = "res/font/fnt_02.fnt"
     end
 
-    print("font  hurt  111111    "..hurt)
+    -- print("font  hurt  111111    "..hurt)
 
     local hurtText = ccui.TextBMFont:create()
     if hurt > 0 then

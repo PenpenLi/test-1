@@ -112,8 +112,11 @@ end
 
 function LoginScene:loginBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then
-        -- self:ConnectAndLogin()
-        self:loginTest()
+        self:ConnectAndLogin()
+        -- self:loginTest()
+
+        -- mm.data.playerinfo = {id = 10000001,exp = 400, lv = 5 }
+        -- self.app_:run("FightScene")
     end
 end
 
@@ -445,10 +448,10 @@ function LoginScene:setCurSever()
     end
 
     local currentServer = gameUtil.getDefaultServerInfo(self.httpTable)
-    local curSeverName = currentServer.Name
-    local serverId = currentServer.Areaid
-    LOTA_TCP = currentServer.IP
-    LOTA_TCP_PORT = currentServer.Port
+    local curSeverName = currentServer.name
+    local serverId = currentServer.areaId
+    LOTA_TCP = currentServer.ip
+    LOTA_TCP_PORT = currentServer.port
     cc.UserDefault:getInstance():setStringForKey("severId", serverId)
     
     self.severBtn:getChildByName("Text_5"):setString(curSeverName)
@@ -484,19 +487,20 @@ function LoginScene:GetHttp( ... )
     local function onReadyStateChange()
         if xhr.readyState == 4 and (xhr.status >= 200 and xhr.status < 207) then
             local statusString = "Http Status Code:"..xhr.statusText
-
+            cclog("--------------------------拉取服务器列表出错--statusString "..statusString)
+            cclog("--------------------------拉取服务器列表出错--xhr.response "..xhr.response)
             local result = json.decode(xhr.response)
             if result.type == 0 then
-                self.httpTable = json.decode(result.areaList)
+                self.httpTable = result.areaList
                 self:setCurSever()
 
             else
-                cclog("--------------------------拉取服务器列表出错--------------------")
+                cclog("--------------------------拉取服务器列表出错--0------------------")
                 self.severBtn:getChildByName("Text_5"):setString("")
             end
         else
             cclog("xhr.readyState is:"..xhr.readyState.."xhr.status is: "..xhr.status)
-            cclog("--------------------------拉取服务器列表出错--------------------")
+            cclog("--------------------------拉取服务器列表出错--1------------------")
             self.severBtn:getChildByName("Text_5"):setString("")
         end
     end

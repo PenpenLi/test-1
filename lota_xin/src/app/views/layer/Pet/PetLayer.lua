@@ -24,6 +24,10 @@ function PetLayer:init(param)
 	self.Node = self:getResourceNode()
     self.ImageBg = self.Node:getChildByName("Image_bg")
 
+    self.pet = param.pet
+    print(" PetLayer :   self.pet      "..json.encode(param))
+    print(" PetLayer :   self.pet      "..json.encode(self.pet))
+
     --初始化主界面UI
     self:UIInit()
 
@@ -32,6 +36,11 @@ end
 function PetLayer:UIInit() 
     self.backBtn = self.ImageBg:getChildByName("Button_back")
     self.backBtn:addTouchEventListener(handler(self, self.backBtnCbk))
+
+    self.zhanliText = self.Node:getChildByName("Text_zhanli")
+    self.nameText = self.Node:getChildByName("Text_name")
+    self.nameText:setString(self.pet.name)
+    
 
     self.checkLvBtn = self.ImageBg:getChildByName("Button_lv")
     self.checkLvBtn:addTouchEventListener(handler(self, self.checkBtnCbk))
@@ -51,6 +60,8 @@ function PetLayer:UIInit()
     self.evolutionNode = self.Node:getChildByName("Node_evolution")
 
     self:setCheckBtn(self.checkLvBtn)
+
+    self:updatePublic()
 end
 
 
@@ -94,9 +105,18 @@ function PetLayer:setCheckBtn(btn)
     end
 end
 
+function PetLayer:updatePublic()
+    local zhanliNum = 10
+    self.zhanliText:setString(zhanliNum)
+end
+
+function PetLayer:updateLv( event )
+
+end
+
 function PetLayer:backBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
-        mm:popLayer()
+        self:removeFromParent()
     end
 end
 
