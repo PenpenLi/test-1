@@ -20,6 +20,11 @@
           <File Name="huakang.TTF" />
           <TTF Name="youyuan.TTF" />
         </Folder>
+        <Folder Name="pet">
+          <Project Name="PetLayer.csd" Type="Layer" />
+          <Project Name="petListitem.csd" Type="Layer" />
+          <Project Name="PetListLayer.csd" Type="Layer" />
+        </Folder>
         <Folder Name="player">
           <Project Name="PlayerLayer.csd" Type="Layer" />
         </Folder>
@@ -87,11 +92,6 @@
         <Project Name="TalkItem_0.csd" Type="Layer" />
         <Project Name="TalkLayer.csd" Type="Layer" />
         <Project Name="talkMsgBox.csd" Type="Layer" />
-        <Folder Name="pet">
-          <Project Name="PetListLayer.csd" Type="Layer" />
-          <Project Name="PetLayer.csd" Type="Layer" />
-          <Project Name="petListitem.csd" Type="Layer" />
-        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

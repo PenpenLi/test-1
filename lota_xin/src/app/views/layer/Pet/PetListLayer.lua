@@ -38,6 +38,9 @@ function PetListLayer:UIInit()
     self.viewNode = self.Node:getChildByName("Node_Scrollview")
     -- self.Node:getChildByName("Button"):addTouchEventListener(handler(self, self.checkBtnCbk))
 
+
+    
+
     self:updateData()
     self:updateList()
 end

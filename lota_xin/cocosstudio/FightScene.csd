@@ -6,7 +6,7 @@
       <ObjectData Name="Scene" Tag="12" ctype="GameNodeObjectData">
         <Size X="640.0000" Y="1136.0000" />
         <Children>
-          <AbstractNodeData Name="Image_13" ActionTag="-801824064" Tag="73" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TopMargin="0.2273" BottomMargin="-0.2272" LeftEage="211" RightEage="211" TopEage="374" BottomEage="374" Scale9OriginX="211" Scale9OriginY="374" Scale9Width="218" Scale9Height="388" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Image_13" ActionTag="-801824064" Tag="73" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" TopMargin="0.2272" BottomMargin="-0.2272" LeftEage="211" RightEage="211" TopEage="374" BottomEage="374" Scale9OriginX="211" Scale9OriginY="374" Scale9Width="218" Scale9Height="388" ctype="ImageViewObjectData">
             <Size X="640.0000" Y="1136.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="320.0000" Y="567.7728" />
@@ -249,15 +249,15 @@
             <PrePosition X="0.7453" Y="0.4903" />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Image_jinbi" ActionTag="-1330251816" Tag="50" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="150.1295" RightMargin="431.8705" TopMargin="16.3395" BottomMargin="1065.6605" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
-            <Size X="58.0000" Y="54.0000" />
+          <AbstractNodeData Name="Image_jinbi" ActionTag="-1330251816" Tag="50" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="162.6295" RightMargin="444.3705" TopMargin="16.3395" BottomMargin="1087.6605" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="13" Scale9Height="12" ctype="ImageViewObjectData">
+            <Size X="33.0000" Y="32.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
             <Position X="179.1295" Y="1119.6605" />
-            <Scale ScaleX="0.5145" ScaleY="0.5567" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2799" Y="0.9856" />
-            <PreSize X="0.0906" Y="0.0475" />
-            <FileData Type="Default" Path="Default/ImageFile.png" Plist="" />
+            <PreSize X="0.0516" Y="0.0282" />
+            <FileData Type="Normal" Path="UI/base/gold.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Image_zuanshi" ActionTag="1225752370" Tag="52" IconVisible="False" VerticalEdge="TopEdge" LeftMargin="332.1707" RightMargin="247.8293" TopMargin="7.0121" BottomMargin="1079.9879" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
             <Size X="60.0000" Y="49.0000" />

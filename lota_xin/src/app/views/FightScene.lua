@@ -32,17 +32,17 @@ local BossTime = 30 --boss的击杀时间
 
 local size  = cc.Director:getInstance():getWinSize()
 
-mm.data.player = {
-    {id = 10000001, lv = 1, skillLv = 1, eq01 = 1, eq02 = 1, eq03 = 1, },
-}
+-- mm.data.player = {
+--     {id = 10000001, lv = 1, skillLv = 1, eq01 = 1, eq02 = 1, eq03 = 1, },
+-- }
 
-mm.data.playerPet = {
-    {id = 1278226736, lv = 3, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278226744, lv = 6, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278226993, lv = 11, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278227249, lv = 19, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 1278227254, lv = 10, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-}
+-- mm.data.playerPet = {
+--     {id = 1278226736, lv = 3, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 1278226744, lv = 6, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 1278226993, lv = 11, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 1278227249, lv = 19, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 1278227254, lv = 10, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+-- }
 
 mm.puTongZhen = {
         1278226736,
@@ -71,6 +71,8 @@ game.qualityTab = {
 mm.data.playerHero = mm.data.playerPet
 
 function FightScene:onCreate()
+
+
 
     self.scene = self:getChildByName("Scene")
     self.scene:setAnchorPoint(cc.p(0.5,0.5))
@@ -109,7 +111,12 @@ function FightScene:onCreate()
 
     self:timeUpdate()
 
+    self:updatePublic()
+end
 
+function FightScene:updatePublic()
+    local goldText = self.scene:getChildByName("jinzitext")
+    goldText:setString(mm.data.base.gold)
 end
 
 function FightScene:onEnter() 
@@ -122,6 +129,8 @@ function FightScene:UIInit()
 
     self.petBtn = self.scene:getChildByName("Button_pet")
     self.petBtn:addTouchEventListener(handler(self, self.petBtnCbk))
+
+
 end
 
 function FightScene:zhujueBtnCbk(widget,touchkey)
@@ -142,7 +151,11 @@ end
 
 function FightScene:globalEventsListener( event )
     if event.name == EventDef.SERVER_MSG then
-        if event.code == "saveFormation" then
+        if event.code == "killmonster" then
+            self:updatePublic()
+        elseif event.code == "stageaccount" then
+
+            self:updatePublic()
         end
     end
     if event.name == EventDef.UI_MSG then
@@ -177,7 +190,7 @@ function FightScene:timeUpdate()
 end
 
 function FightScene:setCheckpointShow()
-    local num = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
+    local num = mm.data.base.stage --cc.UserDefault:getInstance():getIntegerForKey(mm.data.player.id .. "nnffID",1)
     self.scene:getChildByName("Image_old"):getChildByName("Text"):setString(num - 1)
     self.scene:getChildByName("Image_now"):getChildByName("Text"):setString(num)
     self.scene:getChildByName("Image_new"):getChildByName("Text"):setString(num + 1)
@@ -238,7 +251,7 @@ end
 
 function FightScene:nnffInfo(  )
     local tab = {}
-    local nnffID = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
+    local nnffID = mm.data.base.stage--cc.UserDefault:getInstance():getIntegerForKey(mm.data.player.id .. "nnffID",1)
     print("当前关卡  "..nnffID)
     tab.blood = G_BossTable[nnffID].blood * (0.5 +  self.curNnffId * 0.05)
     tab.size = 1
@@ -291,8 +304,11 @@ end
 function FightScene:nnff(  )
 
     if self.NodeTimeNum > 0 then
-        local nnffID = cc.UserDefault:getInstance():getIntegerForKey(mm.data.playerinfo.id .. "nnffID",1)
-        cc.UserDefault:getInstance():setIntegerForKey(mm.data.playerinfo.id .. "nnffID",nnffID + 1)
+        local nnffID = mm.data.base.stage--cc.UserDefault:getInstance():getIntegerForKey(mm.data.player.id .. "nnffID",1)
+        -- cc.UserDefault:getInstance():setIntegerForKey(mm.data.player.id .. "nnffID",nnffID + 1)
+        mm.req("stageaccount",{})
+    else
+        mm.req("killmonster",{})
     end
 
     fight:initNode()
@@ -438,7 +454,7 @@ end
 
 function FightScene:buzhenBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
-        if gameUtil.getPlayerLv(mm.data.playerinfo.exp) > 1 then
+        if gameUtil.getPlayerLv(mm.data.player.exp) > 1 then
             local BuZhenLayer = require("src.app.views.layer.Formation.BuZhenNewLayer").new({app = self.app_})
             self:addChild(BuZhenLayer, MoGlobalZorder[2000002])
             BuZhenLayer:setContentSize(cc.size(size.width, size.height))

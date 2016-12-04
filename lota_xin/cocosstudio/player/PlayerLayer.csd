@@ -223,7 +223,7 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Node_lvUp" ActionTag="1000750932" Tag="224" IconVisible="True" RightMargin="640.0000" TopMargin="1136.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Node_lvUp" Visible="False" ActionTag="1000750932" Tag="224" IconVisible="True" RightMargin="640.0000" TopMargin="1136.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Image_lvup_bg" ActionTag="-71935156" Tag="225" IconVisible="False" RightMargin="-640.0000" TopMargin="-448.9906" BottomMargin="279.9906" LeftEage="211" RightEage="211" TopEage="55" BottomEage="55" Scale9OriginX="211" Scale9OriginY="55" Scale9Width="218" Scale9Height="59" ctype="ImageViewObjectData">
@@ -319,7 +319,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="UI/base/shuxingdi.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_zhan" ActionTag="1345893567" Tag="220" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="189.0000" RightMargin="-451.0000" TopMargin="-203.0000" BottomMargin="97.0000" TouchEnable="True" FontSize="48" ButtonText="喂养" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="232" Scale9Height="84" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_LvUp" ActionTag="1345893567" Tag="220" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="189.0000" RightMargin="-451.0000" TopMargin="-203.0000" BottomMargin="97.0000" TouchEnable="True" FontSize="48" ButtonText="喂养" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="232" Scale9Height="84" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="262.0000" Y="106.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="320.0000" Y="150.0000" />
@@ -368,7 +368,7 @@
           <AbstractNodeData Name="Node_skill" ActionTag="1540781134" Tag="115" IconVisible="True" RightMargin="640.0000" TopMargin="1136.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
-              <AbstractNodeData Name="Image_lvup_bg_0" ActionTag="95933052" Tag="117" IconVisible="False" LeftMargin="10.0000" RightMargin="-650.0000" TopMargin="-438.9906" BottomMargin="269.9906" LeftEage="211" RightEage="211" TopEage="55" BottomEage="55" Scale9OriginX="211" Scale9OriginY="55" Scale9Width="218" Scale9Height="59" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_skillup_bg" ActionTag="95933052" Tag="117" IconVisible="False" LeftMargin="10.0000" RightMargin="-650.0000" TopMargin="-438.9906" BottomMargin="269.9906" LeftEage="211" RightEage="211" TopEage="55" BottomEage="55" Scale9OriginX="211" Scale9OriginY="55" Scale9Width="218" Scale9Height="59" ctype="ImageViewObjectData">
                 <Size X="640.0000" Y="169.0000" />
                 <Children>
                   <AbstractNodeData Name="Text_lv" ActionTag="52425084" Tag="118" IconVisible="False" LeftMargin="259.5000" RightMargin="259.5000" TopMargin="20.4894" BottomMargin="112.5106" FontSize="36" LabelText="Lv:90" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -383,7 +383,7 @@
                     <OutlineColor A="255" R="255" G="0" B="0" />
                     <ShadowColor A="255" R="110" G="110" B="110" />
                   </AbstractNodeData>
-                  <AbstractNodeData Name="Text_des" ActionTag="-307881911" Tag="128" IconVisible="False" LeftMargin="87.2216" RightMargin="90.7783" TopMargin="77.6027" BottomMargin="55.3973" FontSize="36" LabelText="全体增加攻击速度，持续5秒" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                  <AbstractNodeData Name="Text_des" ActionTag="-307881911" Tag="128" IconVisible="False" LeftMargin="87.2216" RightMargin="90.7784" TopMargin="77.6027" BottomMargin="55.3973" FontSize="36" LabelText="全体增加攻击速度，持续5秒" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                     <Size X="462.0000" Y="36.0000" />
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="318.2216" Y="73.3973" />
@@ -404,7 +404,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="UI/base/shuxingdi.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Button_zhan_0" ActionTag="1664414839" Tag="125" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="199.0000" RightMargin="-461.0000" TopMargin="-193.0000" BottomMargin="87.0000" TouchEnable="True" FontSize="48" ButtonText="升级" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="232" Scale9Height="84" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Button_skillUp" ActionTag="1664414839" Tag="125" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="199.0000" RightMargin="-461.0000" TopMargin="-193.0000" BottomMargin="87.0000" TouchEnable="True" FontSize="48" ButtonText="技能升级" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="232" Scale9Height="84" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="262.0000" Y="106.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="330.0000" Y="140.0000" />
@@ -420,7 +420,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="255" G="127" B="80" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text_gold_0" ActionTag="155716597" Tag="126" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="246.3633" RightMargin="-333.3633" TopMargin="-77.2738" BottomMargin="41.2738" FontSize="36" LabelText="100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text_gold" ActionTag="155716597" Tag="126" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="246.3633" RightMargin="-333.3633" TopMargin="-77.2738" BottomMargin="41.2738" FontSize="36" LabelText="100" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="87.0000" Y="36.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="289.8633" Y="59.2738" />
@@ -432,7 +432,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_gold_0" ActionTag="425453966" Tag="127" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="368.7227" RightMargin="-401.7227" TopMargin="-74.7516" BottomMargin="42.7516" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="13" Scale9Height="12" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_gold" ActionTag="425453966" Tag="127" IconVisible="False" VerticalEdge="BottomEdge" LeftMargin="368.7227" RightMargin="-401.7227" TopMargin="-74.7516" BottomMargin="42.7516" LeftEage="10" RightEage="10" TopEage="10" BottomEage="10" Scale9OriginX="10" Scale9OriginY="10" Scale9Width="13" Scale9Height="12" ctype="ImageViewObjectData">
                 <Size X="33.0000" Y="32.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="385.2227" Y="58.7516" />
@@ -450,13 +450,13 @@
             <PrePosition />
             <PreSize X="0.0000" Y="0.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Node_fashion" ActionTag="309665766" Tag="116" IconVisible="True" RightMargin="640.0000" TopMargin="1136.0000" ctype="SingleNodeObjectData">
+          <AbstractNodeData Name="Node_fashion" Visible="False" ActionTag="309665766" Tag="116" IconVisible="True" RightMargin="640.0000" TopMargin="1136.0000" ctype="SingleNodeObjectData">
             <Size X="0.0000" Y="0.0000" />
             <Children>
               <AbstractNodeData Name="Image_equip_bg" ActionTag="973997482" Tag="129" IconVisible="False" VerticalEdge="BottomEdge" RightMargin="-640.0000" TopMargin="-439.6957" BottomMargin="85.6957" LeftEage="211" RightEage="211" TopEage="116" BottomEage="116" Scale9OriginX="211" Scale9OriginY="116" Scale9Width="218" Scale9Height="122" ctype="ImageViewObjectData">
                 <Size X="640.0000" Y="354.0000" />
                 <Children>
-                  <AbstractNodeData Name="ScrollView" ActionTag="1127649865" Tag="130" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="9.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
+                  <AbstractNodeData Name="ScrollView" ActionTag="1127649865" Tag="130" IconVisible="False" LeftMargin="5.0000" RightMargin="5.0000" TopMargin="9.0000" TouchEnable="True" ClipAble="True" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" IsBounceEnabled="True" ScrollDirectionType="Vertical" ctype="ScrollViewObjectData">
                     <Size X="630.0000" Y="345.0000" />
                     <AnchorPoint />
                     <Position X="5.0000" />

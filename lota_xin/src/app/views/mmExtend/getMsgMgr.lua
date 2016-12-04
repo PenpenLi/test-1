@@ -479,3 +479,64 @@ g_msgCode["snipe"] = function( t )
     
     mm.dispatchEvent("snipe",t)
 end
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------
+
+g_msgCode["masterlevelup"] = function( t )
+    cclog("masterlevelup back   ")
+    if t.result == 0 then
+        mm.data.player.lv = mm.data.player.lv + 1
+        mm.dispatchEvent("masterlevelup",t)
+    else
+        cclog("masterlevelup error   ")
+    end
+end
+
+--player 和 pet 走的同一条
+g_msgCode["skillup"] = function( t )
+    cclog("skillup back   ")
+    if t.result == 0 then
+        mm.data.player.skillLv = mm.data.player.skillLv + 1
+        mm.dispatchEvent("skillup",t)
+    else
+        cclog("skillup error   ")
+    end
+end
+
+g_msgCode["killmonster"] = function( t )
+    cclog("killmonster back   ")
+    if t.result == 0 then
+        mm.data.base.gold = t.gold
+        mm.dispatchEvent("killmonster",t)
+    else
+        cclog("killmonster error   ")
+    end
+end
+
+g_msgCode["stageaccount"] = function( t )
+    cclog("stageaccount back   ")
+    if t.result == 0 then
+        mm.data.base.gold = t.gold
+        mm.data.base.stage = mm.data.base.stage + 1
+        mm.dispatchEvent("stageaccount",t)
+    else
+        cclog("stageaccount error   ")
+    end
+end
+
+
+
+
+
+
+
+
+
+
+

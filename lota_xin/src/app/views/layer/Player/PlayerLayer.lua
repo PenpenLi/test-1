@@ -33,6 +33,13 @@ function PlayerLayer:UIInit()
     self.backBtn = self.ImageBg:getChildByName("Button_back")
     self.backBtn:addTouchEventListener(handler(self, self.backBtnCbk))
 
+    self.zhanliText = self.Node:getChildByName("Text_zhanli")
+    self.nameText = self.Node:getChildByName("Text_name")
+    self.nameText:setString(mm.data.base.nickName or "无名字？")
+    self:updatePublic()
+
+
+
     self.checkLvBtn = self.ImageBg:getChildByName("Button_lv")
     self.checkLvBtn:addTouchEventListener(handler(self, self.checkBtnCbk))
 
@@ -47,8 +54,52 @@ function PlayerLayer:UIInit()
     self.fashionNode = self.Node:getChildByName("Node_fashion")
 
     self:setCheckBtn(self.checkLvBtn)
+
+    self.lvUpBtn = self.lvUpNode:getChildByName("Button_LvUp")
+    self.lvUpBtn:addTouchEventListener(handler(self, self.lvUpBtnCbk))
+    self:updateLvUI()
+
+    self.skillUpBtn = self.skillNode:getChildByName("Button_skillUp")
+    self.skillUpBtn:addTouchEventListener(handler(self, self.skillUpBtnCbk))
+    self:updateSkillUpUI()
+
 end
 
+function PlayerLayer:updatePublic()
+    local zhanliNum = mm.data.player.lv + mm.data.player.skillLv
+    self.zhanliText:setString("战斗力:"..zhanliNum)
+end
+
+function PlayerLayer:updateLvUI()
+    local lvText = self.lvUpNode:getChildByName("Image_lvup_bg"):getChildByName("Text_lv")
+    lvText:setString(mm.data.player.lv)
+    local goldText = self.lvUpNode:getChildByName("Text_gold")
+    local needGold = 100
+    goldText:setString(needGold)
+end
+
+function PlayerLayer:updateSkillUpUI()
+    local skillLvText = self.skillNode:getChildByName("Image_skillup_bg"):getChildByName("Text_lv")
+    skillLvText:setString(mm.data.player.skillLv)
+    local goldText = self.skillNode:getChildByName("Text_gold")
+    local needGold = 100
+    goldText:setString(needGold)
+end
+
+function PlayerLayer:lvUpBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        local t = {}
+        mm.req("masterlevelup",t)
+    end
+end
+
+function PlayerLayer:skillUpBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        local t = {}
+        t.id = 0
+        mm.req("skillup",t)
+    end
+end
 
 
 function PlayerLayer:checkBtnCbk(widget,touchkey)
@@ -93,7 +144,12 @@ end
 
 function PlayerLayer:globalEventsListener( event )
     if event.name == EventDef.SERVER_MSG then
-        if event.code == "saveFormation" then
+        if event.code == "masterlevelup" then
+            self:updatePublic()
+            self:updateLvUI()
+        elseif event.code == "skillup" then
+            self:updatePublic()
+            self:updateSkillUpUI()
         end
     end
 end

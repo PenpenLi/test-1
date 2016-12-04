@@ -165,16 +165,8 @@ function mm.connectSuc( ... )
 end
 
 function mm.req(msgName,t)
-    t.gameSession = mm.data.playerinfo.gameSession
+    -- t.gameSession = mm.data.playerinfo.gameSession
     mm.app.clientTCP:send(msgName,t,g_msgCode[msgName])
-
-    -- if g_fightLoadingLayer then
-    --     g_fightLoadingLayer:setVisible(true)
-    --     g_fightLoadingLayer:getChildByName("Text"):setVisible(false)
-    --     performWithDelay(g_fightLoadingLayer,function( ... )
-    --         g_fightLoadingLayer:getChildByName("Text"):setVisible(true)
-    --     end , 5)
-    -- end
 
 end
 

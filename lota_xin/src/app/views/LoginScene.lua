@@ -201,82 +201,43 @@ end
 function LoginScene:login()
     local accountText = self.accEditBox:getText()
     local currentServer = gameUtil.getDefaultServerInfo(self.httpTable)
-    local curSeverId = currentServer.Areaid
+    local curSeverId = currentServer.areaId
 
     local t = {}
     t.uid       = accountText
-    t.qufu      = curSeverId
+    -- t.areaId      = curSeverId
     t.session   = "123456"
-    t.qudao     = "dianhun"
+    t.qudao     = "aa"
     t.zi_qudao  = PLATFORMVER
+
+    game.loginInfoTab = t
         
     local function loginret(msg)
-        print("loginret              !!!!!!!!!!!!!!!!!!!!!!  ")
-        if msg.type == 0 then
-            if not msg.playerHero then
-                cclog(" 没英雄 ！！！！！！ ")
-            end
-            mm.data.playerinfo = msg.playerinfo or {}
-            mm.data.playerEquip = msg.playerEquip or {}
-            mm.data.playerItem = msg.playerItem or {}
-            mm.data.playerHunshi = msg.playerHunshi or {}
-            mm.data.playerHero = msg.playerHero or {}
-            mm.data.playerStage = msg.playerStage or {}
-            mm.data.playerTask = msg.playerTask or {}
-            mm.data.playerTaskProc = msg.TaskProc or {}
-            mm.data.playerFormation = msg.playerFormation or {}
-            mm.data.guajiTime = msg.guajiTime or 0
-            mm.data.guajiWuPin = msg.guajiWuPin or {}
-            mm.data.curDuanWei = msg.curDuanWei
-            mm.data.playerExtra = msg.playerExtra
-            mm.data.time.skillTime = msg.playerExtra.refreshSkillTime
+        print("loginret              !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg))
+        if msg.result == 0 then
 
-            mm.data.addPoolExp = msg.addPoolExp
-            mm.data.addGold = msg.addGold
-            mm.data.addExp = msg.addExp
-            mm.data.dropTab = msg.dropTab
-            mm.data.noReadNum = msg.noReadNum
-            mm.data.closeFuncTab = msg.closeFuncTab or {}
-            mm.data.meleeStatus = msg.meleeStatus or 3
-            mm.data.ranktime = msg.ranktime
+            print("CreateScene loginret       msg.base.pet       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.pet))
 
-            mm.data.activityInfo = msg.activityInfo
-            mm.data.activityRecord = msg.activityRecord
-            mm.data.publicActivityExtraInfo = msg.publicActivityExtraInfo
-
-            mm.data.myMaxRank = msg.myMaxRank
-
-            mm.initTalk( msg.worldTalk )
-            local function getDiRenListBack( event )
-                print("getDiRenListBack ！！！！！！！！！！！ ")
-                if event.type == 0 then
-                    print("没有敌方英雄 ！！！！！！！！！！！ 3333")
-                    mm.direninfo = util.copyTab(event.direninfo)
-                    if mm.direninfo == nil then
-                        print("没有敌方英雄 ！！！！！！！！！！！ 4444")
-                    end
-                    mm.direnIndex = 1
-                else
-                    print("getDiRenListBack ！！！！！！！！！！！ 11")
-                end
-                print("getDiRenListBack ！！！！！！！！！！！ 22")
-                -- self:LoadingScence()
-                self.app_:run("FightScene")
-                
-            end
-            self.app_.clientTCP:send("getDiRenList",{type=0},getDiRenListBack)
-            print("getDiRenListBack ！！！！！！！！！！！ 111111111 ")
+            mm.data.base = msg.base
+            mm.data.player = msg.master
+            mm.data.player.id = msg.base.id
+            mm.data.playerPet = msg.pet
+            mm.data.playerEquip = msg.equip
+            self.app_:run("FightScene")
+            
 
             cc.UserDefault:getInstance():setStringForKey("account",accountText)
             cc.UserDefault:getInstance():setStringForKey("mima",secretText)
-        elseif msg.type == 1 then
-            
-        elseif msg.type == 2 then
+        elseif msg.result == 1 then
+            cc.UserDefault:getInstance():setStringForKey("account",accountText)
+            cc.UserDefault:getInstance():setStringForKey("mima",secretText)
+            self.app_:run("CreateScene") 
+        elseif msg.result == 2 then
             --self.accountText:setString("账号或者密码不正确")
             cc.UserDefault:getInstance():setStringForKey("account",accountText)
             cc.UserDefault:getInstance():setStringForKey("mima",secretText)
             self.app_:run("CreateScene") 
-        elseif msg.type == 3 then
+        elseif msg.result == 3 then
             local WarningLayer = require("src.app.views.layer.WarningLayer").new({app_ = self.app_, lockEndTime = msg.playerinfo.lockEndTime})
             local size  = cc.Director:getInstance():getWinSize()
             self.scene:addChild(WarningLayer, 100000)
@@ -286,7 +247,9 @@ function LoginScene:login()
         end
     
     end
+    
 
+    print("t              !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(t))
     self.app_.clientTCP:send("login",t, loginret)
     game.LoginSDkData = game.LoginSDkData or {}
     mm.accountText = accountText

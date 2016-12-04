@@ -40,7 +40,7 @@ function PetLayer:UIInit()
     self.zhanliText = self.Node:getChildByName("Text_zhanli")
     self.nameText = self.Node:getChildByName("Text_name")
     self.nameText:setString(self.pet.name)
-    
+    self:updatePublic()
 
     self.checkLvBtn = self.ImageBg:getChildByName("Button_lv")
     self.checkLvBtn:addTouchEventListener(handler(self, self.checkBtnCbk))
@@ -61,7 +61,31 @@ function PetLayer:UIInit()
 
     self:setCheckBtn(self.checkLvBtn)
 
-    self:updatePublic()
+    
+
+    self.lvUpBtn = self.lvUpNode:getChildByName("Button_LvUp")
+    self.lvUpBtn:addTouchEventListener(handler(self, self.lvUpBtnCbk))
+    self:updateLvUI()
+
+    self.skillUpBtn = self.skillNode:getChildByName("Button_skillUp")
+    self.skillUpBtn:addTouchEventListener(handler(self, self.skillUpBtnCbk))
+    self:updateSkillUpUI()
+end
+
+function PetLayer:updateLvUI()
+    local lvText = self.lvUpNode:getChildByName("Image_lvup_bg"):getChildByName("Text_lv")
+    lvText:setString(self.pet.lv)
+    local goldText = self.lvUpNode:getChildByName("Text_gold")
+    local needGold = 100
+    goldText:setString(needGold)
+end
+
+function PetLayer:updateSkillUpUI()
+    local skillLvText = self.skillNode:getChildByName("Image_skillup_bg"):getChildByName("Text_lv")
+    skillLvText:setString(self.pet.skillLv)
+    local goldText = self.skillNode:getChildByName("Text_gold")
+    local needGold = 100
+    goldText:setString(needGold)
 end
 
 
@@ -69,6 +93,22 @@ end
 function PetLayer:checkBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
         self:setCheckBtn(widget)
+    end
+end
+
+function PetLayer:lvUpBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        local t = {}
+        t.id = self.pet.id
+        mm.req("petlevelup",t)
+    end
+end
+
+function PetLayer:skillUpBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        local t = {}
+        t.id = self.pet.id
+        mm.req("skillup",t)
     end
 end
 
@@ -106,8 +146,8 @@ function PetLayer:setCheckBtn(btn)
 end
 
 function PetLayer:updatePublic()
-    local zhanliNum = 10
-    self.zhanliText:setString(zhanliNum)
+    local zhanliNum = self.pet.lv + self.pet.skillLv
+    self.zhanliText:setString("战斗力:"..zhanliNum)
 end
 
 function PetLayer:updateLv( event )
@@ -122,7 +162,14 @@ end
 
 function PetLayer:globalEventsListener( event )
     if event.name == EventDef.SERVER_MSG then
-        if event.code == "saveFormation" then
+        if event.code == "petlevelup" then
+            self.pet.lv = self.pet.lv + 1
+            self:updatePublic()
+            self:updateLvUI()
+        elseif event.code == "skillup" then
+            self.pet.skillLv = self.pet.skillLv + 1
+            self:updatePublic()
+            self:updateSkillUpUI()
         end
     end
 end
