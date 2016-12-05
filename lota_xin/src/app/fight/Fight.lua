@@ -102,15 +102,15 @@ function Fight:initBattlefield(param)
 
     local time = {1,1.5,1.8,2,2.1}
     local shaketime = {0.7,1,1.3,1.5,1.6}
-    local function startPK( ... )
+    -- local function startPK( ... )
         -- self:seceneEndShake()
         self.timetime = 1
         self.allPos = 4000
         math.randomseed(tostring(os.time()):reverse():sub(1, 6)) 
         -- self:cteateSkillSequence(self.timetime)
-    end 
+    -- end 
 
-    performWithDelay(self.fScene, startPK, 1)
+    -- performWithDelay(self.fScene, startPK, 0.1)
 
    -- self:seceneBeginShake(0.4, st)
    self:setAllBlood()
@@ -241,6 +241,12 @@ function Fight:checkattack( )
     if not self.timetime then
         return
     end
+
+    local isOver = self:isOver()
+    if isOver then
+        self:cteateSkillSequence(nil)
+    end
+
     local curTime = os.clock()
     for k,v in pairs(self.UnitA) do
         local time = curTime - v:getStartAckTime()
