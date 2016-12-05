@@ -14,11 +14,11 @@ local cc_Sprite = cc.Sprite
 local ccui_ImageView = ccui.ImageView
 
 -- 资源头文件：
-require("src.app.models.initLua")
+-- require("src.app.models.initLua")
 local MM = MM
-local MM_EQuality = MM.EQuality
-local GoldQuality = MM_EQuality.GoldQuality
-local OrangeQuality = MM_EQuality.OrangeQuality
+-- local MM_EQuality = MM.EQuality
+-- local GoldQuality = MM_EQuality.GoldQuality
+-- local OrangeQuality = MM_EQuality.OrangeQuality
 
 -- 文件相关
 function _file_exists(path)

@@ -2,9 +2,9 @@ local FightScene = class("FightScene", cc.load("mvc").ViewBase)
 FightScene.RESOURCE_FILENAME = "FightScene.csb"
 
 
-INITLUA = require("app.models.initLua")
+-- INITLUA = require("app.models.initLua")
 PEIZHI = require("app.res.peizhi")
-INITLUA:fightSceneLoad()
+-- INITLUA:fightSceneLoad()
 local fight = require("app.fight.Fight")
 fight:init()
 local PlayFight = require("app.fight.PlayFight")
@@ -17,14 +17,23 @@ gameTimer = require("app/views/mmExtend/Timer")
 gameTimer:new()
 --玩家阵营始终为 1
 
-Guide = require("app/models/guide")
-
-require("app.res.PreciousUpRes")
+-- Guide = require("app/models/guide")
 
 
-G_BossTable = require("app.res.BossRes")
-G_LvTable = require("app.res.LvRes")
-G_PetTable = require("app.res.PetRes")
+
+require("app.res.MoResConstants")
+
+-- G_BossTable = require("app.res.BossRes")
+-- G_LvTable = require("app.res.LvRes")
+-- G_PetTable = require("app.res.PetRes")
+
+bossTable = require("app.res.bossTableRes")
+equipTable = require("app.res.equipTableRes")
+goldTable = require("app.res.goldTableRes")
+materialTable = require("app.res.materialTableRes")
+petTable = require("app.res.petTableRes")
+speedTable = require("app.res.speedTableRes")
+
 
 local CheckpointCount = 9 --每一关小怪个数
 local BossTime = 30 --boss的击杀时间
@@ -444,7 +453,6 @@ function FightScene:addListener()
     local function eventCustomListener5( ... )
        fight:initNode()
         mm.self = nil
-        Guide:GuildEnd()
         self.app_:run("LoginSceneFinal")
     end
     self.listeners[5] = cc.EventListenerCustom:create("login_data_refesh",eventCustomListener5)
