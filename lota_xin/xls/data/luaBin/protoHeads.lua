@@ -1,4 +1,21 @@
 local protoHeadsWithID = {
+bossTableRes = {
+	protoHead	=
+	[[
+	.Unit {
+		ID 0 : *integer
+		Name 1 : string
+		blood 2 : *integer
+		Src 3 : string
+	}
+
+	.bossTableBook {
+		bossTable 0 : *Unit
+	}
+	]]
+	,
+	headName = "bossTable",
+},
 equipTableRes = {
 	protoHead	=
 	[[
@@ -61,6 +78,24 @@ speedTableRes = {
 	]]
 	,
 	headName = "speedTable",
+},
+goldTableRes = {
+	protoHead	=
+	[[
+	.Unit {
+		ID 0 : *integer
+		PlayerUpLv 1 : *integer
+		PlayerUpSkill 2 : *integer
+		PetUpLv 3 : *integer
+		PetUpSkill 4 : *integer
+	}
+
+	.goldTableBook {
+		goldTable 0 : *Unit
+	}
+	]]
+	,
+	headName = "goldTable",
 },
 materialTableRes = {
 	protoHead	=
