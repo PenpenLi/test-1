@@ -1,0 +1,10 @@
+{
+"dataWithHead":true,
+"path":"data",
+"openExeFold":true,
+"luaExtraPath":["../src/mutilLanguage/chinese/res"],
+"luaBinExtraPath":["../src/mutilLanguage/chinese/luaBin"],
+"webJsonCheck":"http://www.bejson.com",
+"dataExtraPath":"XXXXXX",
+"hHeadExtraPath":"YYYYYYYYYYY"
+}
