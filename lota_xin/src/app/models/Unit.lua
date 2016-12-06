@@ -50,7 +50,7 @@ function Unit:init(param)
     self.playHero = param.playHero
     self.playPet = param.playHero
     self.pet = self:getPetTab(self.HeroId)
-    self.petRes = G_PetTable[self.pet.id]
+    self.petRes = petTable[self.pet.id]
 
     self.type = param.playType  -- 3 关卡
 
@@ -189,9 +189,9 @@ function Unit:getStartAckTime( ... )
 end
 
 function Unit:initValue(param)
-    self.skillID = self:getHeroSkillsId()
-    self.skillTAB = gameUtil.getHeroSkillTab( self.skillID )
-    self.HeroSkillsEx = self:getHeroSkillsEx( self.HeroId )
+    -- self.skillID = self:getHeroSkillsId()
+    -- self.skillTAB = gameUtil.getHeroSkillTab( self.skillID )
+    -- self.HeroSkillsEx = self:getHeroSkillsEx( self.HeroId )
 
 
 

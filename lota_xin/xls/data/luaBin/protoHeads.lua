@@ -128,6 +128,9 @@ petTableRes = {
 		materialID 6 : integer
 		callNum 7 : integer
 		promotionNum 8 : integer
+		Attack 9 : integer
+		Crit 10 : integer
+		Speed 11 : number
 	}
 
 	.petTableBook {

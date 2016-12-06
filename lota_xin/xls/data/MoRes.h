@@ -106,6 +106,9 @@ struct petTableRes{
 	int32				 m_imaterialID;
 	uint32				 m_uicallNum;
 	uint32				 m_uipromotionNum;
+	uint32				 m_uiAttack;
+	uint32				 m_uiCrit;
+	float				 m_fSpeed;
 };
 
 

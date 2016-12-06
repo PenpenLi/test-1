@@ -133,12 +133,7 @@ end
 
 function gameUtil.getHeroTab( heroid )
     local heroid = heroid
-    local tab = INITLUA:getLOLRes()[heroid]
-    if tab then
-        return tab 
-    else
-        return INITLUA:getDOTARes()[heroid]
-    end
+    return petTable[heroid]
 end
 
 function gameUtil.isHasEquip( id )

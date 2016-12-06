@@ -216,8 +216,8 @@ function LoginScene:login()
         print("loginret              !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg))
         if msg.result == 0 then
 
-            print("CreateScene loginret       msg.base.pet       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.pet))
-
+            print("loginret loginret       msg.base.pet       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.pet))
+            print("loginret loginret       msg.base       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.base))
             mm.data.base = msg.base
             mm.data.player = msg.master
             mm.data.player.id = msg.base.id
@@ -249,7 +249,7 @@ function LoginScene:login()
     end
     
 
-    print("t              !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(t))
+    print("login send              !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(t))
     self.app_.clientTCP:send("login",t, loginret)
     game.LoginSDkData = game.LoginSDkData or {}
     mm.accountText = accountText

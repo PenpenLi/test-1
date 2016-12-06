@@ -259,15 +259,20 @@ function FightScene:nnffInit(  )
     return TB
 end
 
+function FightScene:getBossBlood(lv)
+    local id = 401110000 + lv
+    return bossTable[id].blood
+end
+
 function FightScene:nnffInfo(  )
     local tab = {}
     local nnffID = mm.data.base.stage--cc.UserDefault:getInstance():getIntegerForKey(mm.data.player.id .. "nnffID",1)
     print("当前关卡  "..nnffID)
-    tab.blood = G_BossTable[nnffID].blood * (0.5 +  self.curNnffId * 0.05)
+    tab.blood = self:getBossBlood(nnffID) * (0.5 +  self.curNnffId * 0.05)
     tab.size = 1
     tab.time = 0
     if self.curNnffId > CheckpointCount then
-        tab.blood = G_BossTable[nnffID].blood
+        tab.blood = self:getBossBlood(nnffID)
         self.curNnffId = 0
         tab.size = 1.2
         tab.time = BossTime
