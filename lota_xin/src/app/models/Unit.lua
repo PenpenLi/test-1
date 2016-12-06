@@ -175,8 +175,12 @@ function Unit:getAckTime( ... )
     return self.AckTime
 end
 
-function Unit:startAck( ... )
-    self.startActTime = os.clock()
+function Unit:startAck(init)
+    if init then
+        self.startActTime = os.clock() - 5
+    else
+        self.startActTime = os.clock()
+    end
     -- print("startAck ================ "..self.startActTime)
 end
 
@@ -268,7 +272,7 @@ function Unit:initValue(param)
     local time = math.random(100, 200) / 100
     -- print("timetimetimetime  66666666               "..time)
     self:setAckTime(time)
-    self:startAck()
+    self:startAck(true)
 
 end
 

@@ -336,49 +336,14 @@ function UpdateScene:ToLoginScene( ... )
         end
     end
 
-    if device.platform == "android" then
-        self.app_:run("LoginSceneFinal") 
-    elseif device.platform == "ios" then
-        self.app_:run("LoginSceneFinal") 
-    else
+    -- if device.platform == "android" then
+    --     self.app_:run("LoginSceneFinal") 
+    -- elseif device.platform == "ios" then
+    --     self.app_:run("LoginSceneFinal") 
+    -- else
         self.app_:run("LoginScene") 
-    end
-
-    -- local clientTCP = require("app.net.ClientTCP")
-    -- self.app_.clientTCP = clientTCP:new()
-    -- self.app_.clientTCP:Connect()
-
-    
-    -- local dir = cc.FileUtils:getInstance():getSearchPaths()
-    -- for k,v in pairs( dir) do
-    --     print(v)
     -- end
 
-    -- local path = "/data/data/org.cocos2dx.Lota/files/update/0.0.0.3/src/app/views/LoginScene.lua"
-    -- if util.isFileExist(path) then
-    --     print(" isFileExist true 111111111111111 ")
-    -- else
-    --     print(" isFileExist false 111111111111111 ")
-    -- end
-    
-
-    -- file = io.open(path, "r")
-    -- ourline = file:read()
-    -- print(ourline)
-
-    -- cc.FileUtils:getInstance():setSearchPaths(dir)
-
-    --  local dir = cc.FileUtils:getInstance():getSearchPaths()
-    -- for k,v in pairs( dir) do
-    --     print(v)
-    -- end
-
-    -- local aa = cc.FileUtils:getInstance():isDirectoryExist("/data/data/org.cocos2dx.Lota/files/update/0.0.0.3/res/")
-    -- if aa then
-    --     print(" true 111111111111111")
-    -- else
-    --     print(" false 111111111111111")
-    -- end
    
     
 end
