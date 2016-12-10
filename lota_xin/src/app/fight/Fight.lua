@@ -10,8 +10,10 @@ CAMP_B_SKILL_NUM = 4
 CAMP_A_TYPE = 1
 CAMP_B_TYPE = 2
 
+local pet_ack_effect = "res/Effect/pet/t_01/t_01"
+local pet_hurt_effect = "res/Effect/pet/t_01/t_01"
 
-
+local tousewuCo = {}
 
 local sc = 0.6
 local a_scale = {sc,sc,sc,sc,sc}
@@ -207,7 +209,7 @@ function Fight:cteateSkillSequence(unit)
     local seqIndex = 0
 
     if self:isOver() or self.zeroOver then
-        -- print("isOver")
+        print("isOver ================================================================ isOver")
         self.timetime = nil
 
         self.zeroOver = false
@@ -220,10 +222,11 @@ function Fight:cteateSkillSequence(unit)
     local t = self.timetime
     if unit then
         seqIndex = seqIndex + 1
-        self:getRoundSKill(self.skillSeq, self.timetime, unit, TgType,t)
-        self:setCurPos(t,unit,self.skillSeq[self.timetime],TgType)
+        -- self:getRoundSKill(self.skillSeq, self.timetime, unit, TgType,t)
+        -- self:setCurPos(t,unit,self.skillSeq[self.timetime],TgType)
 
-        self:StartAck(self.timetime)
+        -- self:StartAck(self.timetime)
+        self:TapAck(unit)
         self.timetime = self.timetime + 1
     else
         self.timetime = self.timetime + 1
@@ -231,6 +234,76 @@ function Fight:cteateSkillSequence(unit)
     end
 
     
+end
+
+function Fight:TapAck(unit)
+    local unitA = unit
+    local unitB = self:UnitB1()
+    local skillId = unitA:getPetRes().AttackId
+    tousewuCo[skillId] = {}
+    local function playTouSewu( ... )
+
+        local skeletonNode = unitA:getSkeletonNode()
+        skeletonNode:setAnimation(0, "attack", false)
+        local function ackBack()
+            skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
+            skeletonNode:setAnimation(0, "stand", true)
+        end
+        skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
+
+        local tswNode = gameUtil.createSkeletonAnimation(pet_ack_effect..".json", pet_ack_effect..".atlas",1)
+        unitA:addChild(tswNode)
+        tswNode:setAnimation(0, "tsw", false)
+        tswNode:setPosition(100 * 0.5,100 * 0.5)
+        tswNode:setScale(0.4)
+
+        local paowu = 20
+        local cpjuli = self:getTwoNodeCP( unitA, unitB )
+        local cp = self:getTwoNodeCP( unitA, unitB )
+        local bezier = {
+            cc.p(0, 0),
+            cc.p(cp.x * 0.5, paowu + cp.y),
+            cc.p(cp.x, cp.y),
+        }
+        local juli = math.sqrt((math.abs(cpjuli.x) * math.abs(cpjuli.x)) + (math.abs(cpjuli.y) * math.abs(cpjuli.y))) 
+        local time = juli * 0.001 
+        local bezierForward = cc.BezierBy:create(time, bezier)
+
+        local action = cc.Sequence:create(
+                bezierForward,
+                cc.CallFunc:create(function( ... )
+                    tswNode:setVisible(false)
+                    coroutine.resume(tousewuCo[skillId], self)
+                end)
+            )
+        tswNode:runAction(action)
+        coroutine.yield()
+        unitB:setPiaoxue(unitA:getAck(), pet_hurt_effect, 1)
+
+
+    end
+    
+
+    tousewuCo[skillId] = coroutine.create(function()
+        playTouSewu()
+    end)
+    coroutine.resume(tousewuCo[skillId], self)
+
+end
+
+function Fight:getTwoNodeCP( unitA, unitB)
+    local x = unitB:getPositionX() - unitA:getPositionX()
+    local y = unitB:getPositionY()  - 
+                (unitA:getPositionY() )
+    return cc.p(x,y)
+end
+
+function Fight:getTwoPosXY( unitA, unitB )
+    local bp = cc.p(unitB:getPosition())
+    local ap = cc.p(unitA:getPosition())
+    local v =  cc.pSub(bp, ap)
+    local Angel = - math.deg(cc.pToAngleSelf(v)) 
+    return Angel
 end
 
 function Fight:setTimeZero()
@@ -310,7 +383,6 @@ function Fight:isOver()
             isAOver = false
         end
     end
-
     local isBOver = true
     for i=1,#self.UnitB do
         if self.UnitB[i]:getCurBlood() > 0 then
@@ -571,7 +643,7 @@ end
     }
 ]]
 function Fight:getSkillTarget(heroId,skillId,effectType,skillSeq,Unit,time)
-    local skillTab = gameUtil.getHeroSkillTab( skillId )
+    -- local skillTab = gameUtil.getHeroSkillTab( skillId )
     local Rtab = {}
     local skillNodeId = nil
 
@@ -1005,20 +1077,7 @@ function Fight:AckOrSkillActionEnd( roundIndex )
 end
 
 
-function Fight:getTwoNodeCP( unitA, unitB)
-    local x = unitB:getPositionX() - unitA:getPositionX()
-    local y = unitB:getPositionY()  - 
-                (unitA:getPositionY() )
-    return cc.p(x,y)
-end
 
-function Fight:getTwoPosXY( unitA, unitB )
-    local bp = cc.p(unitB:getPosition())
-    local ap = cc.p(unitA:getPosition())
-    local v =  cc.pSub(bp, ap)
-    local Angel = - math.deg(cc.pToAngleSelf(v)) 
-    return Angel
-end
 
 function Fight:playSiFaEffect( ... )
     --gameUtil.playEffect("res/sounds/effect/all/t_sf_zs", false)

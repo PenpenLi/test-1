@@ -45,20 +45,20 @@ local size  = cc.Director:getInstance():getWinSize()
 --     {id = 10000001, lv = 1, skillLv = 1, eq01 = 1, eq02 = 1, eq03 = 1, },
 -- }
 
--- mm.data.playerPet = {
---     {id = 1278226736, lv = 3, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
---     {id = 1278226744, lv = 6, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
---     {id = 1278226993, lv = 11, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
---     {id = 1278227249, lv = 19, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
---     {id = 1278227254, lv = 10, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
--- }
+mm.data.playerPet = {
+    {id = 101110001, lv = 3, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 101110002, lv = 6, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 101110003, lv = 11, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 101110004, lv = 19, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+    {id = 101110005, lv = 10, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+}
 
 mm.puTongZhen = {
-        1278226736,
-        1278226744,
-        1278226993,
-        1278227249,
-        1278227254,
+        101110001,
+        101110002,
+        101110003,
+        101110004,
+        101110005,
     }
 
 
@@ -247,11 +247,11 @@ end
 
 function FightScene:nnffInit(  )
     self.herpNNFF = {
-        1278226736,
-        1278226744,
-        1278226993,
-        1278227249,
-        1278227254,
+        101110001,
+        101110002,
+        101110003,
+        101110004,
+        101110005,
     }
 
     local num = math.random(1,#self.herpNNFF)
@@ -338,7 +338,7 @@ end
 function FightScene:TapTapUI()
 
     local tianshiNode = self.scene:getChildByName("Node_tianshi")
-    local id = 1278227504
+    local id = 101110001
     local skeletonNode = gameUtil.createSkeletonAnimationForUnit(gameUtil.getHeroTab(id).Src..".json", gameUtil.getHeroTab(id).Src..".atlas",1)
     tianshiNode:addChild(skeletonNode)
     skeletonNode:setPosition(0,0)

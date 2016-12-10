@@ -131,6 +131,8 @@ petTableRes = {
 		Attack 9 : integer
 		Crit 10 : integer
 		Speed 11 : number
+		AttackId 12 : integer
+		SkillId 13 : integer
 	}
 
 	.petTableBook {

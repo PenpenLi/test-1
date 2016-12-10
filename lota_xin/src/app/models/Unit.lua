@@ -158,6 +158,9 @@ function Unit:init(param)
 
 end
 
+function Unit:getPetRes()
+    return self.petRes
+end
 function Unit:getPetTab( id )
     for k,v in pairs(self.playPet) do
         if v.id == id then
@@ -246,9 +249,9 @@ function Unit:initValue(param)
     self.curAPDeep = self.initialAPDeep
 
 
-    self.actTimes = self:getInitActTimes()
+    -- self.actTimes = self:getInitActTimes()
 
-    self.TriggerType, self.TrNum = self:initSkillTriggerType()
+    -- self.TriggerType, self.TrNum = self:initSkillTriggerType()
 
     self.binDongTime = 0
 
@@ -386,13 +389,13 @@ function Unit:getInitialCritTimes( ... )
 end
 
 
-function Unit:getInitActTimes( ... )
-    return self.skillTAB.actTimes
-end
+-- function Unit:getInitActTimes( ... )
+--     return self.skillTAB.actTimes
+-- end
 
-function Unit:getCurActTimes( ... )
-    return self.actTimes
-end
+-- function Unit:getCurActTimes( ... )
+--     return self.actTimes
+-- end
 
 function Unit:getSkillTriggerType( ... )
     return self.TriggerType, self.TrNum
@@ -402,10 +405,10 @@ function Unit:setSkillTriggerType( TriggerType )
     self.TriggerType = TriggerType
 end
 
-function Unit:initSkillTriggerType( ... )
-    local id = self:getHeroSkillsId()
-    return gameUtil.getHeroSkillTab( id ).TriggerType, gameUtil.getHeroSkillTab( id ).TrNum
-end
+-- function Unit:initSkillTriggerType( ... )
+--     local id = self:getHeroSkillsId()
+--     return gameUtil.getHeroSkillTab( id ).TriggerType, gameUtil.getHeroSkillTab( id ).TrNum
+-- end
 
 function Unit:getInitZorder( ... )
     return self.zorder
@@ -1526,15 +1529,14 @@ end
 function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
      ---飘雪
 
-    if isZhuJue then
-        local function hurtBack()
-            self:getSkeletonNode():unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-            self:getSkeletonNode():setAnimation(0, "stand", true)
-        end
-        self:getSkeletonNode():setAnimation(0, "hurt", false)
-        self:getSkeletonNode():registerSpineEventHandler(hurtBack,sp.EventType.ANIMATION_COMPLETE)
-    end
-
+    -- if isZhuJue then
+    --     local function hurtBack()
+    --         self:getSkeletonNode():unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
+    --         self:getSkeletonNode():setAnimation(0, "stand", true)
+    --     end
+    --     self:getSkeletonNode():setAnimation(0, "hurt", false)
+    --     self:getSkeletonNode():registerSpineEventHandler(hurtBack,sp.EventType.ANIMATION_COMPLETE)
+    -- end
 
     if not self:isDead() then
         local b = self:getCurBlood() + hurt
@@ -1561,11 +1563,9 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
                     end
                 end
             end
-            if self:getCurBlood() <= 0 then
-                self:setCurBlood(1) 
-            end
-        -- end
     end
+
+
     if not self.loadingBar then
         return
     end
@@ -1585,11 +1585,11 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
     self:runAction( cc.Sequence:create(cc.DelayTime:create(1),cc.CallFunc:create(showbarBack)))
 
     local fut = "res/font/fnt_02.fnt"
-    if DamageStyle == MM.EDamageStyle.Wuli then
+    if DamageStyle == 1 then
         fut = "res/font/fnt_03.fnt"
-    elseif DamageStyle == MM.EDamageStyle.Mofa then
+    elseif DamageStyle == 2 then
         fut = "res/font/fnt_02.fnt"
-    elseif DamageStyle == MM.EDamageStyle.Shen then
+    elseif DamageStyle == 3 then
         fut = "res/font/fnt_02.fnt"
     else
         fut = "res/font/fnt_02.fnt"
@@ -1622,7 +1622,6 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
     self.fight:setAllBlood()
     ---飘雪
 
-
     --播放受击
     if shoujiPath and #shoujiPath > 0 then 
 
@@ -1648,9 +1647,9 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
     end
 
 
-    -- if isZhuJue then
-    --     self.fight:cteateSkillSequence()
-    -- end
+    if self:isDead() then
+        --播放死亡动画
+    end
 
 end
 

@@ -34,7 +34,7 @@ struct bossTableRes{
 
 
 struct equipTableRes{
-	int32				 m_iID;
+	uint32				 m_uiID;
 	char				 m_acName[EQUIPTABLE_NAME_MAXNUM];
 	char				 m_acDesc[EQUIPTABLE_DESC_MAXNUM];
 	uint32				 m_uiType;
@@ -44,7 +44,7 @@ struct equipTableRes{
 
 
 struct speedTableRes{
-	int32				 m_iLV;
+	uint32				 m_uiLV;
 	int32				 m_iAttack01;
 	int32				 m_iAttack02;
 	int32				 m_iAttack03;
@@ -79,7 +79,7 @@ struct speedTableRes{
 
 
 struct goldTableRes{
-	int32				 m_iID;
+	uint32				 m_uiID;
 	int32				 m_iPlayerUpLv;
 	int32				 m_iPlayerUpSkill;
 	int32				 m_iPetUpLv;
@@ -88,7 +88,7 @@ struct goldTableRes{
 
 
 struct materialTableRes{
-	int32				 m_iID;
+	uint32				 m_uiID;
 	char				 m_acName[MATERIALTABLE_NAME_MAXNUM];
 	char				 m_acDesc[MATERIALTABLE_DESC_MAXNUM];
 	int32				 m_iquality;
@@ -97,7 +97,7 @@ struct materialTableRes{
 
 
 struct petTableRes{
-	int32				 m_iID;
+	uint32				 m_uiID;
 	char				 m_acName[PETTABLE_NAME_MAXNUM];
 	char				 m_acPet_Desc[PETTABLE_PET_DESC_MAXNUM];
 	int32				 m_iquality[PETTABLE_QUALITY_MAXNUM];
@@ -109,6 +109,8 @@ struct petTableRes{
 	uint32				 m_uiAttack;
 	uint32				 m_uiCrit;
 	float				 m_fSpeed;
+	uint32				 m_uiAttackId;
+	uint32				 m_uiSkillId;
 };
 
 
