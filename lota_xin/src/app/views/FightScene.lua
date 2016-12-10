@@ -212,9 +212,6 @@ function FightScene:jinshouzhiBtnCbk(widget,touchkey)
             return
         end
 
-        local skillTab = gameUtil.getHeroSkillTab( 1278357552 )
-        local texiaoEffect = skillTab.texiaoEffect 
-
         local unitA = self.scene:getChildByName("Node_tianshi")
         local unitB = self.scene:getChildByName("b_1")
          
@@ -231,7 +228,7 @@ function FightScene:jinshouzhiBtnCbk(widget,touchkey)
 
             if fight:UnitB1() then
                 local hurt = (-1) * (mm.data.player.lv + mm.data.player.skillLv)
-                fight:UnitB1():setPiaoxue(hurt, nil, MM.EDamageStyle.Wuli, true)
+                fight:UnitB1():setPiaoxue(hurt, nil, 1, true)
             end
         end
 
