@@ -159,6 +159,8 @@ function CreateScene:createBtnCbk(widget,touchkey)
                     self.app_:run("FightScene")
 
                 end
+
+                print("CreateScene login send              !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(game.loginInfoTab))
                 self.app_.clientTCP:send("login",game.loginInfoTab, loginret)
                
             elseif msg.result == 1 then

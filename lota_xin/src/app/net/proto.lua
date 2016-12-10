@@ -16,7 +16,7 @@ handshake 1 {
 
 .base{
     id              0 : integer
-    uid             1 : integer
+    uid             1 : string
     qudao           2 : string
     areaId          3 : integer
     gold            4 : integer

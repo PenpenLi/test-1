@@ -63,10 +63,9 @@ mm.puTongZhen = {
 
 
 mm.data.playerBag = {
-    {id = 1278227255, num = 10, },
-    {id = 1278227256, num = 20, },
-    {id = 1278227257, num = 15, },
-    {id = 1278227258, num = 14, },
+    {id = 101110006, num = 10, },
+    {id = 101110007, num = 20, },
+    {id = 101110008, num = 15, },
 }
 
 game.qualityTab = {

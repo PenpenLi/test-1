@@ -96,11 +96,11 @@
                 <PreSize X="0.0000" Y="0.0000" />
               </AbstractNodeData>
             </Children>
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="315.0000" Y="62.0000" />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="315.0000" Y="1.5000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.5082" />
+            <PrePosition X="0.5000" Y="0.0123" />
             <PreSize X="1.0159" Y="0.9918" />
             <FileData Type="Normal" Path="UI/base/jinengdi.png" Plist="" />
           </AbstractNodeData>

@@ -4,7 +4,7 @@
     <Content>
       <Animation Duration="0" Speed="1.0000" />
       <ObjectData Name="Scene" Tag="43" ctype="GameNodeObjectData">
-        <Size X="640.0000" Y="1136.0000" />
+        <Size X="960.0000" Y="640.0000" />
         <Children>
           <AbstractNodeData Name="Image_bg" ActionTag="435723469" Tag="44" IconVisible="False" HorizontalEdge="BothEdge" VerticalEdge="BothEdge" LeftEage="211" RightEage="211" TopEage="374" BottomEage="374" Scale9OriginX="211" Scale9OriginY="374" Scale9Width="218" Scale9Height="388" ctype="ImageViewObjectData">
             <Size X="640.0000" Y="1136.0000" />

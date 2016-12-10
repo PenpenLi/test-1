@@ -3,6 +3,9 @@ PetListLayer.RESOURCE_FILENAME = "pet/PetListLayer.csb"
 
 local petListitemRes = "res/pet/petListitem.csb"
 
+
+local petTable = petTable
+
 function PetListLayer:onEnter()
 
 
@@ -50,7 +53,7 @@ function PetListLayer:updateData()
 
     self.petTable = {}
 
-    for k,v in pairs(G_PetTable) do
+    for k,v in pairs(petTable) do
         local id = v.ID
         local isHas = false
         for k1,v1 in pairs(self.petList) do
@@ -108,7 +111,7 @@ function PetListLayer:updateList()
         count = #self.petTable,
         fun = "updateItem",
         target = self,
-        size = cc.size(630,900 * display.height / 1136),
+        size = cc.size(630,850 * display.height / 1136),
     }
     local listView = require(game.VerListView):create(t)
     listView:setPosition(0, 0)
