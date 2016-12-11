@@ -1,6 +1,12 @@
 local PetLayer = class("PetLayer", require("app.views.mmExtend.LayerBase"))
 PetLayer.RESOURCE_FILENAME = "pet/PetLayer.csb"
 
+local size  = cc.Director:getInstance():getWinSize()
+
+local PetEqBgItemRes = "res/pet/PetEqBgItem.csb"
+local PetEquipItemRes = "res/pet/PetEquipItem.csb"
+
+
 function PetLayer:onEnter()
 
 
@@ -25,6 +31,8 @@ function PetLayer:init(param)
     self.ImageBg = self.Node:getChildByName("Image_bg")
 
     self.pet = param.pet
+
+    self.petEquip = mm.data.petEquip
     print(" PetLayer :   self.pet      "..json.encode(param))
     print(" PetLayer :   self.pet      "..json.encode(self.pet))
 
@@ -70,6 +78,8 @@ function PetLayer:UIInit()
     self.skillUpBtn = self.skillNode:getChildByName("Button_skillUp")
     self.skillUpBtn:addTouchEventListener(handler(self, self.skillUpBtnCbk))
     self:updateSkillUpUI()
+
+    self:updateEquipUI()
 end
 
 function PetLayer:updateLvUI()
@@ -88,7 +98,88 @@ function PetLayer:updateSkillUpUI()
     goldText:setString(needGold)
 end
 
+function PetLayer:updateEquipUI()
+    self.viewNode = self.fashionNode:getChildByName("Image_equip_bg"):getChildByName("viewNode")
+    
+    print("self.petEquip  ========  "..#self.petEquip)
+    self.hang = #self.petEquip / 5
+    print("self.hang  ========1  "..self.hang)
+    if #self.petEquip % 5 > 0 then
+        self.hang = self.hang + 1
+    end
+    print("self.hang  ========2  "..self.hang)
+    -- print("self.petEquip  ========  "..json.encode(self.petEquip))
 
+    
+    self:updateList()
+end
+
+function PetLayer:updateList() 
+    local layoutData = {res = PetEqBgItemRes,layoutName = "Image_bg"}
+    local t = {
+        layoutData = layoutData,
+        count = self.hang,
+        fun = "updateItem",
+        target = self,
+        size = cc.size(630,354 * display.height / 1136),
+    }
+    local listView = require(game.VerListView):create(t)
+    listView:setPosition(0, 0)
+    self.listView = listView
+    self.viewNode:addChild(listView,100)
+
+
+end
+
+function PetLayer:updateItem(cell,tag,isInit) 
+    print('tag =================================================== '..tag)
+    for i=1,5 do
+        local Node = cell:getChildByName("Node_"..i)
+        local index = (tag - 1) * 5 + i
+        local tab = self.petEquip[index]
+        print(i .. "updateItem 11111111111111  i  index "..index)
+        if tab then
+            print(i .. "updateItem 222222222222  i  index "..index)
+            local equipNode = Node:getChildByName("equipNode")
+            if not equipNode then
+                local layoutData = {res = PetEquipItemRes,layoutName = "Image_bg"}
+                equipNode = cs.ObjectPoolManager:getObject(layoutData)
+                equipNode:setName("equipNode")
+                Node:addChild(equipNode)
+                equipNode:setAnchorPoint(cc.p(0.5,0.5))
+                equipNode:setPosition(0, 0)
+            end
+            
+            local lvText = equipNode:getChildByName("Text_lv")
+            lvText:setString(tab.lv)
+            local equipResId = tab.resId
+            local resTab = equipTable[equipResId]
+            equipNode:loadTexture("res/UI/bIcon/bg_icon_"..resTab.quality..".png")
+
+            local iconImage = equipNode:getChildByName("Image_icon")
+            iconImage:loadTexture(resTab.iconSrc)
+
+            equipNode:addTouchEventListener(handler(self, self.checkEquipBtnCbk))
+            equipNode:setSwallowTouches(false)
+            equipNode:setTag(index)
+        end
+    end
+
+end
+
+function PetLayer:checkEquipBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        local tag = widget:getTag()
+        local equipTab = self.petEquip[tag]
+        print("tag =============== "..tag)
+
+        local EquipInfoLayer = require("src.app.views.layer.Pet.EquipInfoLayer").new({equipTab = equipTab, petTab = self.pet})
+        self:addChild(EquipInfoLayer, MoGlobalZorder[2000002])
+        EquipInfoLayer:setContentSize(cc.size(size.width, size.height))
+        ccui.Helper:doLayout(EquipInfoLayer)
+
+    end
+end
 
 function PetLayer:checkBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
@@ -140,6 +231,7 @@ function PetLayer:setCheckBtn(btn)
         self.skillNode:setVisible(true)
     elseif btn:getName() == "Button_fashion" then
         self.fashionNode:setVisible(true)
+
     elseif btn:getName() == "Button_evolution" then
         self.evolutionNode:setVisible(true)
     end
@@ -148,6 +240,44 @@ end
 function PetLayer:updatePublic()
     local zhanliNum = self.pet.lv + self.pet.skillLv
     self.zhanliText:setString("战斗力:"..zhanliNum)
+    print("eqIndex ============================  "..self.pet.id)
+    print("eqIndex ============================  "..json.encode(self.pet))
+
+    local table1 = {"Image_Eq_01", "Image_Eq_02", "Image_Eq_03"}
+    local playerNode = self.Node:getChildByName("Node_player")
+    for i=1,#table1 do
+        local eqIndex = self.pet["eq0"..i]
+
+        if eqIndex > 100000000 then
+            local eqTab
+            for k,v in pairs(self.petEquip) do
+                if v.id == eqIndex then
+                    eqTab = v
+                end
+            end
+            if eqTab then
+                local equipResId = eqTab.resId
+                self.resTab = equipTable[equipResId]
+                local quality = self.resTab.quality
+                local lv = eqTab.lv
+
+                local img = playerNode:getChildByName(table1[i])
+                local layoutData = {res = PetEquipItemRes,layoutName = "Image_bg"}
+                local equipNode = cs.ObjectPoolManager:getObject(layoutData)
+                img:addChild(equipNode)
+                equipNode:setAnchorPoint(cc.p(0.5,0.5))
+                equipNode:setPosition(img:getContentSize().width * 0.5 , img:getContentSize().height * 0.5)
+
+                local lvText = equipNode:getChildByName("Text_lv")
+                lvText:setString(lv)
+                equipNode:loadTexture("res/UI/bIcon/bg_icon_"..quality..".png")
+
+                local iconImage = equipNode:getChildByName("Image_icon")
+                iconImage:loadTexture(self.resTab.iconSrc)
+            end
+        end
+    end
+    
 end
 
 function PetLayer:updateLv( event )

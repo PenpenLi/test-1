@@ -35,7 +35,7 @@ equipTableRes = {
 	,
 	headName = "equipTable",
 },
-speedTableRes = {
+equipLvTableRes = {
 	protoHead	=
 	[[
 	.Unit {
@@ -72,12 +72,12 @@ speedTableRes = {
 		Speed10 30 : integer
 	}
 
-	.speedTableBook {
-		speedTable 0 : *Unit
+	.equipLvTableBook {
+		equipLvTable 0 : *Unit
 	}
 	]]
 	,
-	headName = "speedTable",
+	headName = "equipLvTable",
 },
 goldTableRes = {
 	protoHead	=
@@ -122,7 +122,7 @@ petTableRes = {
 		ID 0 : integer
 		Name 1 : string
 		Pet_Desc 2 : string
-		quality 3 : *integer
+		quality 3 : integer
 		Src 4 : string
 		headSrc 5 : string
 		materialID 6 : integer

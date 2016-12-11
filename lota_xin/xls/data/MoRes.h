@@ -10,7 +10,7 @@
 #define EQUIPTABLE_DESC_MAXNUM		512
 #define EQUIPTABLE_ICONSRC_MAXNUM		64
 
-#define SPEEDTABLE_ATTACK05_MAXNUM		32
+#define EQUIPLVTABLE_ATTACK05_MAXNUM		32
 
 
 #define MATERIALTABLE_NAME_MAXNUM		128
@@ -19,7 +19,6 @@
 
 #define PETTABLE_NAME_MAXNUM		128
 #define PETTABLE_PET_DESC_MAXNUM		512
-#define PETTABLE_QUALITY_MAXNUM		5
 #define PETTABLE_SRC_MAXNUM		64
 #define PETTABLE_HEADSRC_MAXNUM		64
 
@@ -43,13 +42,13 @@ struct equipTableRes{
 };
 
 
-struct speedTableRes{
+struct equipLvTableRes{
 	uint32				 m_uiLV;
 	int32				 m_iAttack01;
 	int32				 m_iAttack02;
 	int32				 m_iAttack03;
 	int32				 m_iAttack04;
-	int32				 m_iAttack05[SPEEDTABLE_ATTACK05_MAXNUM];
+	int32				 m_iAttack05[EQUIPLVTABLE_ATTACK05_MAXNUM];
 	int32				 m_iAttack06;
 	int32				 m_iAttack07;
 	int32				 m_iAttack08;
@@ -100,7 +99,7 @@ struct petTableRes{
 	uint32				 m_uiID;
 	char				 m_acName[PETTABLE_NAME_MAXNUM];
 	char				 m_acPet_Desc[PETTABLE_PET_DESC_MAXNUM];
-	int32				 m_iquality[PETTABLE_QUALITY_MAXNUM];
+	uint32				 m_uiquality;
 	char				 m_acSrc[PETTABLE_SRC_MAXNUM];
 	char				 m_acheadSrc[PETTABLE_HEADSRC_MAXNUM];
 	int32				 m_imaterialID;

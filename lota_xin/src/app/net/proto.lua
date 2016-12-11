@@ -56,8 +56,9 @@ handshake 1 {
     resId           1 : integer
     lv              2 : integer
     user            3 : integer
-    param1          4 : integer
-    param2          5 : integer
+    exp             4 : integer
+    param1          5 : integer
+    param2          6 : integer
 }
 
 login 2 {
@@ -169,6 +170,16 @@ stageaccount 12 {
     response {
         result      0 : integer
         gold        1 : integer
+    }
+}
+
+downequip 13 {
+    request {
+        petId          0 : integer
+        eqId           1 : integer
+    }
+    response {
+        result      0 : integer
     }
 }
 

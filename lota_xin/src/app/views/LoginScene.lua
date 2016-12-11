@@ -216,13 +216,15 @@ function LoginScene:login()
         print("loginret              !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg))
         if msg.result == 0 then
 
-            print("loginret loginret       msg.base.pet       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.pet))
+            print("loginret loginret       msg.pet       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.pet))
             print("loginret loginret       msg.base       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.base))
             mm.data.base = msg.base
             mm.data.player = msg.master
             mm.data.player.id = msg.base.id
             mm.data.playerPet = msg.pet
-            mm.data.playerEquip = msg.equip
+            mm.data.petEquip = msg.petEquip
+
+            print("loginret loginret       msg.equip       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.petEquip))
             self.app_:run("FightScene")
             
 

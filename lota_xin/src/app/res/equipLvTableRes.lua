@@ -1,4 +1,4 @@
-local speedTable = {
+local equipLvTable = {
 {LV=1,Attack01=100,Attack02=120,Attack03=140,Attack04=160,Attack05={180},Attack06=200,Attack07=220,Attack08=240,Attack09=260,Attack10=280,Crit01=300,Crit02=320,Crit03=340,Crit04=360,Crit05=380,Crit06=400,Crit07=420,Crit08=440,Crit09=460,Crit10=480,Speed01=10,Speed02=12,Speed03=14,Speed04=16,Speed05=18,Speed06=20,Speed07=22,Speed08=24,Speed09=26,Speed10=28,},
 {LV=2,Attack01=150,Attack02=170,Attack03=190,Attack04=210,Attack05={230},Attack06=250,Attack07=270,Attack08=290,Attack09=310,Attack10=330,Crit01=350,Crit02=370,Crit03=390,Crit04=410,Crit05=430,Crit06=450,Crit07=470,Crit08=490,Crit09=510,Crit10=530,Speed01=12,Speed02=14,Speed03=16,Speed04=18,Speed05=20,Speed06=22,Speed07=24,Speed08=26,Speed09=28,Speed10=30,},
 {LV=3,Attack01=200,Attack02=220,Attack03=240,Attack04=260,Attack05={280},Attack06=300,Attack07=320,Attack08=340,Attack09=360,Attack10=380,Crit01=400,Crit02=420,Crit03=440,Crit04=460,Crit05=480,Crit06=500,Crit07=520,Crit08=540,Crit09=560,Crit10=580,Speed01=14,Speed02=16,Speed03=18,Speed04=20,Speed05=22,Speed06=24,Speed07=26,Speed08=28,Speed09=30,Speed10=32,},
@@ -11,4 +11,4 @@ local speedTable = {
 {LV=10,Attack01=550,Attack02=570,Attack03=590,Attack04=610,Attack05={630},Attack06=650,Attack07=670,Attack08=690,Attack09=710,Attack10=730,Crit01=750,Crit02=770,Crit03=790,Crit04=810,Crit05=830,Crit06=850,Crit07=870,Crit08=890,Crit09=910,Crit10=930,Speed01=28,Speed02=30,Speed03=32,Speed04=34,Speed05=36,Speed06=38,Speed07=40,Speed08=42,Speed09=44,Speed10=46,},
 }
 
- return speedTable
+ return equipLvTable

@@ -24,6 +24,9 @@
           <Project Name="PetLayer.csd" Type="Layer" />
           <Project Name="petListitem.csd" Type="Layer" />
           <Project Name="PetListLayer.csd" Type="Layer" />
+          <Project Name="PetEqBgItem.csd" Type="Layer" />
+          <Project Name="PetEquipItem.csd" Type="Layer" />
+          <Project Name="EquipInfoLayer.csd" Type="Layer" />
         </Folder>
         <Folder Name="player">
           <Project Name="PlayerLayer.csd" Type="Layer" />
@@ -56,6 +59,9 @@
             <Image Name="zhaungbeidi.png" />
             <Image Name="zhuangbeidi1.png" />
           </Folder>
+          <Folder Name="bIcon">
+            <Image Name="bg_icon_1.png" />
+          </Folder>
           <Folder Name="bigImage">
             <Image Name="fight_bg.png" />
             <Image Name="yijidi.png" />
@@ -64,6 +70,9 @@
             <Image Name="icon_ZB001.png" />
             <Image Name="icon_ZB002.png" />
             <Image Name="icon_ZB003.png" />
+          </Folder>
+          <Folder Name="petIcon">
+            <Image Name="EQ1001.png" />
           </Folder>
           <Folder Name="skillIcon">
             <Image Name="icon_JN0001.png" />

@@ -32,7 +32,7 @@ equipTable = require("app.res.equipTableRes")
 goldTable = require("app.res.goldTableRes")
 materialTable = require("app.res.materialTableRes")
 petTable = require("app.res.petTableRes")
-speedTable = require("app.res.speedTableRes")
+equipLvTable = require("app.res.equipLvTableRes")
 
 
 local CheckpointCount = 9 --每一关小怪个数
@@ -45,13 +45,13 @@ local size  = cc.Director:getInstance():getWinSize()
 --     {id = 10000001, lv = 1, skillLv = 1, eq01 = 1, eq02 = 1, eq03 = 1, },
 -- }
 
-mm.data.playerPet = {
-    {id = 101110001, lv = 3, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 101110002, lv = 6, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 101110003, lv = 11, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 101110004, lv = 19, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-    {id = 101110005, lv = 10, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
-}
+-- mm.data.playerPet = {
+--     {id = 101110001, lv = 3, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 101110002, lv = 6, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 101110003, lv = 11, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 101110004, lv = 19, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+--     {id = 101110005, lv = 10, skillLv = 1, xinLv = 0, eq01 = 1, eq02 = 1, eq03 = 1, },
+-- }
 
 mm.puTongZhen = {
         101110001,
