@@ -51,6 +51,15 @@ handshake 1 {
     param2          4 : integer
 }
 
+.petEquip{
+    id              0 : integer
+    resId           1 : integer
+    lv              2 : integer
+    user            3 : integer
+    param1          4 : integer
+    param2          5 : integer
+}
+
 login 2 {
     request {
         qudao       0 : string
@@ -63,6 +72,7 @@ login 2 {
         master      2 : master
         pet         3 : *pet
         equip       4 : *equip
+        petEquip    5 : *petEquip
     }
 }
 
