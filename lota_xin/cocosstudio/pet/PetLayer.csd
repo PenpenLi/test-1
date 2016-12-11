@@ -191,7 +191,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="UI/base/renwudi.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_Eq_01" ActionTag="-2077764540" Tag="219" IconVisible="False" LeftMargin="-204.7676" RightMargin="101.7676" TopMargin="94.8572" BottomMargin="-202.8572" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_Eq_01" ActionTag="-2077764540" Tag="219" IconVisible="False" LeftMargin="-204.7676" RightMargin="101.7676" TopMargin="94.8572" BottomMargin="-202.8572" TouchEnable="True" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
                 <Size X="103.0000" Y="108.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-153.2676" Y="-148.8572" />
@@ -201,7 +201,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="UI/base/zhuangbeidi1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_Eq_02" ActionTag="-74411988" Tag="220" IconVisible="False" LeftMargin="-56.8971" RightMargin="-46.1029" TopMargin="96.3112" BottomMargin="-204.3112" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_Eq_02" ActionTag="-74411988" Tag="220" IconVisible="False" LeftMargin="-56.8971" RightMargin="-46.1029" TopMargin="96.3112" BottomMargin="-204.3112" TouchEnable="True" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
                 <Size X="103.0000" Y="108.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-5.3971" Y="-150.3112" />
@@ -211,7 +211,7 @@
                 <PreSize X="0.0000" Y="0.0000" />
                 <FileData Type="Normal" Path="UI/base/zhuangbeidi1.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Image_Eq_03" ActionTag="1459602789" Tag="221" IconVisible="False" LeftMargin="93.9160" RightMargin="-196.9160" TopMargin="89.4844" BottomMargin="-197.4844" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="Image_Eq_03" ActionTag="1459602789" Tag="221" IconVisible="False" LeftMargin="93.9160" RightMargin="-196.9160" TopMargin="89.4844" BottomMargin="-197.4844" TouchEnable="True" LeftEage="33" RightEage="33" TopEage="35" BottomEage="35" Scale9OriginX="33" Scale9OriginY="35" Scale9Width="37" Scale9Height="38" ctype="ImageViewObjectData">
                 <Size X="103.0000" Y="108.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="145.4160" Y="-143.4844" />

@@ -29,6 +29,8 @@ function EquipInfoLayer:init(param)
 
     self.equipTab = param.equipTab
     self.petTab = param.petTab
+    self.usetype = param.usetype
+    self.index = param.index
 
     local equipResId = self.equipTab.resId
     self.resTab = equipTable[equipResId]
@@ -93,6 +95,19 @@ function EquipInfoLayer:UIInit()
     self.btn01 = self.ImageBg:getChildByName("Button_1")
     self.btn01:addTouchEventListener(handler(self, self.zbeiBtnCbk))
 
+    
+
+    self.btn02 = self.ImageBg:getChildByName("Button_2")
+    self.btn02:addTouchEventListener(handler(self, self.upBtnCbk))
+
+    if self.usetype and self.usetype == 1 then
+        self.btn01:setTitleText("卸载")
+        self.btn02:setVisible(true)
+    else
+        self.btn01:setTitleText("穿戴")
+        self.btn02:setVisible(false)
+    end
+
 end
 
 function EquipInfoLayer:zbeiBtnCbk(widget,touchkey)
@@ -104,6 +119,11 @@ function EquipInfoLayer:zbeiBtnCbk(widget,touchkey)
     end
 end
 
+function EquipInfoLayer:upBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+
+    end
+end
 
 
 function EquipInfoLayer:setCheckNode() 

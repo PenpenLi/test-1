@@ -274,10 +274,39 @@ function PetLayer:updatePublic()
 
                 local iconImage = equipNode:getChildByName("Image_icon")
                 iconImage:loadTexture(self.resTab.iconSrc)
+                equipNode:setTag(i)
+                equipNode:addTouchEventListener(handler(self, self.petEquipBtnCbk))
             end
         end
     end
     
+end
+
+function PetLayer:petEquipBtnCbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        local tag = widget:getTag()
+        print("tag =============== "..tag)
+
+        local eqIndex = self.pet["eq0"..tag]
+
+        local eqTab
+        for k,v in pairs(self.petEquip) do
+            if v.id == eqIndex then
+                eqTab = v
+            end
+        end
+
+        if eqTab then
+            local EquipInfoLayer = require("src.app.views.layer.Pet.EquipInfoLayer").new({equipTab = eqTab, petTab = self.pet, usetype = 1, index = tag})
+            self:addChild(EquipInfoLayer, MoGlobalZorder[2000002])
+            EquipInfoLayer:setContentSize(cc.size(size.width, size.height))
+            ccui.Helper:doLayout(EquipInfoLayer)
+
+        end
+
+        
+
+    end
 end
 
 function PetLayer:updateLv( event )
