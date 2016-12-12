@@ -115,9 +115,11 @@ function PetLayer:updateEquipUI()
 end
 
 function PetLayer:updateList() 
-    local layoutData = {res = PetEqBgItemRes,layoutName = "Image_bg"}
+    local node = cc.CSLoader:createNode(PetEqBgItemRes)
+    local layout = node:getChildByName("Image_bg"):clone()
+
     local t = {
-        layoutData = layoutData,
+        cell = layout,
         count = self.hang,
         fun = "updateItem",
         target = self,
@@ -137,18 +139,16 @@ function PetLayer:updateItem(cell,tag,isInit)
         local Node = cell:getChildByName("Node_"..i)
         local index = (tag - 1) * 5 + i
         local tab = self.petEquip[index]
-        print(i .. "updateItem 11111111111111  i  index "..index)
         if tab then
-            print(i .. "updateItem 222222222222  i  index "..index)
-            local equipNode = Node:getChildByName("equipNode")
-            if not equipNode then
-                local layoutData = {res = PetEquipItemRes,layoutName = "Image_bg"}
-                equipNode = cs.ObjectPoolManager:getObject(layoutData)
-                equipNode:setName("equipNode")
-                Node:addChild(equipNode)
-                equipNode:setAnchorPoint(cc.p(0.5,0.5))
-                equipNode:setPosition(0, 0)
-            end
+            -- local equipNode = Node:getChildByName("equipNode")
+            -- if not equipNode then
+            local layoutData = {res = PetEquipItemRes,layoutName = "Image_bg"}
+            equipNode = cs.ObjectPoolManager:getObject(layoutData)
+            equipNode:setName("equipNode")
+            Node:addChild(equipNode)
+            equipNode:setAnchorPoint(cc.p(0.5,0.5))
+            equipNode:setPosition(0, 0)
+            -- end
             
             local lvText = equipNode:getChildByName("Text_lv")
             lvText:setString(tab.lv)
