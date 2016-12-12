@@ -69,6 +69,9 @@ function VerListView:init(data)
     self:setContentSize(self.size)
     self:setDirection(ccui.ScrollViewDir.vertical)
     self:addEventListener(handler(self, self.scrollViewDidScroll))
+
+    self:setScrollBarEnabled(false)
+    self:setInertiaScrollEnabled(false)
 end
 
 -- start --
@@ -90,7 +93,7 @@ end
 -- 滚动监听
 -- end --
 function VerListView:scrollViewDidScroll(sender,eventType)
-	if eventType == ccui.ScrollviewEventType.scrolling then
+	-- if eventType == ccui.ScrollviewEventType.scrolling then
         local container = self:getInnerContainer()
 
 		if self.cellCount == self.count then
@@ -121,7 +124,7 @@ function VerListView:scrollViewDidScroll(sender,eventType)
             end
         end
         self.conY = conY
-	end
+	-- end
 end
 
 return VerListView

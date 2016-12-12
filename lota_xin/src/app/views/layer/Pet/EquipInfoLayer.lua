@@ -71,6 +71,7 @@ function EquipInfoLayer:UIInit()
     local table3 = {"攻击：+","减CD：+"}
     local Type = self.resTab.Type
     local xx = table1[Type]..string.format("%02d",quality)
+    print(lv.."lv   xx "..xx)
     local zhushuxin = equipLvTable[lv][xx]
 
     local zhushuxinText = self.ImageBg:getChildByName("Text_zhushuxin")
@@ -137,6 +138,7 @@ end
 
 function EquipInfoLayer:backBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
+        print("EquipInfoLayer:backBtnCbk ============================================================  ")
         self:removeFromParent()
     end
 end
