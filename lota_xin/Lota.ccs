@@ -21,12 +21,14 @@
           <TTF Name="youyuan.TTF" />
         </Folder>
         <Folder Name="pet">
+          <Project Name="EquipInfoLayer.csd" Type="Layer" />
+          <Project Name="PetEqBgItem.csd" Type="Layer" />
+          <Project Name="PetEquipItem.csd" Type="Layer" />
           <Project Name="PetLayer.csd" Type="Layer" />
           <Project Name="petListitem.csd" Type="Layer" />
           <Project Name="PetListLayer.csd" Type="Layer" />
-          <Project Name="PetEqBgItem.csd" Type="Layer" />
-          <Project Name="PetEquipItem.csd" Type="Layer" />
-          <Project Name="EquipInfoLayer.csd" Type="Layer" />
+          <Project Name="PetWearEquipLayer.csd" Type="Layer" />
+          <Project Name="PetCheckEquipLvLayer.csd" Type="Layer" />
         </Folder>
         <Folder Name="player">
           <Project Name="PlayerLayer.csd" Type="Layer" />
@@ -36,6 +38,7 @@
             <Image Name="biaoqing1.png" />
             <Image Name="biaoqing2.png" />
             <Image Name="biaoqingdi.png" />
+            <Image Name="check.png" />
             <Image Name="erjianniu1.png" />
             <Image Name="erjianniu2.png" />
             <Image Name="erjimianban.png" />

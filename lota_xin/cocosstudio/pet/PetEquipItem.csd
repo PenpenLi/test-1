@@ -30,6 +30,16 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="Image_check" ActionTag="-1615693301" VisibleForFrame="False" Tag="130" IconVisible="False" LeftMargin="5.5000" RightMargin="5.5000" TopMargin="8.0000" BottomMargin="8.0000" LeftEage="23" RightEage="23" TopEage="20" BottomEage="20" Scale9OriginX="23" Scale9OriginY="20" Scale9Width="15" Scale9Height="16" ctype="ImageViewObjectData">
+                <Size X="61.0000" Y="56.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="36.0000" Y="36.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.8472" Y="0.7778" />
+                <FileData Type="Normal" Path="UI/base/check.png" Plist="" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="36.0000" Y="36.0000" />

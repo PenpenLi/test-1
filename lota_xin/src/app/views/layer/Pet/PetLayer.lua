@@ -3,7 +3,7 @@ PetLayer.RESOURCE_FILENAME = "pet/PetLayer.csb"
 
 local size  = cc.Director:getInstance():getWinSize()
 
-local PetEqBgItemRes = "res/pet/PetEqBgItem.csb"
+
 local PetEquipItemRes = "res/pet/PetEquipItem.csb"
 
 
@@ -43,41 +43,9 @@ function PetLayer:init(param)
 
 end
 
-function PetLayer:setSorts( ... )
-    self.petEquip = mm.data.petEquip
 
-    self.all = {}
-    self.sorts = {}
-    for k,v in pairs(self.petEquip) do
-        local equipResId = v.resId
-        local resTab = equipTable[equipResId]
-        local Type = resTab.Type
-        self.sorts[Type] = self.sorts[Type] or {}
 
-        v.quality = resTab.quality
-        local user = v.user
-        if user == 0 then
-            table.insert(self.sorts[Type], v)
-            table.insert(self.all, v)
-        end
 
-        
-    end
-
-    self:equipSort(self.all)
-
-    
-end
-
-function PetLayer:equipSort( tab )
-    local function sort_rule( a, b )
-        if a.quality > b.quality then
-            return true
-        end
-    end
-    table.sort(tab, sort_rule)
-    return tab
-end
 
 function PetLayer:UIInit() 
     self.backBtn = self.ImageBg:getChildByName("Button_back")
@@ -136,102 +104,8 @@ function PetLayer:updateSkillUpUI()
     goldText:setString(needGold)
 end
 
-function PetLayer:initEquipUIBtn()
-    local table1 = {"Button_0", "Button_1", "Button_2", "Button_3"}
-    for i=1,#table1 do
-        local btn = self.fashionNode:getChildByName(table1[i])
-        btn:setTag(i-1)
-        btn:addTouchEventListener(handler(self, self.EquipViewBtnCbk))
-    end
-end
 
-function PetLayer:EquipViewBtnCbk(widget,touchkey)
-    if touchkey == ccui.TouchEventType.ended then 
-        local tag = widget:getTag()
-        print("EquipViewBtnCbk  ========  "..tag)
-        self:updateEquipUI(tag)
-    end
-end
-
-function PetLayer:updateEquipUI(index)
-    self.sortIndex = index
-    self:setSorts()
-
-    if self.sortIndex == 0 then
-        self.checkTab = self.all
-    else
-        self.checkTab =   self.sorts[self.sortIndex] 
-    end
-
-
-    self.viewNode = self.fashionNode:getChildByName("Image_equip_bg"):getChildByName("viewNode")
-    
-    print("self.checkTab  ========  "..#self.checkTab)
-    self.hang = #self.checkTab / 5
-    print("self.hang  ========1  "..self.hang)
-    if #self.checkTab % 5 > 0 then
-        self.hang = self.hang + 1
-    end
-    print("self.hang  ========2  "..self.hang)
-    -- print("self.checkTab  ========  "..json.encode(self.checkTab))
-
-    
-    self:updateList()
-end
-
-function PetLayer:updateList() 
-    if self.listView then
-        self.listView:removeFromParent()
-    end
-    local node = cc.CSLoader:createNode(PetEqBgItemRes)
-    local layout = node:getChildByName("Image_bg"):clone()
-
-    local t = {
-        cell = layout,
-        count = self.hang,
-        fun = "updateItem",
-        target = self,
-        size = cc.size(630,354 * display.height / 1136),
-    }
-    local listView = require(game.VerListView):create(t)
-    listView:setPosition(0, 0)
-    self.listView = listView
-    self.viewNode:addChild(listView,100)
-
-
-end
-
-function PetLayer:updateItem(cell,tag,isInit) 
-    print('tag =================================================== '..tag)
-    for i=1,5 do
-        local Node = cell:getChildByName("Node_"..i)
-        local index = (tag - 1) * 5 + i
-        local tab = self.checkTab[index]
-        if tab then
-            local equipNode = Node:getChildByName("equipNode")
-            if not equipNode then
-            local layoutData = {res = PetEquipItemRes,layoutName = "Image_bg"}
-                equipNode = cs.ObjectPoolManager:getObject(layoutData)
-                equipNode:setName("equipNode")
-                Node:addChild(equipNode)
-                equipNode:setAnchorPoint(cc.p(0.5,0.5))
-                equipNode:setPosition(0, 0)
-            end
-            
-            local lvText = equipNode:getChildByName("Text_lv")
-            lvText:setString(tab.lv)
-            local equipResId = tab.resId
-            local resTab = equipTable[equipResId]
-            equipNode:loadTexture("res/UI/bIcon/bg_icon_"..resTab.quality..".png")
-
-            local iconImage = equipNode:getChildByName("Image_icon")
-            iconImage:loadTexture(resTab.iconSrc)
-
-            equipNode:addTouchEventListener(handler(self, self.checkEquipBtnCbk))
-            equipNode:setSwallowTouches(false)
-            equipNode:setTag(index)
-        end
-    end
+function PetLayer:updateEquipUI()
 
 end
 
@@ -299,8 +173,7 @@ function PetLayer:setCheckBtn(btn)
         self.skillNode:setVisible(true)
     elseif btn:getName() == "Button_fashion" then
         self.fashionNode:setVisible(true)
-        self:initEquipUIBtn()
-        self:updateEquipUI(0)
+        self:updateEquipUI()
     elseif btn:getName() == "Button_evolution" then
         self.evolutionNode:setVisible(true)
     end
@@ -319,7 +192,7 @@ function PetLayer:updatePublic()
 
         if eqIndex > 100000000 then
             local eqTab
-            for k,v in pairs(self.checkTab) do
+            for k,v in pairs(mm.data.petEquip) do
                 if v.id == eqIndex then
                     eqTab = v
                 end
@@ -343,10 +216,16 @@ function PetLayer:updatePublic()
 
                 local iconImage = equipNode:getChildByName("Image_icon")
                 iconImage:loadTexture(self.resTab.iconSrc)
-                equipNode:setTag(i)
-                equipNode:addTouchEventListener(handler(self, self.petEquipBtnCbk))
+            else
+                print("error")
             end
+        else
+            
+
         end
+        local img = playerNode:getChildByName(table1[i])
+        img:setTag(i)
+        img:addTouchEventListener(handler(self, self.petEquipBtnCbk))
     end
     
 end
@@ -358,19 +237,31 @@ function PetLayer:petEquipBtnCbk(widget,touchkey)
 
         local eqIndex = self.pet["eq0"..tag]
 
-        local eqTab
-        for k,v in pairs(self.checkTab) do
-            if v.id == eqIndex then
-                eqTab = v
+        if eqIndex > 100000000 then
+            local eqTab
+            for k,v in pairs(mm.data.petEquip) do
+                if v.id == eqIndex then
+                    eqTab = v
+                end
             end
-        end
 
-        if eqTab then
-            local EquipInfoLayer = require("src.app.views.layer.Pet.EquipInfoLayer").new({equipTab = eqTab, petTab = self.pet, usetype = 1, index = tag})
-            self:addChild(EquipInfoLayer, MoGlobalZorder[2000002])
-            EquipInfoLayer:setContentSize(cc.size(size.width, size.height))
-            ccui.Helper:doLayout(EquipInfoLayer)
+            if eqTab then
+                local EquipInfoLayer = require("src.app.views.layer.Pet.EquipInfoLayer").new({equipTab = eqTab, petTab = self.pet, usetype = 1, index = tag})
+                self:addChild(EquipInfoLayer, MoGlobalZorder[2000002])
+                EquipInfoLayer:setContentSize(cc.size(size.width, size.height))
+                ccui.Helper:doLayout(EquipInfoLayer)
 
+            end
+        else
+            -- local PetWearEquipLayer = require("src.app.views.layer.Pet.PetWearEquipLayer").new({petTab = self.pet, index = tag})
+            -- self:addChild(PetWearEquipLayer, MoGlobalZorder[2000002])
+            -- PetWearEquipLayer:setContentSize(cc.size(size.width, size.height))
+            -- ccui.Helper:doLayout(PetWearEquipLayer)
+
+            local PetCheckEquipLvLayer = require("src.app.views.layer.Pet.PetCheckEquipLvLayer").new({petTab = self.pet, index = tag})
+            self:addChild(PetCheckEquipLvLayer, MoGlobalZorder[2000002])
+            PetCheckEquipLvLayer:setContentSize(cc.size(size.width, size.height))
+            ccui.Helper:doLayout(PetCheckEquipLvLayer)
         end
 
         

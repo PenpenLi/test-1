@@ -32,6 +32,8 @@ function EquipInfoLayer:init(param)
     self.usetype = param.usetype
     self.index = param.index
 
+    
+
     local equipResId = self.equipTab.resId
     self.resTab = equipTable[equipResId]
     print(" EquipInfoLayer :   self.equipTab      "..json.encode(self.equipTab))
@@ -145,14 +147,8 @@ end
 
 function EquipInfoLayer:globalEventsListener( event )
     if event.name == EventDef.SERVER_MSG then
-        if event.code == "petlevelup" then
-            self.pet.lv = self.pet.lv + 1
-            self:updatePublic()
-            self:updateLvUI()
-        elseif event.code == "skillup" then
-            self.pet.skillLv = self.pet.skillLv + 1
-            self:updatePublic()
-            self:updateSkillUpUI()
+        if event.code == "wearequip" then
+            --self:removeFromParent()
         end
     end
 end
