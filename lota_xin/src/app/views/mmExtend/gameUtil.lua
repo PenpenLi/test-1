@@ -4490,3 +4490,29 @@ end
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------
+function gameUtil.getLv(exp)
+    local lv = 1
+    for i=1,#equipLvTable do
+        local UpLvAll = equipLvTable[i].UpLvAll
+        if exp < UpLvAll then
+            lv = i
+            return lv
+        end
+    end
+end

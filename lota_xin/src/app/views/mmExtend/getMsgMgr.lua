@@ -541,8 +541,77 @@ end
 
 
 
+g_msgCode["wearequip"] = function( t )
+    cclog("wearequip back   ")
+    print("wearequip send: "..json.encode(mm["wearequip"]))
+    local sendTab = mm["wearequip"]
+    if t.result == 0 then
+        for k,v in pairs(mm.data.playerPet) do
+            if v.id == sendTab.id then
+                mm.data.playerPet[k]["eq0"..sendTab.eqIndex] = sendTab.soltId
+            end
+        end
+        for k,v in pairs(mm.data.petEquip) do
+            if v.id == sendTab.soltId then
+                mm.data.petEquip[k]["user"] = sendTab.id
+            end
+        end
+        mm.dispatchEvent("wearequip",t)
+    else
+        cclog("wearequip error   ")
+    end
+end
 
 
+g_msgCode["equiplevelup"] = function( t )
+    cclog("equiplevelup back   ")
+    print("equiplevelup send: "..json.encode(mm["equiplevelup"]))
+    local sendTab = mm["equiplevelup"]
+    if t.result == 0 then
+
+        local soltIds = sendTab.soltIds
+        for k,v in pairs(mm.data.petEquip) do
+            for k1,v2 in pairs(soltIds) do
+                if v.id == v2 then
+                    table.remove(mm.data.petEquip,k)
+                end
+            end
+
+            if sendTab.id == v.id then
+                mm.data.petEquip[k].exp = t.exp
+                mm.data.petEquip[k].param1 = t.param1
+                mm.data.petEquip[k].param2 = t.param2
+
+                local lv = gameUtil.getLv(t.exp)
+                mm.data.petEquip[k].lv = lv
+            end
+        end
+        mm.dispatchEvent("equiplevelup",t)
+    else
+        cclog("equiplevelup error   ")
+    end
+end
+
+g_msgCode["downequip"] = function( t )
+    cclog("downequip back   ")
+    print("downequip send: "..json.encode(mm["downequip"]))
+    local sendTab = mm["downequip"]
+    if t.result == 0 then
+        for k,v in pairs(mm.data.playerPet) do
+            if v.id == sendTab.petId then
+                mm.data.playerPet[k]["eq0"..sendTab.eqIndex] = 0
+            end
+        end
+        for k,v in pairs(mm.data.petEquip) do
+            if v.id == sendTab.soltId then
+                mm.data.petEquip[k]["user"] = 0
+            end
+        end
+        mm.dispatchEvent("downequip",t)
+    else
+        cclog("downequip error   ")
+    end
+end
 
 
 

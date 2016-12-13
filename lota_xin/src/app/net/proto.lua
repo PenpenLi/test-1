@@ -45,14 +45,6 @@ handshake 1 {
 
 .equip{
     id              0 : integer
-    lv              1 : integer
-    user            2 : integer
-    param1          3 : integer
-    param2          4 : integer
-}
-
-.petEquip{
-    id              0 : integer
     resId           1 : integer
     lv              2 : integer
     user            3 : integer
@@ -73,7 +65,6 @@ login 2 {
         master      2 : master
         pet         3 : *pet
         equip       4 : *equip
-        petEquip    5 : *petEquip
     }
 }
 
@@ -134,10 +125,12 @@ skillup 8 {
 
 equiplevelup 9 {
     request {
-        id          0 : integer
+        id          0 : integer         # 所升级装备的位置id
+        soltIds     1 : *integer        # 消耗装备的槽位置id
     }
     response {
         result      0 : integer
+        exp         1 : integer
         param1      2 : integer
         param2      3 : integer
     }
@@ -146,7 +139,8 @@ equiplevelup 9 {
 wearequip 10 {
     request {
         id          0 : integer
-        eqId        1 : integer
+        eqIndex     1 : integer         # 宠物装备下标
+        soltId      2 : integer         # 装备的槽位置id
     }
     response {
         result      0 : integer
@@ -176,12 +170,14 @@ stageaccount 12 {
 downequip 13 {
     request {
         petId          0 : integer
-        eqId           1 : integer
+        eqIndex        1 : integer
     }
     response {
         result      0 : integer
     }
 }
+
+
 
 ]]
 

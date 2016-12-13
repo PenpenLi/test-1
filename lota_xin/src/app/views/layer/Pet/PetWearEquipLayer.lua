@@ -184,7 +184,7 @@ function PetWearEquipLayer:checkEquipBtnCbk(widget,touchkey)
         print("tag =============== "..tag)
         print("json.encode(equipTab) =============== "..json.encode(equipTab))
 
-        local EquipInfoLayer = require("src.app.views.layer.Pet.EquipInfoLayer").new({equipTab = equipTab, petTab = self.pet})
+        local EquipInfoLayer = require("src.app.views.layer.Pet.EquipInfoLayer").new({equipTab = equipTab, petTab = self.pet, index = self.index})
         self:addChild(EquipInfoLayer, 10000)
         EquipInfoLayer:setContentSize(cc.size(size.width, size.height))
         ccui.Helper:doLayout(EquipInfoLayer)

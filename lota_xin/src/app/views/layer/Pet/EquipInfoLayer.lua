@@ -1,6 +1,7 @@
 local EquipInfoLayer = class("EquipInfoLayer", require("app.views.mmExtend.LayerBase"))
 EquipInfoLayer.RESOURCE_FILENAME = "pet/EquipInfoLayer.csb"
 
+local size  = cc.Director:getInstance():getWinSize()
 local PetEquipItemRes = "res/pet/PetEquipItem.csb"
 
 
@@ -32,7 +33,7 @@ function EquipInfoLayer:init(param)
     self.usetype = param.usetype
     self.index = param.index
 
-    
+
 
     local equipResId = self.equipTab.resId
     self.resTab = equipTable[equipResId]
@@ -42,6 +43,23 @@ function EquipInfoLayer:init(param)
     --初始化主界面UI
     self:UIInit()
 
+end
+
+function EquipInfoLayer:getLvExp( eqTab )
+    local exp = eqTab.exp
+    for i=1,#equipLvTable do
+        local UpLvAll = equipLvTable[i].UpLvAll
+        if exp < UpLvAll then
+            if i == 1 then
+                return i, exp, equipLvTable[i].UpLvNeed
+            else
+                local curExp = equipLvTable[i-1].equipLvTable
+                return i, exp-curExp, equipLvTable[i].UpLvNeed
+            end
+            break
+        end
+    end
+    -- body
 end
 
 function EquipInfoLayer:UIInit() 
@@ -94,6 +112,16 @@ function EquipInfoLayer:UIInit()
         end
     end
 
+    
+
+
+    local LoadingBar = self.ImageBg:getChildByName("LoadingBar")
+    local lv, exp, needexp = self:getLvExp(self.equipTab)
+    LoadingBar:setPercent(math.ceil(exp / needexp * 100))
+
+    local expText = self.ImageBg:getChildByName("Text_exp")
+    expText:setString(exp.." / "..needexp)
+
 
     self.btn01 = self.ImageBg:getChildByName("Button_1")
     self.btn01:addTouchEventListener(handler(self, self.zbeiBtnCbk))
@@ -115,16 +143,30 @@ end
 
 function EquipInfoLayer:zbeiBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
-        local t = {}
-        t.id = self.petTab.id
-        t.eqId = self.equipTab.id
-        mm.req("wearequip",t)
+        if self.usetype and self.usetype == 1 then
+            local t = {}
+            t.petId = self.petTab.id
+            t.eqIndex = self.index
+            t.soltId = self.equipTab.id
+            print("send  "..json.encode(t))
+            mm.req("downequip",t)
+        else
+            local t = {}
+            t.id = self.petTab.id
+            t.soltId = self.equipTab.id
+            t.eqIndex = self.index
+            print("send  "..json.encode(t))
+            mm.req("wearequip",t)
+        end
     end
 end
 
 function EquipInfoLayer:upBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
-
+        local PetCheckEquipLvLayer = require("src.app.views.layer.Pet.PetCheckEquipLvLayer").new({petTab = self.petTab, index = self.index,equipTab = self.equipTab})
+        self:addChild(PetCheckEquipLvLayer, MoGlobalZorder[2000002])
+        PetCheckEquipLvLayer:setContentSize(cc.size(size.width, size.height))
+        ccui.Helper:doLayout(PetCheckEquipLvLayer)
     end
 end
 
@@ -149,6 +191,14 @@ function EquipInfoLayer:globalEventsListener( event )
     if event.name == EventDef.SERVER_MSG then
         if event.code == "wearequip" then
             --self:removeFromParent()
+        elseif event.code == "downequip" then
+            self:removeFromParent()
+        elseif event.code == "equiplevelup" then
+            print("equiplevelup Listener   "..json.encode(event))
+            if event.t.result == 0 then
+                self:removeFromParent()
+            end
+        
         end
     end
 end

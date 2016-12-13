@@ -109,20 +109,6 @@ function PetLayer:updateEquipUI()
 
 end
 
-function PetLayer:checkEquipBtnCbk(widget,touchkey)
-    if touchkey == ccui.TouchEventType.ended then 
-        local tag = widget:getTag()
-        local equipTab = self.checkTab[tag]
-        print("tag =============== "..tag)
-
-        local EquipInfoLayer = require("src.app.views.layer.Pet.EquipInfoLayer").new({equipTab = equipTab, petTab = self.pet})
-        self:addChild(EquipInfoLayer, 10000)
-        EquipInfoLayer:setContentSize(cc.size(size.width, size.height))
-        ccui.Helper:doLayout(EquipInfoLayer)
-
-    end
-end
-
 function PetLayer:checkBtnCbk(widget,touchkey)
     if touchkey == ccui.TouchEventType.ended then 
         self:setCheckBtn(widget)
@@ -179,6 +165,17 @@ function PetLayer:setCheckBtn(btn)
     end
 end
 
+function PetLayer:updatePublicDate()
+    local id = self.pet.id
+    for k,v in pairs(mm.data.playerPet) do
+        if v.id == id then
+            for k1,v1 in pairs(v) do
+                self.pet[k1] = v1
+            end
+        end
+    end
+end
+
 function PetLayer:updatePublic()
     local zhanliNum = self.pet.lv + self.pet.skillLv
     self.zhanliText:setString("战斗力:"..zhanliNum)
@@ -207,6 +204,7 @@ function PetLayer:updatePublic()
                 local layoutData = {res = PetEquipItemRes,layoutName = "Image_bg"}
                 local equipNode = cs.ObjectPoolManager:getObject(layoutData)
                 img:addChild(equipNode)
+                equipNode:setName("equipNode")
                 equipNode:setAnchorPoint(cc.p(0.5,0.5))
                 equipNode:setPosition(img:getContentSize().width * 0.5 , img:getContentSize().height * 0.5)
 
@@ -216,11 +214,18 @@ function PetLayer:updatePublic()
 
                 local iconImage = equipNode:getChildByName("Image_icon")
                 iconImage:loadTexture(self.resTab.iconSrc)
+
+                equipNode:setTag(i)
+                equipNode:addTouchEventListener(handler(self, self.petEquipBtnCbk))
             else
                 print("error")
             end
         else
-            
+            local img = playerNode:getChildByName(table1[i])
+            local equipNode = img:getChildByName("equipNode")
+            if equipNode then
+                equipNode:removeFromParent()
+            end
 
         end
         local img = playerNode:getChildByName(table1[i])
@@ -236,7 +241,7 @@ function PetLayer:petEquipBtnCbk(widget,touchkey)
         print("tag =============== "..tag)
 
         local eqIndex = self.pet["eq0"..tag]
-
+        print("eqIndex =============== "..eqIndex)
         if eqIndex > 100000000 then
             local eqTab
             for k,v in pairs(mm.data.petEquip) do
@@ -250,18 +255,16 @@ function PetLayer:petEquipBtnCbk(widget,touchkey)
                 self:addChild(EquipInfoLayer, MoGlobalZorder[2000002])
                 EquipInfoLayer:setContentSize(cc.size(size.width, size.height))
                 ccui.Helper:doLayout(EquipInfoLayer)
-
+            else
+                print("eqTab =============== ".."error")
             end
         else
-            -- local PetWearEquipLayer = require("src.app.views.layer.Pet.PetWearEquipLayer").new({petTab = self.pet, index = tag})
-            -- self:addChild(PetWearEquipLayer, MoGlobalZorder[2000002])
-            -- PetWearEquipLayer:setContentSize(cc.size(size.width, size.height))
-            -- ccui.Helper:doLayout(PetWearEquipLayer)
+            local PetWearEquipLayer = require("src.app.views.layer.Pet.PetWearEquipLayer").new({petTab = self.pet, index = tag})
+            self:addChild(PetWearEquipLayer, MoGlobalZorder[2000002])
+            PetWearEquipLayer:setContentSize(cc.size(size.width, size.height))
+            ccui.Helper:doLayout(PetWearEquipLayer)
 
-            local PetCheckEquipLvLayer = require("src.app.views.layer.Pet.PetCheckEquipLvLayer").new({petTab = self.pet, index = tag})
-            self:addChild(PetCheckEquipLvLayer, MoGlobalZorder[2000002])
-            PetCheckEquipLvLayer:setContentSize(cc.size(size.width, size.height))
-            ccui.Helper:doLayout(PetCheckEquipLvLayer)
+
         end
 
         
@@ -289,6 +292,25 @@ function PetLayer:globalEventsListener( event )
             self.pet.skillLv = self.pet.skillLv + 1
             self:updatePublic()
             self:updateSkillUpUI()
+        elseif event.code == "wearequip" then
+            print("wearequip Listener   "..json.encode(event))
+            if event.t.result == 0 then
+                self:updatePublicDate()
+                self:updatePublic()
+            end
+        elseif event.code == "downequip" then
+            print("downequip Listener   "..json.encode(event))
+            if event.t.result == 0 then
+                self:updatePublicDate()
+                self:updatePublic()
+            end
+        elseif event.code == "equiplevelup" then
+            print("equiplevelup Listener   "..json.encode(event))
+            if event.t.result == 0 then
+                self:updatePublicDate()
+                self:updatePublic()
+            end
+            
         end
     end
 end

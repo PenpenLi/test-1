@@ -125,6 +125,17 @@
                 <PreSize X="0.7458" Y="0.0854" />
                 <ImageFileData Type="Normal" Path="UI/base/jindu1.png" Plist="" />
               </AbstractNodeData>
+              <AbstractNodeData Name="Text_exp" ActionTag="1955903284" Tag="131" IconVisible="False" LeftMargin="88.7933" RightMargin="121.2067" TopMargin="283.8293" BottomMargin="160.1707" FontSize="36" LabelText="999/9999" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="144.0000" Y="36.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="160.7933" Y="178.1707" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="0" B="0" />
+                <PrePosition X="0.4542" Y="0.3712" />
+                <PreSize X="0.4068" Y="0.0750" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="320.0000" Y="568.0000" />

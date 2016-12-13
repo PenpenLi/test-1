@@ -166,6 +166,7 @@ end
 
 function mm.req(msgName,t)
     -- t.gameSession = mm.data.playerinfo.gameSession
+    mm[msgName] = t
     mm.app.clientTCP:send(msgName,t,g_msgCode[msgName])
 
 end

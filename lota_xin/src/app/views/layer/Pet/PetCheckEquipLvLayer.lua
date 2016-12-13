@@ -35,10 +35,14 @@ function PetCheckEquipLvLayer:init(param)
     self.pet = param.petTab
     self.index = param.index
 
+    self.equipTab = param.equipTab
+
     self.beCheckTab = {}
 
     --初始化主界面UI
     self:UIInit()
+
+    self:setExpText()
 
 end
 
@@ -50,7 +54,8 @@ function PetCheckEquipLvLayer:UIInit()
     -- self.Node:getChildByName("Button"):addTouchEventListener(handler(self, self.checkBtnCbk))
 
 
-    
+    self.Button01Btn = self.ImageBg:getChildByName("Button01")
+    self.Button01Btn:addTouchEventListener(handler(self, self.Button01Cbk))
 
     self:setSorts()
     self:updateList(0)
@@ -212,7 +217,7 @@ function PetCheckEquipLvLayer:checkEquipBtnCbk(widget,touchkey)
             checkImage:setVisible(true)
         end
         
-        
+        self:setExpText()
 
     end
 end
@@ -225,9 +230,10 @@ function PetCheckEquipLvLayer:setExpText( ... )
         local tab = self.checkTab[index]
         local equipResId = tab.resId
         local resTab = equipTable[equipResId]
-        -- local resexp = resTab.
-
+        local resexp = equipLvTable[tab.lv].Exp
+        num = num + resexp
     end
+    self.expText:setString(num)
 end
 
 
@@ -237,10 +243,37 @@ function PetCheckEquipLvLayer:backBtnCbk(widget,touchkey)
     end
 end
 
+function PetCheckEquipLvLayer:getSoltIds( ... )
+    print("self.beCheckTab  "..json.encode(self.beCheckTab))
+    local tab = {}
+    for k,v in pairs(self.beCheckTab) do
+        local index = v
+        local tab1 = self.checkTab[index]
+        local id = tab1.id
+        print("self.beCheckTab tab  "..json.encode(tab))
+        table.insert(tab, id)
+    end
+    return tab
+end
+
+function PetCheckEquipLvLayer:Button01Cbk(widget,touchkey)
+    if touchkey == ccui.TouchEventType.ended then 
+        local t = {}
+        t.id = self.equipTab.id
+        t.soltIds = self:getSoltIds()
+        print("equiplevelup  "..json.encode(t))
+        mm.req("equiplevelup",t)
+    end
+end
+
+
 function PetCheckEquipLvLayer:globalEventsListener( event )
     if event.name == EventDef.SERVER_MSG then
-        if event.code == "wearequip" then
-            self:removeFromParent()
+        if event.code == "equiplevelup" then
+            print("equiplevelup Listener   "..json.encode(event))
+            if event.t.result == 0 then
+                -- self:removeFromParent()
+            end
         end
     end
 end

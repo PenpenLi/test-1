@@ -155,7 +155,7 @@ function CreateScene:createBtnCbk(widget,touchkey)
                     mm.data.player = msg.master
                     mm.data.player.id = msg.base.id
                     mm.data.playerPet = msg.pet
-                    mm.data.playerEquip = msg.equip
+                    mm.data.petEquip = msg.equip
                     self.app_:run("FightScene")
 
                 end

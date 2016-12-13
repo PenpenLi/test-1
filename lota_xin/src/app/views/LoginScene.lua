@@ -222,7 +222,7 @@ function LoginScene:login()
             mm.data.player = msg.master
             mm.data.player.id = msg.base.id
             mm.data.playerPet = msg.pet
-            mm.data.petEquip = msg.petEquip
+            mm.data.petEquip = msg.equip
 
             print("loginret loginret       msg.equip       !!!!!!!!!!!!!!!!!!!!!!  "..json.encode(msg.petEquip))
             self.app_:run("FightScene")
