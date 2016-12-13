@@ -74,6 +74,9 @@ struct equipLvTableRes{
 	int32				 m_iSpeed08;
 	int32				 m_iSpeed09;
 	int32				 m_iSpeed10;
+	int32				 m_iExp;
+	int32				 m_iUpLvNeed;
+	int32				 m_iUpLvAll;
 };
 
 

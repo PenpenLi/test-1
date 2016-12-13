@@ -70,6 +70,9 @@ equipLvTableRes = {
 		Speed08 28 : integer
 		Speed09 29 : integer
 		Speed10 30 : integer
+		Exp 31 : integer
+		UpLvNeed 32 : integer
+		UpLvAll 33 : integer
 	}
 
 	.equipLvTableBook {
