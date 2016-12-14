@@ -58,7 +58,7 @@ mm.puTongZhen = {
         101110002,
         101110003,
         101110004,
-        101110005,
+        -- 101110005,
     }
 
 
@@ -98,7 +98,7 @@ function FightScene:onCreate()
     --初始化主界面UI
     self:UIInit()
 
-    self.scene:getChildByName("Button_buzhen"):addTouchEventListener(handler(self, self.buzhenBtnCbk))
+    -- self.scene:getChildByName("Button_buzhen"):addTouchEventListener(handler(self, self.buzhenBtnCbk))
 
     self.scene:getChildByName("Panel_tap"):addTouchEventListener(handler(self, self.jinshouzhiBtnCbk))
     self.scene:getChildByName("Panel_tap"):setTouchEnabled(true)
@@ -123,8 +123,9 @@ function FightScene:onCreate()
 end
 
 function FightScene:updatePublic()
-    local goldText = self.scene:getChildByName("jinzitext")
-    goldText:setString(mm.data.base.gold)
+    self.goldText:setString(mm.data.base.gold)
+
+    self.zhanliText:setString("战力：9999999")
 end
 
 function FightScene:onEnter() 
@@ -132,13 +133,16 @@ function FightScene:onEnter()
 end
 
 function FightScene:UIInit() 
-    self.zhujueBtn = self.scene:getChildByName("Button_zhujue")
+    self.zhujueBtn = self.scene:getChildByName("Image_bottom"):getChildByName("Button_1")
     self.zhujueBtn:addTouchEventListener(handler(self, self.zhujueBtnCbk))
 
-    self.petBtn = self.scene:getChildByName("Button_pet")
+    self.petBtn = self.scene:getChildByName("Image_bottom"):getChildByName("Button_2")
     self.petBtn:addTouchEventListener(handler(self, self.petBtnCbk))
 
+    self.scene:getChildByName("Text_nickName"):setString(mm.data.base.nickName)
 
+    self.goldText = self.scene:getChildByName("Node_gold"):getChildByName("Text")
+    self.zhanliText = self.scene:getChildByName("Text_zhanli")
 end
 
 function FightScene:zhujueBtnCbk(widget,touchkey)
@@ -265,12 +269,12 @@ function FightScene:nnffInfo(  )
     local nnffID = mm.data.base.stage--cc.UserDefault:getInstance():getIntegerForKey(mm.data.player.id .. "nnffID",1)
     print("当前关卡  "..nnffID)
     tab.blood = self:getBossBlood(nnffID) * (0.5 +  self.curNnffId * 0.05)
-    tab.size = 1
+    tab.size = 0.5
     tab.time = 0
     if self.curNnffId > CheckpointCount then
         tab.blood = self:getBossBlood(nnffID)
         self.curNnffId = 0
-        tab.size = 1.2
+        tab.size = 0.8
         tab.time = BossTime
 
         self:showBlood()
@@ -332,14 +336,14 @@ end
 
 
 function FightScene:TapTapUI()
-
+    local res = "res/spine/playerRes/hero_1x/hero_1x"
     local tianshiNode = self.scene:getChildByName("Node_tianshi")
     local id = 101110001
-    local skeletonNode = gameUtil.createSkeletonAnimationForUnit(gameUtil.getHeroTab(id).Src..".json", gameUtil.getHeroTab(id).Src..".atlas",1)
+    local skeletonNode = gameUtil.createSkeletonAnimationForUnit(res..".json", res..".atlas",1)
     tianshiNode:addChild(skeletonNode)
     skeletonNode:setPosition(0,0)
-    skeletonNode:setScale(0.8)
-    skeletonNode:setAnimation(0, "stand", true)
+    skeletonNode:setScale(0.3)
+    skeletonNode:setAnimation(0, "dle", true)
     self.tianShiSkeletonNode = skeletonNode
 
 

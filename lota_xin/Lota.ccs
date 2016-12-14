@@ -22,13 +22,13 @@
         </Folder>
         <Folder Name="pet">
           <Project Name="EquipInfoLayer.csd" Type="Layer" />
+          <Project Name="PetCheckEquipLvLayer.csd" Type="Layer" />
           <Project Name="PetEqBgItem.csd" Type="Layer" />
           <Project Name="PetEquipItem.csd" Type="Layer" />
           <Project Name="PetLayer.csd" Type="Layer" />
           <Project Name="petListitem.csd" Type="Layer" />
           <Project Name="PetListLayer.csd" Type="Layer" />
           <Project Name="PetWearEquipLayer.csd" Type="Layer" />
-          <Project Name="PetCheckEquipLvLayer.csd" Type="Layer" />
         </Folder>
         <Folder Name="player">
           <Project Name="PlayerLayer.csd" Type="Layer" />
@@ -68,6 +68,40 @@
           <Folder Name="bigImage">
             <Image Name="fight_bg.png" />
             <Image Name="yijidi.png" />
+          </Folder>
+          <Folder Name="fight">
+            <Image Name="buzhen.png" />
+            <Image Name="gongnengdi.png" />
+            <Image Name="hongdian.png" />
+            <Image Name="huodong.png" />
+            <Image Name="huodong1.png" />
+            <Image Name="jiahao.png" />
+            <Image Name="jinbi.png" />
+            <Image Name="jinbidi.png" />
+            <Image Name="liaotian.png" />
+            <Image Name="maomi.png" />
+            <Image Name="maomi1.png" />
+            <Image Name="paihang.png" />
+            <Image Name="renwu.png" />
+            <Image Name="renwu1.png" />
+            <Image Name="shangdian.png" />
+            <Image Name="shangdian1.png" />
+            <Image Name="shijiandi.png" />
+            <Image Name="shijiantiao.png" />
+            <Image Name="skill_lock.png" />
+            <Image Name="xuediban.png" />
+            <Image Name="xuetiao.png" />
+            <Image Name="xuetiaodi.png" />
+            <Image Name="youjian.png" />
+            <Image Name="zhuren.png" />
+            <Image Name="zhuren1.png" />
+            <Image Name="zuanshi.png" />
+          </Folder>
+          <Folder Name="guanqiaui">
+            <Image Name="BOSS.png" />
+            <Image Name="guanqiabiao1.png" />
+            <Image Name="guanqiadi1.png" />
+            <Image Name="guanqiadi2.png" />
           </Folder>
           <Folder Name="palyerEquipIcon">
             <Image Name="icon_ZB001.png" />

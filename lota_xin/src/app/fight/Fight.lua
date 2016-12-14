@@ -15,9 +15,9 @@ local pet_hurt_effect = "res/Effect/pet/t_01/t_01"
 
 local tousewuCo = {}
 
-local sc = 0.6
+local sc = 0.2
 local a_scale = {sc,sc,sc,sc,sc}
-local b_scale = {sc,sc,1,sc,sc}
+local b_scale = {sc,sc,0.5,sc,sc}
 
 local zorder = {20,40,10,50,30}
 
@@ -91,16 +91,7 @@ function Fight:initBattlefield(param)
 
     self.SkillNodeA = self.SkillNodeA or {}
     self.SkillNodeB = self.SkillNodeB or {}
-    --A技能位置
-    for i=1,CAMP_A_SKILL_NUM do
-        local node = fScene:getChildByName("Scene"):getChildByName("s_a_"..i)
-        self.SkillNodeA[i] = SkillNode.create({node = node})
-    end
-    --B技能位置
-    for i=1,CAMP_B_SKILL_NUM do
-        local node = fScene:getChildByName("Scene"):getChildByName("s_b_"..i)
-        self.SkillNodeB[i] = SkillNode.create({node = node})
-    end
+
 
     local time = {1,1.5,1.8,2,2.1}
     local shaketime = {0.7,1,1.3,1.5,1.6}
@@ -251,26 +242,31 @@ function Fight:TapAck(unit)
         end
         skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
 
-        local tswNode = gameUtil.createSkeletonAnimation(pet_ack_effect..".json", pet_ack_effect..".atlas",1)
-        unitA:addChild(tswNode)
-        tswNode:setAnimation(0, "tsw", false)
-        tswNode:setPosition(100 * 0.5,100 * 0.5)
-        tswNode:setScale(0.4)
 
-        local paowu = 20
+
+        local tswNode = ccui.ImageView:create()
+        tswNode:loadTexture("res/UI/fight/002.png")
+        unitA:addChild(tswNode)
+        tswNode:setPosition(40,50)
+
+        local paowu = 70
         local cpjuli = self:getTwoNodeCP( unitA, unitB )
         local cp = self:getTwoNodeCP( unitA, unitB )
         local bezier = {
             cc.p(0, 0),
             cc.p(cp.x * 0.5, paowu + cp.y),
-            cc.p(cp.x, cp.y),
+            cc.p(cp.x, cp.y + 60),
         }
         local juli = math.sqrt((math.abs(cpjuli.x) * math.abs(cpjuli.x)) + (math.abs(cpjuli.y) * math.abs(cpjuli.y))) 
         local time = juli * 0.001 
         local bezierForward = cc.BezierBy:create(time, bezier)
 
+        local RotateTo = CCRotateTo:create(time, 360)
+
+        local spawn = cc.Spawn:create(bezierForward, RotateTo)
+
         local action = cc.Sequence:create(
-                bezierForward,
+                spawn,
                 cc.CallFunc:create(function( ... )
                     tswNode:setVisible(false)
                     coroutine.resume(tousewuCo[skillId], self)
@@ -1181,7 +1177,7 @@ function Fight:sifangSkill( param )
             local bezier = {
                 cc.p(0, 0),
                 cc.p(cp.x * 0.5, paowu + cp.y),
-                cc.p(cp.x, cp.y),
+                cc.p(cp.x, cp.y + 100),
             }
             local juli = math.sqrt((math.abs(cpjuli.x) * math.abs(cpjuli.x)) + (math.abs(cpjuli.y) * math.abs(cpjuli.y))) 
             local time = juli * 0.001 / game.speedBuff

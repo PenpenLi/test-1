@@ -1623,23 +1623,23 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
     ---飘雪
 
     --播放受击
-    if shoujiPath and #shoujiPath > 0 then 
+    -- if shoujiPath and #shoujiPath > 0 then 
 
-        local shoujiNode = gameUtil.createSkeletonAnimation(shoujiPath..".json", shoujiPath..".atlas",1)
-        self:getSkeletonNode():addChild(shoujiNode)
-        shoujiNode:setAnimation(0, "mb", false)
-        shoujiNode:setPosition(0,50)
-        shoujiNode:setScaleX(-1)
-        shoujiNode:setScale(0.5)
+    --     local shoujiNode = gameUtil.createSkeletonAnimation(shoujiPath..".json", shoujiPath..".atlas",1)
+    --     self:getSkeletonNode():addChild(shoujiNode)
+    --     shoujiNode:setAnimation(0, "mb", false)
+    --     shoujiNode:setPosition(0,50)
+    --     shoujiNode:setScaleX(-1)
+    --     shoujiNode:setScale(0.5)
 
 
-        local function toPlayHurtAction( ... )
-            shoujiNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-            shoujiNode:setVisible(false)
+    --     local function toPlayHurtAction( ... )
+    --         shoujiNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
+    --         shoujiNode:setVisible(false)
 
-        end 
-        shoujiNode:registerSpineEventHandler(toPlayHurtAction,sp.EventType.ANIMATION_COMPLETE)
-    end
+    --     end 
+    --     shoujiNode:registerSpineEventHandler(toPlayHurtAction,sp.EventType.ANIMATION_COMPLETE)
+    -- end
 
 
     if debug_xue == 1 then
