@@ -74,13 +74,19 @@ function Unit:init(param)
     local delay = {0,0.5,0.8,1.0,1.1}
 
     local function addHero(  )
-        self.skeletonNode = gameUtil.createSkeletonAnimationForUnit(self:getSRC( self.HeroId )..".json", self:getSRC( self.HeroId )..".atlas",1)
+        local res = "res/spine/bossRes/bird_01/bird_01"
+        if self.campType == CAMP_A_TYPE then
+            res = self:getSRC( self.HeroId )
+        end
+
+
+        self.skeletonNode = gameUtil.createSkeletonAnimationForUnit(res..".json", res..".atlas",1)
         self:addChild(self.skeletonNode)
         self.skeletonNode:setPosition(cc.p(0,0))
         
   
         if scaleX then 
-            self.skeletonNode:setScaleX((-1)*scale) 
+            self.skeletonNode:setScaleX(scale) 
             self.skeletonNode:setScaleY(scale)
         else
             self.skeletonNode:setScaleX(scale)
@@ -90,40 +96,32 @@ function Unit:init(param)
         self.skeletonNode:update(0.012)
         
         
-        self.skeletonNode:setAnimation(0, "stand", true)
+        self.skeletonNode:setAnimation(0, "idle", true)
 
 
         self.nodeHeight = 125--self.skeletonNode:getBoundingBox().height
 
-        local imageView = ccui.ImageView:create()
-        imageView:loadTexture("res/UI/jm_xuetiaodi.png")
-        self.skeletonNode:addChild(imageView)
-        imageView:setPositionY(150)
-        imageView:setVisible(false)
-        self.barImageBg = imageView
-
-        local barRes = ""
         if self.campType == CAMP_A_TYPE then
-            barRes = "res/UI/jm_xuetiaolv.png"
+        
         else
-            barRes = "res/UI/jm_xuetiaohong.png"
+            self.barImageBg = game.G_FightScene.xueNode_imageBg
+            self.loadingBar = game.G_FightScene.xueNode_xueloadbar
+            self.loadingBar:setPercent(100)
         end
-        local loadingBar = ccui.LoadingBar:create()
-        loadingBar:setName("xueBar")
-        loadingBar:loadTexture(barRes)
-        loadingBar:setPercent(100)
-        self.skeletonNode:addChild(loadingBar)
-        loadingBar:setPositionY(150)
-        loadingBar:setVisible(false)
-        self.loadingBar = loadingBar
-        self.barImageBg:setScale(self.loadingBar:getContentSize().width/self.barImageBg:getContentSize().width, self.loadingBar:getContentSize().height/self.barImageBg:getContentSize().height)
+        
 
         local yiyinImageView = ccui.ImageView:create()
-        yiyinImageView:loadTexture("res/UI/jm_yinying.png")
+        yiyinImageView:loadTexture("res/UI/fight/yinying.png")
         self:addChild(yiyinImageView)
         yiyinImageView:setName("yinying")
         yiyinImageView:setLocalZOrder(-20)
-        yiyinImageView:setScale(0.7)    
+
+        if self.campType == CAMP_A_TYPE then
+            yiyinImageView:setScale(1)  
+        else
+            yiyinImageView:setScale(2) 
+            yiyinImageView:setPositionY(-30)
+        end
 
     end
 
@@ -454,6 +452,33 @@ function Unit:getInitialAck( ... )
     local ackNum = 0
     
     ackNum = self.petRes.Attack +  self.pet.lv * 1 +  self.pet.skillLv * 1--todo 公式
+
+    local eq01 = self.pet.eq01
+    if eq01 > 0 then
+
+        local eqTab
+        for k,v in pairs(mm.data.petEquip) do
+            if v.id == eq01 then
+                eqTab = v
+            end
+        end
+
+        if eqTab then
+            local table1 = {"Attack","Crit","Speed"}
+            local equipResId = eqTab.resId
+            local resTab = equipTable[equipResId]
+            local quality = resTab.quality
+            local lv = eqTab.lv
+            local Type = resTab.Type
+
+            local xx = table1[Type]..string.format("%02d",quality)
+            print(lv.."lv   xx "..xx)
+            local zhushuxin = equipLvTable[lv][xx]
+
+            ackNum = ackNum + zhushuxin
+        end
+
+    end
 
    
     return ackNum 
@@ -959,8 +984,8 @@ function Unit:playDieTeXiao( time )
     DieNode:setName("DieTeXiao")
     local function ackPlayBack()
         DieNode:setVisible(false)
-        self.barImageBg:setVisible(false)
-        self.loadingBar:setVisible(false)
+        -- self.barImageBg:setVisible(false)
+        -- self.loadingBar:setVisible(false)
     end
     local action = cc.Sequence:create(
                 cc.DelayTime:create(0.67),
@@ -1420,11 +1445,11 @@ function Unit:PlayHurt(param)
 
     else
         self.loadingBar:setPercent(math.ceil(self:getCurBlood() / self.initialBlood * 100))
-        self.barImageBg:setVisible(true)
-        self.loadingBar:setVisible(true)
+        -- self.barImageBg:setVisible(true)
+        -- self.loadingBar:setVisible(true)
         local function showbarBack( ... )
-            self.barImageBg:setVisible(false)
-            self.loadingBar:setVisible(false)
+            -- self.barImageBg:setVisible(false)
+            -- self.loadingBar:setVisible(false)
         end
         self:runAction( cc.Sequence:create(cc.DelayTime:create(1),cc.CallFunc:create(showbarBack)))
     end
@@ -1576,11 +1601,11 @@ function Unit:setPiaoxue( hurt, shoujiPath, DamageStyle, isZhuJue )
         self.loadingBar:setPercent(math.ceil(self:getCurBlood() / self.initialBlood * 100))
     end
 
-    self.barImageBg:setVisible(true)
-    self.loadingBar:setVisible(true)
+    -- self.barImageBg:setVisible(true)
+    -- self.loadingBar:setVisible(true)
     local function showbarBack( ... )
-        self.barImageBg:setVisible(false)
-        self.loadingBar:setVisible(false)
+        -- self.barImageBg:setVisible(false)
+        -- self.loadingBar:setVisible(false)
     end
     self:runAction( cc.Sequence:create(cc.DelayTime:create(1),cc.CallFunc:create(showbarBack)))
 

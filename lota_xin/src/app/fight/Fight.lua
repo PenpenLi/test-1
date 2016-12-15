@@ -238,7 +238,7 @@ function Fight:TapAck(unit)
         skeletonNode:setAnimation(0, "attack", false)
         local function ackBack()
             skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-            skeletonNode:setAnimation(0, "stand", true)
+            skeletonNode:setAnimation(0, "idle", true)
         end
         skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
 

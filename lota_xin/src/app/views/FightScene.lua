@@ -35,7 +35,7 @@ petTable = require("app.res.petTableRes")
 equipLvTable = require("app.res.equipLvTableRes")
 
 
-local CheckpointCount = 9 --每一关小怪个数
+local CheckpointCount = 1 --每一关小怪个数
 local BossTime = 30 --boss的击杀时间
 
 
@@ -143,6 +143,18 @@ function FightScene:UIInit()
 
     self.goldText = self.scene:getChildByName("Node_gold"):getChildByName("Text")
     self.zhanliText = self.scene:getChildByName("Text_zhanli")
+
+    self.xueNode = self.scene:getChildByName("Node_xue")
+    self.xueNode_imageBg = self.xueNode:getChildByName("Image_xue_bg")
+    self.xueNode_xueloadbar = self.xueNode:getChildByName("LoadingBar_xue")
+
+    self.timeNode_imageBg = self.xueNode:getChildByName("Image_time_bg")
+    self.xueNode_timeloadbar = self.xueNode:getChildByName("LoadingBar_time")
+    self.timeNode_imageBg:setVisible(false)
+    self.xueNode_timeloadbar:setVisible(false)
+
+    self.xueNode_imageicon = self.xueNode:getChildByName("Image_icon")
+    self.xueNode_imageicon:setVisible(false)
 end
 
 function FightScene:zhujueBtnCbk(widget,touchkey)
@@ -189,6 +201,7 @@ function FightScene:timeUpdate()
                 fight:setTimeZero()
                 --小于0就显示0
                 self.curBloodText:setString( string.format("%.2f", 0))
+
             end
         else
 
@@ -225,7 +238,7 @@ function FightScene:jinshouzhiBtnCbk(widget,touchkey)
             skeletonNode:setTimeScale(3)
             local function ackBack()
                     skeletonNode:unregisterSpineEventHandler(sp.EventType.ANIMATION_COMPLETE)
-                    skeletonNode:setAnimation(0, "stand", true)
+                    skeletonNode:setAnimation(0, "idle", true)
             end
             skeletonNode:registerSpineEventHandler(ackBack,sp.EventType.ANIMATION_COMPLETE)
 
@@ -269,18 +282,22 @@ function FightScene:nnffInfo(  )
     local nnffID = mm.data.base.stage--cc.UserDefault:getInstance():getIntegerForKey(mm.data.player.id .. "nnffID",1)
     print("当前关卡  "..nnffID)
     tab.blood = self:getBossBlood(nnffID) * (0.5 +  self.curNnffId * 0.05)
-    tab.size = 0.5
+    tab.size = 0.4
     tab.time = 0
     if self.curNnffId > CheckpointCount then
         tab.blood = self:getBossBlood(nnffID)
         self.curNnffId = 0
-        tab.size = 0.8
+        tab.size = 0.6
         tab.time = BossTime
 
-        self:showBlood()
+
+        self:showTime()
     else
         self.NodeTimeNum = 0
         self.Node_Time:setVisible(false)
+        if self.NodeTimeBar then self.NodeTimeBar:setVisible(false) end
+        if self.curBloodText then self.curBloodText:setVisible(false) end
+        if self.xueNode_imageicon then self.xueNode_imageicon:setVisible(false) end
     end
 
     self:setCheckpointShow()
@@ -288,21 +305,24 @@ function FightScene:nnffInfo(  )
     return tab
 end
 
-function FightScene:showBlood( ... )
+function FightScene:showTime( ... )
 
     if not self.NodeTimeBar then
 
-        local imageView = ccui.ImageView:create()
-        imageView:loadTexture("res/UI/jm_xuetiaodi.png")
-        self.Node_Time:addChild(imageView)
+        -- local imageView = ccui.ImageView:create()
+        -- imageView:loadTexture("res/UI/jm_xuetiaodi.png")
+        -- self.Node_Time:addChild(imageView)
 
 
-        local loadingBar = ccui.LoadingBar:create()
-        loadingBar:loadTexture("res/UI/jm_xuetiao_hong.png")
-        loadingBar:setPercent(100)
-        self.Node_Time:addChild(loadingBar)
-        loadingBar:setVisible(true)
-        self.NodeTimeBar = loadingBar
+        -- local loadingBar = ccui.LoadingBar:create()
+        -- loadingBar:loadTexture("res/UI/jm_xuetiao_hong.png")
+        -- loadingBar:setPercent(100)
+        -- self.Node_Time:addChild(loadingBar)
+        -- loadingBar:setVisible(true)
+        self.NodeTimeBar = self.xueNode_timeloadbar
+        self.NodeTimeBar:setVisible(true)
+        self.NodeTimeBar:setPercent(100)
+        self.xueNode_imageicon:setVisible(true)
 
         self.curBloodText = ccui.Text:create(BBossTime, "fonts/huakang.TTF", 30)
         self.curBloodText:setColor(cc.c3b(205, 149, 12))
@@ -343,8 +363,14 @@ function FightScene:TapTapUI()
     tianshiNode:addChild(skeletonNode)
     skeletonNode:setPosition(0,0)
     skeletonNode:setScale(0.3)
-    skeletonNode:setAnimation(0, "dle", true)
+    skeletonNode:setAnimation(0, "idle", true)
     self.tianShiSkeletonNode = skeletonNode
+
+    local yiyinImageView = ccui.ImageView:create()
+    yiyinImageView:loadTexture("res/UI/fight/yinying.png")
+    tianshiNode:addChild(yiyinImageView)
+    yiyinImageView:setName("yinying")
+    yiyinImageView:setLocalZOrder(-20)
 
 
     game.speedBuff = 1
