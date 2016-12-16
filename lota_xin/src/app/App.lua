@@ -3,7 +3,7 @@ local MyApp = class("App", cc.load("mvc").AppBase)
 
 function MyApp:onCreate()
 	if device.platform == "android" then
-        self.configs_.defaultSceneName = "PlayScene"
+        self.configs_.defaultSceneName = "UpdateScene"
     elseif device.platform == "ios" then
     	-- if PLATFORM == "dhsdk" then
      --    	self.configs_.defaultSceneName = "UpdateScene"
