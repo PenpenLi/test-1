@@ -6,6 +6,9 @@
 #define BOSSTABLE_NAME_MAXNUM		128
 #define BOSSTABLE_SRC_MAXNUM		64
 
+#define BOSSTABLE_NAME_MAXNUM		128
+#define BOSSTABLE_SRC_MAXNUM		64
+
 #define EQUIPTABLE_NAME_MAXNUM		128
 #define EQUIPTABLE_DESC_MAXNUM		512
 #define EQUIPTABLE_ICONSRC_MAXNUM		64
@@ -23,6 +26,14 @@
 #define PETTABLE_HEADSRC_MAXNUM		64
 
 #pragma pack (1)
+
+struct bossTableRes{
+	uint32				 m_uiID;
+	char				 m_acName[BOSSTABLE_NAME_MAXNUM];
+	int32				 m_iblood;
+	char				 m_acSrc[BOSSTABLE_SRC_MAXNUM];
+};
+
 
 struct bossTableRes{
 	uint32				 m_uiID;

@@ -16,6 +16,23 @@ bossTableRes = {
 	,
 	headName = "bossTable",
 },
+bossTableRes = {
+	protoHead	=
+	[[
+	.Unit {
+		ID 0 : integer
+		Name 1 : string
+		blood 2 : integer
+		Src 3 : string
+	}
+
+	.bossTableBook {
+		bossTable 0 : *Unit
+	}
+	]]
+	,
+	headName = "bossTable",
+},
 equipTableRes = {
 	protoHead	=
 	[[
