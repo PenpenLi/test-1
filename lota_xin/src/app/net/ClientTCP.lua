@@ -175,7 +175,8 @@ function ClientTCP:onStatus(msg)
         if self.chonglian == true and (initSceneNameGloble == "LoginSceneFinal" or initSceneNameGloble == "FightScene" or initSceneNameGloble == "CreateScene") then
             print("chonglian------断线重连BUG测试  是重新连接   ")
             local function chonglianBack( event )
-                print("chonglianBack------断线重连BUG测试  重连返回 "..event.message)
+                print("chonglianBack")
+                print("chonglianBack------断线重连BUG测试  重连返回 :    "..json.encode(event))
                 if event.type == 0 then
                     --gameUtil:addTishi({p = cc.Director:getInstance():getRunningScene(), s = event.message,z = 3000})
                     if initSceneNameGloble == "FightScene" then
@@ -188,36 +189,42 @@ function ClientTCP:onStatus(msg)
                 else
                     --self:reconnect()
                     self.socket:close()
-                    g_fightLoadingLayer:getChildByName("Text"):setString(event.message)
+                    -- g_fightLoadingLayer:getChildByName("Text"):setString(event.message)
                     print("onStatus------断线重连BUG测试  连接失败  连接失败   连接失败   ")
                 end
             end
-            if game.LoginSDkData == nil then
-                return
-            end
-            
-            local qufu = "101"
-            local currentServer = gameUtil.getDefaultServerInfo(game.severList)
-            qufu = currentServer.Areaid
 
-            local playerid = 0
-            if mm.data.playerinfo ~= nil then
-                qufu = mm.data.playerinfo.qufu
-                playerid = mm.data.playerinfo.id
-            end
+            print("onStatus------11111111111")
+            -- if game.LoginSDkData == nil then
+            --     return
+            -- end
+            
+            -- local qufu = "101"
+            -- local currentServer = gameUtil.getDefaultServerInfo(game.severList)
+            -- qufu = currentServer.Areaid
+
+            -- local playerid = 0
+            -- if mm.data.playerinfo ~= nil then
+            --     qufu = mm.data.playerinfo.qufu
+            --     playerid = mm.data.playerinfo.id
+            -- end
             local param = {}
             param.uid = game.LoginSDkData.uid
-            param.qufu = qufu
-            param.session = game.LoginSDkData.token
+            -- param.qufu = qufu
+            -- param.session = game.LoginSDkData.token
 
-            param.qudao= PLATFORM
-            -------------蛋疼的解决方案----------------
-            if PLATFORM == "dhtest" then
-                param.qudao= "dhsdk"
-            end
+            param.qudao= "aa"
+            -- -------------蛋疼的解决方案----------------
+            -- if PLATFORM == "dhtest" then
+            --     param.qudao= "dhsdk"
+            -- end
             
-            param.playerid = playerid
-            param.gameSession = mm.data.playerinfo.gameSession
+            -- param.playerid = playerid
+            -- param.gameSession = mm.data.playerinfo.gameSession
+
+            print("onStatus------222222222222 "..json.encode(param))
+
+
             self:send_request("reconnect", param ,chonglianBack)
         else
             mm.connectSuc()

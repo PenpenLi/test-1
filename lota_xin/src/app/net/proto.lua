@@ -177,6 +177,21 @@ downequip 13 {
     }
 }
 
+reconnect 14 {
+    request {
+        qudao       0 : string
+        uid         1 : string
+        session     2 : string
+        playerid    3 : integer
+        qufu        4 : string
+        gameSession 5 : string
+    }
+
+    response {
+        type            0 : integer     # 0:success 1:error
+        message         1 : string
+    }
+}
 
 
 ]]

@@ -442,12 +442,12 @@ function FightScene:addListener()
     eventDispatcher:addEventListenerWithFixedPriority(self.listeners[1], 1)
 
     local function eventCustomListener2( ... )
-        mm.req("guaJiReward", {type = 1})
+        -- mm.req("guaJiReward", {type = 1})
 
-        game.iscometoforeground = true
-        performWithDelay(self, function()
-            game.iscometoforeground = false
-        end, 3)
+        -- game.iscometoforeground = true
+        -- performWithDelay(self, function()
+        --     game.iscometoforeground = false
+        -- end, 3)
 
     end
     self.listeners[2] = cc.EventListenerCustom:create("event_come_to_foreground",eventCustomListener2)

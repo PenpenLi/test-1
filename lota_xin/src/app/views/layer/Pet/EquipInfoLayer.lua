@@ -53,7 +53,7 @@ function EquipInfoLayer:getLvExp( eqTab )
             if i == 1 then
                 return i, exp, equipLvTable[i].UpLvNeed
             else
-                local curExp = equipLvTable[i-1].equipLvTable
+                local curExp = equipLvTable[i-1].UpLvAll
                 return i, exp-curExp, equipLvTable[i].UpLvNeed
             end
             break

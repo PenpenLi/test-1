@@ -156,7 +156,7 @@ end
 
 function mm.reconnectSuc( ... )
     mm.HeartBeatBack()
-    mm.req("guaJiReward", {type = 1})
+    -- mm.req("guaJiReward", {type = 1})
 end
 
 function mm.connectSuc( ... )
