@@ -1,0 +1,90 @@
+
+cat_04.png
+size: 1024,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+001
+  rotate: false
+  xy: 126, 8
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+002
+  rotate: false
+  xy: 799, 97
+  size: 41, 26
+  orig: 41, 26
+  offset: 0, 0
+  index: -1
+003
+  rotate: false
+  xy: 763, 78
+  size: 34, 45
+  orig: 34, 45
+  offset: 0, 0
+  index: -1
+004
+  rotate: false
+  xy: 691, 60
+  size: 70, 63
+  orig: 70, 63
+  offset: 0, 0
+  index: -1
+005
+  rotate: true
+  xy: 321, 4
+  size: 119, 121
+  orig: 119, 121
+  offset: 0, 0
+  index: -1
+006
+  rotate: true
+  xy: 166, 33
+  size: 90, 153
+  orig: 90, 153
+  offset: 0, 0
+  index: -1
+007
+  rotate: true
+  xy: 2, 41
+  size: 82, 162
+  orig: 82, 162
+  offset: 0, 0
+  index: -1
+008
+  rotate: true
+  xy: 83, 3
+  size: 36, 41
+  orig: 36, 41
+  offset: 0, 0
+  index: -1
+009
+  rotate: false
+  xy: 444, 28
+  size: 120, 95
+  orig: 120, 95
+  offset: 0, 0
+  index: -1
+010
+  rotate: true
+  xy: 566, 41
+  size: 82, 123
+  orig: 82, 123
+  offset: 0, 0
+  index: -1
+011
+  rotate: false
+  xy: 444, 17
+  size: 9, 9
+  orig: 9, 9
+  offset: 0, 0
+  index: -1
+012
+  rotate: true
+  xy: 2, 2
+  size: 37, 79
+  orig: 37, 79
+  offset: 0, 0
+  index: -1
