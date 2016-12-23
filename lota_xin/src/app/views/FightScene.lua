@@ -120,10 +120,37 @@ function FightScene:onCreate()
     self:timeUpdate()
 
     self:updatePublic()
+
+    self:goldUpdate()
+end
+
+function FightScene:goldUpdate()
+    local function goldTime( dt )
+        local curGold = self.goldTextNum
+        if self.mbGold and self.mbGold > curGold and self.mbGold < 1000000 then
+            if ( self.mbGold - curGold ) < 5 then
+                self.goldText:setString(self.mbGold)
+                self.goldTextNum = self.mbGold
+            else
+                local jianGeGold = math.floor((self.mbGold - curGold) / 8)
+                self.goldText:setString(curGold + jianGeGold)
+                self.goldTextNum = curGold + jianGeGold
+            end
+        else
+            self.goldText:setString(gameUtil.dealNumber(mm.data.base.gold))
+            self.goldTextNum = mm.data.base.gold
+        end
+        
+    end
+    self.goldTick =  self:getScheduler():scheduleScriptFunc(goldTime, 0.064,false)
+
+
 end
 
 function FightScene:updatePublic()
-    self.goldText:setString(mm.data.base.gold)
+    -- self.goldText:setString(mm.data.base.gold)
+
+    self.mbGold = mm.data.base.gold
 
     self.zhanliText:setString("战力：9999999")
 end
@@ -155,6 +182,8 @@ function FightScene:UIInit()
 
     self.xueNode_imageicon = self.xueNode:getChildByName("Image_icon")
     self.xueNode_imageicon:setVisible(false)
+
+    self.goldTextNum = mm.data.base.gold
 end
 
 function FightScene:zhujueBtnCbk(widget,touchkey)

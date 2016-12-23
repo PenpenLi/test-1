@@ -203,6 +203,8 @@ function Fight:cteateSkillSequence(unit)
         print("isOver ================================================================ isOver")
         self.timetime = nil
 
+        self:UnitB1():playDieTeXiao()
+
         self.zeroOver = false
         self.fScene:nnff()
         return
