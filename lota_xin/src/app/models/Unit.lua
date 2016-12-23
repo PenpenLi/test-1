@@ -270,8 +270,8 @@ function Unit:initValue(param)
     self.WuLiHuDunXue = 0
 
 
-    local time = math.random(100, 200) / 100
-    -- print("timetimetimetime  66666666               "..time)
+    local time = math.random(50, 70) / 100.0
+    print("timetimetimetime  66666666               "..time)
     self:setAckTime(time)
     self:startAck(true)
 
@@ -971,21 +971,19 @@ function Unit:playSkillTongYongTeXiao( ... )
     self.fScene:getChildByName("Scene"):getChildByName("Panel_heibg"):setTouchEnabled(false)
 end
 
-function Unit:playDieTeXiao( time )
+function Unit:playDieTeXiao(  )
+    print("playDieTeXiao   ===============        11111111111   ")
     local str = "res/Effect/yingxiong/gongyong/t_sw/t_sw"
     local DieNode = gameUtil.createSkeletonAnimation(str..".json", str..".atlas",1)
     self:addChild(DieNode)
     DieNode:setAnimation(0, "mb", false)
+    DieNode:setScale(2)
 
+    print("playDieTeXiao   ===============        22222222222   ")
 
-    gameUtil.playEffect("res/sounds/effect/all/t_sw_start",false)
-
-    --DieNode:setLocalZOrder(-10)
     DieNode:setName("DieTeXiao")
     local function ackPlayBack()
         DieNode:setVisible(false)
-        -- self.barImageBg:setVisible(false)
-        -- self.loadingBar:setVisible(false)
     end
     local action = cc.Sequence:create(
                 cc.DelayTime:create(0.67),
@@ -993,40 +991,37 @@ function Unit:playDieTeXiao( time )
             )
     DieNode:runAction(action) 
 
+    print("playDieTeXiao   ===============        3333333333   ")
 
-    if self.fightType == 1 then 
-        if self.campType == CAMP_B_TYPE then
-            self:sendReward(time)
-        end
-    else
-        if self.campType == CAMP_B_TYPE then
-            local uiJinbi = self.fight.fScene.scene:getChildByName("Image_jinbi")
-            self:sendReward(time)
+    local uiJinbi = game.G_FightScene.scene:getChildByName("Node_gold"):getChildByName("Image_gold")
 
-            for i=1,math.random(5,6) do
-                local jibiNode = cc.Node:create()
-                self:addChild(jibiNode)
+    for i=1,math.random(5,6) do
 
-                local jinbiImageView = ccui.ImageView:create()
-                jinbiImageView:loadTexture("res/UI/pc_jinbi.png")
-                jibiNode:addChild(jinbiImageView)
-                jinbiImageView:setName("jinbi")
-                jinbiImageView:setScale(0.8)    
-                jinbiImageView:setPosition(0,50)
-
-                self:jinbiMove(jinbiImageView, uiJinbi, jibiNode)
+        print("playDieTeXiao   ===============        444444444   "..i)
 
 
-            end
-        end
+        local jibiNode = cc.Node:create()
+        game.G_FightScene.scene:addChild(jibiNode, 9999)
+        jibiNode:setPosition(self:getPositionX(), self:getPositionY())
+
+        local jinbiImageView = ccui.ImageView:create()
+        jinbiImageView:loadTexture("res/UI/base/gold.png")
+        jibiNode:addChild(jinbiImageView)
+        jinbiImageView:setName("jinbi")
+        jinbiImageView:setScale(0.8)    
+        jinbiImageView:setPosition(0,50)
+
+        self:jinbiMove(jinbiImageView, uiJinbi, jibiNode)
+
+
     end
 
 end
 
 function Unit:jinbiMove( jinbi, uiJinbi , jibiNode)
     local function fly( ... )
+        print("jinbiMove   ===============        3333   ")
         local function flyBack( ... )
-            local btnSize = uiJinbi:getSize()
         
             local anime = gameUtil.createSkeAnmion( {name = "jb",scale = 1} )
             anime:setAnimation(0, "stand", false)
@@ -1038,8 +1033,7 @@ function Unit:jinbiMove( jinbi, uiJinbi , jibiNode)
             performWithDelay(self,function( ... )
                 anime:removeFromParent()
             end, 0.4)
-            
-            gameUtil.playUIEffect( "Gold_Get" )
+
 
             jinbi:removeFromParent()
         end
@@ -1048,8 +1042,8 @@ function Unit:jinbiMove( jinbi, uiJinbi , jibiNode)
         local p0 = jinbi:getParent():convertToWorldSpace(cc.p(x, y))
         local x, y = uiJinbi:getPosition()
         local p1 = uiJinbi:getParent():convertToWorldSpace(cc.p(x, y))
-        local mx = p1.x - p0.x
-        local my = p1.y - p0.y
+        local mx = p1.x - p0.x - 16
+        local my = p1.y - p0.y - 16
         local bezier = {
             cc.p(0, 0),
             cc.p(mx + math.random(-200,200), math.random(100,200)),
@@ -1063,10 +1057,9 @@ function Unit:jinbiMove( jinbi, uiJinbi , jibiNode)
         particle:setPosition(cc.p(jinbi:getSize().width*0.5, jinbi:getSize().height*0.5))
         particle:setAutoRemoveOnFinish(true)
         particle:setDuration(1.2)
-
+        print("jinbiMove   ===============        44444   ")
         jibiNode:runAction(cc.Sequence:create(cc.DelayTime:create(math.random(10,20) * 0.01),bezierForward, cc.CallFunc:create(flyBack) ))
         
-        gameUtil.playUIEffect( "Gold_Birth" )
     end
 
     local mx = math.random(-80,80)
@@ -1079,17 +1072,19 @@ function Unit:jinbiMove( jinbi, uiJinbi , jibiNode)
     local bezierForward = cc.BezierBy:create(math.random(40,70) * 0.01, bezier)
 
     jibiNode:setVisible(false)
-
+    print("jinbiMove   ===============        11111111   ")
     jibiNode:runAction(cc.Sequence:create(
                 cc.CallFunc:create(function( ... )
                     jibiNode:setVisible(true)
+                    print("jinbiMove   ===============        222222   ")
                 end),
                 bezierForward, 
                 cc.MoveBy:create(0.1,cc.p(0,20)),
                 cc.MoveBy:create(0.1,cc.p(0,-20)),
                 cc.MoveBy:create(0.05,cc.p(0,10)),
                 cc.MoveBy:create(0.05,cc.p(0,-10)), 
-                cc.CallFunc:create(fly)))
+                cc.CallFunc:create(fly)
+                ))
 
 
 end
@@ -1437,7 +1432,7 @@ function Unit:PlayHurt(param)
             gameUtil:addTishi( {p = self, s = "重生" , z = 1000,width = 25, height = 50})
         else
             --计算掉落
-            self:playDieTeXiao(time)
+            -- self:playDieTeXiao(time)
             -- game:dispatchEvent({name = EventDef.UI_MSG, code = "CountHeroDiedTime", heroId = self.HeroId, camp = self.campType})
         end
 
